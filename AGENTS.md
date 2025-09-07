@@ -1,5 +1,7 @@
 Repository Guidelines
 
+- 
+
 Prohibited Practices
 
 •   *No useEffect*: Use fetch in server components via services, or handle side effects via event handlers
