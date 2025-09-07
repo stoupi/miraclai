@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256" role="img">
+  <title>Hand-drawn Heart</title>
+  <g fill="none">
+    <path d="M129 217c-30-28-53-50-71-72-16-20-22-38-17-56 6-21 26-34 48-32 17 2 30 12 38 29 8-17 21-27 38-29 22-2 42 11 48 32 5 18-1 36-17 56-18 22-41 44-71 72z"
+          stroke="#ff6b6b" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" opacity=".35"/>
+    <path d="M128 213c-29-27-50-47-67-67-14-18-20-34-16-50 5-18 22-29 41-27 15 2 27 11 35 26 7-15 19-24 34-26 19-2 36 9 41 27 4 16-2 32-16 50-17 20-38 40-67 67z"
+          stroke="#e63946" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M88 76c8-5 16-3 22 4m57 0c-8-5-16-3-22 4"
+          stroke="#e63946" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>
+
