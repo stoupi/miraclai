@@ -35,7 +35,8 @@
 		"ctaInvest": "Découvrir nos services",
 		"ctaJoinTeam": "Nous contacter",
 		"heartImageAlt": "Illustration stylisée du cœur",
-		"aphpLogoAlt": "Logo AP-HP"
+		"aphpLogoAlt": "Logo AP-HP",
+		"carnotLogoAlt": "Logo Carnot AP-HP"
 	},
 	"auth": {
 		"loginTitle": "Connexion",
