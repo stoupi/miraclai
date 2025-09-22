@@ -9,7 +9,7 @@ export async function Hero({ locale }: HeroProps) {
   const t = await getTranslations({ locale, namespace: 'home' });
 
   return (
-    <section className="relative isolate overflow-hidden">
+    <section className="relative isolate overflow-hidden min-h-screen">
       <div className="absolute inset-0 -z-10 bg-gradient-to-b from-[#061024] via-[#0A3242] to-[#64C0C9]" />
 
       <svg
@@ -27,8 +27,26 @@ export async function Hero({ locale }: HeroProps) {
         />
       </svg>
 
-      <div className="container mx-auto grid min-h-[80vh] grid-cols-1 items-center gap-8 px-4 py-16 md:grid-cols-2 lg:min-h-[86vh] lg:py-24">
-        <div className="flex flex-col items-start gap-6">
+      <div className="container mx-auto grid min-h-[90vh] grid-cols-1 items-center gap-8 px-4 py-16 md:grid-cols-2 lg:min-h-[100vh] lg:py-28">
+        <div className="mt-24 md:mt-36 lg:mt-44 flex flex-col items-start gap-6">
+          {(() => {
+            let altText: string;
+            try {
+              altText = t('aphpLogoAlt');
+            } catch {
+              altText = 'AP-HP logo';
+            }
+            return (
+              <Image
+                src="/assets/AP-HP_Logo_blanc.svg"
+                alt={altText}
+                width={220}
+                height={60}
+                className="h-10 w-auto md:h-12 lg:h-14"
+                priority
+              />
+            );
+          })()}
           <h1 className="text-balance text-4xl font-bold leading-tight tracking-tight text-white sm:text-6xl">
             {t('olvaHeadline')}
           </h1>

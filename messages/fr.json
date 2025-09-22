@@ -34,7 +34,8 @@
 		"olvaDescription": "MIRACL.ai est un Core Lab académique où radiologues et cardiologues collaborent avec ingénieurs et data scientists pour transformer l’imagerie cardiovasculaire, de l’expertise clinique à l’innovation par l’intelligence artificielle.",
 		"ctaInvest": "Découvrir nos services",
 		"ctaJoinTeam": "Nous contacter",
-		"heartImageAlt": "Illustration stylisée du cœur"
+		"heartImageAlt": "Illustration stylisée du cœur",
+		"aphpLogoAlt": "Logo AP-HP"
 	},
 	"auth": {
 		"loginTitle": "Connexion",
