@@ -1,5 +1,6 @@
 import { Hero } from './components/hero';
 import { PartnersMarquee } from './components/partners-marquee';
+import { ResearchSection } from './components/research-section';
 
 export default async function Home({
   params
@@ -12,6 +13,7 @@ export default async function Home({
     <>
       <Hero locale={locale} />
       <PartnersMarquee locale={locale} />
+      <ResearchSection locale={locale} />
     </>
   );
 }

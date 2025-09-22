@@ -45,6 +45,20 @@
     "partnersTitle": "MIRACL.ai is founded by 7 French expert centers",
     "partnersCtaTeam": "Meet our team"
   },
+  "research": {
+    "strapline": "The infrastructure behind collaborative cardiovascular imaging research.",
+    "headline1": "Built for research teams.",
+    "headline2": "Powered by science",
+    "headline3": "driven by data",
+    "description": "MIRACL.ai connects cardiologists, radiologists, engineers, and data scientists to advance cardiovascular research. We provide centralized imaging services, tailored AI solutions, and scientific support to accelerate impactful studies.",
+    "feature1Title": "Centralized Expert Core Laboratory",
+    "feature1Text": "Standardized reads, quality control, and centralized workflows",
+    "feature2Title": "AI‑powered Data Science",
+    "feature2Text": "From biostatistics to deep learning, tailored to cardiovascular imaging",
+    "feature3Title": "Scientific impact",
+    "feature3Text": "From peer‑reviewed publications to real‑world value",
+    "cta": "Discover our services"
+  },
   "auth": {
     "loginTitle": "Login",
     "signupTitle": "Sign up",

@@ -37,9 +37,23 @@
 		"heartImageAlt": "Illustration stylisée du cœur",
 		"aphpLogoAlt": "Logo AP-HP",
 		"carnotLogoAlt": "Logo Carnot AP-HP",
-		"partnersTitle": "MIRACL.ai est fondée par 7 centres français experts",
-		"partnersCtaTeam": "Découvrir notre équipe"
-	},
+    "partnersTitle": "MIRACL.ai est fondée par 7 centres français experts",
+    "partnersCtaTeam": "Découvrir notre équipe"
+  },
+  "research": {
+    "strapline": "L'infrastructure au service de la recherche en imagerie cardiovasculaire.",
+    "headline1": "Conçu pour les équipes de recherche.",
+    "headline2": "Propulsé par la science",
+    "headline3": "guidé par les données",
+    "description": "MIRACL.ai réunit cardiologues, radiologues, ingénieurs et data scientists pour faire avancer la recherche cardiovasculaire. Nous fournissons des services d'imagerie centralisés, des solutions IA sur‑mesure et un support scientifique pour accélérer des études à fort impact.",
+    "feature1Title": "Core Lab expert centralisé",
+    "feature1Text": "Lectures standardisées, contrôle qualité et workflows centralisés",
+    "feature2Title": "Data science alimentée par l'IA",
+    "feature2Text": "De la biostatistique au deep learning, dédié à l'imagerie cardio",
+    "feature3Title": "Impact scientifique",
+    "feature3Text": "Des publications évaluées par les pairs à la valeur terrain",
+    "cta": "Découvrir nos services"
+  },
 	"auth": {
 		"loginTitle": "Connexion",
 		"signupTitle": "Inscription",
