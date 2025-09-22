@@ -8,14 +8,20 @@
 		"donate": "Faire un don",
 		"service": "Service de Cardiologie",
 		"hospital": "HÔPITAL LARIBOISIÈRE",
-		"logoAlt": "Logo de l'hôpital Lariboisière",
+		"logoAlt": "Logo Olva",
 		"profile": "Profil",
 		"login": "Connexion",
 		"logout": "Déconnexion",
 		"signup": "S'inscrire",
 		"loading": "Chargement...",
 		"loggingOut": "Déconnexion en cours...",
-		"appName": "Nom de l'application"
+		"appName": "Nom de l'application",
+		"brand": "Olva",
+		"whyNow": "Pourquoi maintenant",
+		"solution": "Notre solution",
+		"benefits": "Bénéfices",
+		"ourTeam": "Notre équipe",
+		"careers": "Carrières"
 	},
 	"home": {
 		"title": "",
@@ -24,7 +30,12 @@
 		"primaryCta": "Prendre rendez-vous",
 		"secondaryCta": "Espace patients",
 		"chief": "Chef de service : Professeur Patrick HENRY",
-		"teamImageAlt": "Photo de l'équipe"
+		"teamImageAlt": "Photo de l'équipe",
+		"olvaHeadline": "Façonner l'avenir de l'électrophysiologie cardiaque",
+		"olvaDescription": "Nous développons une plateforme portable et réutilisable pour l'ablation cardiaque — rendant l'électrophysiologie plus accessible et durable.",
+		"ctaInvest": "Investir dans Olva",
+		"ctaJoinTeam": "Rejoindre l'équipe",
+		"heartImageAlt": "Illustration stylisée du cœur"
 	},
 	"auth": {
 		"loginTitle": "Connexion",

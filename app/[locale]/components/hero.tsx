@@ -1,74 +1,65 @@
 import { getTranslations } from 'next-intl/server';
-import { getHeroImageUrl } from '@/lib/services/settings';
-import { getSetting } from '@/lib/services/settings';
 import Image from 'next/image';
 import { Link } from '@/app/i18n/navigation';
 import { Button } from '@/components/ui/button';
 
-type HeroProps = {
-  locale: string;
-};
+type HeroProps = { locale: string };
 
 export async function Hero({ locale }: HeroProps) {
   const t = await getTranslations({ locale, namespace: 'home' });
-  let dbUrl: string | null = null;
-  try {
-    dbUrl = await getHeroImageUrl();
-  } catch {
-    dbUrl = null;
-  }
-  const imageUrl = dbUrl ?? process.env.NEXT_PUBLIC_HERO_IMAGE_URL ?? '/assets/nouveaularib.jpg';
-  let teamUrl: string | null = null;
-  try {
-    teamUrl = await getSetting('HERO_TEAM_IMAGE_URL');
-  } catch {
-    teamUrl = null;
-  }
-  const teamImageUrl = teamUrl ?? process.env.NEXT_PUBLIC_HERO_TEAM_IMAGE_URL ?? '/assets/team.png';
 
   return (
-    <section className="relative overflow-hidden">
-      {/* Background image layer */}
-      <div
-        className="absolute inset-0 -z-10 bg-center bg-cover"
-        style={{ backgroundImage: `url(${imageUrl})` }}
-        aria-hidden
-      />
-      {/* Blue overlay to create the tinted transparency */}
-      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-[#2F6FB7]/70 to-[#2A66A6]/70" />
+    <section className="relative isolate overflow-hidden">
+      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-[#061D29] via-[#0A3242] to-[#64C0C9]" />
 
-      <div className="relative container mx-auto flex flex-col items-center gap-8 px-4 py-28 text-center sm:py-36">
-        <div className="flex w-full max-w-6xl items-center justify-center gap-6 sm:gap-8">
-          <h1 className="flex-1 text-balance text-4xl font-extrabold tracking-tight text-white drop-shadow-[0_2px_2px_rgba(0,0,0,0.2)] sm:text-6xl">
-            {t('heroTitle')}
+      <svg
+        aria-hidden
+        className="absolute left-0 right-0 top-28 -z-10 h-32 w-full opacity-20"
+        viewBox="0 0 1440 200"
+        preserveAspectRatio="none"
+      >
+        <path
+          d="M0 120 L120 120 L160 30 L220 120 L360 120 L400 60 L520 60 L560 120 L720 120 L760 40 L820 120 L980 120 L1020 80 L1140 80 L1180 120 L1440 120"
+          fill="none"
+          stroke="#BFE8F0"
+          strokeWidth="2"
+          strokeLinecap="round"
+        />
+      </svg>
+
+      <div className="container mx-auto grid min-h-[80vh] grid-cols-1 items-center gap-8 px-4 py-16 md:grid-cols-2 lg:min-h-[86vh] lg:py-24">
+        <div className="flex flex-col items-start gap-6">
+          <h1 className="text-balance text-4xl font-bold leading-tight tracking-tight text-white sm:text-6xl">
+            {t('olvaHeadline')}
           </h1>
-          <div className="hidden md:block">
-            <Image
-              src={teamImageUrl}
-              alt={t('teamImageAlt')}
-              width={220}
-              height={220}
-              className="h-[220px] w-[220px] rounded-lg object-cover shadow-sm"
-            />
+          <p className="max-w-xl text-lg text-[#D0EEF3] sm:text-xl">
+            {t('olvaDescription')}
+          </p>
+          <div className="mt-2 flex flex-col gap-4 sm:flex-row">
+            <Link href="/invest">
+              <Button size="lg" className="rounded-xl bg-white px-7 text-[#1F6DB2] hover:bg-[#F6FBFF]">
+                {t('ctaInvest')}
+              </Button>
+            </Link>
+            <Link href="/careers">
+              <Button size="lg" variant="outline" className="rounded-xl border-2 border-white bg-transparent px-7 text-white hover:bg-white/10">
+                {t('ctaJoinTeam')}
+              </Button>
+            </Link>
           </div>
         </div>
-        <div className="flex flex-col items-center gap-1">
-          <p className="max-w-3xl text-pretty text-[#E6F0FA] sm:text-xl">
-            {t('heroSubtitle')}
-          </p>
-          <p className="text-[#E6F0FA] sm:text-xl">{t('chief')}</p>
-        </div>
-        <div className="flex flex-col items-center gap-5 sm:flex-row">
-          <Link href="/appointments">
-            <Button size="lg" className="rounded-[14px] bg-white px-8 text-[#1F6DB2] shadow-sm hover:bg-[#F6FBFF]">
-              {t('primaryCta')}
-            </Button>
-          </Link>
-          <Link href="/patients">
-            <Button size="lg" variant="outline" className="rounded-[14px] border-2 border-white bg-transparent px-8 text-white hover:bg-white/10">
-              {t('secondaryCta')}
-            </Button>
-          </Link>
+
+        <div className="relative">
+          <div className="pointer-events-none absolute -right-10 bottom-0 top-0 hidden w-[720px] sm:block">
+            <Image
+              src="/assets/heart.svg"
+              alt={t('heartImageAlt')}
+              width={720}
+              height={720}
+              className="h-full w-full object-contain drop-shadow-[0_20px_40px_rgba(0,0,0,0.25)]"
+              priority
+            />
+          </div>
         </div>
       </div>
     </section>

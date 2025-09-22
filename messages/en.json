@@ -8,14 +8,20 @@
     "donate": "Donate",
     "service": "Cardiology Department",
     "hospital": "LARIBOISIÈRE HOSPITAL",
-    "logoAlt": "Lariboisière hospital logo",
+    "logoAlt": "Olva logo",
     "profile": "Profile",
     "login": "Login",
     "logout": "Logout",
     "signup": "Sign up",
     "loading": "Loading...",
     "loggingOut": "Logging out...",
-    "appName": "App Name"
+    "appName": "App Name",
+    "brand": "Olva",
+    "whyNow": "Why now",
+    "solution": "Our solution",
+    "benefits": "Benefits",
+    "ourTeam": "Our team",
+    "careers": "Careers"
   },
   "home": {
     "title": "",
@@ -24,7 +30,12 @@
     "primaryCta": "Book an appointment",
     "secondaryCta": "Patient space",
     "chief": "Head of Department: Professor Patrick HENRY",
-    "teamImageAlt": "Team photo"
+    "teamImageAlt": "Team photo",
+    "olvaHeadline": "Shaping the future of cardiac electrophysiology",
+    "olvaDescription": "Developing a portable and reusable platform for cardiac ablation — making electrophysiology more accessible and sustainable.",
+    "ctaInvest": "Invest in Olva",
+    "ctaJoinTeam": "Join the team",
+    "heartImageAlt": "Stylized heart illustration"
   },
   "auth": {
     "loginTitle": "Login",

@@ -6,8 +6,6 @@ export default async function Home({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-  
-  return (
-    <Hero locale={locale} />
-  );
+
+  return <Hero locale={locale} />;
 }
