@@ -10,7 +10,7 @@ export async function Hero({ locale }: HeroProps) {
 
   return (
     <section className="relative isolate overflow-hidden">
-      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-[#061D29] via-[#0A3242] to-[#64C0C9]" />
+      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-[#061024] via-[#0A3242] to-[#64C0C9]" />
 
       <svg
         aria-hidden
