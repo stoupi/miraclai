@@ -1,12 +1,19 @@
 'use client';
 
-import { Link } from '@/app/i18n/navigation';
+import { Link, useRouter, usePathname } from '@/app/i18n/navigation';
 import Image from 'next/image';
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 import { Button } from '@/components/ui/button';
 
 export function Navbar() {
   const t = useTranslations('navigation');
+  const locale = useLocale();
+  const router = useRouter();
+  const pathname = usePathname();
+
+  const switchLocale = (next: 'en' | 'fr') => {
+    if (next !== locale) router.push(pathname, { locale: next });
+  };
 
   return (
     <nav className="absolute top-0 z-50 w-full bg-transparent">
@@ -25,6 +32,20 @@ export function Navbar() {
               {t('ctaPrimary')}
             </Button>
           </Link>
+          <div className="ml-4 flex items-center rounded-full border border-white/30 p-0.5">
+            <button
+              onClick={() => switchLocale('fr')}
+              className={`px-3 py-1 text-xs font-medium ${locale === 'fr' ? 'bg-white text-[#061024] rounded-full' : 'text-slate-200 hover:text-white'}`}
+            >
+              FR
+            </button>
+            <button
+              onClick={() => switchLocale('en')}
+              className={`px-3 py-1 text-xs font-medium ${locale === 'en' ? 'bg-white text-[#061024] rounded-full' : 'text-slate-200 hover:text-white'}`}
+            >
+              EN
+            </button>
+          </div>
         </div>
       </div>
     </nav>
