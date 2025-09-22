@@ -10,9 +10,8 @@ export function Navbar() {
   return (
     <nav className="absolute top-0 z-50 w-full bg-transparent">
       <div className="container mx-auto flex h-20 items-center justify-between px-4">
-        <Link href="/" className="flex items-center gap-3">
-          <Image src="/assets/hand-drawn-heart.svg" alt={t('logoAlt')} width={36} height={36} />
-          <span className="text-xl font-semibold tracking-tight text-white">{t('brand')}</span>
+        <Link href="/" className="flex items-center">
+          <Image src="/assets/logo_miracl_blanc.svg" alt={t('logoAlt')} width={110} height={28} priority />
         </Link>
 
         <div className="hidden md:flex items-center gap-10 text-base">
