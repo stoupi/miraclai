@@ -82,12 +82,12 @@ export async function Hero({ locale }: HeroProps) {
             </p>
             <div className="mt-8 sm:mt-10 lg:mt-12 flex flex-col gap-4 sm:flex-row">
               <Link href="/invest">
-                <Button size="lg" className="rounded-full bg-white px-7 text-base md:text-lg font-semibold text-[#1F6DB2] hover:bg-[#F6FBFF]">
+                <Button size="lg" className="cursor-pointer rounded-full bg-white px-7 text-base md:text-lg font-semibold text-[#1F6DB2] hover:bg-[#F6FBFF]">
                   {t('ctaInvest')}
                 </Button>
               </Link>
               <Link href="/careers">
-                <Button size="lg" variant="outline" className="rounded-full border-2 border-white bg-transparent px-7 text-base md:text-lg font-semibold text-white hover:bg-white/10">
+                <Button size="lg" variant="outline" className="cursor-pointer rounded-full border-2 border-white bg-transparent px-7 text-base md:text-lg font-semibold text-white hover:bg-white/10">
                   {t('ctaJoinTeam')}
                 </Button>
               </Link>
