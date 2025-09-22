@@ -36,7 +36,8 @@
 		"ctaJoinTeam": "Nous contacter",
 		"heartImageAlt": "Illustration stylisée du cœur",
 		"aphpLogoAlt": "Logo AP-HP",
-		"carnotLogoAlt": "Logo Carnot AP-HP"
+		"carnotLogoAlt": "Logo Carnot AP-HP",
+		"partnersTitle": "MIRACL.ai est fondé par 7 centres français experts"
 	},
 	"auth": {
 		"loginTitle": "Connexion",

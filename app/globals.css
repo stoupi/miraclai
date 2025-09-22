@@ -148,4 +148,10 @@
   }
   .nav-anim:hover::after,
   .nav-anim:focus-visible::after { transform: scaleX(1); }
+
+  /* Continuous marquee animation for partners section */
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
 }

@@ -40,7 +40,9 @@
     "ctaInvest": "Invest in Olva",
     "ctaJoinTeam": "Join the team",
     "heartImageAlt": "Stylized heart illustration",
-    "aphpLogoAlt": "AP-HP logo"
+    "aphpLogoAlt": "AP-HP logo",
+    "carnotLogoAlt": "Carnot AP-HP logo",
+    "partnersTitle": "MIRACL.ai is founded by 7 French expert centers"
   },
   "auth": {
     "loginTitle": "Login",
