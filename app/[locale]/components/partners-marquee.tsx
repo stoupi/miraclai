@@ -47,7 +47,7 @@ export async function PartnersMarquee({ locale }: { locale: string }) {
       </div>
       <div className="mt-16 md:mt-20 flex justify-center">
         <Link href="/team">
-          <Button size="lg" className="cursor-pointer rounded-full bg-[#F33349] px-7 py-2.5 text-base md:text-lg font-semibold text-white border-2 border-[#F33349] transition-colors hover:bg-[#64C0C9] hover:text-[#061024] hover:border-[#64C0C9]">
+          <Button size="lg" className="cursor-pointer rounded-full bg-[#F33349] px-7 py-2.5 text-base md:text-lg font-semibold text-white border-2 border-[#F33349] transition-colors hover:bg-white hover:text-[#F33349] hover:border-[#F33349]">
             {t('partnersCtaTeam')}
           </Button>
         </Link>
