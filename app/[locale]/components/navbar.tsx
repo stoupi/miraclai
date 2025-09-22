@@ -3,6 +3,7 @@
 import { Link, useRouter, usePathname } from '@/app/i18n/navigation';
 import Image from 'next/image';
 import { useTranslations, useLocale } from 'next-intl';
+import { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
 
 export function Navbar() {
@@ -10,13 +11,25 @@ export function Navbar() {
   const locale = useLocale();
   const router = useRouter();
   const pathname = usePathname();
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 4);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
 
   const switchLocale = (next: 'en' | 'fr') => {
     if (next !== locale) router.push(pathname, { locale: next });
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 w-full bg-transparent">
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 w-full transition-colors duration-200 ${
+        scrolled ? 'backdrop-blur-md bg-white/10 border-b border-white/15' : 'bg-transparent'
+      }`}
+    >
       <div className="container mx-auto flex h-24 items-center justify-between px-5">
         <Link href="/" className="flex items-center">
           <Image src="/assets/logo_miracl_blanc_V2.svg" alt={t('logoAlt')} width={220} height={54} priority />

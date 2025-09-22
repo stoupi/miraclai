@@ -21,7 +21,7 @@ export async function PartnersMarquee({ locale }: { locale: string }) {
   const sequence = [...logos, ...logos];
 
   return (
-    <section className="relative w-full bg-white/0 py-10">
+    <section className="relative w-full bg-white/0 py-16">
       <div className="container mx-auto px-4">
         <h2 className="mb-6 text-center text-2xl sm:text-3xl md:text-4xl font-bold text-black">
           {t('partnersTitle')}
@@ -34,8 +34,8 @@ export async function PartnersMarquee({ locale }: { locale: string }) {
                   key={`a-${idx}-${item.src}`}
                   src={item.src}
                   alt={item.alt}
-                  className="h-10 w-auto opacity-80 grayscale hover:opacity-100 hover:grayscale-0 transition"
-                  height={40}
+                  className="h-20 w-auto opacity-80 grayscale hover:opacity-100 hover:grayscale-0 transition md:h-24"
+                  height={80}
                 />
               ))}
             </div>
@@ -45,8 +45,8 @@ export async function PartnersMarquee({ locale }: { locale: string }) {
                   key={`b-${idx}-${item.src}`}
                   src={item.src}
                   alt={item.alt}
-                  className="h-10 w-auto opacity-80 grayscale hover:opacity-100 hover:grayscale-0 transition"
-                  height={40}
+                  className="h-20 w-auto opacity-80 grayscale hover:opacity-100 hover:grayscale-0 transition md:h-24"
+                  height={80}
                 />
               ))}
             </div>
