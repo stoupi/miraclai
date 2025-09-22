@@ -12,12 +12,30 @@ export function Navbar() {
   const router = useRouter();
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
+  const [partnersInView, setPartnersInView] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 4);
-    onScroll();
-    window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onScroll);
+    const compute = () => {
+      setScrolled(window.scrollY > 4);
+      const hero = document.getElementById('hero-section');
+      const heroRect = hero?.getBoundingClientRect();
+      const heroVisible = heroRect ? heroRect.bottom > 0 : false;
+      const el = document.getElementById('partners-section');
+      if (!el) return setPartnersInView(false);
+      const rect = el.getBoundingClientRect();
+      const vh = window.innerHeight || document.documentElement.clientHeight;
+      const overlap = Math.max(0, Math.min(rect.bottom, vh) - Math.max(rect.top, 0));
+      // Consider the section "in view" only when at least 25% of the viewport overlaps it
+      setPartnersInView(!heroVisible && overlap > vh * 0.1);
+    };
+
+    compute();
+    window.addEventListener('scroll', compute, { passive: true });
+    window.addEventListener('resize', compute);
+    return () => {
+      window.removeEventListener('scroll', compute);
+      window.removeEventListener('resize', compute);
+    };
   }, []);
 
   const switchLocale = (next: 'en' | 'fr') => {
@@ -26,13 +44,30 @@ export function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 w-full transition-colors duration-200 ${
-        scrolled ? 'backdrop-blur-md bg-white/10 border-b border-white/15' : 'bg-transparent'
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 w-full transition-colors duration-200 ${scrolled ? 'backdrop-blur-md bg-white/10 border-b border-white/15' : 'bg-transparent'
+        }`}
     >
       <div className="container mx-auto flex h-24 items-center justify-between px-5">
         <Link href="/" className="flex items-center">
-          <Image src="/assets/logo_miracl_blanc_V2.svg" alt={t('logoAlt')} width={220} height={54} priority />
+          <div className="relative" style={{ width: 220, height: 54 }}>
+            <Image
+              src="/assets/logo_miracl_blanc_V2.svg"
+              alt={t('logoAlt')}
+              width={220}
+              height={54}
+              priority
+              className={`absolute inset-0 transition-opacity duration-300 ${partnersInView ? 'opacity-0' : 'opacity-100'}`}
+            />
+            <Image
+              src="/assets/logo_miracl_noir_V2.svg"
+              alt=""
+              aria-hidden
+              width={220}
+              height={54}
+              priority
+              className={`absolute inset-0 transition-opacity duration-300 ${partnersInView ? 'opacity-100' : 'opacity-0'}`}
+            />
+          </div>
         </Link>
 
         <div className="hidden md:flex items-center gap-10 text-lg">

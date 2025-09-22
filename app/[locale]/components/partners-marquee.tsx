@@ -23,7 +23,7 @@ export async function PartnersMarquee({ locale }: { locale: string }) {
   const sequence = [...logos, ...logos];
 
   return (
-    <section className="relative w-full bg-white/0 py-32">
+    <section id="partners-section" className="relative w-full bg-white/0 py-32">
       <div className="container mx-auto px-4">
         <h2 className="mb-12 md:mb-16 text-center text-2xl sm:text-3xl md:text-4xl font-bold text-black">
           {t('partnersTitle')}

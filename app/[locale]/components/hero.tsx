@@ -9,7 +9,7 @@ export async function Hero({ locale }: HeroProps) {
   const t = await getTranslations({ locale, namespace: 'home' });
 
   return (
-    <section className="relative isolate overflow-hidden min-h-[92vh]">
+    <section id="hero-section" className="relative isolate overflow-hidden min-h-[92vh]">
       <div
         className="absolute inset-0 -z-10"
         style={{
