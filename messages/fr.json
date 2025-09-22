@@ -16,12 +16,11 @@
 		"loading": "Chargement...",
 		"loggingOut": "Déconnexion en cours...",
 		"appName": "Nom de l'application",
-		"brand": "Olva",
-		"whyNow": "Pourquoi maintenant",
-		"solution": "Notre solution",
-		"benefits": "Bénéfices",
-		"ourTeam": "Notre équipe",
-		"careers": "Carrières"
+		"menuServices": "Services",
+		"menuCatalog": "Catalogue",
+		"menuTeam": "Équipe",
+		"menuNews": "Actualités",
+		"ctaPrimary": "Nous contacter"
 	},
 	"home": {
 		"title": "",

@@ -20,7 +20,12 @@
     "solution": "Our solution",
     "benefits": "Benefits",
     "ourTeam": "Our team",
-    "careers": "Careers"
+    "careers": "Careers",
+    "menuServices": "Services",
+    "menuCatalog": "Catalog",
+    "menuTeam": "Our team",
+    "menuNews": "News",
+    "ctaPrimary": "Contact us"
   },
   "home": {
     "title": "",
