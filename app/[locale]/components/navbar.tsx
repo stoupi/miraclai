@@ -23,10 +23,10 @@ export function Navbar() {
         </Link>
 
         <div className="hidden md:flex items-center gap-10 text-lg">
-          <Link href="/services" className="text-slate-200 transition-colors hover:text-white">{t('menuServices')}</Link>
-          <Link href="/catalog" className="text-slate-200 transition-colors hover:text-white">{t('menuCatalog')}</Link>
-          <Link href="/team" className="text-slate-200 transition-colors hover:text-white">{t('menuTeam')}</Link>
-          <Link href="/news" className="text-slate-200 transition-colors hover:text-white">{t('menuNews')}</Link>
+          <Link href="/services" className="inline-block font-medium text-white/70 transition-colors hover:text-white transform-gpu transition-transform duration-150 hover:scale-105">{t('menuServices')}</Link>
+          <Link href="/catalog" className="inline-block font-medium text-white/70 transition-colors hover:text-white transform-gpu transition-transform duration-150 hover:scale-105">{t('menuCatalog')}</Link>
+          <Link href="/team" className="inline-block font-medium text-white/70 transition-colors hover:text-white transform-gpu transition-transform duration-150 hover:scale-105">{t('menuTeam')}</Link>
+          <Link href="/news" className="inline-block font-medium text-white/70 transition-colors hover:text-white transform-gpu transition-transform duration-150 hover:scale-105">{t('menuNews')}</Link>
           <Link href="/contact" className="ml-2">
             <Button className="rounded-full bg-[#F33349] px-6 py-2.5 text-base font-semibold text-white hover:opacity-95">
               {t('ctaPrimary')}
@@ -35,13 +35,13 @@ export function Navbar() {
           <div className="ml-5 flex items-center rounded-full border border-white/30 p-1">
             <button
               onClick={() => switchLocale('fr')}
-              className={`px-3.5 py-1.5 text-sm font-medium ${locale === 'fr' ? 'bg-white text-[#061024] rounded-full' : 'text-slate-200 hover:text-white'}`}
+              className={`px-3.5 py-1.5 text-sm font-medium ${locale === 'fr' ? 'bg-white text-[#061024] rounded-full' : 'text-white/70 hover:text-white'}`}
             >
               FR
             </button>
             <button
               onClick={() => switchLocale('en')}
-              className={`px-3.5 py-1.5 text-sm font-medium ${locale === 'en' ? 'bg-white text-[#061024] rounded-full' : 'text-slate-200 hover:text-white'}`}
+              className={`px-3.5 py-1.5 text-sm font-medium ${locale === 'en' ? 'bg-white text-[#061024] rounded-full' : 'text-white/70 hover:text-white'}`}
             >
               EN
             </button>
