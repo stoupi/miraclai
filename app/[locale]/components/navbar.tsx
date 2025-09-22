@@ -16,7 +16,7 @@ export function Navbar() {
   };
 
   return (
-    <nav className="absolute top-0 z-50 w-full bg-transparent">
+    <nav className="fixed top-0 left-0 right-0 z-50 w-full bg-transparent">
       <div className="container mx-auto flex h-24 items-center justify-between px-5">
         <Link href="/" className="flex items-center">
           <Image src="/assets/logo_miracl_blanc_V2.svg" alt={t('logoAlt')} width={220} height={54} priority />
