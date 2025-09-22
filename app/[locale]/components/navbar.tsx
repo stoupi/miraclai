@@ -19,7 +19,7 @@ export function Navbar() {
     <nav className="absolute top-0 z-50 w-full bg-transparent">
       <div className="container mx-auto flex h-24 items-center justify-between px-5">
         <Link href="/" className="flex items-center">
-          <Image src="/assets/logo_miracl_blanc_V2.svg" alt={t('logoAlt')} width={180} height={44} priority />
+          <Image src="/assets/logo_miracl_blanc_V2.svg" alt={t('logoAlt')} width={220} height={54} priority />
         </Link>
 
         <div className="hidden md:flex items-center gap-10 text-lg">
