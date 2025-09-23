@@ -40,7 +40,17 @@ export async function NewsSection({ locale }: NewsSectionProps) {
   }));
 
   return (
-    <section id="news-section" className="bg-[#64C0C9] py-24 text-[#061024]">
+    <section
+      id="news-section"
+      className="relative isolate overflow-hidden py-24 text-[#061024]"
+    >
+      <div
+        className="absolute inset-0 -z-10"
+        style={{
+          backgroundImage:
+            'linear-gradient(to bottom, #061024 0%, #061024 15%, #64C0C9 100%)'
+        }}
+      />
       <div className="container mx-auto px-4">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="text-3xl font-bold leading-tight tracking-tight sm:text-4xl">
@@ -55,7 +65,7 @@ export async function NewsSection({ locale }: NewsSectionProps) {
           {cards.map((card) => (
             <Card
               key={card.title}
-              className="h-full overflow-hidden border-white/40 bg-white/80 text-[#061024] shadow-xl backdrop-blur-sm"
+              className="h-full overflow-hidden border-white/40 bg-white text-[#061024] shadow-xl"
             >
               <div className="relative h-48 w-full overflow-hidden">
                 <Image
