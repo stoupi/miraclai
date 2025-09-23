@@ -45,6 +45,37 @@
     "partnersTitle": "MIRACL.ai is founded by 7 French expert centers",
     "partnersCtaTeam": "Meet our team"
   },
+  "news": {
+    "sectionTitle": "Latest news",
+    "sectionSubtitle": "Insights, partnerships, and breakthroughs from the MIRACL.ai community.",
+    "cards": {
+      "card1": {
+        "date": "March 16, 2025",
+        "category": "Research",
+        "title": "AI-assisted quantification of cardiac fibrosis",
+        "excerpt": "Our imaging scientists unveil an automated pipeline that accelerates fibrosis quantification across multi-center clinical trials.",
+        "cta": "Read the story",
+        "imageAlt": "Radiologist analysing cardiovascular MRI scans"
+      },
+      "card2": {
+        "date": "March 4, 2025",
+        "category": "Partnership",
+        "title": "New collaboration with AP-HP data hub",
+        "excerpt": "We join forces with AP-HP's data hub to co-design interoperable imaging datasets ready for large-scale AI validation.",
+        "cta": "Discover the partnership",
+        "imageAlt": "Researchers collaborating around a laptop"
+      },
+      "card3": {
+        "date": "February 22, 2025",
+        "category": "Clinical",
+        "title": "First patients enrolled in MIRACL-Flow study",
+        "excerpt": "The prospective MIRACL-Flow study officially kicked off with its first cohort, focusing on longitudinal cardiovascular imaging markers.",
+        "cta": "Explore the study",
+        "imageAlt": "Cardiologist talking with a patient"
+      }
+    },
+    "ctaLabel": "See all articles"
+  },
   "research": {
     "strapline": "The infrastructure behind collaborative cardiovascular imaging research.",
     "headline1": "Built for research teams.",

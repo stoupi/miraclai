@@ -37,10 +37,41 @@
 		"heartImageAlt": "Illustration stylisée du cœur",
 		"aphpLogoAlt": "Logo AP-HP",
 		"carnotLogoAlt": "Logo Carnot AP-HP",
-    "partnersTitle": "MIRACL.ai est fondée par 7 centres français experts",
-    "partnersCtaTeam": "Découvrir notre équipe"
-  },
-  "research": {
+		"partnersTitle": "MIRACL.ai est fondée par 7 centres français experts",
+		"partnersCtaTeam": "Découvrir notre équipe"
+	},
+	"news": {
+		"sectionTitle": "Actualités",
+		"sectionSubtitle": "Découvrez nos collaborations, publications et événements majeurs.",
+		"cards": {
+			"card1": {
+				"date": "16 mars 2025",
+				"category": "Recherche",
+				"title": "Quantification IA des fibroses cardiaques",
+				"excerpt": "Nos équipes d'imagerie dévoilent une chaîne automatisée qui accélère la quantification des fibroses pour les essais multicentriques.",
+				"cta": "Lire l'article",
+				"imageAlt": "Radiologue analysant des IRM cardiovasculaires"
+			},
+			"card2": {
+				"date": "4 mars 2025",
+				"category": "Partenariat",
+				"title": "Nouvelle collaboration avec le data hub de l'AP-HP",
+				"excerpt": "Nous co-construisons avec le data hub de l'AP-HP des jeux de données interopérables prêts pour la validation IA à grande échelle.",
+				"cta": "Découvrir le partenariat",
+				"imageAlt": "Chercheurs collaborant autour d'un ordinateur portable"
+			},
+			"card3": {
+				"date": "22 février 2025",
+				"category": "Clinique",
+				"title": "Premiers patients inclus dans l'étude MIRACL-Flow",
+				"excerpt": "L'étude prospective MIRACL-Flow démarre avec sa première cohorte pour suivre les biomarqueurs d'imagerie cardiovasculaire dans le temps.",
+				"cta": "Explorer l'étude",
+				"imageAlt": "Cardiologue échangeant avec un patient"
+			}
+		},
+		"ctaLabel": "Voir toutes les actualités"
+	},
+	"research": {
     "strapline": "L'infrastructure au service de la recherche en imagerie cardiovasculaire.",
     "headline1": "Conçu pour les équipes de recherche.",
     "headline2": "Propulsé par la science",

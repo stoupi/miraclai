@@ -1,51 +1,98 @@
 'use client';
 
 import { Link, useRouter, usePathname } from '@/app/i18n/navigation';
-import Image from 'next/image';
-import { useTranslations, useLocale } from 'next-intl';
-import { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
+import { useMotionValueEvent, useScroll } from 'framer-motion';
+import Image from 'next/image';
+import { useLocale, useTranslations } from 'next-intl';
+import { useEffect, useState } from 'react';
+
+type PaletteState = 'light' | 'dark';
+
+type LocaleOption = 'en' | 'fr';
 
 export function Navbar() {
   const t = useTranslations('navigation');
   const locale = useLocale();
   const router = useRouter();
   const pathname = usePathname();
+  const { scrollY } = useScroll();
   const [scrolled, setScrolled] = useState(false);
-  const [partnersInView, setPartnersInView] = useState(false);
+  const [heroVisible, setHeroVisible] = useState(true);
+  const [partnersVisible, setPartnersVisible] = useState(false);
+
+  useMotionValueEvent(scrollY, 'change', (value) => {
+    setScrolled(value > 4);
+  });
 
   useEffect(() => {
-    const compute = () => {
-      setScrolled(window.scrollY > 4);
-      const hero = document.getElementById('hero-section');
-      const heroRect = hero?.getBoundingClientRect();
-      const heroVisible = heroRect ? heroRect.bottom > 0 : false;
-      const el = document.getElementById('partners-section');
-      if (!el) return setPartnersInView(false);
-      const rect = el.getBoundingClientRect();
-      const vh = window.innerHeight || document.documentElement.clientHeight;
-      const overlap = Math.max(0, Math.min(rect.bottom, vh) - Math.max(rect.top, 0));
-      // Consider the section "in view" only when at least 25% of the viewport overlaps it
-      setPartnersInView(!heroVisible && overlap > vh * 0.1);
-    };
+    setScrolled(scrollY.get() > 4);
 
-    compute();
-    window.addEventListener('scroll', compute, { passive: true });
-    window.addEventListener('resize', compute);
+    const heroElement = document.getElementById('hero-section');
+    const partnersElement = document.getElementById('partners-section');
+
+    if (!heroElement) {
+      setHeroVisible(false);
+    }
+
+    const heroObserver = heroElement
+      ? new IntersectionObserver(
+          ([entry]) => {
+            setHeroVisible(entry.isIntersecting && entry.intersectionRatio >= 0.1);
+          },
+          { threshold: [0, 0.1, 0.25, 0.5, 1] }
+        )
+      : undefined;
+
+    if (!partnersElement) {
+      setPartnersVisible(false);
+    }
+
+    const partnersObserver = partnersElement
+      ? new IntersectionObserver(
+          ([entry]) => {
+            setPartnersVisible(entry.isIntersecting && entry.intersectionRatio >= 0.25);
+          },
+          { threshold: [0, 0.25, 0.5, 1] }
+        )
+      : undefined;
+
+    if (heroElement && heroObserver) heroObserver.observe(heroElement);
+    if (partnersElement && partnersObserver) partnersObserver.observe(partnersElement);
+
     return () => {
-      window.removeEventListener('scroll', compute);
-      window.removeEventListener('resize', compute);
+      heroObserver?.disconnect();
+      partnersObserver?.disconnect();
     };
-  }, []);
+  }, [scrollY]);
 
-  const switchLocale = (next: 'en' | 'fr') => {
+  const palette: PaletteState = heroVisible && !partnersVisible ? 'light' : 'dark';
+
+  const navLinkClasses = `inline-block font-medium transition-colors transform-gpu transition-transform duration-150 hover:scale-105 ${
+    palette === 'light' ? 'text-white/70 hover:text-white' : 'text-[#061024] hover:text-[#05112b]'
+  }`;
+
+  const contactButtonClasses =
+    palette === 'light'
+      ? 'cursor-pointer rounded-full bg-[#F33349] px-6 py-2.5 text-base font-semibold text-white border-2 border-[#F33349] transition-colors hover:bg-white hover:text-[#F33349] hover:border-white'
+      : 'cursor-pointer rounded-full bg-white px-6 py-2.5 text-base font-semibold text-[#061024] border-2 border-white transition-colors hover:bg-[#061024] hover:text-white hover:border-[#061024]';
+
+  const localeButtonActive = palette === 'light' ? 'bg-white text-[#061024]' : 'bg-[#061024] text-white';
+  const localeButtonInactive =
+    palette === 'light'
+      ? 'text-white/70 hover:text-white hover:underline underline-offset-4 decoration-white/80'
+      : 'text-[#061024]/70 hover:text-[#061024] hover:underline underline-offset-4 decoration-[#061024]/80';
+  const localeWrapperBorder = palette === 'light' ? 'border-white/30' : 'border-[#061024]/30';
+
+  const switchLocale = (next: LocaleOption) => {
     if (next !== locale) router.push(pathname, { locale: next });
   };
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 w-full transition-colors duration-200 ${scrolled ? 'backdrop-blur-md bg-white/10 border-b border-white/15' : 'bg-transparent'
-        }`}
+      className={`fixed top-0 left-0 right-0 z-50 w-full transition-colors duration-200 ${
+        scrolled ? 'backdrop-blur-md bg-white/10 border-b border-white/15' : 'bg-transparent'
+      }`}
     >
       <div className="container mx-auto flex h-24 items-center justify-between px-5">
         <Link href="/" className="flex items-center">
@@ -56,7 +103,9 @@ export function Navbar() {
               width={220}
               height={54}
               priority
-              className={`absolute inset-0 transition-opacity duration-300 ${partnersInView ? 'opacity-0' : 'opacity-100'}`}
+              className={`absolute inset-0 transition-opacity duration-300 ${
+                palette === 'light' ? 'opacity-100' : 'opacity-0'
+              }`}
             />
             <Image
               src="/assets/logo_miracl_noir_V2.svg"
@@ -65,31 +114,43 @@ export function Navbar() {
               width={220}
               height={54}
               priority
-              className={`absolute inset-0 transition-opacity duration-300 ${partnersInView ? 'opacity-100' : 'opacity-0'}`}
+              className={`absolute inset-0 transition-opacity duration-300 ${
+                palette === 'light' ? 'opacity-0' : 'opacity-100'
+              }`}
             />
           </div>
         </Link>
 
         <div className="hidden md:flex items-center gap-10 text-lg">
-          <Link href="/services" className="inline-block font-medium text-white/70 transition-colors hover:text-white transform-gpu transition-transform duration-150 hover:scale-105">{t('menuServices')}</Link>
-          <Link href="/catalog" className="inline-block font-medium text-white/70 transition-colors hover:text-white transform-gpu transition-transform duration-150 hover:scale-105">{t('menuCatalog')}</Link>
-          <Link href="/team" className="inline-block font-medium text-white/70 transition-colors hover:text-white transform-gpu transition-transform duration-150 hover:scale-105">{t('menuTeam')}</Link>
-          <Link href="/news" className="inline-block font-medium text-white/70 transition-colors hover:text-white transform-gpu transition-transform duration-150 hover:scale-105">{t('menuNews')}</Link>
-          <Link href="/contact" className="ml-2">
-            <Button className="cursor-pointer rounded-full bg-[#F33349] px-6 py-2.5 text-base font-semibold text-white border-2 border-[#F33349] transition-colors hover:bg-white hover:text-[#F33349] hover:border-white">
-              {t('ctaPrimary')}
-            </Button>
+          <Link href="/services" className={navLinkClasses}>
+            {t('menuServices')}
           </Link>
-          <div className="ml-5 flex items-center rounded-full border border-white/30 p-1">
+          <Link href="/catalog" className={navLinkClasses}>
+            {t('menuCatalog')}
+          </Link>
+          <Link href="/team" className={navLinkClasses}>
+            {t('menuTeam')}
+          </Link>
+          <Link href="/news" className={navLinkClasses}>
+            {t('menuNews')}
+          </Link>
+          <Link href="/contact" className="ml-2">
+            <Button className={contactButtonClasses}>{t('ctaPrimary')}</Button>
+          </Link>
+          <div className={`ml-5 flex items-center rounded-full border ${localeWrapperBorder} p-1`}>
             <button
               onClick={() => switchLocale('fr')}
-              className={`cursor-pointer px-3.5 py-1.5 text-sm font-medium ${locale === 'fr' ? 'bg-white text-[#061024] rounded-full' : 'text-white/70 hover:text-white hover:underline underline-offset-4 decoration-white/80'}`}
+              className={`cursor-pointer px-3.5 py-1.5 text-sm font-medium rounded-full ${
+                locale === 'fr' ? localeButtonActive : localeButtonInactive
+              }`}
             >
               FR
             </button>
             <button
               onClick={() => switchLocale('en')}
-              className={`cursor-pointer px-3.5 py-1.5 text-sm font-medium ${locale === 'en' ? 'bg-white text-[#061024] rounded-full' : 'text-white/70 hover:text-white hover:underline underline-offset-4 decoration-white/80'}`}
+              className={`cursor-pointer px-3.5 py-1.5 text-sm font-medium rounded-full ${
+                locale === 'en' ? localeButtonActive : localeButtonInactive
+              }`}
             >
               EN
             </button>
