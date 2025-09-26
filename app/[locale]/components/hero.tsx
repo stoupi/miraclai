@@ -25,11 +25,12 @@ export async function Hero({ locale }: HeroProps) {
         preserveAspectRatio="none"
       >
         <path
-          d="M0 120 L120 120 L160 30 L220 120 L360 120 L400 60 L520 60 L560 120 L720 120 L760 40 L820 120 L980 120 L1020 80 L1140 80 L1180 120 L1440 120"
+          d="M0 120 L200 120 L240 110 L260 130 L280 120 L320 120 L340 155 L360 40 L380 190 L400 120 L440 95 L480 120 L560 120 L600 110 L620 130 L640 120 L680 120 L700 155 L720 42 L740 188 L760 120 L800 95 L840 120 L920 120 L960 110 L980 130 L1000 120 L1040 120 L1060 155 L1080 44 L1100 186 L1120 120 L1160 95 L1200 120 L1280 120 L1320 110 L1340 130 L1360 120 L1400 120 L1440 120"
           fill="none"
           stroke="#BFE8F0"
           strokeWidth="2"
           strokeLinecap="round"
+          strokeLinejoin="round"
         />
       </svg>
 

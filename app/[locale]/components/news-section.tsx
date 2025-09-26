@@ -1,7 +1,6 @@
 import { Link } from '@/app/i18n/navigation';
-import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardFooter, CardTitle } from '@/components/ui/card';
+import { ArrowRight } from 'lucide-react';
 import { getTranslations } from 'next-intl/server';
 import Image from 'next/image';
 
@@ -40,71 +39,98 @@ export async function NewsSection({ locale }: NewsSectionProps) {
     image: imageByCard[key]
   }));
 
+  if (cards.length === 0) {
+    return null;
+  }
+
+  const [feature, ...articles] = cards;
+
   return (
-    <section
-      id="news-section"
-      className="py-24 text-[#061024]"
-      style={{ backgroundColor: '#F9F9F9' }}
-    >
+    <section id="news-section" className="bg-white py-24 text-[#061024]">
       <div className="container mx-auto px-4">
-        <div className="mx-auto max-w-3xl text-center">
-          <h2 className="text-4xl font-extrabold leading-tight tracking-tight text-[#061024] sm:text-5xl">
-            {t('sectionTitle')}
-          </h2>
-          <p className="mt-4 text-base text-[#061024]/70 sm:text-lg">
-            {t('sectionSubtitle')}
-          </p>
-        </div>
+        <div className="grid gap-12 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)]">
+          <div className="relative isolate flex min-h-[520px] flex-col overflow-hidden rounded-none shadow-[0_40px_80px_rgba(6,16,36,0.22)]">
+            <div className="absolute inset-0 bg-gradient-to-tr from-[#0D8196] via-[#00AFC4] to-[#27D0E1]" />
+            <Image
+              src={feature.image}
+              alt={feature.imageAlt}
+              fill
+              sizes="(min-width: 1024px) 52vw, 100vw"
+              className="absolute inset-0 h-full w-full object-cover opacity-20"
+              priority
+            />
+            <div className="pointer-events-none absolute inset-y-8 right-12 hidden flex-col justify-between lg:flex">
+              <span
+                className="text-[9rem] font-black uppercase tracking-tight text-white/25"
+                style={{ writingMode: 'vertical-rl' }}
+              >
+                {t('accentLabel')}
+              </span>
+            </div>
+            <div className="relative z-10 mt-auto w-full max-w-[520px] bg-white px-12 py-12">
+              <p className="text-sm font-semibold uppercase tracking-[0.35em] text-[#061024]/60">
+                {feature.category}
+              </p>
+              <h2 className="mt-4 text-3xl font-bold leading-snug text-[#061024]">
+                {feature.title}
+              </h2>
+              <p className="mt-5 text-base leading-relaxed text-[#061024]/75">
+                {feature.excerpt}
+              </p>
+              <Link
+                href="/news"
+                className="mt-6 inline-flex items-center gap-3 text-base font-semibold text-[#061024] transition-colors hover:text-[#05112b]"
+                aria-label={feature.cta}
+              >
+                {feature.cta}
+                <ArrowRight className="size-5" />
+              </Link>
+            </div>
+          </div>
 
-        <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-          {cards.map((card) => (
-            <Card
-              key={card.title}
-              className="flex h-full flex-col overflow-hidden border-white/40 bg-white p-0 text-[#061024] shadow-xl rounded-none"
-            >
-              <div className="relative h-56 w-full overflow-hidden">
-                <Image
-                  src={card.image}
-                  alt={card.imageAlt}
-                  fill
-                  sizes="(min-width: 1024px) 320px, (min-width: 768px) 45vw, 90vw"
-                  className="object-cover"
-                />
-              </div>
-              <CardContent className="flex flex-1 flex-col gap-4 pb-4 pt-4">
-                <div className="flex items-center justify-between text-base font-medium text-[#061024]/70">
-                  <span>{card.date}</span>
-                  <Badge className="rounded-full bg-[#2FE0EA] px-3 py-1 text-sm font-semibold uppercase tracking-wide text-white">
-                    {card.category}
-                  </Badge>
+          <div className="flex flex-col justify-between gap-12">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-[0.45em] text-[#061024]/60">
+                {t('sectionKicker')}
+              </p>
+              <h3 className="mt-4 text-4xl font-extrabold leading-tight tracking-tight text-[#061024]">
+                {t('sectionTitle')}
+              </h3>
+              <p className="mt-4 text-base text-[#061024]/70">
+                {t('sectionSubtitle')}
+              </p>
+            </div>
+
+            <div className="flex flex-1 flex-col gap-10">
+              {articles.map((article) => (
+                <div key={article.title} className="group flex flex-col border-b border-[#061024]/15 pb-8 last:border-none last:pb-0">
+                  <div className="flex justify-between gap-8">
+                    <div className="max-w-xl">
+                      <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#061024]/60">
+                        {article.category}
+                      </p>
+                      <h4 className="mt-3 text-xl font-semibold leading-snug text-[#071330] transition-colors group-hover:text-[#05112b]">
+                        {article.title}
+                      </h4>
+                      <p className="mt-3 text-sm text-[#061024]/75">
+                        {article.excerpt}
+                      </p>
+                    </div>
+                    <ArrowRight className="mt-1 size-6 shrink-0 text-[#061024]/40 transition-all duration-200 group-hover:translate-x-1 group-hover:text-[#061024]" />
+                  </div>
                 </div>
-                <CardTitle className="text-lg font-semibold leading-tight text-[#061024]">
-                  {card.title}
-                </CardTitle>
-                <p className="text-sm text-[#061024]/75">
-                  {card.excerpt}
-                </p>
-              </CardContent>
-              <CardFooter className="mt-auto justify-end px-6 pb-4 pt-0">
-                <Link
-                  href="/news"
-                  aria-label={card.cta}
-                  className="text-sm font-semibold text-[#061024] transition-colors hover:text-[#05112b] hover:underline"
-                >
-                  {t('readMore')}
-                </Link>
-              </CardFooter>
-            </Card>
-          ))}
-        </div>
+              ))}
+            </div>
 
-        <div className="mt-14 flex justify-center">
-          <Button
-            asChild
-            className="rounded-full border-2 border-[#061024] bg-[#061024] px-8 py-2.5 text-base font-semibold text-white transition-colors hover:bg-white hover:text-[#061024]"
-          >
-            <Link href="/news">{t('ctaLabel')}</Link>
-          </Button>
+            <div className="flex justify-end">
+              <Button
+                asChild
+                className="rounded-full bg-[#041CB3] px-12 text-base font-semibold text-white shadow-lg transition-transform duration-200 hover:-translate-y-0.5 hover:bg-[#03158A]"
+              >
+                <Link href="/news">{t('ctaLabel')}</Link>
+              </Button>
+            </div>
+          </div>
         </div>
       </div>
     </section>

@@ -42,12 +42,14 @@
     "heartImageAlt": "Stylized heart illustration",
     "aphpLogoAlt": "AP-HP logo",
     "carnotLogoAlt": "Carnot AP-HP logo",
-    "partnersTitle": "MIRACL.ai is founded by 7 French expert centers",
+    "partnersTitle": "MIRACL.ai is founded by <highlight>7 French centers</highlight> of excellence",
     "partnersCtaTeam": "Meet our team"
   },
   "news": {
+    "sectionKicker": "Latest",
     "sectionTitle": "Our news",
     "sectionSubtitle": "Insights, partnerships, and breakthroughs from the MIRACL.ai community.",
+    "accentLabel": "news",
     "cards": {
       "card1": {
         "date": "March 16, 2025",
