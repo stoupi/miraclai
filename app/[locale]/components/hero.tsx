@@ -3,6 +3,20 @@ import Image from 'next/image';
 import { Link } from '@/app/i18n/navigation';
 import { Button } from '@/components/ui/button';
 
+const baseCyclePath =
+  'M0 80 L120 80 L140 70 L160 80 L200 80 L220 130 L240 20 L260 130 L280 80 L320 80 L340 60 L360 80';
+
+const ecgPathSegments = [0, 360, 720].map((offset) =>
+  baseCyclePath.replace(/(M|L)(\d+)/g, (match, command, value) => {
+    const numericValue = Number(value) + offset;
+    return `${command}${numericValue}`;
+  })
+);
+
+const ecgPathD = ecgPathSegments
+  .map((segment, index) => (index === 0 ? segment : segment.replace(/^M/, 'L')))
+  .join(' ');
+
 type HeroProps = { locale: string };
 
 export async function Hero({ locale }: HeroProps) {
@@ -24,13 +38,54 @@ export async function Hero({ locale }: HeroProps) {
         viewBox="0 0 1440 200"
         preserveAspectRatio="none"
       >
+        <defs>
+          <linearGradient
+            id="ecgGlowGradient"
+            gradientUnits="userSpaceOnUse"
+            x1="0"
+            y1="0"
+            x2="200"
+            y2="0"
+          >
+            <stop offset="0" stopColor="#00E0FF" stopOpacity="0" />
+            <stop offset="0.5" stopColor="#00E0FF" stopOpacity="1" />
+            <stop offset="1" stopColor="#00E0FF" stopOpacity="0" />
+            <animateTransform
+              attributeName="gradientTransform"
+              type="translate"
+              from="-200 0"
+              to="1440 0"
+              dur="4s"
+              repeatCount="indefinite"
+            />
+          </linearGradient>
+          <filter id="ecgGlow" x="-5%" y="-5%" width="110%" height="110%">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="blur" />
+            <feMerge>
+              <feMergeNode in="blur" />
+              <feMergeNode in="SourceGraphic" />
+            </feMerge>
+          </filter>
+        </defs>
         <path
-          d="M0 120 L200 120 L240 110 L260 130 L280 120 L320 120 L340 155 L360 40 L380 190 L400 120 L440 95 L480 120 L560 120 L600 110 L620 130 L640 120 L680 120 L700 155 L720 42 L740 188 L760 120 L800 95 L840 120 L920 120 L960 110 L980 130 L1000 120 L1040 120 L1060 155 L1080 44 L1100 186 L1120 120 L1160 95 L1200 120 L1280 120 L1320 110 L1340 130 L1360 120 L1400 120 L1440 120"
+          d={ecgPathD}
           fill="none"
-          stroke="#BFE8F0"
+          stroke="#66E0FF"
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
+          vectorEffect="non-scaling-stroke"
+          opacity="0.4"
+        />
+        <path
+          d={ecgPathD}
+          fill="none"
+          stroke="url(#ecgGlowGradient)"
+          strokeWidth="4"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          vectorEffect="non-scaling-stroke"
+          filter="url(#ecgGlow)"
         />
       </svg>
 

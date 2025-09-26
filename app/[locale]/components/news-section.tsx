@@ -125,7 +125,7 @@ export async function NewsSection({ locale }: NewsSectionProps) {
             <div className="flex justify-end">
               <Button
                 asChild
-                className="rounded-full bg-[#041CB3] px-12 text-base font-semibold text-white shadow-lg transition-transform duration-200 hover:-translate-y-0.5 hover:bg-[#03158A]"
+                className="rounded-full border-2 border-[#F33349] bg-[#F33349] px-10 text-base font-semibold text-white shadow-lg transition-colors hover:bg-white hover:text-[#F33349]"
               >
                 <Link href="/news">{t('ctaLabel')}</Link>
               </Button>
