@@ -61,7 +61,7 @@ export async function ResearchSection({ locale }: Props) {
           {services.map(({ key, title, description, images }) => (
             <article
               key={key}
-              className="flex h-full flex-col items-center border border-black/5 bg-white px-10 py-14 text-center text-[#061024] shadow-[0_35px_90px_rgba(6,16,36,0.18)]"
+              className="service-card group flex h-full flex-col items-center border border-black/5 bg-white px-10 py-14 text-center text-[#061024] shadow-[0_35px_90px_rgba(6,16,36,0.18)] transition-transform duration-200 hover:-translate-y-1"
             >
               <div
                 className={`flex h-36 items-end justify-center ${
