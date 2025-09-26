@@ -177,13 +177,13 @@ export async function Hero({ locale }: HeroProps) {
         </div>
 
         <div className="relative flex items-center justify-center">
-          <div className="pointer-events-none relative w-[380px] sm:w-[420px] lg:w-[500px] xl:w-[560px] translate-y-10 md:translate-y-16">
+          <div className="relative w-[380px] sm:w-[420px] lg:w-[500px] xl:w-[560px] translate-y-10 md:translate-y-16">
             <Image
               src="/assets/coeur_hero.svg"
               alt={t('heartImageAlt')}
               width={560}
               height={560}
-              className="h-full w-full object-contain drop-shadow-[0_24px_60px_rgba(6,16,36,0.35)]"
+              className="heart-hover h-full w-full object-contain drop-shadow-[0_24px_60px_rgba(6,16,36,0.35)] pointer-events-auto"
               priority
             />
           </div>
