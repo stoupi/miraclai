@@ -24,8 +24,8 @@ export async function Footer({ locale }: FooterProps) {
 
   return (
     <footer className="bg-[#030b1d] text-white overflow-hidden">
-      <div className="container relative mx-auto px-4 py-16">
-        <div className="pointer-events-none absolute -left-48 bottom-0 hidden select-none translate-y-[180px] md:block md:translate-y-[200px] lg:-left-40 lg:translate-y-[220px] xl:translate-y-[240px]">
+      <div className="container relative mx-auto px-4 py-12 md:py-14">
+        <div className="pointer-events-none absolute -left-48 bottom-0 hidden select-none translate-y-[260px] md:block md:translate-y-[300px] lg:-left-40 lg:translate-y-[340px] xl:translate-y-[360px]">
           <Image
             src="/assets/coeur_hero.svg"
             alt={tHome('heartImageAlt')}
@@ -34,8 +34,8 @@ export async function Footer({ locale }: FooterProps) {
             className="w-[400px] max-w-none lg:w-[460px] xl:w-[520px]"
           />
         </div>
-        <div className="grid gap-12 md:grid-cols-[260px_1fr_1fr] md:gap-16 md:pl-[200px] lg:grid-cols-[280px_1fr_1fr] lg:pl-[240px] xl:grid-cols-[320px_1fr_1fr] xl:gap-20 xl:pl-[280px]">
-          <div className="flex flex-col gap-6 md:min-h-[280px] md:justify-center">
+        <div className="grid gap-10 md:grid-cols-[260px_1fr_1fr] md:gap-14 md:pl-[200px] lg:grid-cols-[280px_1fr_1fr] lg:pl-[220px] xl:grid-cols-[320px_1fr_1fr] xl:gap-16 xl:pl-[260px]">
+          <div className="flex flex-col gap-5 md:min-h-[240px] md:justify-center">
             <div className="flex justify-center md:hidden">
               <Image
                 src="/assets/coeur_hero.svg"
