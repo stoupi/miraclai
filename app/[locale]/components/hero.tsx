@@ -29,7 +29,7 @@ export async function Hero({ locale }: HeroProps) {
   const t = await getTranslations({ locale, namespace: 'home' });
 
   return (
-    <section id="hero-section" className="relative isolate overflow-hidden min-h-[92vh]">
+    <section id="hero-section" className="relative isolate overflow-hidden min-h-[80vh] py-6 md:py-2 lg:py-0">
       <div
         className="absolute inset-0 -z-10"
         style={{
@@ -40,7 +40,7 @@ export async function Hero({ locale }: HeroProps) {
 
       <svg
         aria-hidden
-        className="absolute left-0 right-0 top-44 md:top-48 -z-10 h-32 w-full opacity-20"
+        className="absolute left-0 right-0 top-24 md:top-28 -z-10 h-32 w-full opacity-20"
         viewBox="0 0 1440 200"
         preserveAspectRatio="none"
       >
@@ -97,8 +97,8 @@ export async function Hero({ locale }: HeroProps) {
         </g>
       </svg>
 
-      <div className="container mx-auto grid min-h-[78vh] grid-cols-1 items-center gap-8 px-4 py-16 md:grid-cols-2 lg:min-h-[88vh] lg:py-24">
-        <div className="mt-24 md:mt-36 lg:mt-44 flex flex-col items-start gap-6 w-full">
+      <div className="container mx-auto grid grid-cols-1 items-center gap-8 px-4 pt-14 pb-10 md:grid-cols-2 lg:pt-12 lg:pb-12">
+        <div className="flex flex-col items-start gap-6 w-full">
           <div className="w-full max-w-4xl">
             <div className="flex w-full items-center justify-between gap-6">
               {(() => {
@@ -138,7 +138,7 @@ export async function Hero({ locale }: HeroProps) {
                 );
               })()}
             </div>
-            <h1 className="mt-6 text-balance text-4xl font-bold leading-tight tracking-tight text-white sm:text-6xl">
+            <h1 className="mt-2 text-balance text-4xl font-bold leading-tight tracking-tight text-white sm:text-6xl">
               {t.rich('olvaHeadline', {
                 highlight: (chunks) => (
                   <span className="relative inline-block pb-[0.125rem]">
@@ -151,10 +151,10 @@ export async function Hero({ locale }: HeroProps) {
                 )
               })}
             </h1>
-            <p className="mt-2 max-w-3xl text-lg text-[#D0EEF3] sm:text-xl">
+            <p className="mt-4 max-w-3xl text-lg text-[#D0EEF3] sm:text-xl">
               {t('olvaDescription')}
             </p>
-            <div className="mt-8 sm:mt-10 lg:mt-12 flex flex-col gap-4 sm:flex-row">
+            <div className="mt-8 flex flex-col gap-4 sm:mt-10 sm:flex-row">
               <Link href="/invest">
                 <Button
                   size="lg"
@@ -176,14 +176,14 @@ export async function Hero({ locale }: HeroProps) {
           </div>
         </div>
 
-        <div className="relative">
-          <div className="pointer-events-none absolute -right-10 bottom-0 top-0 hidden w-[720px] sm:block">
+        <div className="relative flex items-center justify-center">
+          <div className="pointer-events-none relative w-[380px] sm:w-[420px] lg:w-[500px] xl:w-[560px] translate-y-10 md:translate-y-16">
             <Image
-              src="/assets/heart.svg"
+              src="/assets/coeur_hero.svg"
               alt={t('heartImageAlt')}
-              width={720}
-              height={720}
-              className="h-full w-full object-contain drop-shadow-[0_20px_40px_rgba(0,0,0,0.25)]"
+              width={560}
+              height={560}
+              className="h-full w-full object-contain drop-shadow-[0_24px_60px_rgba(6,16,36,0.35)]"
               priority
             />
           </div>
