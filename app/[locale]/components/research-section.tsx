@@ -81,11 +81,7 @@ export async function ResearchSection({ locale }: Props) {
                 ))}
               </div>
               <h3 className="relative mt-8 inline-block text-2xl font-extrabold leading-snug text-[#061024]">
-                <span className="relative z-10 px-1">{title}</span>
-                <span
-                  aria-hidden
-                  className="pointer-events-none absolute inset-x-[-0.3rem] bottom-0 top-1/2 -translate-y-1/2 -skew-y-2 bg-[#A7F3F0]/80 -z-10"
-                />
+                <span className="highlight-diagonal">{title}</span>
               </h3>
               <p className="mt-4 text-sm leading-relaxed text-[#061024]/75">
                 {description}
