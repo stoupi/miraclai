@@ -116,6 +116,7 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }
@@ -123,21 +124,44 @@
 
 @layer utilities {
   @keyframes heartbeat {
-    0%, 100% { transform: scale(1); }
-    25% { transform: scale(1.01); }
-    50% { transform: scale(0.995); }
-    75% { transform: scale(1.01); }
+
+    0%,
+    100% {
+      transform: scale(1);
+    }
+
+    25% {
+      transform: scale(1.01);
+    }
+
+    50% {
+      transform: scale(0.995);
+    }
+
+    75% {
+      transform: scale(1.01);
+    }
   }
-  .heart-hover { transition: transform 0.4s ease, filter 0.4s ease; }
+
+  .heart-hover {
+    transition: transform 0.4s ease, filter 0.4s ease;
+  }
+
   .heart-hover:hover {
     transform: scale(1.01);
     filter: drop-shadow(0 0 20px rgba(243, 51, 73, 0.6));
     animation: heartbeat 1s ease-in-out infinite;
   }
-  .animate-heartbeat { animation: heartbeat 1s ease-in-out infinite; }
+
+  .animate-heartbeat {
+    animation: heartbeat 1s ease-in-out infinite;
+  }
 
   /* Navbar link underline reveal */
-  .nav-anim { position: relative; }
+  .nav-anim {
+    position: relative;
+  }
+
   .nav-anim::after {
     content: "";
     position: absolute;
@@ -150,19 +174,27 @@
     transform-origin: center;
     transition: transform .25s ease;
   }
+
   .nav-anim:hover::after,
-  .nav-anim:focus-visible::after { transform: scaleX(1); }
+  .nav-anim:focus-visible::after {
+    transform: scaleX(1);
+  }
 
   /* Continuous marquee animation for partners section */
   @keyframes marquee {
-    from { transform: translateX(0); }
-    to { transform: translateX(-50%); }
+    from {
+      transform: translateX(0);
+    }
+
+    to {
+      transform: translateX(-50%);
+    }
   }
 
   .highlight-diagonal {
     position: relative;
     display: inline-block;
-    padding: 0.1em 0.35em;
+    padding: 0.05em 0.4em;
     z-index: 0;
   }
 
@@ -170,11 +202,12 @@
     content: "";
     position: absolute;
     left: -0.25em;
-    right: -0.25em;
-    bottom: 0.22em;
-    top: 0.3em;
-    background: #A7F3F0;
-    border-radius: 0.35em;
+    right: -0.1em;
+    top: 80%;
+    height: 0.55em;
+    background: #C9FFFD;
+    transform: translateY(-50%) skewX(-15deg);
+    border-radius: 0.1em;
     z-index: -1;
   }
 }
