@@ -193,21 +193,21 @@
 
   .highlight-diagonal {
     position: relative;
-    display: inline-block;
-    padding: 0.05em 0.4em;
-    z-index: 0;
+    display: inline;
+    padding: 0.1em 0.45em;
+    background-image: linear-gradient(-2deg, #C9FFFD 0%, #7ED0DB 100%);
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: 0% 70%;
+    border-radius: 0.18em;
+    transition: background-size 320ms ease;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
   }
 
-  .highlight-diagonal::before {
-    content: "";
-    position: absolute;
-    left: -0.25em;
-    right: -0.1em;
-    top: 80%;
-    height: 0.55em;
-    background: #C9FFFD;
-    transform: translateY(-50%) skewX(-15deg);
-    border-radius: 0.1em;
-    z-index: -1;
+  .service-card:hover .highlight-diagonal,
+  .service-card:focus-within .highlight-diagonal,
+  .highlight-diagonal:hover {
+    background-size: 100% 70%;
   }
 }

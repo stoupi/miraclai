@@ -80,7 +80,7 @@ export async function ResearchSection({ locale }: Props) {
                   />
                 ))}
               </div>
-              <h3 className="relative mt-8 inline-block whitespace-nowrap text-2xl font-extrabold leading-snug text-[#061024]">
+              <h3 className="relative mt-8 inline-block text-2xl font-extrabold leading-snug text-[#061024]">
                 <span className="highlight-diagonal">{title}</span>
               </h3>
               <p className="mt-4 text-sm leading-relaxed text-[#061024]/75">
