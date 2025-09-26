@@ -118,8 +118,8 @@
     "cta": "Discover our services"
   },
   "footer": {
-    "title": "Building the future of cardiovascular imaging.",
-    "description": "Academic core lab and AI partner supporting clinical teams, researchers, and industry pioneers.",
+    "title": "",
+    "description": "",
     "contactTitle": "Contact",
     "contactEmailLabel": "Email",
     "contactPhoneLabel": "Phone",
@@ -133,7 +133,7 @@
     "addressTitle": "Location",
     "addressLine1": "Hôpital Lariboisière",
     "addressLine2": "2 Rue Ambroise Paré, 75010 Paris",
-    "copyright": "© {{year}} MIRACL.ai. All rights reserved."
+    "copyrightSuffix": "MIRACL.ai. All rights reserved."
   },
   "auth": {
     "loginTitle": "Login",

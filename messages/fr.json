@@ -113,8 +113,8 @@
 		"cta": "Découvrir nos services"
 	},
 	"footer": {
-		"title": "Construire l'avenir de l'imagerie cardiovasculaire.",
-		"description": "Core lab académique et partenaire IA au service des équipes cliniques, des chercheurs et des acteurs industriels.",
+		"title": "",
+		"description": "",
 		"contactTitle": "Contact",
 		"contactEmailLabel": "E-mail",
 		"contactPhoneLabel": "Téléphone",
@@ -128,7 +128,7 @@
 		"addressTitle": "Adresse",
 		"addressLine1": "Hôpital Lariboisière",
 		"addressLine2": "2 Rue Ambroise Paré, 75010 Paris",
-		"copyright": "© {{year}} MIRACL.ai. Tous droits réservés."
+		"copyrightSuffix": "MIRACL.ai. Tous droits réservés."
 	},
 	"auth": {
 		"loginTitle": "Connexion",

@@ -1,4 +1,5 @@
 import { getTranslations } from 'next-intl/server';
+import Image from 'next/image';
 import { Link } from '@/app/i18n/navigation';
 
 const CONTACT_EMAIL = 'contact@miracl.ai';
@@ -14,21 +15,29 @@ const navigationRoutes = [
 type FooterProps = { locale: string };
 
 export async function Footer({ locale }: FooterProps) {
-  const t = await getTranslations({ locale, namespace: 'footer' });
+  const [tFooter, tNavigation] = await Promise.all([
+    getTranslations({ locale, namespace: 'footer' }),
+    getTranslations({ locale, namespace: 'navigation' })
+  ]);
   const currentYear = new Date().getFullYear();
 
   return (
     <footer className="bg-[#030b1d] text-white">
       <div className="container mx-auto grid gap-12 px-4 py-16 md:grid-cols-[2fr_1fr_1fr] md:gap-16">
         <div className="space-y-4">
-          <h2 className="text-2xl font-semibold leading-tight md:text-3xl">
-            {t('title')}
-          </h2>
-          <p className="max-w-lg text-white/70">{t('description')}</p>
+          <Link href="/" className="inline-flex">
+            <Image
+              src="/assets/logo_miracl_blanc_V2.svg"
+              alt={tNavigation('logoAlt')}
+              width={260}
+              height={80}
+              className="h-16 w-auto"
+            />
+          </Link>
         </div>
         <div className="space-y-4">
           <h3 className="text-sm font-semibold uppercase tracking-[0.18em] text-white/60">
-            {t('navigationTitle')}
+            {tFooter('navigationTitle')}
           </h3>
           <ul className="space-y-3 text-sm text-white/80">
             {navigationRoutes.map((item) => (
@@ -37,7 +46,7 @@ export async function Footer({ locale }: FooterProps) {
                   href={item.href}
                   className="transition-colors hover:text-white"
                 >
-                  {t(`links.${item.key}`)}
+                  {tFooter(`links.${item.key}`)}
                 </Link>
               </li>
             ))}
@@ -46,12 +55,12 @@ export async function Footer({ locale }: FooterProps) {
         <div className="space-y-6 text-sm text-white/80">
           <div className="space-y-3">
             <h3 className="text-sm font-semibold uppercase tracking-[0.18em] text-white/60">
-              {t('contactTitle')}
+              {tFooter('contactTitle')}
             </h3>
             <div className="space-y-2">
               <div>
                 <span className="block text-xs uppercase tracking-[0.2em] text-white/40">
-                  {t('contactEmailLabel')}
+                  {tFooter('contactEmailLabel')}
                 </span>
                 <a
                   href={`mailto:${CONTACT_EMAIL}`}
@@ -62,7 +71,7 @@ export async function Footer({ locale }: FooterProps) {
               </div>
               <div>
                 <span className="block text-xs uppercase tracking-[0.2em] text-white/40">
-                  {t('contactPhoneLabel')}
+                  {tFooter('contactPhoneLabel')}
                 </span>
                 <a
                   href={`tel:${CONTACT_PHONE.replace(/\s+/g, '')}`}
@@ -75,19 +84,19 @@ export async function Footer({ locale }: FooterProps) {
           </div>
           <div className="space-y-2">
             <h3 className="text-sm font-semibold uppercase tracking-[0.18em] text-white/60">
-              {t('addressTitle')}
+              {tFooter('addressTitle')}
             </h3>
             <p className="text-white/70">
-              {t('addressLine1')}
+              {tFooter('addressLine1')}
               <br />
-              {t('addressLine2')}
+              {tFooter('addressLine2')}
             </p>
           </div>
         </div>
       </div>
       <div className="border-t border-white/10 py-6">
         <div className="container mx-auto px-4 text-xs text-white/50">
-          {t('copyright', { year: currentYear })}
+          © {currentYear} {tFooter('copyrightSuffix')}
         </div>
       </div>
     </footer>
