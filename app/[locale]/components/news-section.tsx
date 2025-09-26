@@ -97,7 +97,7 @@ export async function NewsSection({ locale }: NewsSectionProps) {
                       <span className="relative z-10">{chunks}</span>
                       <span
                         aria-hidden="true"
-                        className="pointer-events-none absolute -left-2 -right-2 bottom-0 h-2.5 bg-[#F33349]"
+                        className="pointer-events-none absolute -left-2 -right-2 bottom-0 h-2 bg-[#F33349]"
                       />
                     </span>
                   )

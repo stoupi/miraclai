@@ -32,7 +32,7 @@ export async function PartnersMarquee({ locale }: { locale: string }) {
                 <span className="relative z-10">{chunks}</span>
                 <span
                   aria-hidden="true"
-                  className="pointer-events-none absolute -left-2 -right-2 bottom-0 h-2.5 bg-[#F33349]"
+                  className="pointer-events-none absolute -left-2 -right-2 bottom-0 h-2 bg-[#F33349]"
                 />
               </span>
             )
@@ -48,7 +48,7 @@ export async function PartnersMarquee({ locale }: { locale: string }) {
                 key={`${idx}-${item.src}`}
                 src={item.src}
                 alt={item.alt}
-                className="h-14 w-auto shrink-0 opacity-80 grayscale hover:opacity-100 hover:grayscale-0 transition md:h-16"
+                className="h-14 w-auto shrink-0 opacity-80 grayscale hover:opacity-100 hover:grayscale-0 transition md:h-16 cursor-pointer"
                 height={56}
               />
             ))}

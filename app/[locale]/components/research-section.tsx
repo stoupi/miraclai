@@ -23,17 +23,7 @@ export async function ResearchSection({ locale }: Props) {
   return (
     <section className="bg-[#061024] py-24 text-white">
       <div className="container mx-auto px-4">
-        <p className="text-center text-sm font-semibold uppercase tracking-[0.4em] text-white/70">
-          {t('strapline')}
-        </p>
-        <h2 className="mt-4 text-center text-4xl font-extrabold leading-tight sm:text-5xl">
-          {t('headline2')},<br className="hidden sm:block" /> {t('headline3')}.
-        </h2>
-        <p className="mx-auto mt-5 max-w-3xl text-center text-white/80">
-          {t('description')}
-        </p>
-
-        <div className="mt-14 grid grid-cols-1 gap-8 sm:grid-cols-3">
+        <div className="grid grid-cols-1 gap-8 sm:grid-cols-3">
           {services.map(({ key, category, title, description, image, imageAlt }) => (
             <article
               key={key}

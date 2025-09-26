@@ -145,7 +145,7 @@ export async function Hero({ locale }: HeroProps) {
                     <span className="relative z-10">{chunks}</span>
                     <span
                       aria-hidden="true"
-                      className="pointer-events-none absolute inset-x-0 bottom-0 h-3 bg-[#F33349]"
+                      className="pointer-events-none absolute inset-x-0 bottom-0 h-2 bg-[#F33349]"
                     />
                   </span>
                 )
