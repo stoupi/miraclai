@@ -74,8 +74,8 @@ export function Navbar() {
 
   const contactButtonClasses =
     palette === 'light'
-      ? 'cursor-pointer rounded-full bg-[#F33349] px-6 py-2.5 text-base font-semibold text-white border-2 border-[#F33349] transition-colors hover:bg-white hover:text-[#F33349] hover:border-white'
-      : 'cursor-pointer rounded-full bg-white px-6 py-2.5 text-base font-semibold text-[#061024] border-2 border-white transition-colors hover:bg-[#061024] hover:text-white hover:border-[#061024]';
+      ? 'cursor-pointer rounded-full bg-[#F33349] px-7 py-3 text-lg font-semibold text-white border-2 border-[#F33349] transition-colors hover:bg-white hover:text-[#F33349] hover:border-white'
+      : 'cursor-pointer rounded-full bg-white px-7 py-3 text-lg font-semibold text-[#061024] border-2 border-white transition-colors hover:bg-[#061024] hover:text-white hover:border-[#061024]';
 
   const localeButtonActive = palette === 'light' ? 'bg-white text-[#061024]' : 'bg-[#061024] text-white';
   const localeButtonInactive =
@@ -94,14 +94,14 @@ export function Navbar() {
         scrolled ? 'backdrop-blur-md bg-white/10 border-b border-white/15' : 'bg-transparent'
       }`}
     >
-      <div className="container mx-auto flex h-24 items-center justify-between px-5">
+      <div className="container mx-auto flex h-28 items-center justify-between px-5">
         <Link href="/" className="flex items-center">
-          <div className="relative" style={{ width: 220, height: 54 }}>
+          <div className="relative" style={{ width: 260, height: 64 }}>
             <Image
               src="/assets/logo_miracl_blanc_V2.svg"
               alt={t('logoAlt')}
-              width={220}
-              height={54}
+              width={260}
+              height={64}
               priority
               className={`absolute inset-0 transition-opacity duration-300 ${
                 palette === 'light' ? 'opacity-100' : 'opacity-0'
@@ -111,8 +111,8 @@ export function Navbar() {
               src="/assets/logo_miracl_noir_V2.svg"
               alt=""
               aria-hidden
-              width={220}
-              height={54}
+              width={260}
+              height={64}
               priority
               className={`absolute inset-0 transition-opacity duration-300 ${
                 palette === 'light' ? 'opacity-0' : 'opacity-100'
@@ -121,7 +121,7 @@ export function Navbar() {
           </div>
         </Link>
 
-        <div className="hidden md:flex items-center gap-10 text-lg">
+        <div className="hidden md:flex items-center gap-12 text-xl">
           <Link href="/services" className={navLinkClasses}>
             {t('menuServices')}
           </Link>
@@ -137,10 +137,10 @@ export function Navbar() {
           <Link href="/contact" className="ml-2">
             <Button className={contactButtonClasses}>{t('ctaPrimary')}</Button>
           </Link>
-          <div className={`ml-5 flex items-center rounded-full border ${localeWrapperBorder} p-1`}>
+          <div className={`ml-6 flex items-center rounded-full border ${localeWrapperBorder} px-1.5 py-1`}>
             <button
               onClick={() => switchLocale('fr')}
-              className={`cursor-pointer px-3.5 py-1.5 text-sm font-medium rounded-full ${
+              className={`cursor-pointer px-4 py-1.5 text-base font-medium rounded-full ${
                 locale === 'fr' ? localeButtonActive : localeButtonInactive
               }`}
             >
@@ -148,7 +148,7 @@ export function Navbar() {
             </button>
             <button
               onClick={() => switchLocale('en')}
-              className={`cursor-pointer px-3.5 py-1.5 text-sm font-medium rounded-full ${
+              className={`cursor-pointer px-4 py-1.5 text-base font-medium rounded-full ${
                 locale === 'en' ? localeButtonActive : localeButtonInactive
               }`}
             >
