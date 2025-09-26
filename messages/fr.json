@@ -67,8 +67,17 @@
 				"excerpt": "L'étude prospective MIRACL-Flow démarre avec sa première cohorte pour suivre les biomarqueurs d'imagerie cardiovasculaire dans le temps.",
 				"cta": "Explorer l'étude",
 				"imageAlt": "Cardiologue échangeant avec un patient"
+			},
+			"card4": {
+				"date": "8 février 2025",
+				"category": "Innovation",
+				"title": "Lancement du sandbox développeur MIRACL",
+				"excerpt": "Un environnement cloud sécurisé permet désormais à nos partenaires de prototyper des algorithmes IA cardiovasculaires avec données gouvernées.",
+				"cta": "Découvrir la plateforme",
+				"imageAlt": "Illustration abstraite de données cardiaques connectées"
 			}
 		},
+		"readMore": "Lire la suite ->",
 		"ctaLabel": "Voir toutes les actualités"
 	},
 	"research": {

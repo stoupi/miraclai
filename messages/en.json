@@ -72,8 +72,17 @@
         "excerpt": "The prospective MIRACL-Flow study officially kicked off with its first cohort, focusing on longitudinal cardiovascular imaging markers.",
         "cta": "Explore the study",
         "imageAlt": "Cardiologist talking with a patient"
+      },
+      "card4": {
+        "date": "February 8, 2025",
+        "category": "Innovation",
+        "title": "Launching the MIRACL developer sandbox",
+        "excerpt": "A secure cloud sandbox now lets partners prototype cardiovascular AI algorithms with curated datasets and governance built in.",
+        "cta": "See the platform",
+        "imageAlt": "Abstract illustration of connected heart data"
       }
     },
+    "readMore": "Read more ->",
     "ctaLabel": "See all articles"
   },
   "research": {

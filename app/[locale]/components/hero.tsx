@@ -93,7 +93,7 @@ export async function Hero({ locale }: HeroProps) {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="cursor-pointer rounded-full border-2 border-white bg-transparent px-7 text-base md:text-lg font-semibold text-white transition-colors hover:bg-white hover:text-[#061024] hover:border-white"
+                  className="cursor-pointer rounded-full border-2 border-white bg-transparent px-7 text-base md:text-lg font-semibold text-white transition-colors hover:bg-[#061024] hover:text-white hover:border-[#061024]"
                 >
                   {t('ctaJoinTeam')}
                 </Button>

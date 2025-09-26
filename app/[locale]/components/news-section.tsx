@@ -5,7 +5,7 @@ import { Card, CardContent, CardFooter, CardTitle } from '@/components/ui/card';
 import { getTranslations } from 'next-intl/server';
 import Image from 'next/image';
 
-const cardKeys = ['card1', 'card2', 'card3'] as const;
+const cardKeys = ['card1', 'card2', 'card3', 'card4'] as const;
 type CardKey = (typeof cardKeys)[number];
 
 type NewsCard = {
@@ -23,7 +23,8 @@ type NewsSectionProps = { locale: string };
 const imageByCard: Record<CardKey, string> = {
   card1: '/assets/nouveaularib.jpg',
   card2: '/assets/equipe.jpeg',
-  card3: '/assets/hand-drawn-heart.svg'
+  card3: '/assets/hand-drawn-heart.svg',
+  card4: '/assets/coeur_miracl_netb.svg'
 };
 
 export async function NewsSection({ locale }: NewsSectionProps) {
@@ -42,30 +43,24 @@ export async function NewsSection({ locale }: NewsSectionProps) {
   return (
     <section
       id="news-section"
-      className="relative isolate overflow-hidden py-24 text-[#061024]"
+      className="py-24 text-[#061024]"
+      style={{ backgroundColor: '#F9F9F9' }}
     >
-      <div
-        className="absolute inset-0 -z-10"
-        style={{
-          backgroundImage:
-            'linear-gradient(to bottom, #061024 0%, #061024 15%, #64C0C9 100%)'
-        }}
-      />
       <div className="container mx-auto px-4">
         <div className="mx-auto max-w-3xl text-center">
-          <h2 className="text-3xl font-bold leading-tight tracking-tight sm:text-4xl">
+          <h2 className="text-3xl font-bold leading-tight tracking-tight text-[#061024] sm:text-4xl">
             {t('sectionTitle')}
           </h2>
-          <p className="mt-4 text-base text-[#061024]/80 sm:text-lg">
+          <p className="mt-4 text-base text-[#061024]/70 sm:text-lg">
             {t('sectionSubtitle')}
           </p>
         </div>
 
-        <div className="mt-12 grid gap-8 md:grid-cols-3">
+        <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           {cards.map((card) => (
             <Card
               key={card.title}
-              className="h-full overflow-hidden border-white/40 bg-white text-[#061024] shadow-xl"
+              className="flex h-full flex-col overflow-hidden border-white/40 bg-white p-0 text-[#061024] shadow-xl"
             >
               <div className="relative h-48 w-full overflow-hidden">
                 <Image
@@ -73,31 +68,31 @@ export async function NewsSection({ locale }: NewsSectionProps) {
                   alt={card.imageAlt}
                   fill
                   sizes="(min-width: 1024px) 320px, (min-width: 768px) 45vw, 90vw"
-                  className={card.image.endsWith('.svg') ? 'object-contain p-6' : 'object-cover'}
+                  className="object-cover"
                 />
               </div>
-              <CardContent className="space-y-4 pb-6 pt-6">
-                <div className="flex items-center justify-between text-sm text-[#061024]/70">
+              <CardContent className="flex flex-1 flex-col gap-4 pb-6 pt-6">
+                <div className="flex items-center justify-between text-base font-medium text-[#061024]/70">
                   <span>{card.date}</span>
-                  <Badge className="rounded-full bg-[#061024]/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-[#061024]">
+                  <Badge className="rounded-full bg-[#78B9C3] px-3 py-1 text-sm font-semibold uppercase tracking-wide text-white">
                     {card.category}
                   </Badge>
                 </div>
-                <CardTitle className="text-2xl font-semibold leading-snug text-[#061024]">
+                <CardTitle className="text-lg font-semibold leading-tight text-[#061024]">
                   {card.title}
                 </CardTitle>
-                <p className="text-sm text-[#061024]/75 sm:text-base">
+                <p className="text-sm text-[#061024]/75">
                   {card.excerpt}
                 </p>
               </CardContent>
-              <CardFooter className="px-6 pb-6 pt-0">
-                <Button
-                  asChild
-                  variant="link"
-                  className="px-0 text-[#061024] underline-offset-4 hover:text-[#05112b]"
+              <CardFooter className="mt-auto justify-end px-6 pb-6 pt-0">
+                <Link
+                  href="/news"
+                  aria-label={card.cta}
+                  className="text-sm font-semibold text-[#061024] transition-colors hover:text-[#05112b] hover:underline"
                 >
-                  <Link href="/news">{card.cta}</Link>
-                </Button>
+                  {t('readMore')}
+                </Link>
               </CardFooter>
             </Card>
           ))}
