@@ -25,7 +25,7 @@ export async function Footer({ locale }: FooterProps) {
   return (
     <footer className="bg-[#030b1d] text-white overflow-hidden">
       <div className="container relative mx-auto px-4 py-12 md:py-14">
-        <div className="pointer-events-none absolute -left-48 bottom-0 hidden select-none translate-y-[260px] md:block md:translate-y-[300px] lg:-left-40 lg:translate-y-[340px] xl:translate-y-[360px]">
+        <div className="pointer-events-none absolute -left-64 bottom-0 hidden select-none translate-y-[280px] md:block md:translate-y-[320px] lg:-left-52 lg:translate-y-[360px] xl:translate-y-[380px]">
           <Image
             src="/assets/coeur_hero.svg"
             alt={tHome('heartImageAlt')}
@@ -35,7 +35,7 @@ export async function Footer({ locale }: FooterProps) {
           />
         </div>
         <div className="grid gap-10 md:grid-cols-[260px_1fr_1fr] md:gap-14 md:pl-[200px] lg:grid-cols-[280px_1fr_1fr] lg:pl-[220px] xl:grid-cols-[320px_1fr_1fr] xl:gap-16 xl:pl-[260px]">
-          <div className="flex flex-col gap-5 md:min-h-[240px] md:justify-center">
+          <div className="flex flex-col gap-5 md:min-h-[240px] md:justify-start md:-mt-2 lg:-mt-4 xl:-mt-6">
             <div className="flex justify-center md:hidden">
               <Image
                 src="/assets/coeur_hero.svg"
@@ -116,8 +116,14 @@ export async function Footer({ locale }: FooterProps) {
         </div>
       </div>
       <div className="border-t border-white/10 py-6">
-        <div className="container mx-auto px-4 text-xs text-white/50">
-          © {currentYear} {tFooter('copyrightSuffix')}
+        <div className="container mx-auto px-4">
+          <div className="text-xs text-white/50 text-center md:grid md:grid-cols-[260px_1fr_1fr] md:gap-14 md:pl-[200px] lg:grid-cols-[280px_1fr_1fr] lg:pl-[220px] xl:grid-cols-[320px_1fr_1fr] xl:gap-16 xl:pl-[260px]">
+            <div className="hidden md:block" />
+            <div className="hidden md:block" />
+            <div className="md:text-left">
+              © {currentYear} {tFooter('copyrightSuffix')}
+            </div>
+          </div>
         </div>
       </div>
     </footer>
