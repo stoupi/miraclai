@@ -60,7 +60,7 @@ export async function NewsSection({ locale }: NewsSectionProps) {
           {cards.map((card) => (
             <Card
               key={card.title}
-              className="flex h-full flex-col overflow-hidden border-white/40 bg-white p-0 text-[#061024] shadow-xl"
+              className="flex h-full flex-col overflow-hidden border-white/40 bg-white p-0 text-[#061024] shadow-xl rounded-none"
             >
               <div className="relative h-56 w-full overflow-hidden">
                 <Image
