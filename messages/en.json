@@ -47,7 +47,7 @@
   },
   "news": {
     "sectionKicker": "Latest",
-    "sectionTitle": "Our news",
+    "sectionTitle": "Our <highlight>news</highlight>",
     "sectionSubtitle": "Insights, partnerships, and breakthroughs from the MIRACL.ai community.",
     "accentLabel": "news",
     "cards": {

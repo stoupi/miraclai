@@ -42,7 +42,7 @@
 	},
 	"news": {
 		"sectionKicker": "À la une",
-		"sectionTitle": "Notre Actualité",
+		"sectionTitle": "Notre <highlight>Actualité</highlight>",
 		"sectionSubtitle": "Découvrez nos collaborations, publications et événements majeurs.",
 		"accentLabel": "actu",
 		"cards": {

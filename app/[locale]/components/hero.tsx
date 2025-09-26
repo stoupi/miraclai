@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { Link } from '@/app/i18n/navigation';
 import { Button } from '@/components/ui/button';
 
+const baselineY = 80;
 const baseCyclePath =
   'M0 80 L120 80 L140 70 L160 80 L200 80 L220 130 L240 20 L260 130 L280 80 L320 80 L340 60 L360 80';
 
@@ -16,6 +17,11 @@ const ecgPathSegments = [0, 360, 720].map((offset) =>
 const ecgPathD = ecgPathSegments
   .map((segment, index) => (index === 0 ? segment : segment.replace(/^M/, 'L')))
   .join(' ');
+
+const horizontalScale = 1440 / 1080;
+const verticalScale = 1.5;
+const ecgTransform = `translate(0, ${baselineY}) scale(${horizontalScale}, ${verticalScale}) translate(0, -${baselineY})`;
+const waveformOffsetY = 24;
 
 type HeroProps = { locale: string };
 
@@ -34,7 +40,7 @@ export async function Hero({ locale }: HeroProps) {
 
       <svg
         aria-hidden
-        className="absolute left-0 right-0 top-28 -z-10 h-32 w-full opacity-20"
+        className="absolute left-0 right-0 top-44 md:top-48 -z-10 h-32 w-full opacity-20"
         viewBox="0 0 1440 200"
         preserveAspectRatio="none"
       >
@@ -55,7 +61,7 @@ export async function Hero({ locale }: HeroProps) {
               type="translate"
               from="-200 0"
               to="1440 0"
-              dur="4s"
+              dur="7s"
               repeatCount="indefinite"
             />
           </linearGradient>
@@ -67,26 +73,28 @@ export async function Hero({ locale }: HeroProps) {
             </feMerge>
           </filter>
         </defs>
-        <path
-          d={ecgPathD}
-          fill="none"
-          stroke="#66E0FF"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          vectorEffect="non-scaling-stroke"
-          opacity="0.4"
-        />
-        <path
-          d={ecgPathD}
-          fill="none"
-          stroke="url(#ecgGlowGradient)"
-          strokeWidth="4"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          vectorEffect="non-scaling-stroke"
-          filter="url(#ecgGlow)"
-        />
+        <g transform={`translate(0, ${waveformOffsetY}) ${ecgTransform}`}>
+          <path
+            d={ecgPathD}
+            fill="none"
+            stroke="#66E0FF"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            vectorEffect="non-scaling-stroke"
+            opacity="0.4"
+          />
+          <path
+            d={ecgPathD}
+            fill="none"
+            stroke="url(#ecgGlowGradient)"
+            strokeWidth="4"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            vectorEffect="non-scaling-stroke"
+            filter="url(#ecgGlow)"
+          />
+        </g>
       </svg>
 
       <div className="container mx-auto grid min-h-[78vh] grid-cols-1 items-center gap-8 px-4 py-16 md:grid-cols-2 lg:min-h-[88vh] lg:py-24">
