@@ -90,10 +90,7 @@ export async function NewsSection({ locale }: NewsSectionProps) {
 
           <div className="flex flex-col justify-between gap-12">
             <div>
-              <p className="text-sm font-semibold uppercase tracking-[0.45em] text-[#061024]/60">
-                {t('sectionKicker')}
-              </p>
-              <h3 className="mt-4 text-4xl font-extrabold leading-tight tracking-tight text-[#061024]">
+              <h3 className="mt-4 text-5xl font-extrabold leading-tight tracking-tight text-[#061024]">
                 {t.rich('sectionTitle', {
                   highlight: (chunks) => (
                     <span className="relative inline-block pb-[0.375rem]">

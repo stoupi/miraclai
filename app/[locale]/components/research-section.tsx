@@ -1,7 +1,7 @@
 import { getTranslations } from 'next-intl/server';
 import { Link } from '@/app/i18n/navigation';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import Image from 'next/image';
 
 type Props = { locale: string };
 
@@ -12,8 +12,11 @@ export async function ResearchSection({ locale }: Props) {
 
   const services = cardKeys.map((cardKey) => ({
     key: cardKey,
+    category: t(`cards.${cardKey}.category`),
     title: t(`cards.${cardKey}.title`),
-    description: t(`cards.${cardKey}.description`)
+    description: t(`cards.${cardKey}.description`),
+    image: t(`cards.${cardKey}.image`),
+    imageAlt: t(`cards.${cardKey}.imageAlt`)
   }));
 
   return (
@@ -29,23 +32,43 @@ export async function ResearchSection({ locale }: Props) {
           {t('description')}
         </p>
 
-        <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-3">
-          {services.map(({ key, title, description }) => (
-            <Card
+        <div className="mt-14 grid grid-cols-1 gap-8 sm:grid-cols-3">
+          {services.map(({ key, category, title, description, image, imageAlt }) => (
+            <article
               key={key}
-              className="border-white/10 bg-white/5 text-left text-white shadow-lg"
+              className="relative isolate flex h-full flex-col overflow-hidden rounded-none bg-white text-[#061024] shadow-[0_25px_60px_rgba(5,11,26,0.3)]"
             >
-              <CardHeader className="space-y-3 px-6 pt-6">
-                <CardTitle className="text-2xl font-semibold text-white">
-                  {title}
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="px-6 pb-6">
-                <CardDescription className="text-white/75 text-base">
-                  {description}
-                </CardDescription>
-              </CardContent>
-            </Card>
+              <div className="relative h-48 w-full overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-b from-[#03879F] via-[#039AB7] to-[#03AED3]" />
+                <Image
+                  src={image}
+                  alt={imageAlt}
+                  fill
+                  sizes="(min-width: 768px) 33vw, 100vw"
+                  className="h-full w-full object-cover opacity-30"
+                />
+              </div>
+              <div className="flex flex-1 flex-col justify-between px-8 py-8">
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#061024]/55">
+                    {category}
+                  </p>
+                  <h3 className="mt-4 text-2xl font-semibold leading-snug text-[#061024]">
+                    {title}
+                  </h3>
+                  <p className="mt-4 text-sm leading-relaxed text-[#061024]/75">
+                    {description}
+                  </p>
+                </div>
+                <Link
+                  href="/services"
+                  className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-[#061024] transition-colors hover:text-[#04102a]"
+                >
+                  {t('ctaCard')}
+                  <span aria-hidden className="text-lg">→</span>
+                </Link>
+              </div>
+            </article>
           ))}
         </div>
 

@@ -41,7 +41,6 @@
 		"partnersCtaTeam": "Découvrir notre équipe"
 	},
 	"news": {
-		"sectionKicker": "À la une",
 		"sectionTitle": "Notre <highlight>Actualité</highlight>",
 		"sectionSubtitle": "Découvrez nos collaborations, publications et événements majeurs.",
 		"accentLabel": "actu",
@@ -89,18 +88,28 @@
 		"description": "MIRACL.ai réunit cardiologues, radiologues, ingénieurs et data scientists pour faire avancer la recherche cardiovasculaire. Nous fournissons des services d'imagerie centralisés, des solutions IA sur‑mesure et un support scientifique pour accélérer des études à fort impact.",
 		"cards": {
 			"card1": {
+				"category": "Recherche",
 				"title": "Nom du service 1",
-				"description": "Texte placeholder pour décrire le service numéro 1."
+				"description": "Texte placeholder pour décrire le service numéro 1.",
+				"image": "/assets/nouveaularib.jpg",
+				"imageAlt": "Bâtiment de laboratoire de recherche"
 			},
 			"card2": {
+				"category": "Innovation",
 				"title": "Nom du service 2",
-				"description": "Texte placeholder pour décrire le service numéro 2."
+				"description": "Texte placeholder pour décrire le service numéro 2.",
+				"image": "/assets/equipe.jpeg",
+				"imageAlt": "Équipe de recherche en discussion"
 			},
 			"card3": {
+				"category": "Clinique",
 				"title": "Nom du service 3",
-				"description": "Texte placeholder pour décrire le service numéro 3."
+				"description": "Texte placeholder pour décrire le service numéro 3.",
+				"image": "/assets/hand-drawn-heart.svg",
+				"imageAlt": "Illustration stylisée d'un cœur"
 			}
 		},
+		"ctaCard": "Lire l'article",
 		"cta": "Découvrir nos services"
 	},
 	"auth": {
