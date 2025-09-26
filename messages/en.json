@@ -35,7 +35,7 @@
     "secondaryCta": "Patient space",
     "chief": "Head of Department: Professor Patrick HENRY",
     "teamImageAlt": "Team photo",
-    "olvaHeadline": "Shaping the future of cardiac electrophysiology",
+    "olvaHeadline": "<highlight>Shaping the future</highlight> of cardiac electrophysiology",
     "olvaDescription": "Developing a portable and reusable platform for cardiac ablation — making electrophysiology more accessible and sustainable.",
     "ctaInvest": "Invest in Olva",
     "ctaJoinTeam": "Join the team",
@@ -46,7 +46,7 @@
     "partnersCtaTeam": "Meet our team"
   },
   "news": {
-    "sectionTitle": "Latest news",
+    "sectionTitle": "Our news",
     "sectionSubtitle": "Insights, partnerships, and breakthroughs from the MIRACL.ai community.",
     "cards": {
       "card1": {
@@ -87,16 +87,23 @@
   },
   "research": {
     "strapline": "The infrastructure behind collaborative cardiovascular imaging research.",
-    "headline1": "Built for research teams.",
     "headline2": "Powered by science",
     "headline3": "driven by data",
     "description": "MIRACL.ai connects cardiologists, radiologists, engineers, and data scientists to advance cardiovascular research. We provide centralized imaging services, tailored AI solutions, and scientific support to accelerate impactful studies.",
-    "feature1Title": "Centralized Expert Core Laboratory",
-    "feature1Text": "Standardized reads, quality control, and centralized workflows",
-    "feature2Title": "AI‑powered Data Science",
-    "feature2Text": "From biostatistics to deep learning, tailored to cardiovascular imaging",
-    "feature3Title": "Scientific impact",
-    "feature3Text": "From peer‑reviewed publications to real‑world value",
+    "cards": {
+      "card1": {
+        "title": "Service name 1",
+        "description": "Placeholder copy describing what the first service offers."
+      },
+      "card2": {
+        "title": "Service name 2",
+        "description": "Placeholder copy describing what the second service offers."
+      },
+      "card3": {
+        "title": "Service name 3",
+        "description": "Placeholder copy describing what the third service offers."
+      }
+    },
     "cta": "Discover our services"
   },
   "auth": {

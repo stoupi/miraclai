@@ -30,7 +30,7 @@
 		"secondaryCta": "Espace patients",
 		"chief": "Chef de service : Professeur Patrick HENRY",
 		"teamImageAlt": "Photo de l'équipe",
-		"olvaHeadline": "Innover ensemble en imagerie cardiovasculaire",
+		"olvaHeadline": "<highlight>Innover ensemble</highlight> en imagerie cardiovasculaire",
 		"olvaDescription": "MIRACL.ai est un Core Lab académique où radiologues et cardiologues collaborent avec ingénieurs et data scientists pour transformer l’imagerie cardiovasculaire, de l’expertise clinique à l’innovation par l’intelligence artificielle.",
 		"ctaInvest": "Découvrir nos services",
 		"ctaJoinTeam": "Nous contacter",
@@ -41,7 +41,7 @@
 		"partnersCtaTeam": "Découvrir notre équipe"
 	},
 	"news": {
-		"sectionTitle": "Actualités",
+		"sectionTitle": "Notre Actualité",
 		"sectionSubtitle": "Découvrez nos collaborations, publications et événements majeurs.",
 		"cards": {
 			"card1": {
@@ -81,19 +81,26 @@
 		"ctaLabel": "Voir toutes les actualités"
 	},
 	"research": {
-    "strapline": "L'infrastructure au service de la recherche en imagerie cardiovasculaire.",
-    "headline1": "Conçu pour les équipes de recherche.",
-    "headline2": "Propulsé par la science",
-    "headline3": "guidé par les données",
-    "description": "MIRACL.ai réunit cardiologues, radiologues, ingénieurs et data scientists pour faire avancer la recherche cardiovasculaire. Nous fournissons des services d'imagerie centralisés, des solutions IA sur‑mesure et un support scientifique pour accélérer des études à fort impact.",
-    "feature1Title": "Core Lab expert centralisé",
-    "feature1Text": "Lectures standardisées, contrôle qualité et workflows centralisés",
-    "feature2Title": "Data science alimentée par l'IA",
-    "feature2Text": "De la biostatistique au deep learning, dédié à l'imagerie cardio",
-    "feature3Title": "Impact scientifique",
-    "feature3Text": "Des publications évaluées par les pairs à la valeur terrain",
-    "cta": "Découvrir nos services"
-  },
+		"strapline": "L'infrastructure au service de la recherche en imagerie cardiovasculaire.",
+		"headline2": "Propulsé par la science",
+		"headline3": "guidé par les données",
+		"description": "MIRACL.ai réunit cardiologues, radiologues, ingénieurs et data scientists pour faire avancer la recherche cardiovasculaire. Nous fournissons des services d'imagerie centralisés, des solutions IA sur‑mesure et un support scientifique pour accélérer des études à fort impact.",
+		"cards": {
+			"card1": {
+				"title": "Nom du service 1",
+				"description": "Texte placeholder pour décrire le service numéro 1."
+			},
+			"card2": {
+				"title": "Nom du service 2",
+				"description": "Texte placeholder pour décrire le service numéro 2."
+			},
+			"card3": {
+				"title": "Nom du service 3",
+				"description": "Texte placeholder pour décrire le service numéro 3."
+			}
+		},
+		"cta": "Découvrir nos services"
+	},
 	"auth": {
 		"loginTitle": "Connexion",
 		"signupTitle": "Inscription",

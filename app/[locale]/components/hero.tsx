@@ -75,7 +75,17 @@ export async function Hero({ locale }: HeroProps) {
               })()}
             </div>
             <h1 className="mt-6 text-balance text-4xl font-bold leading-tight tracking-tight text-white sm:text-6xl">
-              {t('olvaHeadline')}
+              {t.rich('olvaHeadline', {
+                highlight: (chunks) => (
+                  <span className="relative inline-block pb-[0.125rem]">
+                    <span className="relative z-10">{chunks}</span>
+                    <span
+                      aria-hidden="true"
+                      className="pointer-events-none absolute inset-x-0 bottom-0 h-3 bg-[#F33349]"
+                    />
+                  </span>
+                )
+              })}
             </h1>
             <p className="mt-2 max-w-3xl text-lg text-[#D0EEF3] sm:text-xl">
               {t('olvaDescription')}

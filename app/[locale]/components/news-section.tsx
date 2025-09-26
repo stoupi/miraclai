@@ -48,7 +48,7 @@ export async function NewsSection({ locale }: NewsSectionProps) {
     >
       <div className="container mx-auto px-4">
         <div className="mx-auto max-w-3xl text-center">
-          <h2 className="text-3xl font-bold leading-tight tracking-tight text-[#061024] sm:text-4xl">
+          <h2 className="text-4xl font-extrabold leading-tight tracking-tight text-[#061024] sm:text-5xl">
             {t('sectionTitle')}
           </h2>
           <p className="mt-4 text-base text-[#061024]/70 sm:text-lg">
@@ -62,7 +62,7 @@ export async function NewsSection({ locale }: NewsSectionProps) {
               key={card.title}
               className="flex h-full flex-col overflow-hidden border-white/40 bg-white p-0 text-[#061024] shadow-xl"
             >
-              <div className="relative h-48 w-full overflow-hidden">
+              <div className="relative h-56 w-full overflow-hidden">
                 <Image
                   src={card.image}
                   alt={card.imageAlt}
@@ -71,10 +71,10 @@ export async function NewsSection({ locale }: NewsSectionProps) {
                   className="object-cover"
                 />
               </div>
-              <CardContent className="flex flex-1 flex-col gap-4 pb-6 pt-6">
+              <CardContent className="flex flex-1 flex-col gap-4 pb-4 pt-4">
                 <div className="flex items-center justify-between text-base font-medium text-[#061024]/70">
                   <span>{card.date}</span>
-                  <Badge className="rounded-full bg-[#78B9C3] px-3 py-1 text-sm font-semibold uppercase tracking-wide text-white">
+                  <Badge className="rounded-full bg-[#2FE0EA] px-3 py-1 text-sm font-semibold uppercase tracking-wide text-white">
                     {card.category}
                   </Badge>
                 </div>
@@ -85,7 +85,7 @@ export async function NewsSection({ locale }: NewsSectionProps) {
                   {card.excerpt}
                 </p>
               </CardContent>
-              <CardFooter className="mt-auto justify-end px-6 pb-6 pt-0">
+              <CardFooter className="mt-auto justify-end px-6 pb-4 pt-0">
                 <Link
                   href="/news"
                   aria-label={card.cta}
