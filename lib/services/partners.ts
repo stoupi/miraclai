@@ -6,7 +6,8 @@ import type { PartnerLogo } from '@/types/partners';
 const logoDirectory = path.join(process.cwd(), 'public', 'assets', 'logo_centres');
 const imagePattern = /\.(svg|png|jpe?g)$/i;
 const logoScaleOverrides: Record<string, number> = {
-  'logo_amiens.jpg': 1.2
+  'logo_amiens.jpg': 1.2,
+  'logo_HEGP.png': 1.2
 };
 
 export async function getPartnerLogos(): Promise<PartnerLogo[]> {

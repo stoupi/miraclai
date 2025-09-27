@@ -14,7 +14,7 @@ type PartnersMarqueeProps = {
 
 const baseTrackClass = 'flex w-max flex-nowrap items-center gap-12 pr-12 animate-[marquee_20s_linear_infinite]';
 const baseItemClass =
-  'relative flex h-10 shrink-0 items-center justify-center overflow-visible opacity-80 grayscale transition group-hover:opacity-100 group-hover:grayscale-0';
+  'relative flex h-10 shrink-0 items-center justify-center overflow-visible cursor-pointer opacity-80 grayscale transition hover:opacity-100 hover:grayscale-0';
 
 export function PartnersMarquee({
   logos,
@@ -30,11 +30,11 @@ export function PartnersMarquee({
   const sequence = [...logos, ...logos];
 
   return (
-    <div className={cn('group relative w-full overflow-hidden', className)}>
+    <div className={cn('relative w-full overflow-hidden', className)}>
       <div
         className={cn(
           baseTrackClass,
-          pauseOnHover ? 'group-hover:[animation-play-state:paused]' : '',
+          pauseOnHover ? 'hover:[animation-play-state:paused]' : '',
           trackClassName
         )}
         style={{ willChange: 'transform' }}
