@@ -12,6 +12,7 @@ type CardImageConfig = {
   altKey: string;
   width: number;
   height: number;
+  className?: string;
 };
 
 const cardMediaByKey: Record<CardKey, CardImageConfig[]> = {
@@ -19,8 +20,9 @@ const cardMediaByKey: Record<CardKey, CardImageConfig[]> = {
     {
       src: '/assets/ct.svg',
       altKey: 'cards.card1.imageAltPrimary',
-      width: 48,
-      height: 48
+      width: 100,
+      height: 100,
+      className: 'h-64 w-64' // taille plus grande pour le CT
     }
   ],
   card2: [
@@ -28,7 +30,8 @@ const cardMediaByKey: Record<CardKey, CardImageConfig[]> = {
       src: '/assets/accompagnement.svg',
       altKey: 'cards.card2.imageAltPrimary',
       width: 48,
-      height: 48
+      height: 48,
+      className: 'h-42 w-42' // petite taille
     }
   ],
   card3: [
@@ -36,7 +39,8 @@ const cardMediaByKey: Record<CardKey, CardImageConfig[]> = {
       src: '/assets/ai.svg',
       altKey: 'cards.card3.imageAltPrimary',
       width: 48,
-      height: 48
+      height: 48,
+      className: 'h-42 w-42' // petite taille
     }
   ]
 };
@@ -64,17 +68,16 @@ export async function ResearchSection({ locale }: Props) {
               className="service-card group flex h-full flex-col items-center border border-black/5 bg-white px-10 py-14 text-center text-[#061024] shadow-[0_35px_90px_rgba(6,16,36,0.18)] transition-transform duration-200 hover:-translate-y-1"
             >
               <div
-                className={`flex h-36 items-center justify-center ${images.length > 1 ? 'gap-6' : ''
-                  }`}
+                className={`flex h-36 items-center justify-center ${images.length > 1 ? 'gap-6' : ''}`}
               >
-                {images.map(({ src, alt, width, height }) => (
+                {images.map(({ src, alt, width, height, className }) => (
                   <Image
                     key={src}
                     src={src}
                     alt={alt}
                     width={width}
                     height={height}
-                    className="h-auto w-auto"
+                    className={className}
                     priority={key === 'card1'}
                   />
                 ))}
