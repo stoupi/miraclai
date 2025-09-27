@@ -86,6 +86,87 @@
     "readMore": "Read more ->",
     "ctaLabel": "See all articles"
   },
+  "teamPage": {
+    "hero": {
+      "eyebrow": "About us",
+      "title": "Collective excellence for cardiovascular innovation",
+      "subtitle": "MIRACL.ai unites cardiologists, radiologists, engineers and data scientists to accelerate cardiovascular imaging.",
+      "backgroundAlt": "The MIRACL team gathered during an event",
+      "actions": {
+        "missions": "Our missions",
+        "team": "Our team",
+        "board": "Our board"
+      }
+    },
+    "missions": {
+      "title": "Our missions",
+      "description": "We build an open ecosystem where clinical research and industrial innovation strengthen each other.",
+      "items": {
+        "ecosystem": {
+          "title": "Unite the ecosystem",
+          "description": "Bring innovation stakeholders together by creating bridges around shared priorities.",
+          "iconAlt": "Collaboration icon"
+        },
+        "support": {
+          "title": "Support projects",
+          "description": "Guide every stakeholder from study design to execution and scale-up.",
+          "iconAlt": "Rocket icon"
+        },
+        "collaborate": {
+          "title": "Boost collaboration",
+          "description": "Encourage closer cooperation between players across the Greater Paris area.",
+          "iconAlt": "Handshake icon"
+        },
+        "inclusion": {
+          "title": "Champion inclusion",
+          "description": "Promote inclusion, diversity and environmentally responsible tech.",
+          "iconAlt": "Leaf icon"
+        }
+      }
+    },
+    "team": {
+      "title": "Our team",
+      "description": "A multidisciplinary crew combining medical expertise, data science and complex program delivery.",
+      "members": {
+        "patrickHenry": {
+          "name": "Prof. Patrick Henry",
+          "role": "Medical Director",
+          "bio": "Interventional cardiologist ensuring clinical pathways and scientific rigor for our core lab readings."
+        },
+        "claireDubois": {
+          "name": "Dr Claire Dubois",
+          "role": "Scientific Director",
+          "bio": "Radiologist specialized in cardiac MRI, structuring research protocols and annotation methodologies."
+        },
+        "alexandreMoreau": {
+          "name": "Alexandre Moreau",
+          "role": "Head of Data & AI",
+          "bio": "Machine learning engineer leading data pipelines, industrialization and model transfer."
+        }
+      }
+    },
+    "board": {
+      "title": "Our board",
+      "description": "A strategic committee of academic and institutional leaders steering our roadmap.",
+      "members": {
+        "sophieMartin": {
+          "name": "Sophie Martin",
+          "role": "Board Chair",
+          "bio": "Digital health entrepreneur safeguarding MIRACL.ai's vision and governance."
+        },
+        "drissBenali": {
+          "name": "Dr Driss Benali",
+          "role": "AP-HP Representative",
+          "bio": "Innovation lead within AP-HP facilitating orchestration with partner hospitals."
+        },
+        "heleneGomez": {
+          "name": "Hélène Gomez",
+          "role": "AI & Regulatory Expert",
+          "bio": "Specialist in software medical devices securing compliance and value strategy."
+        }
+      }
+    }
+  },
   "research": {
     "strapline": "The infrastructure behind collaborative cardiovascular imaging research.",
     "headline2": "Powered by science",
