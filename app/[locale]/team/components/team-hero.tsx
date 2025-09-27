@@ -36,6 +36,9 @@ export function TeamHero({ content, logos }: TeamHeroProps) {
               {content.partnersTitle}
             </div>
           ) : null}
+          {content.partnersInstructions ? (
+            <p className="text-sm text-[#061024]/70">{content.partnersInstructions}</p>
+          ) : null}
           <PartnersMarquee
             logos={logos}
             className="py-2"

@@ -1,256 +1,258 @@
 {
-	"navigation": {
-		"home": "Accueil",
-		"patients": "Espace patients",
-		"care": "Offre de soins",
-		"team": "L'équipe",
-		"news": "Actualités",
-		"donate": "Faire un don",
-		"service": "Service de Cardiologie",
-		"hospital": "HÔPITAL LARIBOISIÈRE",
-		"logoAlt": "Logo Miracl",
-		"profile": "Profil",
-		"login": "Connexion",
-		"logout": "Déconnexion",
-		"signup": "S'inscrire",
-		"loading": "Chargement...",
-		"loggingOut": "Déconnexion en cours...",
-		"appName": "Nom de l'application",
-		"menuServices": "Services",
-		"menuCatalog": "Catalogue",
-		"menuTeam": "Qui sommes-nous ?",
-		"menuNews": "Actualités",
-		"ctaPrimary": "Nous contacter"
-	},
-	"home": {
-		"title": "",
-		"heroTitle": "Bienvenue dans notre service de Cardiologie",
-		"heroSubtitle": "Hôpital Lariboisière - Assistance Publique des Hôpitaux de Paris (AP-HP)",
-		"primaryCta": "Prendre rendez-vous",
-		"secondaryCta": "Espace patients",
-		"chief": "Chef de service : Professeur Patrick HENRY",
-		"teamImageAlt": "Photo de l'équipe",
-		"olvaHeadline": "<highlight>Innover ensemble</highlight> en imagerie cardiovasculaire",
-		"olvaDescription": "MIRACL.ai est un Core Lab académique où radiologues et cardiologues collaborent avec ingénieurs et data scientists pour transformer l’imagerie cardiovasculaire, de l’expertise clinique à l’innovation par l’intelligence artificielle.",
-		"ctaInvest": "Découvrir nos services",
-		"ctaJoinTeam": "Nous contacter",
-		"heartImageAlt": "Illustration stylisée du cœur",
-		"aphpLogoAlt": "Logo AP-HP",
-		"carnotLogoAlt": "Logo Carnot AP-HP",
-		"partnersTitle": "MIRACL.ai est fondée par <highlight>7 centres français</highlight> experts",
-		"partnersCtaTeam": "Découvrir notre équipe"
-	},
-	"news": {
-		"sectionTitle": "Notre <highlight>Actualité</highlight>",
-		"sectionSubtitle": "Découvrez nos collaborations, publications et événements majeurs.",
-		"accentLabel": "actu",
-		"cards": {
-			"card1": {
-				"date": "16 mars 2025",
-				"category": "Recherche",
-				"title": "Quantification IA des fibroses cardiaques",
-				"excerpt": "Nos équipes d'imagerie dévoilent une chaîne automatisée qui accélère la quantification des fibroses pour les essais multicentriques.",
-				"cta": "Lire l'article",
-				"imageAlt": "Radiologue analysant des IRM cardiovasculaires"
-			},
-			"card2": {
-				"date": "4 mars 2025",
-				"category": "Partenariat",
-				"title": "Nouvelle collaboration avec le data hub de l'AP-HP",
-				"excerpt": "Nous co-construisons avec le data hub de l'AP-HP des jeux de données interopérables prêts pour la validation IA à grande échelle.",
-				"cta": "Découvrir le partenariat",
-				"imageAlt": "Chercheurs collaborant autour d'un ordinateur portable"
-			},
-			"card3": {
-				"date": "22 février 2025",
-				"category": "Clinique",
-				"title": "Premiers patients inclus dans l'étude MIRACL-Flow",
-				"excerpt": "L'étude prospective MIRACL-Flow démarre avec sa première cohorte pour suivre les biomarqueurs d'imagerie cardiovasculaire dans le temps.",
-				"cta": "Explorer l'étude",
-				"imageAlt": "Cardiologue échangeant avec un patient"
-			},
-			"card4": {
-				"date": "8 février 2025",
-				"category": "Innovation",
-				"title": "Lancement du sandbox développeur MIRACL",
-				"excerpt": "Un environnement cloud sécurisé permet désormais à nos partenaires de prototyper des algorithmes IA cardiovasculaires avec données gouvernées.",
-				"cta": "Découvrir la plateforme",
-				"imageAlt": "Illustration abstraite de données cardiaques connectées"
-			}
-		},
-		"readMore": "Lire la suite ->",
-		"ctaLabel": "Voir toutes les actualités"
-	},
-	"teamPage": {
-		"hero": {
-			"eyebrow": "",
-			"title": "La force collective au service de l'innovation cardiovasculaire",
-			"subtitle": "",
-			"backgroundAlt": "L'équipe MIRACL réunie lors d'un événement",
-			"actions": {
-				"missions": "Nos missions",
-				"team": "Notre comité exécutif",
-				"board": "Notre comité de pilotage"
-			}
-		},
-		"partnersTitle": "Découvrez nos centres",
-		"missions": {
-			"title": "Nos missions",
-			"description": "Nous bâtissons un écosystème ouvert où la recherche clinique et l'innovation industrielle se renforcent mutuellement.",
-			"items": {
-				"ecosystem": {
-					"title": "Fédérer l'écosystème",
-					"description": "Fédérer les acteurs de l'innovation en créant des passerelles autour de sujets communs.",
-					"iconAlt": "Icône de collaboration"
-				},
-				"support": {
-					"title": "Accompagner les projets",
-					"description": "Accompagner le développement de l'ensemble des parties prenantes, de la conception à la mise en œuvre.",
-					"iconAlt": "Icône de fusée"
-				},
-				"collaborate": {
-					"title": "Encourager la collaboration",
-					"description": "Encourager une collaboration accrue entre les acteurs du territoire francilien.",
-					"iconAlt": "Icône de poignée de main"
-				},
-				"inclusion": {
-					"title": "Promouvoir l'inclusion",
-					"description": "Promouvoir l'inclusion, la diversité et la tech éco-responsable.",
-					"iconAlt": "Icône de feuille"
-				}
-			}
-		},
-			"team": {
-				"title": "Notre comité exécutif",
-			"description": "Une équipe pluridisciplinaire qui combine expertise médicale, data science et pilotage de projets complexes.",
-			"members": {
-				"patrickHenry": {
-					"name": "Pr Patrick Henry",
-					"role": "Directeur médical",
-					"bio": "Cardiologue interventionnel, il coordonne les parcours cliniques et la qualité scientifique des lectures centralisées."
-				},
-				"claireDubois": {
-					"name": "Dr Claire Dubois",
-					"role": "Directrice scientifique",
-					"bio": "Radiologue spécialiste de l'IRM cardiaque, elle structure les protocoles de recherche et les méthodologies d'annotation."
-				},
-				"alexandreMoreau": {
-					"name": "Alexandre Moreau",
-					"role": "Lead Data & IA",
-					"bio": "Ingénieur en machine learning, il pilote les pipelines de données, l'industrialisation et le transfert de modèles."
-				}
-			}
-		},
-		"board": {
-			"title": "Notre board",
-			"description": "Un comité stratégique composé de leaders académiques et institutionnels pour guider notre feuille de route.",
-			"members": {
-				"sophieMartin": {
-					"name": "Sophie Martin",
-					"role": "Présidente du board",
-					"bio": "Entrepreneure en santé numérique, elle garantit la vision et la gouvernance de MIRACL.ai."
-				},
-				"drissBenali": {
-					"name": "Dr Driss Benali",
-					"role": "Représentant AP-HP",
-					"bio": "Responsable innovation au sein de l'AP-HP, il facilite l'orchestration avec les centres hospitaliers partenaires."
-				},
-				"heleneGomez": {
-					"name": "Hélène Gomez",
-					"role": "Experte IA & Réglementaire",
-					"bio": "Spécialiste des dispositifs médicaux logiciels, elle sécurise la conformité et la stratégie de valorisation."
-				}
-			}
-		}
-	},
-	"research": {
-		"strapline": "L'infrastructure au service de la recherche en imagerie cardiovasculaire.",
-		"headline2": "Propulsé par la science",
-		"headline3": "guidé par les données",
-		"description": "MIRACL.ai réunit cardiologues, radiologues, ingénieurs et data scientists pour faire avancer la recherche cardiovasculaire. Nous fournissons des services d'imagerie centralisés, des solutions IA sur‑mesure et un support scientifique pour accélérer des études à fort impact.",
-		"cards": {
-			"card1": {
-				"title": "Analyse centralisée multimodale",
-				"description": "Relecture experte et standardisée de toutes les modalités d’imagerie cardiovasculaire (IRM, scanner, échographie, ECG, angiographie). Robustesse et fiabilité garanties pour vos essais cliniques et publications.",
-				"imageAltPrimary": "Scanner cardiaque rouge stylisé"
-			},
-			"card2": {
-				"title": "Accompagnement de vos projets",
-				"description": "De la conception à la collecte sécurisée des données, nous vous accompagnons dans toutes les étapes de vos études. Nos experts assurent méthodologie, contrôle qualité et conformité réglementaire.",
-				"imageAltPrimary": "Poignée de main rouge stylisée"
-			},
-			"card3": {
-				"title": "Données pour l’innovation en IA",
-				"description": "Accédez à des registres multimodaux annotés par des experts. Validez vos algorithmes et développez de nouveaux biomarqueurs grâce à des cohortes uniques multi-centres et multi-pathologies.",
-				"imageAltPrimary": "Cerveau rouge stylisé avec circuit imprimé"
-			}
-		},
-		"cta": "Découvrir nos services"
-	},
-	"footer": {
-		"title": "",
-		"description": "",
-		"contactTitle": "Contact",
-		"contactEmailLabel": "E-mail",
-		"contactPhoneLabel": "Téléphone",
-		"navigationTitle": "Navigation",
-		"links": {
-			"home": "Accueil",
-			"team": "Équipe",
-			"services": "Services",
-			"news": "Actualités"
-		},
-		"addressTitle": "Adresse",
-		"addressLine1": "Hôpital Lariboisière",
-		"addressLine2": "2 Rue Ambroise Paré, 75010 Paris",
-		"copyrightSuffix": "MIRACL.ai. Tous droits réservés."
-	},
-	"auth": {
-		"loginTitle": "Connexion",
-		"signupTitle": "Inscription",
-		"email": "E-mail",
-		"password": "Mot de passe",
-		"confirmPassword": "Confirmer le mot de passe",
-		"name": "Nom",
-		"loginButton": "Se connecter",
-		"signupButton": "S'inscrire",
-		"alreadyHaveAccount": "Vous avez déjà un compte ?",
-		"noAccount": "Vous n'avez pas de compte ?",
-		"switchToLogin": "Connectez-vous ici",
-		"switchToSignup": "Inscrivez-vous ici",
-		"invalidCredentials": "Identifiants invalides",
-		"nameRequired": "Le nom est requis pour l'inscription",
-		"authenticationFailed": "Échec de l'authentification",
-		"googleLoginFailed": "Échec de la connexion Google",
-		"loading": "Chargement...",
-		"orContinueWith": "Ou continuer avec",
-		"nameMinLength": "Le nom doit contenir au moins 2 caractères",
-		"invalidEmail": "Adresse e-mail invalide",
-		"passwordMinLength": "Le mot de passe doit contenir au moins 6 caractères",
-		"welcomeBack": "Bon retour",
-		"signInToAccount": "Connectez-vous à votre compte",
-		"emailPlaceholder": "Entrez votre email",
-		"passwordPlaceholder": "Entrez votre mot de passe",
-		"forgotPassword": "Mot de passe oublié ?",
-		"signIn": "Se connecter",
-		"demoCredentials": "Identifiants de démo",
-		"userCredentials": "Utilisateur",
-		"adminCredentials": "Administrateur",
-		"signUp": "S'inscrire",
-		"createAccount": "Créer un compte",
-		"signUpToStart": "Inscrivez-vous pour commencer",
-		"namePlaceholder": "Entrez votre nom",
-		"signupFailed": "Échec de l'inscription",
-		"continueWithGoogle": "Continuer avec Google",
-		"orDivider": "OU",
-		"googleSignInError": "Échec de la connexion Google"
-	},
-	"profile": {
-		"title": "Profil",
-		"welcome": "Bienvenue sur votre profil"
-	},
-	"metadata": {
-		"title": "FeedbackApp",
-		"description": "Application de feedback utilisateur"
-	}
+  "navigation": {
+    "home": "Accueil",
+    "patients": "Espace patients",
+    "care": "Offre de soins",
+    "team": "L'équipe",
+    "news": "Actualités",
+    "donate": "Faire un don",
+    "service": "Service de Cardiologie",
+    "hospital": "HÔPITAL LARIBOISIÈRE",
+    "logoAlt": "Logo Miracl",
+    "profile": "Profil",
+    "login": "Connexion",
+    "logout": "Déconnexion",
+    "signup": "S'inscrire",
+    "loading": "Chargement...",
+    "loggingOut": "Déconnexion en cours...",
+    "appName": "Nom de l'application",
+    "menuServices": "Services",
+    "menuCatalog": "Catalogue",
+    "menuTeam": "Qui sommes-nous ?",
+    "menuNews": "Actualités",
+    "ctaPrimary": "Nous contacter"
+  },
+  "home": {
+    "title": "",
+    "heroTitle": "Bienvenue dans notre service de Cardiologie",
+    "heroSubtitle": "Hôpital Lariboisière - Assistance Publique des Hôpitaux de Paris (AP-HP)",
+    "primaryCta": "Prendre rendez-vous",
+    "secondaryCta": "Espace patients",
+    "chief": "Chef de service : Professeur Patrick HENRY",
+    "teamImageAlt": "Photo de l'équipe",
+    "olvaHeadline": "<highlight>Innover ensemble</highlight> en imagerie cardiovasculaire",
+    "olvaDescription": "MIRACL.ai est un Core Lab académique où radiologues et cardiologues collaborent avec ingénieurs et data scientists pour transformer l’imagerie cardiovasculaire, de l’expertise clinique à l’innovation par l’intelligence artificielle.",
+    "ctaInvest": "Découvrir nos services",
+    "ctaJoinTeam": "Nous contacter",
+    "heartImageAlt": "Illustration stylisée du cœur",
+    "aphpLogoAlt": "Logo AP-HP",
+    "carnotLogoAlt": "Logo Carnot AP-HP",
+    "partnersTitle": "MIRACL.ai est fondée par <highlight>7 centres français</highlight> experts",
+    "partnersCtaTeam": "Découvrir notre équipe",
+    "partnersInstructions": "Cliquez sur un centre pour découvrir sa page dédiée."
+  },
+  "news": {
+    "sectionTitle": "Notre <highlight>Actualité</highlight>",
+    "sectionSubtitle": "Découvrez nos collaborations, publications et événements majeurs.",
+    "accentLabel": "actu",
+    "cards": {
+      "card1": {
+        "date": "16 mars 2025",
+        "category": "Recherche",
+        "title": "Quantification IA des fibroses cardiaques",
+        "excerpt": "Nos équipes d'imagerie dévoilent une chaîne automatisée qui accélère la quantification des fibroses pour les essais multicentriques.",
+        "cta": "Lire l'article",
+        "imageAlt": "Radiologue analysant des IRM cardiovasculaires"
+      },
+      "card2": {
+        "date": "4 mars 2025",
+        "category": "Partenariat",
+        "title": "Nouvelle collaboration avec le data hub de l'AP-HP",
+        "excerpt": "Nous co-construisons avec le data hub de l'AP-HP des jeux de données interopérables prêts pour la validation IA à grande échelle.",
+        "cta": "Découvrir le partenariat",
+        "imageAlt": "Chercheurs collaborant autour d'un ordinateur portable"
+      },
+      "card3": {
+        "date": "22 février 2025",
+        "category": "Clinique",
+        "title": "Premiers patients inclus dans l'étude MIRACL-Flow",
+        "excerpt": "L'étude prospective MIRACL-Flow démarre avec sa première cohorte pour suivre les biomarqueurs d'imagerie cardiovasculaire dans le temps.",
+        "cta": "Explorer l'étude",
+        "imageAlt": "Cardiologue échangeant avec un patient"
+      },
+      "card4": {
+        "date": "8 février 2025",
+        "category": "Innovation",
+        "title": "Lancement du sandbox développeur MIRACL",
+        "excerpt": "Un environnement cloud sécurisé permet désormais à nos partenaires de prototyper des algorithmes IA cardiovasculaires avec données gouvernées.",
+        "cta": "Découvrir la plateforme",
+        "imageAlt": "Illustration abstraite de données cardiaques connectées"
+      }
+    },
+    "readMore": "Lire la suite ->",
+    "ctaLabel": "Voir toutes les actualités"
+  },
+  "teamPage": {
+    "hero": {
+      "eyebrow": "",
+      "title": "La force collective au service de l'innovation cardiovasculaire",
+      "subtitle": "",
+      "backgroundAlt": "L'équipe MIRACL réunie lors d'un événement",
+      "actions": {
+        "missions": "Nos missions",
+        "team": "Notre comité exécutif",
+        "board": "Notre comité de pilotage"
+      }
+    },
+    "partnersTitle": "Découvrez nos centres",
+    "missions": {
+      "title": "Nos missions",
+      "description": "Nous bâtissons un écosystème ouvert où la recherche clinique et l'innovation industrielle se renforcent mutuellement.",
+      "items": {
+        "ecosystem": {
+          "title": "Fédérer l'écosystème",
+          "description": "Fédérer les acteurs de l'innovation en créant des passerelles autour de sujets communs.",
+          "iconAlt": "Icône de collaboration"
+        },
+        "support": {
+          "title": "Accompagner les projets",
+          "description": "Accompagner le développement de l'ensemble des parties prenantes, de la conception à la mise en œuvre.",
+          "iconAlt": "Icône de fusée"
+        },
+        "collaborate": {
+          "title": "Encourager la collaboration",
+          "description": "Encourager une collaboration accrue entre les acteurs du territoire francilien.",
+          "iconAlt": "Icône de poignée de main"
+        },
+        "inclusion": {
+          "title": "Promouvoir l'inclusion",
+          "description": "Promouvoir l'inclusion, la diversité et la tech éco-responsable.",
+          "iconAlt": "Icône de feuille"
+        }
+      }
+    },
+    "team": {
+      "title": "Notre comité exécutif",
+      "description": "Une équipe pluridisciplinaire qui combine expertise médicale, data science et pilotage de projets complexes.",
+      "members": {
+        "patrickHenry": {
+          "name": "Pr Patrick Henry",
+          "role": "Directeur médical",
+          "bio": "Cardiologue interventionnel, il coordonne les parcours cliniques et la qualité scientifique des lectures centralisées."
+        },
+        "claireDubois": {
+          "name": "Dr Claire Dubois",
+          "role": "Directrice scientifique",
+          "bio": "Radiologue spécialiste de l'IRM cardiaque, elle structure les protocoles de recherche et les méthodologies d'annotation."
+        },
+        "alexandreMoreau": {
+          "name": "Alexandre Moreau",
+          "role": "Lead Data & IA",
+          "bio": "Ingénieur en machine learning, il pilote les pipelines de données, l'industrialisation et le transfert de modèles."
+        }
+      }
+    },
+    "board": {
+      "title": "Notre board",
+      "description": "Un comité stratégique composé de leaders académiques et institutionnels pour guider notre feuille de route.",
+      "members": {
+        "sophieMartin": {
+          "name": "Sophie Martin",
+          "role": "Présidente du board",
+          "bio": "Entrepreneure en santé numérique, elle garantit la vision et la gouvernance de MIRACL.ai."
+        },
+        "drissBenali": {
+          "name": "Dr Driss Benali",
+          "role": "Représentant AP-HP",
+          "bio": "Responsable innovation au sein de l'AP-HP, il facilite l'orchestration avec les centres hospitaliers partenaires."
+        },
+        "heleneGomez": {
+          "name": "Hélène Gomez",
+          "role": "Experte IA & Réglementaire",
+          "bio": "Spécialiste des dispositifs médicaux logiciels, elle sécurise la conformité et la stratégie de valorisation."
+        }
+      }
+    },
+    "partnersInstructions": "Cliquez sur un centre pour découvrir sa page dédiée."
+  },
+  "research": {
+    "strapline": "L'infrastructure au service de la recherche en imagerie cardiovasculaire.",
+    "headline2": "Propulsé par la science",
+    "headline3": "guidé par les données",
+    "description": "MIRACL.ai réunit cardiologues, radiologues, ingénieurs et data scientists pour faire avancer la recherche cardiovasculaire. Nous fournissons des services d'imagerie centralisés, des solutions IA sur‑mesure et un support scientifique pour accélérer des études à fort impact.",
+    "cards": {
+      "card1": {
+        "title": "Analyse centralisée multimodale",
+        "description": "Relecture experte et standardisée de toutes les modalités d’imagerie cardiovasculaire (IRM, scanner, échographie, ECG, angiographie). Robustesse et fiabilité garanties pour vos essais cliniques et publications.",
+        "imageAltPrimary": "Scanner cardiaque rouge stylisé"
+      },
+      "card2": {
+        "title": "Accompagnement de vos projets",
+        "description": "De la conception à la collecte sécurisée des données, nous vous accompagnons dans toutes les étapes de vos études. Nos experts assurent méthodologie, contrôle qualité et conformité réglementaire.",
+        "imageAltPrimary": "Poignée de main rouge stylisée"
+      },
+      "card3": {
+        "title": "Données pour l’innovation en IA",
+        "description": "Accédez à des registres multimodaux annotés par des experts. Validez vos algorithmes et développez de nouveaux biomarqueurs grâce à des cohortes uniques multi-centres et multi-pathologies.",
+        "imageAltPrimary": "Cerveau rouge stylisé avec circuit imprimé"
+      }
+    },
+    "cta": "Découvrir nos services"
+  },
+  "footer": {
+    "title": "",
+    "description": "",
+    "contactTitle": "Contact",
+    "contactEmailLabel": "E-mail",
+    "contactPhoneLabel": "Téléphone",
+    "navigationTitle": "Navigation",
+    "links": {
+      "home": "Accueil",
+      "team": "Équipe",
+      "services": "Services",
+      "news": "Actualités"
+    },
+    "addressTitle": "Adresse",
+    "addressLine1": "Hôpital Lariboisière",
+    "addressLine2": "2 Rue Ambroise Paré, 75010 Paris",
+    "copyrightSuffix": "MIRACL.ai. Tous droits réservés."
+  },
+  "auth": {
+    "loginTitle": "Connexion",
+    "signupTitle": "Inscription",
+    "email": "E-mail",
+    "password": "Mot de passe",
+    "confirmPassword": "Confirmer le mot de passe",
+    "name": "Nom",
+    "loginButton": "Se connecter",
+    "signupButton": "S'inscrire",
+    "alreadyHaveAccount": "Vous avez déjà un compte ?",
+    "noAccount": "Vous n'avez pas de compte ?",
+    "switchToLogin": "Connectez-vous ici",
+    "switchToSignup": "Inscrivez-vous ici",
+    "invalidCredentials": "Identifiants invalides",
+    "nameRequired": "Le nom est requis pour l'inscription",
+    "authenticationFailed": "Échec de l'authentification",
+    "googleLoginFailed": "Échec de la connexion Google",
+    "loading": "Chargement...",
+    "orContinueWith": "Ou continuer avec",
+    "nameMinLength": "Le nom doit contenir au moins 2 caractères",
+    "invalidEmail": "Adresse e-mail invalide",
+    "passwordMinLength": "Le mot de passe doit contenir au moins 6 caractères",
+    "welcomeBack": "Bon retour",
+    "signInToAccount": "Connectez-vous à votre compte",
+    "emailPlaceholder": "Entrez votre email",
+    "passwordPlaceholder": "Entrez votre mot de passe",
+    "forgotPassword": "Mot de passe oublié ?",
+    "signIn": "Se connecter",
+    "demoCredentials": "Identifiants de démo",
+    "userCredentials": "Utilisateur",
+    "adminCredentials": "Administrateur",
+    "signUp": "S'inscrire",
+    "createAccount": "Créer un compte",
+    "signUpToStart": "Inscrivez-vous pour commencer",
+    "namePlaceholder": "Entrez votre nom",
+    "signupFailed": "Échec de l'inscription",
+    "continueWithGoogle": "Continuer avec Google",
+    "orDivider": "OU",
+    "googleSignInError": "Échec de la connexion Google"
+  },
+  "profile": {
+    "title": "Profil",
+    "welcome": "Bienvenue sur votre profil"
+  },
+  "metadata": {
+    "title": "FeedbackApp",
+    "description": "Application de feedback utilisateur"
+  }
 }

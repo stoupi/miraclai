@@ -14,7 +14,7 @@ type PartnersMarqueeProps = {
 
 const baseTrackClass = 'flex w-max flex-nowrap items-center gap-12 pr-12 animate-[marquee_20s_linear_infinite]';
 const baseItemClass =
-  'relative flex h-10 shrink-0 items-center justify-center overflow-visible cursor-pointer opacity-80 grayscale transition hover:opacity-100 hover:grayscale-0';
+  'relative flex h-10 shrink-0 items-center justify-center overflow-visible cursor-pointer opacity-80 grayscale transition-transform duration-300 ease-out hover:scale-105 hover:opacity-100 hover:grayscale-0';
 
 export function PartnersMarquee({
   logos,
@@ -43,7 +43,9 @@ export function PartnersMarquee({
           const isDuplicate = index >= logos.length;
           const scale = logo.scale ?? 1;
           const wrapperStyle: CSSProperties | undefined =
-            scale === 1 ? undefined : { transform: `scale(${scale})`, transformOrigin: 'center' };
+            scale === 1
+              ? undefined
+              : { transform: `scale(${scale})`, transformOrigin: 'center' };
           const imageStyle: CSSProperties = { height: '100%', width: 'auto' };
 
           return (

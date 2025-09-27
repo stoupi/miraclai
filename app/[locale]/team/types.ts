@@ -11,6 +11,7 @@ export type HeroContent = {
   subtitle: string;
   locale: string;
   partnersTitle: string;
+  partnersInstructions: string;
   actions: HeroAction[];
 };
 

@@ -26,9 +26,12 @@ export async function PartnersSection({ locale }: { locale: string }) {
   return (
     <section id="partners-section" className="relative w-full bg-white py-32">
       <div className="container mx-auto px-4">
-        <h2 className="mb-12 text-center text-2xl font-bold text-black sm:text-3xl md:mb-16 md:text-4xl">
+        <h2 className="mb-6 text-center text-2xl font-bold text-black sm:text-3xl md:text-4xl">
           {title}
         </h2>
+        <p className="mb-10 text-center text-sm text-[#061024]/70 sm:text-base md:mb-14">
+          {t('partnersInstructions')}
+        </p>
         <PartnersMarquee
           logos={logos}
           className="py-4 md:py-6"

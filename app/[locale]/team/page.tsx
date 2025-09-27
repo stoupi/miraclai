@@ -53,6 +53,7 @@ export default async function TeamPage({ params }: Params) {
     subtitle: t('hero.subtitle'),
     locale,
     partnersTitle: t('partnersTitle'),
+    partnersInstructions: t('partnersInstructions'),
     actions: [
       { href: '/team#missions', label: t('hero.actions.missions') },
       { href: '/team#team', label: t('hero.actions.team') },
