@@ -68,14 +68,14 @@ export function Navbar() {
 
   const palette: PaletteState = heroVisible && !partnersVisible ? 'light' : 'dark';
 
-  const navLinkClasses = `inline-block font-medium transition-colors transform-gpu transition-transform duration-150 hover:scale-105 ${
+  const navLinkClasses = `inline-block font-medium uppercase transition-colors transform-gpu transition-transform duration-150 hover:scale-105 ${
     palette === 'light' ? 'text-white/70 hover:text-white' : 'text-[#061024] hover:text-[#05112b]'
   }`;
 
   const contactButtonClasses =
     palette === 'light'
-      ? 'cursor-pointer rounded-full bg-[#F33349] px-6 py-2.5 text-base font-semibold text-white border-2 border-[#F33349] transition-colors hover:bg-white hover:text-[#F33349] hover:border-white'
-      : 'cursor-pointer rounded-full bg-white px-6 py-2.5 text-base font-semibold text-[#061024] border-2 border-white transition-colors hover:bg-[#061024] hover:text-white hover:border-[#061024]';
+      ? 'cursor-pointer rounded-full bg-[#F33349] px-6 py-2.5 text-base font-semibold uppercase text-white border-2 border-[#F33349] transition-colors hover:bg-white hover:text-[#F33349] hover:border-white'
+      : 'cursor-pointer rounded-full bg-white px-6 py-2.5 text-base font-semibold uppercase text-[#061024] border-2 border-white transition-colors hover:bg-[#061024] hover:text-white hover:border-[#061024]';
 
   const localeButtonActive = palette === 'light' ? 'bg-white text-[#061024]' : 'bg-[#061024] text-white';
   const localeButtonInactive =
@@ -122,14 +122,11 @@ export function Navbar() {
         </Link>
 
         <div className="hidden md:flex items-center gap-10 text-base">
-          <Link href="/services" className={navLinkClasses}>
-            {t('menuServices')}
-          </Link>
-          <Link href="/catalog" className={navLinkClasses}>
-            {t('menuCatalog')}
-          </Link>
           <Link href="/team" className={navLinkClasses}>
             {t('menuTeam')}
+          </Link>
+          <Link href="/services" className={navLinkClasses}>
+            {t('menuServices')}
           </Link>
           <Link href="/news" className={navLinkClasses}>
             {t('menuNews')}
