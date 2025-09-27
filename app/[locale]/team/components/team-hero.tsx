@@ -15,18 +15,20 @@ type TeamHeroProps = {
 
 export function TeamHero({ content, logos }: TeamHeroProps) {
   const highlightLabel = 'force collective';
+  const highlightGradient =
+    "bg-gradient-to-r from-[#7ED0DB] via-[#F23D4C] to-[#FF80AB]";
   const highlightSegments = content.title.split(highlightLabel);
   const highlightedTitle =
     highlightSegments.length === 1
       ? content.title
       : highlightSegments.map((segment, index) => (
-          <Fragment key={`${segment}-${index}`}>
-            {segment}
-            {index < highlightSegments.length - 1 ? (
-              <AuroraText>{highlightLabel}</AuroraText>
-            ) : null}
-          </Fragment>
-        ));
+        <Fragment key={`${segment}-${index}`}>
+          {segment}
+          {index < highlightSegments.length - 1 ? (
+            <AuroraText colors={highlightGradient}>{highlightLabel}</AuroraText>
+          ) : null}
+        </Fragment>
+      ));
 
   return (
     <section
