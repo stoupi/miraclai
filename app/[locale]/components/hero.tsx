@@ -21,7 +21,7 @@ const ecgPathD = ecgPathSegments
 const horizontalScale = 1440 / 1080;
 const verticalScale = 1.5;
 const ecgTransform = `translate(0, ${baselineY}) scale(${horizontalScale}, ${verticalScale}) translate(0, -${baselineY})`;
-const waveformOffsetY = 24;
+const waveformOffsetY = 12;
 
 type HeroProps = { locale: string };
 
@@ -40,7 +40,7 @@ export async function Hero({ locale }: HeroProps) {
 
       <svg
         aria-hidden
-        className="absolute left-0 right-0 top-24 md:top-28 -z-10 h-32 w-full opacity-20"
+        className="absolute left-0 right-0 top-16 md:top-20 -z-10 h-32 w-full opacity-20"
         viewBox="0 0 1440 200"
         preserveAspectRatio="none"
       >
