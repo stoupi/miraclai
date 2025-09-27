@@ -17,7 +17,7 @@ type CardImageConfig = {
 const cardMediaByKey: Record<CardKey, CardImageConfig[]> = {
   card1: [
     {
-      src: '/assets/ct.png',
+      src: '/assets/ct.svg',
       altKey: 'cards.card1.imageAltPrimary',
       width: 120,
       height: 120
@@ -75,7 +75,7 @@ export async function ResearchSection({ locale }: Props) {
                     alt={alt}
                     width={width}
                     height={height}
-                    className={`h-auto w-auto${src === '/assets/ct.png' ? ' translate-y-6' : ''}`}
+                    className={`h-auto w-auto${src === '/assets/ct.svg' ? ' translate-y-6' : ''}`}
                     priority={key === 'card1'}
                   />
                 ))}

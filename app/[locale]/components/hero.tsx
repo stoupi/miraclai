@@ -141,11 +141,16 @@ export async function Hero({ locale }: HeroProps) {
             <h1 className="mt-2 text-balance text-4xl font-bold leading-tight tracking-tight text-white sm:text-6xl">
               {t.rich('olvaHeadline', {
                 highlight: (chunks) => (
-                  <span className="relative inline-block pb-[0.125rem]">
+                  <span className="relative inline-block px-1 pb-1">
                     <span className="relative z-10">{chunks}</span>
                     <span
                       aria-hidden="true"
-                      className="pointer-events-none absolute inset-x-0 bottom-0 h-2 bg-[#F33349]"
+                      className="pointer-events-none absolute inset-x-[-0.2em] bottom-[0.08em] h-[0.55em] -z-10"
+                      style={{
+                        background:
+                          'linear-gradient(90deg, rgba(243, 51, 73, 0.55) 0%, rgba(243, 51, 73, 0.85) 50%, rgba(243, 51, 73, 0.55) 100%)',
+                        clipPath: 'polygon(0% 0%, 100% 0%, 94% 100%, 6% 100%)'
+                      }}
                     />
                   </span>
                 )
