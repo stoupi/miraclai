@@ -44,7 +44,7 @@
     "carnotLogoAlt": "Carnot AP-HP logo",
     "partnersTitle": "MIRACL.ai is founded by <highlight>7 French centers</highlight> of excellence",
     "partnersCtaTeam": "Meet our team",
-    "partnersInstructions": "Click a center to explore its dedicated page."
+    "partnersInstructions": "Click a center to meet its teams and discover their projects at MIRACL.ai."
   },
   "news": {
     "sectionTitle": "Our <highlight>news</highlight>",
@@ -100,7 +100,7 @@
       }
     },
     "partnersTitle": "Discover our centers",
-    "partnersInstructions": "Click a center to explore its dedicated page.",
+    "partnersInstructions": "Click a center to meet its teams and discover their projects at MIRACL.ai.",
     "missions": {
       "title": "Our missions",
       "description": "We build an open ecosystem where clinical research and industrial innovation strengthen each other.",

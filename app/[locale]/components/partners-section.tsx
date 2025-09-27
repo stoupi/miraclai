@@ -29,7 +29,7 @@ export async function PartnersSection({ locale }: { locale: string }) {
         <h2 className="mb-6 text-center text-2xl font-bold text-black sm:text-3xl md:text-4xl">
           {title}
         </h2>
-        <p className="mb-10 text-center text-sm text-[#061024]/70 sm:text-base md:mb-14">
+        <p className="mb-10 text-center text-base font-semibold text-[#061024]/70 sm:text-lg md:mb-14">
           {t('partnersInstructions')}
         </p>
         <PartnersMarquee

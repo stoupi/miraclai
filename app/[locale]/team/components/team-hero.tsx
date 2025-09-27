@@ -1,6 +1,9 @@
+import { Fragment } from 'react';
+
 import { Link } from '@/app/i18n/navigation';
 import { CtaButton } from '@/components/ui/cta-button';
 import { PartnersMarquee } from '@/components/ui/partners-marquee';
+import { AuroraText } from '@/registry/magicui/aurora-text';
 import type { PartnerLogo } from '@/types/partners';
 
 import type { HeroContent } from '../types';
@@ -11,6 +14,20 @@ type TeamHeroProps = {
 };
 
 export function TeamHero({ content, logos }: TeamHeroProps) {
+  const highlightLabel = 'force collective';
+  const highlightSegments = content.title.split(highlightLabel);
+  const highlightedTitle =
+    highlightSegments.length === 1
+      ? content.title
+      : highlightSegments.map((segment, index) => (
+          <Fragment key={`${segment}-${index}`}>
+            {segment}
+            {index < highlightSegments.length - 1 ? (
+              <AuroraText>{highlightLabel}</AuroraText>
+            ) : null}
+          </Fragment>
+        ));
+
   return (
     <section
       id="hero-section"
@@ -22,8 +39,8 @@ export function TeamHero({ content, logos }: TeamHeroProps) {
             {content.eyebrow}
           </span>
         ) : null}
-        <h1 className="max-w-4xl text-balance text-4xl font-bold leading-tight tracking-tight sm:text-5xl md:text-6xl">
-          {content.title}
+        <h1 className="max-w-4xl text-balance text-4xl font-bold leading-tight tracking-tighter md:text-5xl lg:text-7xl">
+          {highlightedTitle}
         </h1>
         {content.subtitle ? (
           <p className="max-w-3xl text-base text-[#061024]/80 sm:text-lg md:text-xl">

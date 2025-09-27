@@ -39,7 +39,7 @@
     "carnotLogoAlt": "Logo Carnot AP-HP",
     "partnersTitle": "MIRACL.ai est fondée par <highlight>7 centres français</highlight> experts",
     "partnersCtaTeam": "Découvrir notre équipe",
-    "partnersInstructions": "Cliquez sur un centre pour découvrir sa page dédiée."
+    "partnersInstructions": "Cliquez sur un centre et découvrez ses acteurs et ses projets au sein de MIRACL.ai."
   },
   "news": {
     "sectionTitle": "Notre <highlight>Actualité</highlight>",
@@ -163,7 +163,7 @@
         }
       }
     },
-    "partnersInstructions": "Cliquez sur un centre pour découvrir sa page dédiée."
+    "partnersInstructions": "Cliquez sur un centre et découvrez ses acteurs et ses projets au sein de MIRACL.ai."
   },
   "research": {
     "strapline": "L'infrastructure au service de la recherche en imagerie cardiovasculaire.",
