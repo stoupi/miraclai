@@ -33,7 +33,7 @@ export async function PartnersSection({ locale }: { locale: string }) {
           logos={logos}
           className="py-4 md:py-6"
           trackClassName="gap-16 pr-16"
-          itemClassName="h-14 w-auto opacity-80 grayscale transition hover:opacity-100 hover:grayscale-0 md:h-16 cursor-pointer"
+          itemClassName="h-14 cursor-pointer hover:opacity-100 hover:grayscale-0 md:h-16"
         />
       </div>
       <div className="mt-16 flex justify-center md:mt-20">

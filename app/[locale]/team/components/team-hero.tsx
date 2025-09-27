@@ -40,7 +40,7 @@ export function TeamHero({ content, logos }: TeamHeroProps) {
             logos={logos}
             className="py-2"
             trackClassName="gap-12 pr-12"
-            itemClassName="h-10 w-auto opacity-80 grayscale transition hover:opacity-100 hover:grayscale-0 md:h-12"
+            itemClassName="h-10 hover:opacity-100 hover:grayscale-0 md:h-12"
           />
         </div>
         <div className="flex flex-col gap-4 pt-4 sm:flex-row sm:gap-6">

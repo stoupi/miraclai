@@ -1,3 +1,6 @@
+import Image from 'next/image';
+import type { CSSProperties } from 'react';
+
 import type { PartnerLogo } from '@/types/partners';
 import { cn } from '@/lib/utils';
 
@@ -10,7 +13,8 @@ type PartnersMarqueeProps = {
 };
 
 const baseTrackClass = 'flex w-max flex-nowrap items-center gap-12 pr-12 animate-[marquee_20s_linear_infinite]';
-const baseItemClass = 'h-10 w-auto shrink-0 opacity-80 grayscale transition group-hover:opacity-100 group-hover:grayscale-0';
+const baseItemClass =
+  'relative flex h-10 shrink-0 items-center justify-center overflow-visible opacity-80 grayscale transition group-hover:opacity-100 group-hover:grayscale-0';
 
 export function PartnersMarquee({
   logos,
@@ -37,18 +41,30 @@ export function PartnersMarquee({
       >
         {sequence.map((logo, index) => {
           const isDuplicate = index >= logos.length;
+          const scale = logo.scale ?? 1;
+          const wrapperStyle: CSSProperties | undefined =
+            scale === 1 ? undefined : { transform: `scale(${scale})`, transformOrigin: 'center' };
+          const imageStyle: CSSProperties = { height: '100%', width: 'auto' };
 
           return (
-            <img
+            <div
               key={`${logo.src}-${index}`}
-              src={logo.src}
-              alt={isDuplicate ? '' : logo.alt}
-              aria-hidden={isDuplicate}
               className={cn(baseItemClass, itemClassName)}
-              draggable={false}
-              loading="lazy"
-              decoding="async"
-            />
+              style={wrapperStyle}
+            >
+              <Image
+                src={logo.src}
+                alt={isDuplicate ? '' : logo.alt}
+                aria-hidden={isDuplicate}
+                draggable={false}
+                loading="lazy"
+                width={160}
+                height={40}
+                sizes="(min-width: 768px) 160px, 120px"
+                className="h-full w-auto object-contain"
+                style={imageStyle}
+              />
+            </div>
           );
         })}
       </div>
