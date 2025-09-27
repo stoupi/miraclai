@@ -94,7 +94,7 @@
         "board": "Notre comité de pilotage"
       }
     },
-    "partnersTitle": "Découvrez nos centres",
+    "partnersTitle": "",
     "missions": {
       "title": "Nos missions",
       "description": "Nous bâtissons un écosystème ouvert où la recherche clinique et l'innovation industrielle se renforcent mutuellement.",
@@ -163,7 +163,7 @@
         }
       }
     },
-    "partnersInstructions": "Cliquez sur un centre et découvrez ses acteurs et ses projets au sein de MIRACL.ai."
+    "partnersInstructions": "MIRACL.ai réunit un consortium de centres hospitaliers où radiologues, cardiologues et ingénieurs conjuguent leurs expertises.\nCliquez sur un centre et découvrez ses acteurs et ses projets au sein de MIRACL.ai."
   },
   "research": {
     "strapline": "L'infrastructure au service de la recherche en imagerie cardiovasculaire.",

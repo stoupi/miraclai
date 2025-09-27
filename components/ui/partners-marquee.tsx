@@ -12,9 +12,9 @@ type PartnersMarqueeProps = {
   pauseOnHover?: boolean;
 };
 
-const baseTrackClass = 'flex w-max flex-nowrap items-center gap-12 pr-12 animate-[marquee_20s_linear_infinite]';
+const baseTrackClass = 'flex w-max flex-nowrap items-center gap-16 pr-16 animate-[marquee_20s_linear_infinite]';
 const baseItemClass =
-  'relative flex h-10 shrink-0 items-center justify-center overflow-visible cursor-pointer opacity-80 grayscale transition-transform duration-300 ease-out hover:scale-105 hover:opacity-100 hover:grayscale-0';
+  'relative flex h-14 shrink-0 items-center justify-center overflow-visible cursor-pointer opacity-80 grayscale transition-transform duration-300 ease-out hover:scale-105 hover:opacity-100 hover:grayscale-0';
 
 export function PartnersMarquee({
   logos,

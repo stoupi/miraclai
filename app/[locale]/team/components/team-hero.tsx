@@ -16,6 +16,12 @@ export function TeamHero({ content, logos }: TeamHeroProps) {
   const highlightGradient =
     'bg-gradient-to-r from-[#007AFF] via-[#F23D4C] to-[#FF80AB]';
   const highlightIndex = content.title.indexOf(highlightLabel);
+  const partnersInstructionLines = content.partnersInstructions
+    ? content.partnersInstructions
+        .split('\n')
+        .map((line) => line.trim())
+        .filter((line) => line.length > 0)
+    : [];
   const highlightedTitle =
     highlightIndex === -1
       ? content.title
@@ -82,14 +88,23 @@ export function TeamHero({ content, logos }: TeamHeroProps) {
               {content.partnersTitle}
             </div>
           ) : null}
-          {content.partnersInstructions ? (
-            <p className="text-sm text-[#061024]/70">{content.partnersInstructions}</p>
+          {partnersInstructionLines.length > 0 ? (
+            <p className="text-sm font-semibold leading-relaxed text-[#061024] sm:text-base md:text-lg">
+              {partnersInstructionLines.map((line, index) => (
+                <span
+                  key={`partners-instruction-${index}`}
+                  className={index > 0 ? 'block pt-2' : 'block'}
+                >
+                  {line}
+                </span>
+              ))}
+            </p>
           ) : null}
           <PartnersMarquee
             logos={logos}
             className="py-2"
             trackClassName="gap-12 pr-12"
-            itemClassName="h-10 hover:opacity-100 hover:grayscale-0 md:h-12"
+            itemClassName="h-12 hover:opacity-100 hover:grayscale-0 md:h-16"
           />
         </div>
         <div className="flex flex-col gap-4 pt-4 sm:flex-row sm:gap-6">
