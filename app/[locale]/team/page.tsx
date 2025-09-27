@@ -51,6 +51,7 @@ export default async function TeamPage({ params }: Params) {
     eyebrow: t('hero.eyebrow'),
     title: t('hero.title'),
     subtitle: t('hero.subtitle'),
+    introLead: t('hero.introLead'),
     locale,
     partnersTitle: t('partnersTitle'),
     partnersInstructions: t('partnersInstructions'),

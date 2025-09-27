@@ -9,6 +9,7 @@ export type HeroContent = {
   eyebrow: string;
   title: string;
   subtitle: string;
+  introLead: string;
   locale: string;
   partnersTitle: string;
   partnersInstructions: string;
