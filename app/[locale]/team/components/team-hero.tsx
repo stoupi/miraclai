@@ -1,5 +1,3 @@
-import { Fragment } from 'react';
-
 import { Link } from '@/app/i18n/navigation';
 import { CtaButton } from '@/components/ui/cta-button';
 import { PartnersMarquee } from '@/components/ui/partners-marquee';
@@ -16,19 +14,48 @@ type TeamHeroProps = {
 export function TeamHero({ content, logos }: TeamHeroProps) {
   const highlightLabel = 'force collective';
   const highlightGradient =
-    "bg-gradient-to-r from-[#7ED0DB] via-[#F23D4C] to-[#FF80AB]";
-  const highlightSegments = content.title.split(highlightLabel);
+    'bg-gradient-to-r from-[#007AFF] via-[#F23D4C] to-[#FF80AB]';
+  const highlightIndex = content.title.indexOf(highlightLabel);
   const highlightedTitle =
-    highlightSegments.length === 1
+    highlightIndex === -1
       ? content.title
-      : highlightSegments.map((segment, index) => (
-        <Fragment key={`${segment}-${index}`}>
-          {segment}
-          {index < highlightSegments.length - 1 ? (
-            <AuroraText colors={highlightGradient}>{highlightLabel}</AuroraText>
-          ) : null}
-        </Fragment>
-      ));
+      : (() => {
+          const beforeHighlight = content.title.slice(0, highlightIndex);
+          const afterHighlightStart = highlightIndex + highlightLabel.length;
+          const afterHighlight = content.title.slice(afterHighlightStart);
+          const lineBreakPhrase = ' au service';
+          const lineBreakIndex = afterHighlight.indexOf(lineBreakPhrase);
+
+          if (lineBreakIndex === -1) {
+            return (
+              <>
+                <span className="block">
+                  {beforeHighlight}
+                  <AuroraText colors={highlightGradient}>{highlightLabel}</AuroraText>
+                  {afterHighlight}
+                </span>
+              </>
+            );
+          }
+
+          const firstLineSuffix = afterHighlight.slice(0, lineBreakIndex + lineBreakPhrase.length);
+          const secondLineText = afterHighlight
+            .slice(lineBreakIndex + lineBreakPhrase.length)
+            .trimStart();
+
+          return (
+            <>
+              <span className="block">
+                {beforeHighlight}
+                <AuroraText colors={highlightGradient}>{highlightLabel}</AuroraText>
+                {firstLineSuffix}
+              </span>
+              {secondLineText.length > 0 ? (
+                <span className="block md:whitespace-nowrap">{secondLineText}</span>
+              ) : null}
+            </>
+          );
+        })();
 
   return (
     <section
