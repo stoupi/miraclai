@@ -138,25 +138,14 @@ export async function Hero({ locale }: HeroProps) {
                 );
               })()}
             </div>
-            <h1 className="mt-2 text-balance text-4xl font-bold leading-tight tracking-tight text-white sm:text-6xl">
+            <h1 className="mt-2 text-balance text-3xl font-bold leading-tight tracking-tight text-white sm:text-5xl">
               {t.rich('olvaHeadline', {
                 highlight: (chunks) => (
-                  <span className="relative inline-block px-1 pb-1">
-                    <span className="relative z-10">{chunks}</span>
-                    <span
-                      aria-hidden="true"
-                      className="pointer-events-none absolute inset-x-[-0.2em] bottom-[0.08em] h-[0.55em] -z-10"
-                      style={{
-                        background:
-                          'linear-gradient(90deg, rgba(243, 51, 73, 0.55) 0%, rgba(243, 51, 73, 0.85) 50%, rgba(243, 51, 73, 0.55) 100%)',
-                        clipPath: 'polygon(0% 0%, 100% 0%, 94% 100%, 6% 100%)'
-                      }}
-                    />
-                  </span>
+                  <span className="hero-highlight">{chunks}</span>
                 )
               })}
             </h1>
-            <p className="mt-4 max-w-3xl text-lg text-[#D0EEF3] sm:text-xl">
+            <p className="mt-4 max-w-3xl text-base text-[#D0EEF3] sm:text-lg">
               {t('olvaDescription')}
             </p>
             <div className="mt-8 flex flex-col gap-4 sm:mt-10 sm:flex-row">

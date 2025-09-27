@@ -74,8 +74,8 @@ export function Navbar() {
 
   const contactButtonClasses =
     palette === 'light'
-      ? 'cursor-pointer rounded-full bg-[#F33349] px-7 py-3 text-lg font-semibold text-white border-2 border-[#F33349] transition-colors hover:bg-white hover:text-[#F33349] hover:border-white'
-      : 'cursor-pointer rounded-full bg-white px-7 py-3 text-lg font-semibold text-[#061024] border-2 border-white transition-colors hover:bg-[#061024] hover:text-white hover:border-[#061024]';
+      ? 'cursor-pointer rounded-full bg-[#F33349] px-6 py-2.5 text-base font-semibold text-white border-2 border-[#F33349] transition-colors hover:bg-white hover:text-[#F33349] hover:border-white'
+      : 'cursor-pointer rounded-full bg-white px-6 py-2.5 text-base font-semibold text-[#061024] border-2 border-white transition-colors hover:bg-[#061024] hover:text-white hover:border-[#061024]';
 
   const localeButtonActive = palette === 'light' ? 'bg-white text-[#061024]' : 'bg-[#061024] text-white';
   const localeButtonInactive =
@@ -121,7 +121,7 @@ export function Navbar() {
           </div>
         </Link>
 
-        <div className="hidden md:flex items-center gap-12 text-xl">
+        <div className="hidden md:flex items-center gap-10 text-base">
           <Link href="/services" className={navLinkClasses}>
             {t('menuServices')}
           </Link>
@@ -140,7 +140,7 @@ export function Navbar() {
           <div className={`ml-6 flex items-center rounded-full border ${localeWrapperBorder} px-1.5 py-1`}>
             <button
               onClick={() => switchLocale('fr')}
-              className={`cursor-pointer px-4 py-1.5 text-base font-medium rounded-full ${
+              className={`cursor-pointer px-3 py-1 text-xs font-medium rounded-full ${
                 locale === 'fr' ? localeButtonActive : localeButtonInactive
               }`}
             >
@@ -148,7 +148,7 @@ export function Navbar() {
             </button>
             <button
               onClick={() => switchLocale('en')}
-              className={`cursor-pointer px-4 py-1.5 text-base font-medium rounded-full ${
+              className={`cursor-pointer px-3 py-1 text-xs font-medium rounded-full ${
                 locale === 'en' ? localeButtonActive : localeButtonInactive
               }`}
             >

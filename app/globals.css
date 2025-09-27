@@ -131,7 +131,7 @@
     }
 
     25% {
-      transform: scale(1.01);
+      transform: scale(1.005);
     }
 
     50% {
@@ -148,9 +148,23 @@
   }
 
   .heart-hover:hover {
-    transform: scale(1.01);
-    filter: drop-shadow(0 0 20px rgba(243, 51, 73, 0.6));
-    animation: heartbeat 1s ease-in-out infinite;
+    animation: heartbeat 1.2s ease-in-out infinite;
+    will-change: transform, filter;
+  }
+
+  @keyframes heartbeat {
+
+    0%,
+    100% {
+      transform: scale(1);
+      filter: drop-shadow(0 0 8px rgba(243, 51, 73, 0.4));
+    }
+
+    50% {
+      transform: scale(1.001);
+      /* quasi imperceptible */
+      filter: drop-shadow(0 0 16px rgba(243, 51, 73, 0.7));
+    }
   }
 
   .animate-heartbeat {
@@ -209,5 +223,26 @@
   .service-card:focus-within .highlight-diagonal,
   .highlight-diagonal:hover {
     background-size: 100% 70%;
+  }
+
+  .hero-highlight {
+    position: relative;
+    display: inline-block;
+    padding-inline: 0.15em;
+    padding-bottom: 0.1em;
+    z-index: 0;
+  }
+
+  .hero-highlight::before {
+    content: "";
+    position: absolute;
+    left: -0.25em;
+    right: -0.25em;
+    bottom: 0.05em;
+    height: 0.55em;
+    background: linear-gradient(90deg, rgba(243, 51, 73, 0.55) 0%, rgba(243, 51, 73, 0.85) 50%, rgba(243, 51, 73, 0.55) 100%);
+    transform: skewX(-12deg);
+    border-radius: 0.2em;
+    z-index: -1;
   }
 }
