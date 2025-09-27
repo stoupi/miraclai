@@ -83,16 +83,17 @@
 	},
 	"teamPage": {
 		"hero": {
-			"eyebrow": "Qui sommes-nous ?",
+			"eyebrow": "",
 			"title": "La force collective au service de l'innovation cardiovasculaire",
-			"subtitle": "MIRACL.ai fédère cardiologues, radiologues, ingénieurs et data scientists pour accélérer l'imagerie cardiovasculaire.",
+			"subtitle": "",
 			"backgroundAlt": "L'équipe MIRACL réunie lors d'un événement",
 			"actions": {
 				"missions": "Nos missions",
-				"team": "Notre équipe",
-				"board": "Notre board"
+				"team": "Notre comité exécutif",
+				"board": "Notre comité de pilotage"
 			}
 		},
+		"partnersTitle": "Découvrez nos centres",
 		"missions": {
 			"title": "Nos missions",
 			"description": "Nous bâtissons un écosystème ouvert où la recherche clinique et l'innovation industrielle se renforcent mutuellement.",
@@ -119,8 +120,8 @@
 				}
 			}
 		},
-		"team": {
-			"title": "Notre équipe",
+			"team": {
+				"title": "Notre comité exécutif",
 			"description": "Une équipe pluridisciplinaire qui combine expertise médicale, data science et pilotage de projets complexes.",
 			"members": {
 				"patrickHenry": {

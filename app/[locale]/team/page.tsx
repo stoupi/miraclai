@@ -12,6 +12,7 @@ import type {
   MissionItemWithIcon,
   MissionKey
 } from './types';
+import { getPartnerLogos } from '@/lib/services/partners';
 
 type Params = {
   params: Promise<{ locale: string }>;
@@ -44,13 +45,14 @@ function buildInitials(name: string): string {
 export default async function TeamPage({ params }: Params) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'teamPage' });
+  const partnerLogos = await getPartnerLogos();
 
   const hero: HeroContent = {
     eyebrow: t('hero.eyebrow'),
     title: t('hero.title'),
     subtitle: t('hero.subtitle'),
-    backgroundAlt: t('hero.backgroundAlt'),
-    backgroundImageSrc: '/assets/equipe.jpeg',
+    locale,
+    partnersTitle: t('partnersTitle'),
     actions: [
       { href: '/team#missions', label: t('hero.actions.missions') },
       { href: '/team#team', label: t('hero.actions.team') },
@@ -96,7 +98,7 @@ export default async function TeamPage({ params }: Params) {
 
   return (
     <>
-      <TeamHero content={hero} />
+      <TeamHero content={hero} logos={partnerLogos} />
       <TeamMissions
         id="missions"
         title={t('missions.title')}

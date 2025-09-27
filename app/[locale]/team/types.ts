@@ -9,8 +9,8 @@ export type HeroContent = {
   eyebrow: string;
   title: string;
   subtitle: string;
-  backgroundAlt: string;
-  backgroundImageSrc: string;
+  locale: string;
+  partnersTitle: string;
   actions: HeroAction[];
 };
 

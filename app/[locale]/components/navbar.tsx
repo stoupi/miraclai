@@ -1,7 +1,7 @@
 'use client';
 
 import { Link, useRouter, usePathname } from '@/app/i18n/navigation';
-import { Button } from '@/components/ui/button';
+import { CtaButton } from '@/components/ui/cta-button';
 import { useMotionValueEvent, useScroll } from 'framer-motion';
 import Image from 'next/image';
 import { useLocale, useTranslations } from 'next-intl';
@@ -72,11 +72,6 @@ export function Navbar() {
     palette === 'light' ? 'text-white/70 hover:text-white' : 'text-[#061024] hover:text-[#05112b]'
   }`;
 
-  const contactButtonClasses =
-    palette === 'light'
-      ? 'cursor-pointer rounded-full bg-[#F33349] px-6 py-2.5 text-base font-semibold uppercase text-white border-2 border-[#F33349] transition-colors hover:bg-white hover:text-[#F33349] hover:border-white'
-      : 'cursor-pointer rounded-full bg-white px-6 py-2.5 text-base font-semibold uppercase text-[#061024] border-2 border-white transition-colors hover:bg-[#061024] hover:text-white hover:border-[#061024]';
-
   const localeButtonActive = palette === 'light' ? 'bg-white text-[#061024]' : 'bg-[#061024] text-white';
   const localeButtonInactive =
     palette === 'light'
@@ -131,9 +126,9 @@ export function Navbar() {
           <Link href="/news" className={navLinkClasses}>
             {t('menuNews')}
           </Link>
-          <Link href="/contact" className="ml-2">
-            <Button className={contactButtonClasses}>{t('ctaPrimary')}</Button>
-          </Link>
+          <CtaButton asChild className="ml-2">
+            <Link href="/contact">{t('ctaPrimary')}</Link>
+          </CtaButton>
           <div className={`ml-6 flex items-center rounded-full border ${localeWrapperBorder} px-1.5 py-1`}>
             <button
               onClick={() => switchLocale('fr')}

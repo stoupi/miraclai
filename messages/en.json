@@ -90,7 +90,7 @@
     "hero": {
       "eyebrow": "About us",
       "title": "Collective excellence for cardiovascular innovation",
-      "subtitle": "MIRACL.ai unites cardiologists, radiologists, engineers and data scientists to accelerate cardiovascular imaging.",
+      "subtitle": "",
       "backgroundAlt": "The MIRACL team gathered during an event",
       "actions": {
         "missions": "Our missions",
@@ -98,6 +98,7 @@
         "board": "Our board"
       }
     },
+    "partnersTitle": "Discover our centers",
     "missions": {
       "title": "Our missions",
       "description": "We build an open ecosystem where clinical research and industrial innovation strengthen each other.",
