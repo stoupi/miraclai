@@ -104,27 +104,27 @@
     "partnersInstructions": "Click a center to meet its teams and discover their projects at MIRACL.ai.",
     "missions": {
       "title": "Our missions",
-      "description": "We build an open ecosystem where clinical research and industrial innovation strengthen each other.",
+      "description": "",
       "items": {
-        "ecosystem": {
-          "title": "Unite the ecosystem",
-          "description": "Bring innovation stakeholders together by creating bridges around shared priorities.",
-          "iconAlt": "Collaboration icon"
+        "platform": {
+          "title": "",
+          "description": "Provide a secure platform to manage and analyze multimodal cardiovascular imaging.",
+          "iconAlt": "Shield check icon"
         },
-        "support": {
-          "title": "Support projects",
-          "description": "Guide every stakeholder from study design to execution and scale-up.",
-          "iconAlt": "Rocket icon"
+        "analysis": {
+          "title": "",
+          "description": "Ensure reliable centralized analysis to strengthen the scientific value of studies.",
+          "iconAlt": "Bar chart icon"
         },
-        "collaborate": {
-          "title": "Boost collaboration",
-          "description": "Encourage closer cooperation between players across the Greater Paris area.",
-          "iconAlt": "Handshake icon"
+        "projects": {
+          "title": "",
+          "description": "Simplify and accelerate complex multicenter research projects.",
+          "iconAlt": "Workflow icon"
         },
-        "inclusion": {
-          "title": "Champion inclusion",
-          "description": "Promote inclusion, diversity and environmentally responsible tech.",
-          "iconAlt": "Leaf icon"
+        "community": {
+          "title": "",
+          "description": "Bring radiologists, cardiologists, engineers, and data scientists together to innovate in cardiovascular imaging.",
+          "iconAlt": "Collaborative team icon"
         }
       }
     },

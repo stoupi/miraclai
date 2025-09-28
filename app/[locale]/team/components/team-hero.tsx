@@ -1,8 +1,8 @@
 import { Link } from '@/app/i18n/navigation';
 import { AuroraText } from '@/registry/magicui/aurora-text';
 import { PartnersMarquee } from '@/components/ui/partners-marquee';
+import { CtaButton } from '@/components/ui/cta-button';
 import type { PartnerLogo } from '@/types/partners';
-import { Button } from '@/components/ui/button';
 
 import type { HeroContent } from '../types';
 
@@ -45,13 +45,15 @@ export function TeamHero({ content, logos }: TeamHeroProps) {
 
           return (
             <>
-              <span className="block">
+              <span className="block leading-tight">
                 {beforeHighlight}
                 <AuroraText colors={highlightGradient}>{highlightLabel}</AuroraText>
                 {firstLineSuffix}
               </span>
               {secondLineText.length > 0 ? (
-                <span className="block md:whitespace-nowrap">{secondLineText}</span>
+                <span className="block -mt-2 leading-tight md:-mt-3 lg:-mt-4 md:whitespace-nowrap">
+                  {secondLineText}
+                </span>
               ) : null}
             </>
           );
@@ -77,17 +79,19 @@ export function TeamHero({ content, logos }: TeamHeroProps) {
               {content.introLead}
             </p>
           ) : null}
-          <p className="mt-2 text-base text-gray-600">
-            {content.partnersInstructions}
-          </p>
           {logos.length > 0 ? (
             <div className="mt-10 w-full">
+              {content.partnersInstructions ? (
+                <p className="text-base text-gray-600">
+                  {content.partnersInstructions}
+                </p>
+              ) : null}
               {content.partnersTitle ? (
-                <div className="text-sm font-semibold uppercase tracking-[0.3em] text-[#061024]/60">
+                <div className="mt-6 text-sm font-semibold uppercase tracking-[0.3em] text-[#061024]/60">
                   {content.partnersTitle}
                 </div>
               ) : null}
-              <div className="relative mt-8 w-screen max-w-none self-center left-1/2 -translate-x-1/2">
+              <div className="relative mt-6 w-screen max-w-none self-center left-1/2 -translate-x-1/2">
                 <PartnersMarquee
                   logos={logos}
                   className="mx-auto w-full px-6 md:px-10 lg:px-16"
@@ -98,20 +102,10 @@ export function TeamHero({ content, logos }: TeamHeroProps) {
             </div>
           ) : null}
           <div className="mt-12 flex flex-wrap justify-center gap-6">
-            {content.actions.map((action, index) => (
-              <Button
-                key={action.href}
-                asChild
-                size="lg"
-                variant={index === 0 ? 'default' : 'outline'}
-                className={
-                  index === 0
-                    ? 'rounded-full border-2 border-[#F33349] bg-[#F33349] px-7 py-2.5 text-base font-semibold text-white transition-colors hover:bg-white hover:text-[#F33349] hover:border-[#F33349] md:text-lg'
-                    : 'rounded-full border-2 border-[#F33349] px-7 py-2.5 text-base font-semibold text-[#F33349] transition-colors hover:bg-[#F33349] hover:text-white md:text-lg'
-                }
-              >
+            {content.actions.map((action) => (
+              <CtaButton key={action.href} asChild size="lg">
                 <Link href={action.href}>{action.label}</Link>
-              </Button>
+              </CtaButton>
             ))}
           </div>
         </div>

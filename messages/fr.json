@@ -98,27 +98,27 @@
     "partnersTitle": "",
     "missions": {
       "title": "Nos missions",
-      "description": "Nous bâtissons un écosystème ouvert où la recherche clinique et l'innovation industrielle se renforcent mutuellement.",
+      "description": "",
       "items": {
-        "ecosystem": {
-          "title": "Fédérer l'écosystème",
-          "description": "Fédérer les acteurs de l'innovation en créant des passerelles autour de sujets communs.",
-          "iconAlt": "Icône de collaboration"
+        "platform": {
+          "title": "",
+          "description": "Fournir une plateforme sécurisée pour gérer et analyser l’imagerie cardiovasculaire multimodale.",
+          "iconAlt": "Icône de bouclier validé"
         },
-        "support": {
-          "title": "Accompagner les projets",
-          "description": "Accompagner le développement de l'ensemble des parties prenantes, de la conception à la mise en œuvre.",
-          "iconAlt": "Icône de fusée"
+        "analysis": {
+          "title": "",
+          "description": "Garantir une analyse centralisée fiable pour renforcer la valeur scientifique des études.",
+          "iconAlt": "Icône de diagramme"
         },
-        "collaborate": {
-          "title": "Encourager la collaboration",
-          "description": "Encourager une collaboration accrue entre les acteurs du territoire francilien.",
-          "iconAlt": "Icône de poignée de main"
+        "projects": {
+          "title": "",
+          "description": "Simplifier et accélérer les projets de recherche multicentriques complexes.",
+          "iconAlt": "Icône de flux opérationnel"
         },
-        "inclusion": {
-          "title": "Promouvoir l'inclusion",
-          "description": "Promouvoir l'inclusion, la diversité et la tech éco-responsable.",
-          "iconAlt": "Icône de feuille"
+        "community": {
+          "title": "",
+          "description": "Fédérer radiologues, cardiologues, ingénieurs et data scientists pour innover en imagerie cardiovasculaire.",
+          "iconAlt": "Icône de collectif"
         }
       }
     },

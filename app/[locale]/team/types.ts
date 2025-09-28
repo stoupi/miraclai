@@ -16,7 +16,7 @@ export type HeroContent = {
   actions: HeroAction[];
 };
 
-export type MissionKey = 'ecosystem' | 'support' | 'collaborate' | 'inclusion';
+export type MissionKey = 'platform' | 'analysis' | 'projects' | 'community';
 
 export type MissionItem = {
   key: MissionKey;

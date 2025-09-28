@@ -1,5 +1,5 @@
 import { getTranslations } from 'next-intl/server';
-import { Handshake, Leaf, Rocket, Users } from 'lucide-react';
+import { BarChart3, ShieldCheck, UsersRound, Workflow } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 
 import { TeamHero } from './components/team-hero';
@@ -18,13 +18,13 @@ type Params = {
   params: Promise<{ locale: string }>;
 };
 
-const missionKeys: MissionKey[] = ['ecosystem', 'support', 'collaborate', 'inclusion'];
+const missionKeys: MissionKey[] = ['platform', 'analysis', 'projects', 'community'];
 
 const missionIconMap: Record<MissionKey, LucideIcon> = {
-  ecosystem: Users,
-  support: Rocket,
-  collaborate: Handshake,
-  inclusion: Leaf
+  platform: ShieldCheck,
+  analysis: BarChart3,
+  projects: Workflow,
+  community: UsersRound
 };
 
 const teamMemberKeys = ['patrickHenry', 'claireDubois', 'alexandreMoreau'] as const;
