@@ -67,10 +67,22 @@ export function Navbar() {
   }, [scrollY]);
 
   const palette: PaletteState = heroVisible && !partnersVisible ? 'light' : 'dark';
+  const normalizedPath = pathname.replace(/^\/(en|fr)(?=\/|$)/, '') || '/';
 
-  const navLinkClasses = `inline-block font-medium uppercase transition-colors transform-gpu transition-transform duration-150 hover:scale-105 ${
-    palette === 'light' ? 'text-white/70 hover:text-white' : 'text-[#061024] hover:text-[#05112b]'
-  }`;
+  const getNavLinkClasses = (href: string) => {
+    const baseClasses = `relative inline-block font-medium uppercase transform-gpu transition-colors transition-transform duration-150 hover:scale-105 ${
+      palette === 'light' ? 'text-white/70 hover:text-white' : 'text-[#061024] hover:text-[#05112b]'
+    }`;
+    const isActive = normalizedPath === href || normalizedPath.startsWith(`${href}/`);
+
+    if (!isActive) return baseClasses;
+
+    const activeUnderlineBase = "after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-full after:rounded-full after:content-['']";
+    const activeUnderlineColor = palette === 'light' ? 'after:bg-white' : 'after:bg-[#061024]';
+    const activeTextColor = palette === 'light' ? 'text-white' : 'text-[#05112b]';
+
+    return `${baseClasses} ${activeTextColor} ${activeUnderlineBase} ${activeUnderlineColor}`;
+  };
 
   const localeButtonActive = palette === 'light' ? 'bg-white text-[#061024]' : 'bg-[#061024] text-white';
   const localeButtonInactive =
@@ -117,17 +129,19 @@ export function Navbar() {
         </Link>
 
         <div className="hidden md:flex items-center gap-10 text-base">
-          <Link href="/team" className={navLinkClasses}>
+          <Link href="/team" className={getNavLinkClasses('/team')}>
             {t('menuTeam')}
           </Link>
-          <Link href="/services" className={navLinkClasses}>
+          <Link href="/services" className={getNavLinkClasses('/services')}>
             {t('menuServices')}
           </Link>
-          <Link href="/news" className={navLinkClasses}>
+          <Link href="/news" className={getNavLinkClasses('/news')}>
             {t('menuNews')}
           </Link>
-          <CtaButton asChild className="ml-2">
-            <Link href="/contact">{t('ctaPrimary')}</Link>
+          <CtaButton asChild className="ml-2 text-xs md:text-sm h-9 md:h-10">
+            <Link href="/contact" className="uppercase">
+              {t('ctaPrimary')}
+            </Link>
           </CtaButton>
           <div className={`ml-6 flex items-center rounded-full border ${localeWrapperBorder} px-1.5 py-1`}>
             <button

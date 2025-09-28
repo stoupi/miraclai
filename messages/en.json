@@ -98,10 +98,10 @@
         "team": "Our team",
         "board": "Our board"
       },
-      "introLead": "MIRACL.ai brings together a consortium of hospitals where radiologists, cardiologists, and engineers combine their expertise."
+      "introLead": ""
     },
     "partnersTitle": "",
-    "partnersInstructions": "MIRACL.ai brings together a consortium of hospital centers where radiologists, cardiologists, and engineers combine their expertise.\nClick a center to meet its teams and discover their projects at MIRACL.ai.",
+    "partnersInstructions": "Click a center to meet its teams and discover their projects at MIRACL.ai.",
     "missions": {
       "title": "Our missions",
       "description": "We build an open ecosystem where clinical research and industrial innovation strengthen each other.",

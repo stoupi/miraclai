@@ -93,7 +93,7 @@
         "team": "Notre comité exécutif",
         "board": "Notre comité de pilotage"
       },
-      "introLead": "MIRACL.ai réunit un consortium de centres hospitaliers où radiologues, cardiologues et ingénieurs conjuguent leurs expertises."
+      "introLead": ""
     },
     "partnersTitle": "",
     "missions": {
@@ -164,7 +164,7 @@
         }
       }
     },
-    "partnersInstructions": "MIRACL.ai réunit un consortium de centres hospitaliers où radiologues, cardiologues et ingénieurs conjuguent leurs expertises.\nCliquez sur un centre et découvrez ses acteurs et ses projets au sein de MIRACL.ai."
+    "partnersInstructions": "Cliquez sur un centre et découvrez ses acteurs et ses projets au sein de MIRACL.ai."
   },
   "research": {
     "strapline": "L'infrastructure au service de la recherche en imagerie cardiovasculaire.",

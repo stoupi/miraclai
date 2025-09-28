@@ -1,8 +1,8 @@
-import Image from 'next/image';
 import { Link } from '@/app/i18n/navigation';
-import { Button } from '@/components/ui/button';
 import { AuroraText } from '@/registry/magicui/aurora-text';
+import { PartnersMarquee } from '@/components/ui/partners-marquee';
 import type { PartnerLogo } from '@/types/partners';
+import { Button } from '@/components/ui/button';
 
 import type { HeroContent } from '../types';
 
@@ -72,47 +72,31 @@ export function TeamHero({ content, logos }: TeamHeroProps) {
           <h1 className="mt-4 text-balance text-4xl font-bold leading-tight tracking-tighter md:text-5xl lg:text-7xl">
             {highlightedTitle}
           </h1>
-          <p className="mt-6 text-lg font-medium text-gray-800">
-            {content.introLead}
-          </p>
+          {content.introLead ? (
+            <p className="mt-6 text-lg font-medium text-gray-800">
+              {content.introLead}
+            </p>
+          ) : null}
           <p className="mt-2 text-base text-gray-600">
             {content.partnersInstructions}
           </p>
-          {content.partnersTitle ? (
-            <div className="mt-10 text-sm font-semibold uppercase tracking-[0.3em] text-[#061024]/60">
-              {content.partnersTitle}
+          {logos.length > 0 ? (
+            <div className="mt-10 w-full">
+              {content.partnersTitle ? (
+                <div className="text-sm font-semibold uppercase tracking-[0.3em] text-[#061024]/60">
+                  {content.partnersTitle}
+                </div>
+              ) : null}
+              <div className="relative mt-8 w-screen max-w-none self-center left-1/2 -translate-x-1/2">
+                <PartnersMarquee
+                  logos={logos}
+                  className="mx-auto w-full px-6 md:px-10 lg:px-16"
+                  trackClassName="gap-14 pr-14"
+                  itemClassName="h-12"
+                />
+              </div>
             </div>
           ) : null}
-          <div className="mt-10 flex flex-wrap justify-center gap-10 grayscale transition hover:grayscale-0">
-            {logos.map((logo) => {
-              const scale = logo.scale ?? 1;
-
-              return (
-                <div
-                  key={logo.src}
-                  className="flex h-16 w-40 items-center justify-center transition duration-300 ease-out hover:scale-105"
-                >
-                  <div
-                    className="flex h-full w-full items-center justify-center"
-                    style={
-                      scale === 1
-                        ? undefined
-                        : { transform: `scale(${scale})`, transformOrigin: 'center' }
-                    }
-                  >
-                    <Image
-                      src={logo.src}
-                      alt={logo.alt}
-                      width={160}
-                      height={64}
-                      className="h-full w-auto object-contain"
-                      loading="lazy"
-                    />
-                  </div>
-                </div>
-              );
-            })}
-          </div>
           <div className="mt-12 flex flex-wrap justify-center gap-6">
             {content.actions.map((action, index) => (
               <Button
