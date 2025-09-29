@@ -352,20 +352,13 @@
       "title": "À propos de l'Hôpital Lariboisière",
       "description": "L'Hôpital Lariboisière, établissement emblématique de l'AP-HP, associe expertise universitaire et innovation médicale pour répondre aux besoins de santé du nord de Paris. Depuis sa création, il s'est imposé comme un centre hospitalier de référence en cardiologie et en imagerie avancée.\n\nSes équipes pluridisciplinaires prennent en charge plus de 100 000 patients chaque année et réalisent des parcours de soins complets, de la prévention aux interventions les plus complexes. Les plateaux techniques de dernière génération et les partenariats de recherche permettent d'offrir des diagnostics précis et rapides.\n\nEn collaboration avec MIRACL.ai, l'hôpital accélère le développement de solutions numériques pour améliorer la qualité des soins et la coordination entre les équipes médicales et de recherche."
     },
-    "location": {
-      "title": "Localisation et plan",
-      "contactTitle": "Coordonnées principales",
-      "addressLabel": "Adresse",
-      "address": "2 Rue Ambroise Paré, 75010 Paris, France",
-      "phoneLabel": "Téléphone",
-      "phoneNumber": "01 49 95 65 65",
-      "emergencyLabel": "Urgences",
-      "emergencyAvailability": "Ouvert 24h/24, 7j/7",
-      "mapTitle": "Plan interactif",
-      "mapDescription": "Préparez votre venue et découvrez les accès au site.",
-      "mapHint": "2 Rue Ambroise Paré, 75010 Paris",
-      "mapCtaLabel": "Itinéraire",
-      "mapCtaAria": "Ouvrir l'itinéraire vers l'Hôpital Lariboisière"
+    "gallery": {
+      "items": {
+        "facade": "Vue de la façade vitrée de l'Hôpital Lariboisière",
+        "team": "Réunion pluridisciplinaire au sein de l'hôpital",
+        "innovation": "Plateau technique de pointe pour l'imagerie médicale",
+        "care": "Coordination d'équipe autour du parcours de soins"
+      }
     }
   }
 }

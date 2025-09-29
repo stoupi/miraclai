@@ -357,20 +357,13 @@
       "title": "About Lariboisière Hospital",
       "description": "Lariboisière Hospital, a flagship institution of AP-HP, combines academic expertise and medical innovation to serve northern Paris. Since its creation it has become a reference center for cardiology and advanced imaging.\n\nIts multidisciplinary teams care for more than 100,000 patients every year and deliver complete care pathways, from prevention to the most complex interventions. Cutting-edge facilities and research partnerships provide fast and accurate diagnostics.\n\nIn partnership with MIRACL.ai, the hospital accelerates the development of digital solutions that improve care quality and coordination between medical and research teams."
     },
-    "location": {
-      "title": "Location and map",
-      "contactTitle": "Key contact details",
-      "addressLabel": "Address",
-      "address": "2 Rue Ambroise Paré, 75010 Paris, France",
-      "phoneLabel": "Phone",
-      "phoneNumber": "+33 1 49 95 65 65",
-      "emergencyLabel": "Emergency",
-      "emergencyAvailability": "Open 24/7",
-      "mapTitle": "Interactive map",
-      "mapDescription": "Plan your visit and review access points to the hospital.",
-      "mapHint": "2 Rue Ambroise Paré, 75010 Paris",
-      "mapCtaLabel": "Directions",
-      "mapCtaAria": "Open directions to Lariboisière Hospital"
+    "gallery": {
+      "items": {
+        "facade": "Glass façade of Lariboisière Hospital",
+        "team": "Multidisciplinary team workshop inside the hospital",
+        "innovation": "Advanced imaging equipment in action",
+        "care": "Coordinated care team supporting patients"
+      }
     }
   }
 }

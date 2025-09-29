@@ -11,25 +11,14 @@ export type LariboisiereAboutContent = {
   paragraphs: string[];
 };
 
-export type LariboisiereLocationContent = {
-  title: string;
-  contactTitle: string;
-  addressLabel: string;
-  address: string;
-  phoneLabel: string;
-  phoneNumber: string;
-  emergencyLabel: string;
-  emergencyAvailability: string;
-  mapTitle: string;
-  mapDescription: string;
-  mapHint: string;
-  mapCtaLabel: string;
-  mapCtaAria: string;
-  mapCtaHref: string;
+export type LariboisiereGalleryItem = {
+  src: string;
+  alt: string;
+  objectPosition?: string;
 };
 
 export type LariboisierePageContent = {
   hero: LariboisiereHeroContent;
   about: LariboisiereAboutContent;
-  location: LariboisiereLocationContent;
+  gallery: LariboisiereGalleryItem[];
 };
