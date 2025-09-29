@@ -101,7 +101,7 @@
       "introLead": ""
     },
     "partnersTitle": "",
-    "partnersInstructions": "Click a center to meet its teams and discover their projects at MIRACL.ai.",
+    "partnersInstructions": "Click a center to learn more about its teams and projects.",
     "missions": {
       "title": "Our missions",
       "description": "",
@@ -130,22 +130,27 @@
     },
     "team": {
       "title": "Our team",
-      "description": "A multidisciplinary crew combining medical expertise, data science and complex program delivery.",
+      "description": "",
       "members": {
-        "patrickHenry": {
-          "name": "Prof. Patrick Henry",
-          "role": "Medical Director",
-          "bio": "Interventional cardiologist ensuring clinical pathways and scientific rigor for our core lab readings."
+        "theoPezel": {
+          "name": "Dr Théo Pezel",
+          "role": "Scientific Director\nLead Cardiologist\nLariboisière Hospital, AP-HP, Paris",
+          "bio": ""
         },
-        "claireDubois": {
-          "name": "Dr Claire Dubois",
-          "role": "Scientific Director",
-          "bio": "Radiologist specialized in cardiac MRI, structuring research protocols and annotation methodologies."
+        "gillesSoulat": {
+          "name": "Prof. Gilles Soulat",
+          "role": "Lead Radiologist\nGeorges-Pompidou European Hospital, AP-HP, Paris",
+          "bio": ""
         },
-        "alexandreMoreau": {
-          "name": "Alexandre Moreau",
-          "role": "Head of Data & AI",
-          "bio": "Machine learning engineer leading data pipelines, industrialization and model transfer."
+        "solennToupin": {
+          "name": "Solenn Toupin, PhD",
+          "role": "Scientific Coordinator\nLariboisière Hospital, AP-HP, France",
+          "bio": ""
+        },
+        "ericVicaut": {
+          "name": "Prof. Eric Vicaut",
+          "role": "Methodology Lead\nAP-HP Nord Clinical Research Unit, Paris",
+          "bio": ""
         }
       }
     },
@@ -155,18 +160,98 @@
       "members": {
         "sophieMartin": {
           "name": "Sophie Martin",
-          "role": "Board Chair",
-          "bio": "Digital health entrepreneur safeguarding MIRACL.ai's vision and governance."
+          "role": "Chair of the board\nAP-HP Research Directorate, Paris",
+          "bio": ""
         },
         "drissBenali": {
           "name": "Dr Driss Benali",
-          "role": "AP-HP Representative",
-          "bio": "Innovation lead within AP-HP facilitating orchestration with partner hospitals."
+          "role": "AP-HP representative\nInnovation Directorate, Paris",
+          "bio": ""
         },
         "heleneGomez": {
           "name": "Hélène Gomez",
-          "role": "AI & Regulatory Expert",
-          "bio": "Specialist in software medical devices securing compliance and value strategy."
+          "role": "AI & regulatory expert\nMedical device consultant, Paris",
+          "bio": ""
+        },
+        "marcDupont": {
+          "name": "Marc Dupont",
+          "role": "Industrial partnerships lead\nBichat Hospital, AP-HP, Paris",
+          "bio": ""
+        },
+        "anneLeclerc": {
+          "name": "Anne Leclerc",
+          "role": "Clinical projects lead\nGeorges-Pompidou European Hospital, AP-HP, Paris",
+          "bio": ""
+        },
+        "louisBernard": {
+          "name": "Louis Bernard",
+          "role": "Translational research director\nParis-Sud Cardiovascular Institute, Massy",
+          "bio": ""
+        },
+        "fatimaAmrani": {
+          "name": "Fatima Amrani",
+          "role": "Multicenter trials coordinator\nLille University Hospital, France",
+          "bio": ""
+        },
+        "julienCaradec": {
+          "name": "Julien Caradec",
+          "role": "Data valorisation lead\nAP-HP Data Hub, Paris",
+          "bio": ""
+        },
+        "claireMonnier": {
+          "name": "Claire Monnier",
+          "role": "Research nursing director\nLariboisière Hospital, AP-HP, Paris",
+          "bio": ""
+        },
+        "hugoValentin": {
+          "name": "Hugo Valentin",
+          "role": "Innovation funding expert\nÎle-de-France Regional Council, Paris",
+          "bio": ""
+        },
+        "inesMorel": {
+          "name": "Inès Morel",
+          "role": "Healthcare legal lead\nAP-HP Legal Department, Paris",
+          "bio": ""
+        },
+        "paulRoche": {
+          "name": "Paul Roche",
+          "role": "Interventional imaging advisor\nNancy University Hospital, France",
+          "bio": ""
+        },
+        "noraBelkacem": {
+          "name": "Nora Belkacem",
+          "role": "Ethics & patient advisor\nÎle-de-France Ethics Committee, Paris",
+          "bio": ""
+        },
+        "cedricLambert": {
+          "name": "Cédric Lambert",
+          "role": "Digital operations director\nHeart Institute, European Hospital, Marseille",
+          "bio": ""
+        },
+        "amelieGirard": {
+          "name": "Amélie Girard",
+          "role": "Data transformation lead\nBordeaux University Hospital, France",
+          "bio": ""
+        },
+        "antoineLefevre": {
+          "name": "Antoine Lefèvre",
+          "role": "Hospital strategy advisor\nFrench Ministry of Health, Paris",
+          "bio": ""
+        },
+        "emmaRenard": {
+          "name": "Emma Renard",
+          "role": "Scientific communications lead\nAP-HP Communications, Paris",
+          "bio": ""
+        },
+        "lucasPerrin": {
+          "name": "Lucas Perrin",
+          "role": "AI training coordinator\nUniversité Paris Cité, Paris",
+          "bio": ""
+        },
+        "valerieMorin": {
+          "name": "Valérie Morin",
+          "role": "Clinical quality expert\nAP-HP Nord Clinical Research Unit, Paris",
+          "bio": ""
         }
       }
     }
@@ -260,5 +345,32 @@
   "metadata": {
     "title": "FeedbackApp",
     "description": "User feedback application"
+  },
+  "lariboisierePage": {
+    "hero": {
+      "title": "Lariboisière Hospital, AP-HP",
+      "subtitle": "",
+      "description": "",
+      "imageAlt": "Modern facade of Lariboisière Hospital"
+    },
+    "about": {
+      "title": "About Lariboisière Hospital",
+      "description": "Lariboisière Hospital, a flagship institution of AP-HP, combines academic expertise and medical innovation to serve northern Paris. Since its creation it has become a reference center for cardiology and advanced imaging.\n\nIts multidisciplinary teams care for more than 100,000 patients every year and deliver complete care pathways, from prevention to the most complex interventions. Cutting-edge facilities and research partnerships provide fast and accurate diagnostics.\n\nIn partnership with MIRACL.ai, the hospital accelerates the development of digital solutions that improve care quality and coordination between medical and research teams."
+    },
+    "location": {
+      "title": "Location and map",
+      "contactTitle": "Key contact details",
+      "addressLabel": "Address",
+      "address": "2 Rue Ambroise Paré, 75010 Paris, France",
+      "phoneLabel": "Phone",
+      "phoneNumber": "+33 1 49 95 65 65",
+      "emergencyLabel": "Emergency",
+      "emergencyAvailability": "Open 24/7",
+      "mapTitle": "Interactive map",
+      "mapDescription": "Plan your visit and review access points to the hospital.",
+      "mapHint": "2 Rue Ambroise Paré, 75010 Paris",
+      "mapCtaLabel": "Directions",
+      "mapCtaAria": "Open directions to Lariboisière Hospital"
+    }
   }
 }

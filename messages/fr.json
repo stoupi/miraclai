@@ -90,7 +90,7 @@
       "backgroundAlt": "L'équipe MIRACL réunie lors d'un événement",
       "actions": {
         "missions": "Nos missions",
-        "team": "Notre comité exécutif",
+        "team": "Comité exécutif",
         "board": "Notre comité de pilotage"
       },
       "introLead": ""
@@ -123,48 +123,133 @@
       }
     },
     "team": {
-      "title": "Notre comité exécutif",
-      "description": "Une équipe pluridisciplinaire qui combine expertise médicale, data science et pilotage de projets complexes.",
+      "title": "Comité exécutif",
+      "description": "",
       "members": {
-        "patrickHenry": {
-          "name": "Pr Patrick Henry",
-          "role": "Directeur médical",
-          "bio": "Cardiologue interventionnel, il coordonne les parcours cliniques et la qualité scientifique des lectures centralisées."
+        "theoPezel": {
+          "name": "Dr Théo Pezel",
+          "role": "Directeur scientifique\nRéférent cardiologue\nHôpital Lariboisière, AP-HP, Paris",
+          "bio": ""
         },
-        "claireDubois": {
-          "name": "Dr Claire Dubois",
-          "role": "Directrice scientifique",
-          "bio": "Radiologue spécialiste de l'IRM cardiaque, elle structure les protocoles de recherche et les méthodologies d'annotation."
+        "gillesSoulat": {
+          "name": "Pr Gilles Soulat",
+          "role": "Référent radiologue\nHôpital Européen Georges-Pompidou, AP-HP, Paris",
+          "bio": ""
         },
-        "alexandreMoreau": {
-          "name": "Alexandre Moreau",
-          "role": "Lead Data & IA",
-          "bio": "Ingénieur en machine learning, il pilote les pipelines de données, l'industrialisation et le transfert de modèles."
+        "solennToupin": {
+          "name": "Solenn Toupin, PhD",
+          "role": "Coordinatrice scientifique\nHôpital Lariboisière, AP-HP, France",
+          "bio": ""
+        },
+        "ericVicaut": {
+          "name": "Pr Eric Vicaut",
+          "role": "Référent méthodologiste\nUnité de Recherche Clinique AP-HP Nord, Paris",
+          "bio": ""
         }
       }
     },
     "board": {
-      "title": "Notre board",
-      "description": "Un comité stratégique composé de leaders académiques et institutionnels pour guider notre feuille de route.",
+      "title": "Comité de pilotage",
+      "description": "",
       "members": {
         "sophieMartin": {
           "name": "Sophie Martin",
-          "role": "Présidente du board",
-          "bio": "Entrepreneure en santé numérique, elle garantit la vision et la gouvernance de MIRACL.ai."
+          "role": "Présidente du board\nAP-HP Direction Recherche, Paris",
+          "bio": ""
         },
         "drissBenali": {
           "name": "Dr Driss Benali",
-          "role": "Représentant AP-HP",
-          "bio": "Responsable innovation au sein de l'AP-HP, il facilite l'orchestration avec les centres hospitaliers partenaires."
+          "role": "Représentant AP-HP\nDirection de l'innovation, Paris",
+          "bio": ""
         },
         "heleneGomez": {
           "name": "Hélène Gomez",
-          "role": "Experte IA & Réglementaire",
-          "bio": "Spécialiste des dispositifs médicaux logiciels, elle sécurise la conformité et la stratégie de valorisation."
+          "role": "Experte IA & réglementaire\nConsultante dispositifs médicaux, Paris",
+          "bio": ""
+        },
+        "marcDupont": {
+          "name": "Marc Dupont",
+          "role": "Responsable partenariats industriels\nHôpital Bichat, AP-HP, Paris",
+          "bio": ""
+        },
+        "anneLeclerc": {
+          "name": "Anne Leclerc",
+          "role": "Cheffe projets cliniques\nHôpital Européen Georges-Pompidou, AP-HP, Paris",
+          "bio": ""
+        },
+        "louisBernard": {
+          "name": "Louis Bernard",
+          "role": "Directeur recherche translationnelle\nInstitut Cardiovasculaire Paris Sud, Massy",
+          "bio": ""
+        },
+        "fatimaAmrani": {
+          "name": "Fatima Amrani",
+          "role": "Coordinatrice essais multicentres\nCHU Lille, France",
+          "bio": ""
+        },
+        "julienCaradec": {
+          "name": "Julien Caradec",
+          "role": "Responsable valorisation data\nData Hub AP-HP, Paris",
+          "bio": ""
+        },
+        "claireMonnier": {
+          "name": "Claire Monnier",
+          "role": "Directrice nursing recherche\nHôpital Lariboisière, AP-HP, Paris",
+          "bio": ""
+        },
+        "hugoValentin": {
+          "name": "Hugo Valentin",
+          "role": "Expert financement innovation\nRégion Île-de-France, Paris",
+          "bio": ""
+        },
+        "inesMorel": {
+          "name": "Inès Morel",
+          "role": "Responsable juridique santé\nAP-HP Direction juridique, Paris",
+          "bio": ""
+        },
+        "paulRoche": {
+          "name": "Paul Roche",
+          "role": "Référent imagerie interventionnelle\nCHU de Nancy, France",
+          "bio": ""
+        },
+        "noraBelkacem": {
+          "name": "Nora Belkacem",
+          "role": "Experte éthique & patients\nComité CPP Île-de-France, Paris",
+          "bio": ""
+        },
+        "cedricLambert": {
+          "name": "Cédric Lambert",
+          "role": "Directeur des opérations digitales\nInstitut du Cœur, Hôpital Européen, Marseille",
+          "bio": ""
+        },
+        "amelieGirard": {
+          "name": "Amélie Girard",
+          "role": "Cheffe transformation data\nCHU de Bordeaux, France",
+          "bio": ""
+        },
+        "antoineLefevre": {
+          "name": "Antoine Lefèvre",
+          "role": "Conseiller stratégie hospitalière\nMinistère de la Santé, Paris",
+          "bio": ""
+        },
+        "emmaRenard": {
+          "name": "Emma Renard",
+          "role": "Responsable communication scientifique\nAP-HP Communication, Paris",
+          "bio": ""
+        },
+        "lucasPerrin": {
+          "name": "Lucas Perrin",
+          "role": "Coordinateur formation IA\nUniversité Paris Cité, Paris",
+          "bio": ""
+        },
+        "valerieMorin": {
+          "name": "Valérie Morin",
+          "role": "Experte qualité clinique\nURC AP-HP Nord, Paris",
+          "bio": ""
         }
       }
     },
-    "partnersInstructions": "Cliquez sur un centre et découvrez ses acteurs et ses projets au sein de MIRACL.ai."
+    "partnersInstructions": "Cliquez sur un centre pour en savoir plus sur ses acteurs et ses projets."
   },
   "research": {
     "strapline": "L'infrastructure au service de la recherche en imagerie cardiovasculaire.",
@@ -255,5 +340,32 @@
   "metadata": {
     "title": "FeedbackApp",
     "description": "Application de feedback utilisateur"
+  },
+  "lariboisierePage": {
+    "hero": {
+      "title": "Hôpital Lariboisière, AP-HP",
+      "subtitle": "",
+      "description": "",
+      "imageAlt": "Façade moderne de l'Hôpital Lariboisière"
+    },
+    "about": {
+      "title": "À propos de l'Hôpital Lariboisière",
+      "description": "L'Hôpital Lariboisière, établissement emblématique de l'AP-HP, associe expertise universitaire et innovation médicale pour répondre aux besoins de santé du nord de Paris. Depuis sa création, il s'est imposé comme un centre hospitalier de référence en cardiologie et en imagerie avancée.\n\nSes équipes pluridisciplinaires prennent en charge plus de 100 000 patients chaque année et réalisent des parcours de soins complets, de la prévention aux interventions les plus complexes. Les plateaux techniques de dernière génération et les partenariats de recherche permettent d'offrir des diagnostics précis et rapides.\n\nEn collaboration avec MIRACL.ai, l'hôpital accélère le développement de solutions numériques pour améliorer la qualité des soins et la coordination entre les équipes médicales et de recherche."
+    },
+    "location": {
+      "title": "Localisation et plan",
+      "contactTitle": "Coordonnées principales",
+      "addressLabel": "Adresse",
+      "address": "2 Rue Ambroise Paré, 75010 Paris, France",
+      "phoneLabel": "Téléphone",
+      "phoneNumber": "01 49 95 65 65",
+      "emergencyLabel": "Urgences",
+      "emergencyAvailability": "Ouvert 24h/24, 7j/7",
+      "mapTitle": "Plan interactif",
+      "mapDescription": "Préparez votre venue et découvrez les accès au site.",
+      "mapHint": "2 Rue Ambroise Paré, 75010 Paris",
+      "mapCtaLabel": "Itinéraire",
+      "mapCtaAria": "Ouvrir l'itinéraire vers l'Hôpital Lariboisière"
+    }
   }
 }

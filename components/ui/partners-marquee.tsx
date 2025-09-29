@@ -1,6 +1,8 @@
 import Image from 'next/image';
 import type { CSSProperties } from 'react';
 
+import { Link } from '@/app/i18n/navigation';
+
 import type { PartnerLogo } from '@/types/partners';
 import { cn } from '@/lib/utils';
 
@@ -48,12 +50,13 @@ export function PartnersMarquee({
               : { transform: `scale(${scale})`, transformOrigin: 'center' };
           const imageStyle: CSSProperties = { height: '100%', width: 'auto' };
 
-          return (
-            <div
-              key={`${logo.src}-${index}`}
-              className={cn(baseItemClass, itemClassName)}
-              style={wrapperStyle}
-            >
+          const commonProps = {
+            className: cn(baseItemClass, itemClassName),
+            style: wrapperStyle,
+            'aria-hidden': isDuplicate || undefined
+          };
+
+          const image = (
               <Image
                 src={logo.src}
                 alt={isDuplicate ? '' : logo.alt}
@@ -66,6 +69,26 @@ export function PartnersMarquee({
                 className="h-full w-auto object-contain"
                 style={imageStyle}
               />
+          );
+
+          if (logo.href) {
+            return (
+              <Link
+                key={`${logo.src}-${index}`}
+                href={logo.href}
+                aria-label={isDuplicate ? undefined : logo.alt}
+                tabIndex={isDuplicate ? -1 : undefined}
+                prefetch={false}
+                {...commonProps}
+              >
+                {image}
+              </Link>
+            );
+          }
+
+          return (
+            <div key={`${logo.src}-${index}`} {...commonProps}>
+              {image}
             </div>
           );
         })}

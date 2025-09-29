@@ -1,5 +1,6 @@
 import { Card, CardContent } from '@/components/ui/card';
 import { cn } from '@/lib/utils';
+import { Dribbble, Linkedin } from 'lucide-react';
 
 import type { Member, PeopleSectionTone } from '../types';
 
@@ -11,60 +12,72 @@ type TeamPeopleSectionProps = {
   tone: PeopleSectionTone;
 };
 
-const toneStyles: Record<PeopleSectionTone, {
-  section: string;
-  card: string;
-  badge: string;
-  role: string;
-  bio: string;
-}> = {
-  bright: {
-    section: 'bg-white text-[#061024]',
-    card: 'border-[#061024]/10 bg-white/80 shadow-[0_18px_40px_-16px_rgba(6,16,36,0.18)] backdrop-blur',
-    badge: 'bg-[#061024] text-white',
-    role: 'text-[#0A1B3F] font-semibold',
-    bio: 'text-[#061024]/70'
-  },
-  muted: {
-    section: 'bg-[#F4F6FC] text-[#061024]',
-    card: 'border-[#061024]/10 bg-white shadow-[0_16px_35px_-20px_rgba(6,16,36,0.45)]',
-    badge: 'bg-[#0A1B3F] text-white',
-    role: 'text-[#0A1B3F] font-semibold',
-    bio: 'text-[#061024]/70'
-  }
+const sectionBackgrounds: Record<PeopleSectionTone, string> = {
+  bright: 'bg-white text-[#061024]',
+  muted: 'bg-[#F4F6FC] text-[#061024]'
+};
+
+const descriptionColors: Record<PeopleSectionTone, string> = {
+  bright: 'text-[#061024]/70',
+  muted: 'text-[#061024]/70'
 };
 
 export function TeamPeopleSection({ id, title, description, members, tone }: TeamPeopleSectionProps) {
-  const styles = toneStyles[tone];
-
   return (
-    <section id={id} className={cn('py-20', styles.section)}>
+    <section id={id} className={cn('py-20', sectionBackgrounds[tone])}>
       <div className="container mx-auto px-6">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="text-3xl font-bold tracking-tight md:text-4xl">{title}</h2>
-          <p className="mt-6 text-base text-[#061024]/70 sm:text-lg">{description}</p>
+          {description ? (
+            <p className={cn('mt-6 text-base sm:text-lg', descriptionColors[tone])}>{description}</p>
+          ) : null}
         </div>
 
-        <div className="mt-16 grid gap-8 md:grid-cols-2 xl:grid-cols-3">
+        <div className="mt-16 grid gap-8 md:grid-cols-2 xl:grid-cols-4">
           {members.map((member) => (
-            <Card key={member.key} className={cn('h-full border', styles.card)}>
-              <CardContent className="flex h-full flex-col gap-6 px-6 py-8">
-                <div className="flex items-center gap-4">
-                  <div
-                    className={cn(
-                      'flex h-14 w-14 items-center justify-center rounded-full text-lg font-semibold uppercase',
-                      styles.badge
-                    )}
-                    aria-hidden
-                  >
-                    {member.initials}
-                  </div>
-                  <div className="text-left">
-                    <p className="text-lg font-semibold text-[#061024]">{member.name}</p>
-                    <p className={styles.role}>{member.role}</p>
-                  </div>
+            <Card
+              key={member.key}
+              className="group flex h-full flex-col rounded-none border border-[#121A38] bg-[#050B1F] text-white transition-transform duration-200 hover:-translate-y-1 hover:border-[#F33349]"
+            >
+              <div className="relative aspect-[3/2] w-full bg-[#D9DCE8]">
+                <span className="absolute inset-0 flex items-center justify-center text-4xl font-semibold uppercase text-[#0A1B3F]">
+                  {member.initials}
+                </span>
+              </div>
+              <CardContent className="flex flex-1 flex-col items-center gap-2.5 px-5 py-5 text-center">
+                <div className="space-y-1">
+                  <p className="text-xl font-semibold text-white">{member.name}</p>
+                  {(() => {
+                    const roleLines = member.role.split('\n');
+                    const locationLineRaw = roleLines.length > 1 ? roleLines.at(-1) ?? '' : '';
+                    const locationLine = locationLineRaw.trim();
+                    const responsibilityLines = (locationLine ? roleLines.slice(0, -1) : roleLines).filter(
+                      (line) => line.trim().length > 0
+                    );
+
+                    return (
+                      <div className="flex flex-col items-center gap-1 text-sm tracking-wide text-white/70">
+                        {responsibilityLines.map((line, index) => (
+                          <span key={`${member.key}-role-${index}`} className="text-xs font-semibold uppercase tracking-[0.18em] text-white/80">
+                            {line.trim().toUpperCase()}
+                          </span>
+                        ))}
+                        {locationLine ? (
+                          <span className="text-sm font-medium normal-case text-white/70">
+                            {locationLine}
+                          </span>
+                        ) : null}
+                      </div>
+                    );
+                  })()}
                 </div>
-                <p className={cn('text-sm leading-relaxed', styles.bio)}>{member.bio}</p>
+                {member.bio ? (
+                  <p className="text-xs leading-relaxed text-white/80">{member.bio}</p>
+                ) : null}
+                <div className="mt-auto flex items-center gap-3 text-white/70">
+                  <Linkedin aria-hidden className="h-4 w-4" />
+                  <Dribbble aria-hidden className="h-4 w-4" />
+                </div>
               </CardContent>
             </Card>
           ))}

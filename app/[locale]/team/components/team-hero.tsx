@@ -64,7 +64,7 @@ export function TeamHero({ content, logos }: TeamHeroProps) {
       id="hero-section"
       className="relative isolate overflow-hidden bg-white text-[#061024]"
     >
-      <div className="container relative z-10 mx-auto px-6 py-24 text-center md:py-28 lg:py-32">
+      <div className="container relative z-10 mx-auto px-6 pt-24 pb-16 text-center md:pt-28 md:pb-20 lg:pt-32 lg:pb-24">
         <div className="mx-auto flex max-w-4xl flex-col items-center text-center">
           {content.eyebrow ? (
             <span className="text-sm font-semibold uppercase tracking-[0.3em] text-[#061024]/70">
@@ -101,7 +101,7 @@ export function TeamHero({ content, logos }: TeamHeroProps) {
               </div>
             </div>
           ) : null}
-          <div className="mt-12 flex flex-wrap justify-center gap-6">
+          <div className="mt-16 flex flex-wrap justify-center gap-6 md:mt-20">
             {content.actions.map((action) => (
               <CtaButton key={action.href} asChild size="lg">
                 <Link href={action.href}>{action.label}</Link>

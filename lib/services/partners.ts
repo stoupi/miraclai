@@ -10,13 +10,28 @@ const logoScaleOverrides: Record<string, number> = {
   'logo_HEGP.png': 1.2
 };
 
+const logoLinkOverrides: Record<string, string> = {
+  logo_larib: '/lariboisiere'
+};
+
+const logoAltOverrides: Record<string, string> = {
+  logo_larib: 'Logo Hôpital Lariboisière'
+};
+
 export async function getPartnerLogos(): Promise<PartnerLogo[]> {
   const entries = await fs.readdir(logoDirectory);
   const files = entries.filter((name) => imagePattern.test(name));
 
-  return files.map((name) => ({
-    src: `/assets/logo_centres/${encodeURIComponent(name)}`,
-    alt: name.replace(/[-_]/g, ' ').replace(/\.[^.]+$/, ''),
-    scale: logoScaleOverrides[name] ?? undefined
-  }));
+  return files.map((name) => {
+    const identifier = name.replace(/\.[^.]+$/, '');
+
+    return {
+      src: `/assets/logo_centres/${encodeURIComponent(name)}`,
+      alt:
+        logoAltOverrides[identifier] ??
+        name.replace(/[-_]/g, ' ').replace(/\.[^.]+$/, ''),
+      scale: logoScaleOverrides[name] ?? undefined,
+      href: logoLinkOverrides[identifier]
+    } satisfies PartnerLogo;
+  });
 }

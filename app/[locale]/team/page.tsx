@@ -2,6 +2,7 @@ import { getTranslations } from 'next-intl/server';
 import { BarChart3, ShieldCheck, UsersRound, Workflow } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 
+import { Footer } from '../components/footer';
 import { TeamHero } from './components/team-hero';
 import { TeamMissions } from './components/team-missions';
 import { TeamPeopleSection } from './components/team-people-section';
@@ -27,8 +28,28 @@ const missionIconMap: Record<MissionKey, LucideIcon> = {
   community: UsersRound
 };
 
-const teamMemberKeys = ['patrickHenry', 'claireDubois', 'alexandreMoreau'] as const;
-const boardMemberKeys = ['sophieMartin', 'drissBenali', 'heleneGomez'] as const;
+const teamMemberKeys = ['theoPezel', 'gillesSoulat', 'solennToupin', 'ericVicaut'] as const;
+const boardMemberKeys = [
+  'sophieMartin',
+  'drissBenali',
+  'heleneGomez',
+  'marcDupont',
+  'anneLeclerc',
+  'louisBernard',
+  'fatimaAmrani',
+  'julienCaradec',
+  'claireMonnier',
+  'hugoValentin',
+  'inesMorel',
+  'paulRoche',
+  'noraBelkacem',
+  'cedricLambert',
+  'amelieGirard',
+  'antoineLefevre',
+  'emmaRenard',
+  'lucasPerrin',
+  'valerieMorin'
+] as const;
 
 function buildInitials(name: string): string {
   const initials = name
@@ -121,6 +142,7 @@ export default async function TeamPage({ params }: Params) {
         members={boardMembers}
         tone="muted"
       />
+      <Footer locale={locale} />
     </>
   );
 }
