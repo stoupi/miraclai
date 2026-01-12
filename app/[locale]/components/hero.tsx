@@ -110,7 +110,7 @@ export async function Hero({ locale }: HeroProps) {
       <div className="container mx-auto grid grid-cols-1 items-center gap-8 px-4 pt-12 pb-6 md:grid-cols-2 lg:pt-16 lg:pb-8">
         <div className="flex flex-col items-start w-full pt-12 md:pt-16">
           <div className="w-full max-w-xl">
-            <h1 className="text-balance text-4xl leading-tight tracking-tight text-[#061024] sm:text-5xl lg:text-6xl" style={{ fontFamily: 'var(--font-calistoga), serif' }}>
+            <h1 className="text-balance text-4xl leading-[1.1] tracking-tight text-[#061024] sm:text-5xl lg:text-6xl" style={{ fontFamily: 'var(--font-calistoga), serif' }}>
               {t.rich('olvaHeadline', {
                 highlight: (chunks) => (
                   <span className="hero-highlight">{chunks}</span>
@@ -143,7 +143,7 @@ export async function Hero({ locale }: HeroProps) {
         </div>
 
         <div className="relative flex items-center justify-center">
-          <div className="relative w-[280px] sm:w-[320px] lg:w-[380px] xl:w-[420px]">
+          <div className="relative w-[200px] sm:w-[260px] md:w-[320px] lg:w-[380px] xl:w-[420px]">
             <Image
               src="/assets/coeur_hero.svg"
               alt={t('heartImageAlt')}
@@ -152,35 +152,41 @@ export async function Hero({ locale }: HeroProps) {
               className="heart-hover w-full h-full object-contain drop-shadow-[0_8px_24px_rgba(0,180,216,0.2)]"
               priority
             />
-          </div>
-        </div>
-      </div>
 
-      <div className="w-full -mt-12 md:-mt-16 pb-4">
-        <div className="w-full flex justify-end pr-4 md:pr-8 lg:pr-16">
-          <div className="flex items-center gap-2 sm:gap-3 md:gap-4 lg:gap-5">
-            {imagingModalities.map((modality, index) => (
-              <div
-                key={modality.label}
-                className="group flex flex-col items-center animate-slide-in"
-                style={{
-                  animationDelay: `${index * 0.1}s`
-                }}
-              >
-                <div className="relative w-14 h-14 sm:w-16 sm:h-16 md:w-18 md:h-18 lg:w-20 lg:h-20 rounded-full overflow-hidden border-2 border-white shadow-lg bg-[#061024] transition-all duration-300 hover:scale-110 hover:shadow-xl hover:border-[#00B4D8]">
-                  <Image
-                    src={modality.src}
-                    alt={modality.alt}
-                    fill
-                    className={`object-cover ${modality.scale}`}
-                    sizes="80px"
-                  />
-                </div>
-                <span className="mt-2 text-[10px] sm:text-xs font-medium text-[#061024]/60 transition-colors group-hover:text-[#00B4D8]">
-                  {modality.label}
-                </span>
+            <div className="absolute bottom-[5%] left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 md:gap-6">
+              <div className="flex items-center gap-4 md:gap-8">
+                {imagingModalities.slice(0, 4).map((modality) => (
+                  <div
+                    key={modality.label}
+                    className="w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 rounded-full overflow-hidden border-2 border-white shadow-lg bg-[#061024] transition-all duration-300 hover:scale-110 hover:shadow-xl hover:border-[#00B4D8]"
+                  >
+                    <Image
+                      src={modality.src}
+                      alt={modality.alt}
+                      width={64}
+                      height={64}
+                      className={`w-full h-full object-cover ${modality.scale}`}
+                    />
+                  </div>
+                ))}
               </div>
-            ))}
+              <div className="flex items-center gap-4 md:gap-8">
+                {imagingModalities.slice(4, 7).map((modality) => (
+                  <div
+                    key={modality.label}
+                    className="w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 rounded-full overflow-hidden border-2 border-white shadow-lg bg-[#061024] transition-all duration-300 hover:scale-110 hover:shadow-xl hover:border-[#00B4D8]"
+                  >
+                    <Image
+                      src={modality.src}
+                      alt={modality.alt}
+                      width={64}
+                      height={64}
+                      className={`w-full h-full object-cover ${modality.scale}`}
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </div>

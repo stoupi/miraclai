@@ -332,4 +332,57 @@
     animation: fade-in-up 0.6s ease-out forwards;
     opacity: 0;
   }
+
+  @keyframes scroll-vertical {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-50%);
+    }
+  }
+
+  .team-scroll-container {
+    mask-image: linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%);
+  }
+
+  .team-scroll {
+    animation: scroll-vertical 30s linear infinite;
+  }
+
+  .team-scroll-container:hover .team-scroll {
+    animation-play-state: paused;
+  }
+
+  @keyframes marquee-left {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  @keyframes marquee-right {
+    0% {
+      transform: translateX(-50%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+
+  .marquee-row-left {
+    animation: marquee-left 40s linear infinite;
+  }
+
+  .marquee-row-right {
+    animation: marquee-right 40s linear infinite;
+  }
+
+  .marquee-row-left:hover,
+  .marquee-row-right:hover {
+    animation-play-state: paused;
+  }
 }
