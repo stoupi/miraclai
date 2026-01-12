@@ -42,6 +42,13 @@
     "partnersCtaTeam": "Découvrir notre équipe",
     "partnersInstructions": "Cliquez sur un centre et découvrez ses acteurs et ses projets au sein de MIRACL.ai."
   },
+  "centers": {
+    "eyebrow": "Nos centres partenaires",
+    "title": "Les équipes MIRACL.ai",
+    "subtitle": "Découvrez les experts de chaque centre qui contribuent à l'innovation en imagerie cardiovasculaire.",
+    "membersLabel": "membres",
+    "discoverButton": "Découvrir le centre"
+  },
   "news": {
     "sectionTitle": "Notre <highlight>Actualité</highlight>",
     "sectionSubtitle": "Découvrez nos collaborations, publications et événements majeurs.",

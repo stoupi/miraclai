@@ -47,6 +47,13 @@
     "partnersCtaTeam": "Meet our team",
     "partnersInstructions": "Click a center to meet its teams and discover their projects at MIRACL.ai."
   },
+  "centers": {
+    "eyebrow": "Our partner centers",
+    "title": "The MIRACL.ai teams",
+    "subtitle": "Meet the experts from each center contributing to cardiovascular imaging innovation.",
+    "membersLabel": "members",
+    "discoverButton": "Discover the center"
+  },
   "news": {
     "sectionTitle": "Our <highlight>news</highlight>",
     "sectionSubtitle": "Insights, partnerships, and breakthroughs from the MIRACL.ai community.",
