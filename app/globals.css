@@ -8,6 +8,8 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-serif: var(--font-playfair);
+  --font-display: var(--font-calistoga);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -157,12 +159,12 @@
     0%,
     100% {
       transform: scale(1);
-      filter: drop-shadow(0 0 8px rgba(100, 192, 201, 0.4));
+      filter: drop-shadow(0 0 8px rgba(0, 180, 216, 0.4));
     }
 
     50% {
       transform: scale(1.001);
-      filter: drop-shadow(0 0 16px rgba(100, 192, 201, 0.7));
+      filter: drop-shadow(0 0 16px rgba(0, 180, 216, 0.7));
     }
   }
 
@@ -243,23 +245,75 @@
   }
 
   .hero-highlight {
-    position: relative;
-    display: inline-block;
-    padding-inline: 0.15em;
-    padding-bottom: 0.1em;
-    z-index: 0;
+    font-family: var(--font-dm-serif), serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 1.15em;
+    color: #00B4D8;
   }
 
-  .hero-highlight::before {
-    content: "";
-    position: absolute;
-    left: -0.25em;
-    right: -0.25em;
-    bottom: 0.05em;
-    height: 0.55em;
-    background: linear-gradient(90deg, rgba(100, 192, 201, 0.45) 0%, rgba(100, 192, 201, 0.75) 50%, rgba(100, 192, 201, 0.45) 100%);
-    transform: skewX(-12deg);
-    border-radius: 0.2em;
-    z-index: -1;
+  @keyframes slow-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes counter-spin {
+    from {
+      transform: translate(-50%, -50%) rotate(0deg);
+    }
+    to {
+      transform: translate(-50%, -50%) rotate(-360deg);
+    }
+  }
+
+  .animate-slow-spin {
+    animation: slow-spin 60s linear infinite;
+  }
+
+  .animate-counter-spin {
+    animation: counter-spin 60s linear infinite;
+  }
+
+  @keyframes heart-counter-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(-360deg);
+    }
+  }
+
+  .animate-heart-counter-spin {
+    animation: heart-counter-spin 60s linear infinite;
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-8px);
+    }
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  @keyframes slide-in-right {
+    0% {
+      transform: translateX(-100vw);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+
+  .animate-slide-in {
+    animation: slide-in-right 1.2s ease-out forwards;
   }
 }

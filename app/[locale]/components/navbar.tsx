@@ -66,7 +66,7 @@ export function Navbar() {
     };
   }, [scrollY]);
 
-  const palette: PaletteState = heroVisible && !partnersVisible ? 'light' : 'dark';
+  const palette: PaletteState = 'dark';
   const normalizedPath = pathname.replace(/^\/(en|fr)(?=\/|$)/, '') || '/';
 
   const getNavLinkClasses = (href: string) => {
@@ -98,7 +98,7 @@ export function Navbar() {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 w-full transition-colors duration-200 ${
-        scrolled ? 'backdrop-blur-md bg-white/10 border-b border-white/15' : 'bg-transparent'
+        scrolled ? 'backdrop-blur-md bg-white/80 border-b border-[#061024]/10' : 'bg-transparent'
       }`}
     >
       <div className="container mx-auto flex h-28 items-center justify-between px-5">
@@ -138,12 +138,7 @@ export function Navbar() {
           <Link href="/news" className={getNavLinkClasses('/news')}>
             {t('menuNews')}
           </Link>
-          <CtaButton asChild className="ml-2 text-xs md:text-sm h-9 md:h-10">
-            <Link href="/contact" className="uppercase">
-              {t('ctaPrimary')}
-            </Link>
-          </CtaButton>
-          <div className={`ml-6 flex items-center rounded-full border ${localeWrapperBorder} px-1.5 py-1`}>
+          <div className={`ml-2 flex items-center rounded-full border ${localeWrapperBorder} px-1.5 py-1`}>
             <button
               onClick={() => switchLocale('fr')}
               className={`cursor-pointer px-3 py-1 text-xs font-medium rounded-full ${
@@ -161,6 +156,11 @@ export function Navbar() {
               EN
             </button>
           </div>
+          <CtaButton asChild className="ml-6 text-xs md:text-sm h-9 md:h-10">
+            <Link href="/contact" className="uppercase">
+              {t('ctaPrimary')}
+            </Link>
+          </CtaButton>
         </div>
       </div>
     </nav>
