@@ -93,13 +93,7 @@ export async function NewsSection({ locale }: NewsSectionProps) {
               <h3 className="mt-4 text-5xl font-extrabold leading-tight tracking-tight text-[#061024]">
                 {t.rich('sectionTitle', {
                   highlight: (chunks) => (
-                    <span className="relative inline-block pb-[0.375rem]">
-                      <span className="relative z-10">{chunks}</span>
-                      <span
-                        aria-hidden="true"
-                        className="pointer-events-none absolute -left-2 -right-2 bottom-0 h-2 bg-[#F33349]"
-                      />
-                    </span>
+                    <span className="font-extrabold text-[#64C0C9]">{chunks}</span>
                   )
                 })}
               </h3>

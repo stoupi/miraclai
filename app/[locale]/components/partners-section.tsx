@@ -6,20 +6,13 @@ import { Button } from '@/components/ui/button';
 import { PartnersMarquee } from '@/components/ui/partners-marquee';
 import { getPartnerLogos } from '@/lib/services/partners';
 
-const highlightClass = 'relative inline-block pb-[0.25rem]';
-const highlightAccentClass =
-  'pointer-events-none absolute -left-2 -right-2 bottom-0 h-2 bg-[#F33349]';
-
 export async function PartnersSection({ locale }: { locale: string }) {
   const t = await getTranslations({ locale, namespace: 'home' });
   const logos = await getPartnerLogos();
 
   const title: ReactNode = t.rich('partnersTitle', {
     highlight: (chunks) => (
-      <span className={highlightClass}>
-        <span className="relative z-10">{chunks}</span>
-        <span aria-hidden className={highlightAccentClass} />
-      </span>
+      <span className="font-extrabold text-[#64C0C9]">{chunks}</span>
     )
   });
 
