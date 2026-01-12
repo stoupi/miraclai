@@ -3,6 +3,7 @@ import { getTranslations } from 'next-intl/server';
 import { Footer } from '../components/footer';
 import { LariboisiereHero } from './components/lariboisiere-hero';
 import { LariboisiereInformation } from './components/lariboisiere-information';
+import { LariboisiereTeam } from './components/lariboisiere-team';
 import type { LariboisierePageContent } from './types';
 
 type Params = {
@@ -21,6 +22,22 @@ export default async function LariboisierePage({ params }: Params) {
     'right center'
   ];
   const galleryKeys = ['facade', 'team', 'innovation', 'care'] as const;
+  const teamMemberKeys = [
+    'imagingLead',
+    'researchLead',
+    'cardiologyLead',
+    'patientCoordinator',
+    'dataEngineer'
+  ] as const;
+
+  const computeInitials = (value: string): string => {
+    return value
+      .split(/[\s-]+/)
+      .filter(Boolean)
+      .slice(0, 2)
+      .map((part) => part[0]?.toUpperCase() ?? '')
+      .join('');
+  };
 
   const content: LariboisierePageContent = {
     hero: {
@@ -38,13 +55,27 @@ export default async function LariboisierePage({ params }: Params) {
       src: `/assets/lariboisiere/gallery-${index + 1}.jpg`,
       alt: t(`gallery.items.${key}`),
       objectPosition: galleryPositions[index]
-    }))
+    })),
+    team: {
+      title: t('team.title'),
+      members: teamMemberKeys.map((key) => {
+        const name = t(`team.members.${key}.name`);
+
+        return {
+          name,
+          role: t(`team.members.${key}.role`),
+          description: t(`team.members.${key}.description`),
+          avatarInitials: computeInitials(name)
+        };
+      })
+    }
   };
 
   return (
     <>
       <LariboisiereHero content={content.hero} />
       <LariboisiereInformation about={content.about} gallery={content.gallery} />
+      <LariboisiereTeam team={content.team} />
       <Footer locale={locale} />
     </>
   );

@@ -364,6 +364,36 @@
         "innovation": "Advanced imaging equipment in action",
         "care": "Coordinated care team supporting patients"
       }
+    },
+    "team": {
+      "title": "A dedicated team for every pathway",
+      "members": {
+        "imagingLead": {
+          "name": "Dr. Camille Dupont",
+          "role": "Head of Medical Imaging",
+          "description": "Coordinates MRI, CT, and ultrasound teams to guarantee rapid access to advanced diagnostics."
+        },
+        "researchLead": {
+          "name": "Prof. Julien Martin",
+          "role": "Clinical Research Lead",
+          "description": "Oversees academic partnerships and clinical trials to translate innovation into patient care."
+        },
+        "cardiologyLead": {
+          "name": "Dr. Sofia Benali",
+          "role": "Interventional Cardiologist",
+          "description": "Specializes in complex procedures and mentors teams on minimally invasive techniques."
+        },
+        "patientCoordinator": {
+          "name": "Ines Morel",
+          "role": "Patient Pathway Coordinator",
+          "description": "Designs personalised support programmes to keep patients informed at every stage."
+        },
+        "dataEngineer": {
+          "name": "Hugo Lemaire",
+          "role": "Healthcare Data & AI Engineer",
+          "description": "Builds hospital data pipelines with MIRACL.ai to support predictive care tools."
+        }
+      }
     }
   }
 }

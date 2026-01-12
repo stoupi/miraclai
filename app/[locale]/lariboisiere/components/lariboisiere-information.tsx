@@ -21,7 +21,7 @@ export function LariboisiereInformation({ about, gallery }: LariboisiereInformat
             <h2 className="text-2xl font-semibold text-[#061024] md:text-3xl">
               {about.title}
             </h2>
-            <div className="space-y-4 text-base leading-relaxed text-[#061024]/85 md:text-lg">
+            <div className="space-y-3 text-sm leading-relaxed text-[#061024]/80 md:text-base">
               {about.paragraphs.map((paragraph) => (
                 <p key={paragraph.slice(0, 20)}>{paragraph}</p>
               ))}

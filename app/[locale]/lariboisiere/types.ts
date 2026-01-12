@@ -17,8 +17,21 @@ export type LariboisiereGalleryItem = {
   objectPosition?: string;
 };
 
+export type LariboisiereTeamMember = {
+  name: string;
+  role: string;
+  description: string;
+  avatarInitials: string;
+};
+
+export type LariboisiereTeamContent = {
+  title: string;
+  members: LariboisiereTeamMember[];
+};
+
 export type LariboisierePageContent = {
   hero: LariboisiereHeroContent;
   about: LariboisiereAboutContent;
   gallery: LariboisiereGalleryItem[];
+  team: LariboisiereTeamContent;
 };

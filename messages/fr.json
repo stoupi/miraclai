@@ -359,6 +359,36 @@
         "innovation": "Plateau technique de pointe pour l'imagerie médicale",
         "care": "Coordination d'équipe autour du parcours de soins"
       }
+    },
+    "team": {
+      "title": "Une équipe dédiée à chaque parcours",
+      "members": {
+        "imagingLead": {
+          "name": "Dr Camille Dupont",
+          "role": "Cheffe de l'imagerie médicale",
+          "description": "Coordonne les équipes IRM, scanner et échographie pour garantir un accès rapide aux diagnostics avancés."
+        },
+        "researchLead": {
+          "name": "Pr Julien Martin",
+          "role": "Responsable de la recherche clinique",
+          "description": "Pilote les partenariats académiques et les essais cliniques pour transformer l'innovation en pratique."
+        },
+        "cardiologyLead": {
+          "name": "Dr Sofia Benali",
+          "role": "Cardiologue interventionnelle",
+          "description": "Réalise les procédures complexes et accompagne les équipes sur les techniques mini-invasives."
+        },
+        "patientCoordinator": {
+          "name": "Inès Morel",
+          "role": "Coordinatrice du parcours patient",
+          "description": "Conçoit des parcours d'accompagnement personnalisés pour informer les patients à chaque étape."
+        },
+        "dataEngineer": {
+          "name": "Hugo Lemaire",
+          "role": "Ingénieur data & IA santé",
+          "description": "Déploie les pipelines de données hospitalières avec MIRACL.ai pour soutenir les outils prédictifs."
+        }
+      }
     }
   }
 }

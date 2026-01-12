@@ -31,7 +31,7 @@ export function LariboisiereHero({ content }: LariboisiereHeroProps) {
             <h1 className="text-3xl font-bold leading-tight tracking-tight md:text-5xl lg:text-6xl">
               {content.title}
             </h1>
-            <p className="text-xs font-semibold uppercase tracking-[0.5em] text-white/80">
+            <p className="text-sm font-semibold uppercase tracking-[0.45em] text-white/85 md:text-base">
               2 Rue Ambroise Paré, 75010 Paris
             </p>
             {content.description ? (
