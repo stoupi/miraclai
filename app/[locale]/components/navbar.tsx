@@ -138,9 +138,6 @@ export function Navbar() {
           <Link href="/services" className={getNavLinkClasses('/services')}>
             {t('menuServices')}
           </Link>
-          <Link href="/news" className={getNavLinkClasses('/news')}>
-            {t('menuNews')}
-          </Link>
           <div className={`ml-2 flex items-center rounded-full border ${localeWrapperBorder} px-1.5 py-1`}>
             <button
               onClick={() => switchLocale('fr')}

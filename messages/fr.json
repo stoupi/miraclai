@@ -16,10 +16,9 @@
     "loading": "Chargement...",
     "loggingOut": "Déconnexion en cours...",
     "appName": "Nom de l'application",
-    "menuServices": "Services",
+    "menuServices": "Nos services",
     "menuCatalog": "Catalogue",
-    "menuTeam": "Qui sommes-nous ?",
-    "menuNews": "Actualités",
+    "menuTeam": "Notre équipe",
     "ctaPrimary": "Nous contacter"
   },
   "home": {
@@ -60,6 +59,16 @@
     "membersLabel": "membres",
     "discoverButton": "Découvrir le centre"
   },
+  "modalitiesSection": {
+    "title": "Modalités analysées par notre <highlight>Core Lab</highlight>",
+    "mri": "IRM",
+    "ct": "Scanner",
+    "echo": "Échographie",
+    "angio": "Coronarographie",
+    "oct": "OCT / IVUS",
+    "ecg": "ECG",
+    "nuclear": "Imagerie nucléaire"
+  },
   "centersGrid": {
     "eyebrow": "MIRACL.ai",
     "titleBig": "7 centres hospitaliers français",
@@ -69,6 +78,23 @@
     "service3": "🤖 Développement et validation IA",
     "service4": "📑 Support méthodologique et scientifique",
     "discover": "Découvrir"
+  },
+  "servicesSection": {
+    "title": "Pourquoi faire appel à <highlight>MIRACL.ai</highlight> ?",
+    "subtitle": "En tant qu'équipe académique ou partenaire industriel",
+    "intro1": "Solliciter MIRACL.ai pour vos projets, c'est s'appuyer sur un <bold>Core Lab académique de référence</bold> en imagerie cardiovasculaire multimodale, au cœur d'un environnement clinique, scientifique et technologique d'excellence.",
+    "intro2": "MIRACL.ai vous accompagne tout au long du cycle de vie de vos projets, de la donnée à la valorisation scientifique, selon des standards méthodologiques, réglementaires et académiques reconnus.",
+    "intro3": "Nous intervenons notamment sur les axes suivants :",
+    "service1Title": "La constitution de bases de données d'imagerie cardiovasculaire",
+    "service1Desc": "Collecte multicentrique, anonymisation, harmonisation et structuration des données en vue de projets de recherche, de développements méthodologiques ou d'applications en intelligence artificielle.",
+    "service2Title": "La relecture centralisée experte et standardisée",
+    "service2Desc": "Analyse des images par des lecteurs spécialisés selon des protocoles validés, avec gestion des divergences, traçabilité et contrôle qualité.",
+    "service3Title": "La production de vérités terrain fiables",
+    "service3Desc": "Annotations, segmentations, scorings et extractions de variables d'imagerie utilisées comme références pour la recherche clinique et le développement d'algorithmes.",
+    "service4Title": "Le développement et la validation d'algorithmes d'IA",
+    "service4Desc": "Accompagnement méthodologique pour l'entraînement, l'évaluation et la validation de modèles en imagerie cardiovasculaire.",
+    "service5Title": "La valorisation scientifique et collaborative",
+    "service5Desc": "Publications, communications, études ancillaires, structuration de projets collaboratifs académiques et industriels."
   },
   "news": {
     "sectionTitle": "Notre <highlight>Actualité</highlight>",

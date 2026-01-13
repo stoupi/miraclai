@@ -21,10 +21,9 @@
     "benefits": "Benefits",
     "ourTeam": "Our team",
     "careers": "Careers",
-    "menuServices": "Services",
+    "menuServices": "Our services",
     "menuCatalog": "Catalog",
     "menuTeam": "Our team",
-    "menuNews": "News",
     "ctaPrimary": "Contact us"
   },
   "home": {
@@ -65,6 +64,16 @@
     "membersLabel": "members",
     "discoverButton": "Discover the center"
   },
+  "modalitiesSection": {
+    "title": "Modalities analyzed by our <highlight>Core Lab</highlight>",
+    "mri": "MRI",
+    "ct": "CT Scan",
+    "echo": "Echocardiography",
+    "angio": "Coronary Angiography",
+    "oct": "OCT / IVUS",
+    "ecg": "ECG",
+    "nuclear": "Nuclear Imaging"
+  },
   "centersGrid": {
     "eyebrow": "MIRACL.ai",
     "titleBig": "7 French hospital centers",
@@ -74,6 +83,23 @@
     "service3": "🤖 AI development and validation",
     "service4": "📑 Methodological and scientific support",
     "discover": "Discover"
+  },
+  "servicesSection": {
+    "title": "Why choose <highlight>MIRACL.ai</highlight>?",
+    "subtitle": "As an academic team or industrial partner",
+    "intro1": "Working with MIRACL.ai means partnering with a <bold>leading academic Core Lab</bold> in multimodal cardiovascular imaging, at the heart of a clinical, scientific and technological environment of excellence.",
+    "intro2": "MIRACL.ai supports you throughout the lifecycle of your projects, from data to scientific valorization, according to recognized methodological, regulatory and academic standards.",
+    "intro3": "We intervene on the following areas:",
+    "service1Title": "Building cardiovascular imaging databases",
+    "service1Desc": "Multicenter collection, anonymization, harmonization and structuring of data for research projects, methodological developments or artificial intelligence applications.",
+    "service2Title": "Expert and standardized centralized review",
+    "service2Desc": "Image analysis by specialized readers following validated protocols, with divergence management, traceability and quality control.",
+    "service3Title": "Producing reliable ground truths",
+    "service3Desc": "Annotations, segmentations, scorings and imaging variable extractions used as references for clinical research and algorithm development.",
+    "service4Title": "AI algorithm development and validation",
+    "service4Desc": "Methodological support for training, evaluation and validation of cardiovascular imaging models.",
+    "service5Title": "Scientific and collaborative valorization",
+    "service5Desc": "Publications, communications, ancillary studies, structuring of collaborative academic and industrial projects."
   },
   "news": {
     "sectionTitle": "Our <highlight>news</highlight>",

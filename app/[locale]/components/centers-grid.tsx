@@ -262,7 +262,7 @@ export async function CentersGrid({ locale }: { locale: string }) {
   const logos = await getPartnerLogos();
 
   return (
-    <section className="relative w-full py-16 md:py-24">
+    <section className="relative w-full py-16 md:py-24 bg-[#F5F7FA]">
       <div className="container mx-auto px-4">
         <div className="text-center mb-8 md:mb-10">
           <h2 className="max-w-4xl mx-auto">

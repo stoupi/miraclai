@@ -1,5 +1,7 @@
 import { Hero } from './components/hero';
+import { ModalitiesSection } from './components/modalities-section';
 import { CentersGrid } from './components/centers-grid';
+import { ServicesSection } from './components/services-section';
 import { CentersSection } from './components/centers-section';
 import { NewsSection } from './components/news-section';
 import { PartnersSection } from './components/partners-section';
@@ -16,7 +18,9 @@ export default async function Home({
   return (
     <>
       <Hero locale={locale} />
+      <ModalitiesSection locale={locale} />
       <CentersGrid locale={locale} />
+      <ServicesSection locale={locale} />
       <CentersSection locale={locale} />
       <PartnersSection locale={locale} />
       <ResearchSection locale={locale} />

@@ -25,16 +25,6 @@ const waveformOffsetY = 12;
 
 type HeroProps = { locale: string };
 
-const imagingModalities = [
-  { src: '/assets/images_hero/mri.png', alt: 'IRM', label: 'IRM', scale: 'scale-100' },
-  { src: '/assets/images_hero/ct.png', alt: 'Scanner', label: 'Scanner', scale: 'scale-100' },
-  { src: '/assets/images_hero/echo.png', alt: 'Échographie', label: 'Échographie', scale: 'scale-100' },
-  { src: '/assets/images_hero/angio.png', alt: 'Coronarographie', label: 'Coronarographie', scale: 'scale-100' },
-  { src: '/assets/images_hero/oct.png', alt: 'OCT/IVUS', label: 'OCT / IVUS', scale: 'scale-100' },
-  { src: '/assets/images_hero/ecg.jpg', alt: 'ECG', label: 'ECG', scale: 'scale-100' },
-  { src: '/assets/images_hero/nuclear.png', alt: 'Imagerie nucléaire', label: 'Imagerie nucléaire', scale: 'scale-100' },
-];
-
 export async function Hero({ locale }: HeroProps) {
   const t = await getTranslations({ locale, namespace: 'home' });
 
@@ -149,54 +139,15 @@ export async function Hero({ locale }: HeroProps) {
         </div>
 
         <div className="relative flex items-center justify-center">
-          <div className="relative w-[200px] sm:w-[260px] md:w-[320px] lg:w-[380px] xl:w-[420px] mt-8 md:mt-12 lg:mt-16">
+          <div className="relative w-[280px] sm:w-[340px] md:w-[400px] lg:w-[460px] xl:w-[500px] mt-8 md:mt-12 lg:mt-16">
             <Image
               src="/assets/coeur_hero.svg"
               alt={t('heartImageAlt')}
-              width={420}
-              height={420}
+              width={500}
+              height={500}
               className="heart-hover w-full h-full object-contain drop-shadow-[0_8px_24px_rgba(0,180,216,0.2)]"
               priority
             />
-
-            <div className="absolute bottom-[8%] left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 md:gap-2">
-              <div className="flex items-start gap-3 md:gap-6">
-                {imagingModalities.slice(0, 4).map((modality) => (
-                  <div key={modality.label} className="flex flex-col items-center group">
-                    <div className="w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 rounded-full overflow-hidden border-2 border-white shadow-lg bg-[#061024] transition-all duration-300 group-hover:scale-110 group-hover:shadow-xl group-hover:border-[#00B4D8]">
-                      <Image
-                        src={modality.src}
-                        alt={modality.alt}
-                        width={64}
-                        height={64}
-                        className={`w-full h-full object-cover ${modality.scale}`}
-                      />
-                    </div>
-                    <span className="mt-2 px-2.5 py-1 rounded-full bg-white/80 backdrop-blur-sm text-[7px] sm:text-[8px] md:text-[9px] lg:text-[10px] font-semibold text-[#061024] uppercase tracking-[0.12em] whitespace-nowrap shadow-sm">
-                      {modality.label}
-                    </span>
-                  </div>
-                ))}
-              </div>
-              <div className="flex items-start gap-3 md:gap-6">
-                {imagingModalities.slice(4, 7).map((modality) => (
-                  <div key={modality.label} className="flex flex-col items-center group">
-                    <div className="w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 rounded-full overflow-hidden border-2 border-white shadow-lg bg-[#061024] transition-all duration-300 group-hover:scale-110 group-hover:shadow-xl group-hover:border-[#00B4D8]">
-                      <Image
-                        src={modality.src}
-                        alt={modality.alt}
-                        width={64}
-                        height={64}
-                        className={`w-full h-full object-cover ${modality.scale}`}
-                      />
-                    </div>
-                    <span className="mt-2 px-2.5 py-1 rounded-full bg-white/80 backdrop-blur-sm text-[7px] sm:text-[8px] md:text-[9px] lg:text-[10px] font-semibold text-[#061024] uppercase tracking-[0.12em] whitespace-nowrap shadow-sm">
-                      {modality.label}
-                    </span>
-                  </div>
-                ))}
-              </div>
-            </div>
           </div>
         </div>
       </div>
