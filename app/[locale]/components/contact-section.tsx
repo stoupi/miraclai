@@ -217,7 +217,7 @@ export function ContactSection({ locale }: { locale: string }) {
                   required
                   value={formData.role}
                   onChange={(event) => handleInputChange('role', event.target.value)}
-                  className="px-4 py-3 rounded-lg border border-gray-200 focus:border-[#00B4D8] focus:ring-2 focus:ring-[#00B4D8]/20 outline-none transition-all bg-white"
+                  className="px-4 py-3 rounded-lg border border-gray-200 focus:border-[#00B4D8] focus:ring-2 focus:ring-[#00B4D8]/20 outline-none transition-all bg-white cursor-pointer"
                 >
                   <option value="">{t('placeholderRole')}</option>
                   {roleOptions.map((option) => (
@@ -241,7 +241,7 @@ export function ContactSection({ locale }: { locale: string }) {
                   required
                   value={formData.projectType}
                   onChange={(event) => handleInputChange('projectType', event.target.value)}
-                  className="px-4 py-3 rounded-lg border border-gray-200 focus:border-[#00B4D8] focus:ring-2 focus:ring-[#00B4D8]/20 outline-none transition-all bg-white"
+                  className="px-4 py-3 rounded-lg border border-gray-200 focus:border-[#00B4D8] focus:ring-2 focus:ring-[#00B4D8]/20 outline-none transition-all bg-white cursor-pointer"
                 >
                   <option value="">{t('placeholderProjectType')}</option>
                   {projectTypeOptions.map((option) => (
@@ -262,7 +262,7 @@ export function ContactSection({ locale }: { locale: string }) {
                   required
                   value={formData.hasFunding}
                   onChange={(event) => handleInputChange('hasFunding', event.target.value)}
-                  className="px-4 py-3 rounded-lg border border-gray-200 focus:border-[#00B4D8] focus:ring-2 focus:ring-[#00B4D8]/20 outline-none transition-all bg-white"
+                  className="px-4 py-3 rounded-lg border border-gray-200 focus:border-[#00B4D8] focus:ring-2 focus:ring-[#00B4D8]/20 outline-none transition-all bg-white cursor-pointer"
                 >
                   <option value="">{t('placeholderHasFunding')}</option>
                   {fundingOptions.map((option) => (
@@ -283,7 +283,7 @@ export function ContactSection({ locale }: { locale: string }) {
                     id="fundingStatus"
                     value={formData.fundingStatus}
                     onChange={(event) => handleInputChange('fundingStatus', event.target.value)}
-                    className="px-4 py-3 rounded-lg border border-gray-200 focus:border-[#00B4D8] focus:ring-2 focus:ring-[#00B4D8]/20 outline-none transition-all bg-white"
+                    className="px-4 py-3 rounded-lg border border-gray-200 focus:border-[#00B4D8] focus:ring-2 focus:ring-[#00B4D8]/20 outline-none transition-all bg-white cursor-pointer"
                   >
                     <option value="">{t('placeholderFundingStatus')}</option>
                     {fundingStatusOptions.map((option) => (
@@ -421,7 +421,7 @@ export function ContactSection({ locale }: { locale: string }) {
               <button
                 type="submit"
                 disabled={isLoading}
-                className="w-full md:w-auto px-8 py-2.5 bg-[#F33349] hover:bg-[#d62b3f] text-white font-semibold rounded-full transition-all duration-200 flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
+                className="cursor-pointer w-full md:w-auto px-8 py-2.5 bg-[#F33349] text-white font-semibold rounded-full border-2 border-[#F33349] transition-colors duration-200 hover:bg-white hover:text-[#F33349] flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
               >
                 {isLoading ? (
                   <>
