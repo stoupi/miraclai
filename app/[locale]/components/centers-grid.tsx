@@ -272,10 +272,10 @@ export async function CentersGrid({ locale }: { locale: string }) {
             >
               {t('titleLine1')}
             </span>
-            <span className="block text-2xl md:text-3xl lg:text-4xl text-[#061024]/80 mt-2 font-medium">
-              {t('titleLine2')}{' '}
+            <span className="block text-[#061024]/80 mt-2 font-medium">
+              <span className="text-lg md:text-xl lg:text-2xl">{t('titleLine2')}</span>{' '}
               <span
-                className="text-[#00B4D8]"
+                className="text-xl md:text-2xl lg:text-3xl text-[#00B4D8]"
                 style={{ fontFamily: 'var(--font-dm-serif), serif', fontStyle: 'italic' }}
               >
                 {t('titleHighlight')}
