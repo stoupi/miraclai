@@ -140,7 +140,7 @@ export function ContactSection({ locale }: { locale: string }) {
   }
 
   return (
-    <section className="relative w-full py-16 md:py-24 bg-[#030b1d]">
+    <section id="contact-section" className="relative w-full py-16 md:py-24 bg-[#030b1d] scroll-mt-28">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
           {/* Header */}

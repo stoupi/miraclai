@@ -1,7 +1,6 @@
 import { getTranslations } from 'next-intl/server';
 import Image from 'next/image';
-import { Link } from '@/app/i18n/navigation';
-import { Button } from '@/components/ui/button';
+import { HeroCtaButtons } from './hero-cta-buttons';
 
 const baselineY = 80;
 const baseCyclePath =
@@ -116,25 +115,10 @@ export async function Hero({ locale }: HeroProps) {
               <p><span className="mr-2">{t('olvaService3Emoji')}</span><span className="font-bold">{t('olvaService3Bold')}</span> {t('olvaService3Regular')}</p>
               <p><span className="mr-2">{t('olvaService4Emoji')}</span><span className="font-bold">{t('olvaService4Bold')}</span> {t('olvaService4Regular')}</p>
             </div>
-            <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-              <Link href="/services">
-                <Button
-                  size="lg"
-                  className="cursor-pointer rounded-full border-2 border-[#F33349] bg-[#F33349] px-8 text-base md:text-lg font-semibold text-white transition-colors hover:bg-white hover:text-[#F33349]"
-                >
-                  {t('ctaInvest')}
-                </Button>
-              </Link>
-              <Link href="/contact">
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="cursor-pointer rounded-full border-2 border-[#061024] bg-transparent px-8 text-base md:text-lg font-semibold text-[#061024] transition-colors hover:bg-[#061024] hover:text-white"
-                >
-                  {t('ctaJoinTeam')}
-                </Button>
-              </Link>
-            </div>
+            <HeroCtaButtons
+              ctaInvestLabel={t('ctaInvest')}
+              ctaJoinTeamLabel={t('ctaJoinTeam')}
+            />
           </div>
         </div>
 

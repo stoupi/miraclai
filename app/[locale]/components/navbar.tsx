@@ -132,12 +132,22 @@ export function Navbar() {
         </Link>
 
         <div className="hidden md:flex items-center gap-10 text-base">
-          <Link href="/team" className={getNavLinkClasses('/team')}>
+          <button
+            onClick={() => {
+              document.getElementById('centers-section')?.scrollIntoView({ behavior: 'smooth' });
+            }}
+            className={`cursor-pointer ${getNavLinkClasses('/team')}`}
+          >
             {t('menuTeam')}
-          </Link>
-          <Link href="/services" className={getNavLinkClasses('/services')}>
+          </button>
+          <button
+            onClick={() => {
+              document.getElementById('services-section')?.scrollIntoView({ behavior: 'smooth' });
+            }}
+            className={`cursor-pointer ${getNavLinkClasses('/services')}`}
+          >
             {t('menuServices')}
-          </Link>
+          </button>
           <div className={`ml-2 flex items-center rounded-full border ${localeWrapperBorder} px-1.5 py-1`}>
             <button
               onClick={() => switchLocale('fr')}
@@ -156,10 +166,13 @@ export function Navbar() {
               EN
             </button>
           </div>
-          <CtaButton asChild className="ml-6 text-xs md:text-sm h-9 md:h-10">
-            <Link href="/contact" className="uppercase">
-              {t('ctaPrimary')}
-            </Link>
+          <CtaButton
+            onClick={() => {
+              document.getElementById('contact-section')?.scrollIntoView({ behavior: 'smooth' });
+            }}
+            className="ml-6 text-xs md:text-sm h-9 md:h-10 uppercase"
+          >
+            {t('ctaPrimary')}
           </CtaButton>
         </div>
       </div>

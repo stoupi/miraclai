@@ -19,7 +19,7 @@ export async function ServicesSection({ locale }: { locale: string }) {
   const t = await getTranslations({ locale, namespace: 'servicesSection' });
 
   return (
-    <section className="relative w-full py-16 md:py-24 bg-[#FAFBFC]">
+    <section id="services-section" className="relative w-full py-16 md:py-24 bg-[#FAFBFC] scroll-mt-28">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
           {/* Left side - Content */}
