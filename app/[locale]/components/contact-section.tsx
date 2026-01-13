@@ -151,7 +151,7 @@ export function ContactSection({ locale }: { locale: string }) {
             >
               {t('title')}
             </h2>
-            <p className="text-white/80 text-lg max-w-2xl mx-auto">
+            <p className="text-white/80 text-lg max-w-2xl mx-auto whitespace-pre-line">
               {t('subtitle')}
             </p>
           </div>

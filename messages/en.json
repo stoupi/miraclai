@@ -406,7 +406,7 @@
   },
   "contactSection": {
     "title": "Contact Us ✉️",
-    "subtitle": "Have a cardiovascular imaging project? Our team is here to support you.",
+    "subtitle": "Have a cardiovascular imaging project?\nOur team is here to support you.",
     "labelName": "👤 Full Name",
     "placeholderName": "Your name",
     "labelEmail": "📧 Email",
@@ -432,6 +432,8 @@
     "modalityEcho": "Ultrasound",
     "modalityAngio": "Angiography",
     "modalityECG": "ECG",
+    "modalityPETCT": "PET-CT",
+    "modalitySPECT": "SPECT",
     "modalityOther": "Other",
     "labelProjectType": "🎓 Project Type",
     "placeholderProjectType": "Select type",
