@@ -25,7 +25,7 @@ export async function ServicesSection({ locale }: { locale: string }) {
           {/* Left side - Content */}
           <div className="flex flex-col">
             <h2
-              className="text-3xl md:text-4xl lg:text-5xl font-medium text-[#061024] leading-tight"
+              className="text-2xl md:text-3xl lg:text-4xl font-medium text-[#061024] leading-tight"
               style={{ fontFamily: 'var(--font-calistoga), serif' }}
             >
               {t.rich('title', {
