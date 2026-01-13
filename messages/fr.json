@@ -49,6 +49,11 @@
     "membersLabel": "membres",
     "discoverButton": "Découvrir le centre"
   },
+  "centersGrid": {
+    "title": "Nos centres partenaires",
+    "subtitle": "7 centres hospitaliers français réunis pour innover en imagerie cardiovasculaire",
+    "discover": "Découvrir"
+  },
   "news": {
     "sectionTitle": "Notre <highlight>Actualité</highlight>",
     "sectionSubtitle": "Découvrez nos collaborations, publications et événements majeurs.",

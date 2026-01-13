@@ -54,6 +54,11 @@
     "membersLabel": "members",
     "discoverButton": "Discover the center"
   },
+  "centersGrid": {
+    "title": "Our partner centers",
+    "subtitle": "7 French hospital centers united to innovate in cardiovascular imaging",
+    "discover": "Discover"
+  },
   "news": {
     "sectionTitle": "Our <highlight>news</highlight>",
     "sectionSubtitle": "Insights, partnerships, and breakthroughs from the MIRACL.ai community.",
