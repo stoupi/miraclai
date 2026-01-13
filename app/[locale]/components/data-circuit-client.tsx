@@ -49,27 +49,35 @@ const circuitSteps: CircuitStep[] = [
   },
 ];
 
-function CurvedArrow() {
+function CurvedArrow({ mirrored = false }: { mirrored?: boolean }) {
+  const arrowId = mirrored ? 'arrowhead-mirrored' : 'arrowhead';
   return (
     <svg
-      className="w-20 h-8 text-[#00B4D8]/60 flex-shrink-0 mx-1"
-      viewBox="0 0 80 30"
+      className={`w-40 h-8 flex-shrink-0 -mx-14 ${mirrored ? 'scale-y-[-1]' : ''}`}
+      viewBox="0 0 100 32"
       fill="none"
     >
+      <defs>
+        <marker
+          id={arrowId}
+          markerWidth="8"
+          markerHeight="6"
+          refX="7"
+          refY="3"
+          orient="auto"
+        >
+          <polygon
+            points="0 0, 8 3, 0 6"
+            fill="#0A2540"
+          />
+        </marker>
+      </defs>
       <path
-        d="M0 22 C20 22 25 8 40 8 C55 8 60 22 80 22"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
+        d="M 2 12 Q 50 28, 98 12"
+        stroke="#0A2540"
+        strokeWidth="1"
         fill="none"
-      />
-      <path
-        d="M72 18 L80 22 L72 26"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        fill="none"
+        markerEnd={`url(#${arrowId})`}
       />
     </svg>
   );
@@ -154,8 +162,8 @@ export function DataCircuitClient({ title }: { title: string }) {
                 onLeave={() => setActiveStep(null)}
               />
               {index < circuitSteps.length - 1 && (
-                <div className="mt-8">
-                  <CurvedArrow />
+                <div className={index === 0 || index === 2 ? 'mt-10' : 'mt-4'}>
+                  <CurvedArrow mirrored={index === 1 || index === 3} />
                 </div>
               )}
             </div>
