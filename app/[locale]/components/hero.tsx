@@ -143,7 +143,7 @@ export async function Hero({ locale }: HeroProps) {
         </div>
 
         <div className="relative flex items-center justify-center">
-          <div className="relative w-[200px] sm:w-[260px] md:w-[320px] lg:w-[380px] xl:w-[420px]">
+          <div className="relative w-[200px] sm:w-[260px] md:w-[320px] lg:w-[380px] xl:w-[420px] mt-8 md:mt-12 lg:mt-16">
             <Image
               src="/assets/coeur_hero.svg"
               alt={t('heartImageAlt')}
@@ -153,7 +153,7 @@ export async function Hero({ locale }: HeroProps) {
               priority
             />
 
-            <div className="absolute bottom-[5%] left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 md:gap-6">
+            <div className="absolute bottom-[15%] left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 md:gap-3">
               <div className="flex items-center gap-4 md:gap-8">
                 {imagingModalities.slice(0, 4).map((modality) => (
                   <div

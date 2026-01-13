@@ -34,7 +34,7 @@ const allMembers: TeamMember[] = [
 
 function MemberCard({ member }: { member: TeamMember }) {
   return (
-    <div className="group relative w-32 sm:w-36 md:w-44 lg:w-48 aspect-[3/4] rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 cursor-pointer flex-shrink-0">
+    <div className="group relative w-44 aspect-[3/4] rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 cursor-pointer flex-shrink-0">
       <div className={`absolute inset-0 flex items-center justify-center ${
         member.specialty === 'cardio'
           ? 'bg-gradient-to-br from-[#00B4D8] to-[#0077B6]'
@@ -77,7 +77,7 @@ export function TeamCarousel() {
   const lastTimeRef = useRef<number>(0);
   const containerRef = useRef<HTMLDivElement>(null);
 
-  const CARD_WIDTH = 216;
+  const CARD_WIDTH = 200; // 176px card + 24px gap
   const SPEED = 50;
   const TOTAL_CARDS = 18;
 
@@ -130,7 +130,7 @@ export function TeamCarousel() {
   return (
     <div
       ref={containerRef}
-      className="space-y-4 md:space-y-6"
+      className="w-screen relative left-1/2 right-1/2 -mx-[50vw] space-y-4 md:space-y-6"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
