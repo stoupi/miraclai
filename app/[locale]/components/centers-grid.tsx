@@ -270,21 +270,29 @@ export async function CentersGrid({ locale }: { locale: string }) {
               className="block text-3xl md:text-4xl lg:text-5xl font-medium text-[#061024] leading-tight"
               style={{ fontFamily: 'var(--font-calistoga), serif' }}
             >
-              {t('titleLine1')}
+              {t('titleBig')}
             </span>
-            <span className="block text-[#061024]/80 mt-2 font-medium">
-              <span className="text-lg md:text-xl lg:text-2xl">{t('titleLine2')}</span>{' '}
-              <span
-                className="text-xl md:text-2xl lg:text-3xl text-[#00B4D8]"
-                style={{ fontFamily: 'var(--font-dm-serif), serif', fontStyle: 'italic' }}
-              >
-                {t('titleHighlight')}
-              </span>
+            <span className="block mt-2 font-medium">
+              {t.rich('titleSmall', {
+                highlight: (chunks) => (
+                  <span
+                    className="text-2xl md:text-3xl lg:text-4xl text-[#00B4D8]"
+                    style={{ fontFamily: 'var(--font-dm-serif), serif', fontStyle: 'italic' }}
+                  >
+                    {chunks}
+                  </span>
+                ),
+                small: (chunks) => (
+                  <span
+                    className="text-lg md:text-xl lg:text-2xl text-[#061024]/80"
+                    style={{ fontFamily: 'var(--font-calistoga), serif' }}
+                  >
+                    {chunks}
+                  </span>
+                )
+              })}
             </span>
           </h2>
-          <p className="text-[#061024]/60 text-base md:text-lg max-w-2xl mx-auto mt-6 leading-relaxed">
-            {t('subtitle')}
-          </p>
         </div>
 
       </div>

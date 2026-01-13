@@ -126,8 +126,8 @@ export function Navbar() {
               }`}
             />
           </div>
-          <span className="mt-1 text-[9px] md:text-[10px] font-semibold text-[#00B4D8] uppercase tracking-[0.15em]">
-            Plateforme AP-HP · Label Carnot
+          <span className="-mt-3 ml-[88px] text-[9px] md:text-[10px] font-semibold text-[#00B4D8] uppercase tracking-[0.15em]">
+            Une plateforme de l'AP-HP
           </span>
         </Link>
 

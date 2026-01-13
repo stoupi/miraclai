@@ -110,16 +110,22 @@ export async function Hero({ locale }: HeroProps) {
       <div className="container mx-auto grid grid-cols-1 items-center gap-8 px-4 pt-12 pb-6 md:grid-cols-2 lg:pt-16 lg:pb-8">
         <div className="flex flex-col items-start w-full pt-12 md:pt-16">
           <div className="w-full max-w-xl">
-            <h1 className="text-balance text-4xl leading-[1.1] tracking-tight text-[#061024] sm:text-5xl lg:text-6xl" style={{ fontFamily: 'var(--font-calistoga), serif' }}>
+            <h1 className="text-balance text-3xl leading-[1.15] tracking-tight text-[#061024] sm:text-4xl lg:text-5xl" style={{ fontFamily: 'var(--font-calistoga), serif' }}>
               {t.rich('olvaHeadline', {
                 highlight: (chunks) => (
                   <span className="hero-highlight">{chunks}</span>
+                ),
+                nowrap: (chunks) => (
+                  <span className="whitespace-nowrap">{chunks}</span>
                 )
               })}
             </h1>
-            <p className="mt-6 max-w-lg text-base leading-relaxed text-[#061024]/70 sm:text-lg">
-              {t('olvaDescription')}
-            </p>
+            <div className="mt-6 flex flex-col gap-2 text-base text-[#061024] sm:text-lg">
+              <p><span className="mr-2">{t('olvaService1Emoji')}</span><span className="font-bold">{t('olvaService1Bold')}</span> {t('olvaService1Regular')}</p>
+              <p><span className="mr-2">{t('olvaService2Emoji')}</span><span className="font-bold">{t('olvaService2Bold')}</span> {t('olvaService2Regular')}</p>
+              <p><span className="mr-2">{t('olvaService3Emoji')}</span><span className="font-bold">{t('olvaService3Bold')}</span> {t('olvaService3Regular')}</p>
+              <p><span className="mr-2">{t('olvaService4Emoji')}</span><span className="font-bold">{t('olvaService4Bold')}</span> {t('olvaService4Regular')}</p>
+            </div>
             <div className="mt-10 flex flex-col gap-4 sm:flex-row">
               <Link href="/services">
                 <Button
