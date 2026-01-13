@@ -70,7 +70,7 @@ export function Navbar() {
   const normalizedPath = pathname.replace(/^\/(en|fr)(?=\/|$)/, '') || '/';
 
   const getNavLinkClasses = (href: string) => {
-    const baseClasses = `relative inline-block font-medium uppercase transform-gpu transition-colors transition-transform duration-150 hover:scale-105 ${
+    const baseClasses = `relative inline-block font-medium uppercase tracking-widest transform-gpu transition-colors transition-transform duration-150 hover:scale-105 ${
       palette === 'light' ? 'text-white/70 hover:text-white' : 'text-[#061024] hover:text-[#05112b]'
     }`;
     const isActive = normalizedPath === href || normalizedPath.startsWith(`${href}/`);
