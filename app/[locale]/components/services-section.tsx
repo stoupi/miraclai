@@ -33,8 +33,18 @@ export async function ServicesSection({ locale }: { locale: string }) {
                 )
               })}
             </h2>
-            <p className="mt-2 text-lg md:text-xl font-semibold text-[#061024]">
-              {t('subtitle')}
+            <p className="mt-3">
+              {t.rich('subtitle', {
+                highlight: (chunks) => (
+                  <span
+                    className="text-xl md:text-2xl lg:text-3xl text-[#00B4D8]"
+                    style={{ fontFamily: 'var(--font-dm-serif), serif', fontStyle: 'italic' }}
+                  >
+                    {chunks}
+                  </span>
+                ),
+                br: () => <br />
+              })}
             </p>
 
             <div className="w-full h-px bg-[#061024]/20 my-6" />

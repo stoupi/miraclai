@@ -72,7 +72,7 @@
   "centersGrid": {
     "eyebrow": "MIRACL.ai",
     "titleBig": "7 centres hospitaliers français",
-    "titleSmall": "<small>unis au service de</small> <highlight>vos projets en imagerie cardiovasculaire multimodale</highlight>",
+    "titleSmall": "<small>unis au service de</small> <highlight>vos projets en imagerie <nowrap>cardiovasculaire multimodale</nowrap></highlight>",
     "service1": "🫀 Relecture centralisée d'imagerie",
     "service2": "📊 Analyse quantitative et qualitative",
     "service3": "🤖 Développement et validation IA",
@@ -81,7 +81,7 @@
   },
   "servicesSection": {
     "title": "Pourquoi faire appel à <highlight>MIRACL.ai</highlight> ?",
-    "subtitle": "En tant qu'équipe académique ou partenaire industriel",
+    "subtitle": "<highlight>En tant qu'équipe académique ou<br></br>partenaire industriel</highlight>",
     "intro1": "Solliciter MIRACL.ai pour vos projets, c'est s'appuyer sur un <bold>Core Lab académique de référence</bold> en imagerie cardiovasculaire multimodale, au cœur d'un environnement clinique, scientifique et technologique d'excellence.",
     "intro2": "MIRACL.ai vous accompagne tout au long du cycle de vie de vos projets, de la donnée à la valorisation scientifique, selon des standards méthodologiques, réglementaires et académiques reconnus.",
     "intro3": "Nous intervenons notamment sur les axes suivants :",

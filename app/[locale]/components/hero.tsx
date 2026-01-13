@@ -97,8 +97,8 @@ export async function Hero({ locale }: HeroProps) {
         </g>
       </svg>
 
-      <div className="container mx-auto grid grid-cols-1 items-center gap-8 px-4 pt-12 pb-6 md:grid-cols-2 lg:pt-16 lg:pb-8">
-        <div className="flex flex-col items-start w-full pt-12 md:pt-16">
+      <div className="container mx-auto grid grid-cols-1 items-center gap-8 px-4 pt-6 pb-6 md:grid-cols-2 lg:pt-8 lg:pb-8">
+        <div className="flex flex-col items-start w-full pt-4 md:pt-6">
           <div className="w-full max-w-xl">
             <h1 className="text-balance text-3xl leading-[1.15] tracking-tight text-[#061024] sm:text-4xl lg:text-5xl" style={{ fontFamily: 'var(--font-calistoga), serif' }}>
               {t.rich('olvaHeadline', {
@@ -139,7 +139,7 @@ export async function Hero({ locale }: HeroProps) {
         </div>
 
         <div className="relative flex items-center justify-center">
-          <div className="relative w-[280px] sm:w-[340px] md:w-[400px] lg:w-[460px] xl:w-[500px] mt-8 md:mt-12 lg:mt-16">
+          <div className="relative w-[280px] sm:w-[340px] md:w-[400px] lg:w-[460px] xl:w-[500px] mt-12 md:mt-20 lg:mt-24">
             <Image
               src="/assets/coeur_hero.svg"
               alt={t('heartImageAlt')}

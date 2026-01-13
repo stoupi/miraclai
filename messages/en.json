@@ -77,7 +77,7 @@
   "centersGrid": {
     "eyebrow": "MIRACL.ai",
     "titleBig": "7 French hospital centers",
-    "titleSmall": "<small>united to support</small> <highlight>your multimodal cardiovascular imaging projects</highlight>",
+    "titleSmall": "<small>united to support</small> <highlight>your <nowrap>multimodal cardiovascular imaging</nowrap> projects</highlight>",
     "service1": "🫀 Centralized imaging review",
     "service2": "📊 Quantitative and qualitative analysis",
     "service3": "🤖 AI development and validation",
@@ -86,7 +86,7 @@
   },
   "servicesSection": {
     "title": "Why choose <highlight>MIRACL.ai</highlight>?",
-    "subtitle": "As an academic team or industrial partner",
+    "subtitle": "<highlight>As an academic team or<br></br>industrial partner</highlight>",
     "intro1": "Working with MIRACL.ai means partnering with a <bold>leading academic Core Lab</bold> in multimodal cardiovascular imaging, at the heart of a clinical, scientific and technological environment of excellence.",
     "intro2": "MIRACL.ai supports you throughout the lifecycle of your projects, from data to scientific valorization, according to recognized methodological, regulatory and academic standards.",
     "intro3": "We intervene on the following areas:",
