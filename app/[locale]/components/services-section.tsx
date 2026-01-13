@@ -1,5 +1,6 @@
 import { getTranslations } from 'next-intl/server';
 import Image from 'next/image';
+import { DataCircuitClient } from './data-circuit-client';
 
 type ServiceItem = {
   titleKey: string;
@@ -86,6 +87,11 @@ export async function ServicesSection({ locale }: { locale: string }) {
               />
             </div>
           </div>
+        </div>
+
+        {/* Data Circuit */}
+        <div className="mt-16 md:mt-24">
+          <DataCircuitClient />
         </div>
       </div>
     </section>

@@ -132,26 +132,12 @@ function StepNode({ step, isActive, onHover, onLeave }: {
   );
 }
 
-export function DataCircuitClient({ title }: { title: string }) {
+export function DataCircuitClient() {
   const [activeStep, setActiveStep] = useState<number | null>(null);
 
   return (
-    <section className="relative w-full py-16 md:py-24 bg-white overflow-hidden">
-      <div className="container mx-auto px-4">
-        {/* Header */}
-        <div className="text-center mb-12 md:mb-16">
-          <p className="text-[#00B4D8] font-medium mb-2">
-            👉 MIRACL.ai vous accompagne de la donnée à la publication
-          </p>
-          <h2
-            className="text-2xl md:text-3xl lg:text-4xl font-medium text-[#0A2540]"
-            style={{ fontFamily: 'var(--font-calistoga), serif' }}
-          >
-            {title}
-          </h2>
-        </div>
-
-        {/* Desktop: Horizontal flow with curved arrows */}
+    <div className="w-full py-4">
+      {/* Desktop: Horizontal flow with curved arrows */}
         <div className="hidden lg:flex items-start justify-center">
           {circuitSteps.map((step, index) => (
             <div key={step.id} className="flex items-start">
@@ -214,10 +200,9 @@ export function DataCircuitClient({ title }: { title: string }) {
         </div>
 
         {/* Hint */}
-        <p className="text-center text-[#0A2540]/40 text-sm mt-12">
-          Survolez les étapes pour plus de détails
-        </p>
-      </div>
-    </section>
+      <p className="text-center text-[#0A2540]/40 text-sm mt-8">
+        Survolez les étapes pour plus de détails
+      </p>
+    </div>
   );
 }
