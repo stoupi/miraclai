@@ -24,7 +24,8 @@
     "menuServices": "Our services",
     "menuCatalog": "Catalog",
     "menuTeam": "Our team",
-    "ctaPrimary": "Contact us"
+    "ctaPrimary": "Contact us",
+    "platformLabel": "An AP-HP platform"
   },
   "home": {
     "title": "",
@@ -34,7 +35,7 @@
     "secondaryCta": "Patient space",
     "chief": "Head of Department: Professor Patrick HENRY",
     "teamImageAlt": "Team photo",
-    "olvaHeadline": "The leading <highlight>academic Core Lab</highlight> in <nowrap>multimodal cardiovascular imaging</nowrap>",
+    "olvaHeadline": "The leading <highlight>academic Core Lab</highlight><br></br>in multimodal cardiovascular imaging",
     "olvaService1Emoji": "🫀",
     "olvaService1Bold": "Centralized review",
     "olvaService1Regular": "of imaging",
@@ -47,8 +48,8 @@
     "olvaService4Emoji": "📑",
     "olvaService4Bold": "Methodological support",
     "olvaService4Regular": "and scientific",
-    "ctaInvest": "Invest in Olva",
-    "ctaJoinTeam": "Join the team",
+    "ctaInvest": "Discover our services",
+    "ctaJoinTeam": "Contact us",
     "affiliation": "An AP-HP platform · Carnot Label",
     "heartImageAlt": "Stylized heart illustration",
     "aphpLogoAlt": "AP-HP logo",

@@ -19,7 +19,8 @@
     "menuServices": "Nos services",
     "menuCatalog": "Catalogue",
     "menuTeam": "Notre équipe",
-    "ctaPrimary": "Contactez-nous"
+    "ctaPrimary": "Contactez-nous",
+    "platformLabel": "Une plateforme de l'AP-HP"
   },
   "home": {
     "title": "",
