@@ -55,8 +55,11 @@
     "discoverButton": "Discover the center"
   },
   "centersGrid": {
-    "title": "Our partner centers",
-    "subtitle": "7 French hospital centers united to innovate in cardiovascular imaging",
+    "eyebrow": "MIRACL.ai",
+    "titleLine1": "7 French hospital centers",
+    "titleLine2": "united to advance",
+    "titleHighlight": "cardiovascular imaging",
+    "subtitle": "Cardiologists, radiologists, engineers and data scientists working together to advance research and innovation.",
     "discover": "Discover"
   },
   "news": {
