@@ -101,6 +101,9 @@
     "service5Title": "Scientific and collaborative valorization",
     "service5Desc": "Publications, communications, ancillary studies, structuring of collaborative academic and industrial projects."
   },
+  "dataCircuit": {
+    "title": "The data circuit"
+  },
   "news": {
     "sectionTitle": "Our <highlight>news</highlight>",
     "sectionSubtitle": "Insights, partnerships, and breakthroughs from the MIRACL.ai community.",

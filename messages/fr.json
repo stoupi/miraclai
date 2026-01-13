@@ -96,6 +96,9 @@
     "service5Title": "La valorisation scientifique et collaborative",
     "service5Desc": "Publications, communications, études ancillaires, structuration de projets collaboratifs académiques et industriels."
   },
+  "dataCircuit": {
+    "title": "Le circuit de la donnée"
+  },
   "news": {
     "sectionTitle": "Notre <highlight>Actualité</highlight>",
     "sectionSubtitle": "Découvrez nos collaborations, publications et événements majeurs.",
