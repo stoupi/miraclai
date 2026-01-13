@@ -2,11 +2,13 @@ import { getTranslations } from 'next-intl/server';
 import Image from 'next/image';
 import { Link } from '@/app/i18n/navigation';
 import { ChevronRight } from 'lucide-react';
+import { PartnersMarquee } from '@/components/ui/partners-marquee';
+import { getPartnerLogos } from '@/lib/services/partners';
 
 type TeamMember = {
   name: string;
   miraclRole: string;
-  degree: 'MD, PhD' | 'PhD' | '';
+  degree: 'MD, PhD' | 'MD' | 'PhD' | '';
   specialty: 'cardio' | 'radio' | 'other';
   isChefDeService?: boolean;
   photo?: string;
@@ -66,7 +68,7 @@ const centersData: Center[] = [
     logoScale: 'small',
     members: [
       { name: 'Dr Yohann Bohbot', miraclRole: '', degree: 'MD, PhD', specialty: 'cardio', photo: '/assets/team/bohbot.jpg' },
-      { name: 'Dr Cédric Renard', miraclRole: '', degree: 'MD, PhD', specialty: 'radio', photo: '/assets/team/renard.jpg' },
+      { name: 'Dr Cédric Renard', miraclRole: '', degree: 'MD', specialty: 'radio', photo: '/assets/team/renard.jpg' },
     ],
   },
   {
@@ -79,7 +81,7 @@ const centersData: Center[] = [
     logoScale: 'large',
     members: [
       { name: 'Pr Jérôme Garot', miraclRole: '', degree: 'MD, PhD', specialty: 'cardio', photo: '/assets/team/garot.jpeg' },
-      { name: 'Dr Béatrice Daoud', miraclRole: '', degree: 'MD, PhD', specialty: 'radio', photo: '/assets/team/daoud.jpg' },
+      { name: 'Dr Béatrice Daoud', miraclRole: '', degree: 'MD', specialty: 'radio', photo: '/assets/team/daoud.jpg' },
     ],
   },
   {
@@ -106,7 +108,7 @@ const centersData: Center[] = [
     members: [
       { name: 'Pr Olivier Huttin', miraclRole: '', degree: 'MD, PhD', specialty: 'cardio', photo: '/assets/team/huttin.jpg' },
       { name: 'Pr Christian De Chillou', miraclRole: '', degree: 'MD, PhD', specialty: 'cardio', photo: '/assets/team/chillou.jpg' },
-      { name: 'Marine Beaumont', miraclRole: 'Ingénieur de recherche', degree: 'PhD', specialty: 'other', photo: '/assets/team/beaumont.jpg' },
+      { name: 'Marine Beaumont', miraclRole: '', degree: 'PhD', specialty: 'other', photo: '/assets/team/beaumont.jpg' },
     ],
   },
   {
@@ -152,18 +154,15 @@ function MemberPlaceholder({ member }: { member: TeamMember }) {
       ? 'Cardiologue'
       : member.specialty === 'radio'
         ? 'Radiologue'
-        : '';
+        : member.specialty === 'other' && !member.miraclRole
+          ? 'Ingénieur de recherche'
+          : '';
 
   const specialtyLabel = member.isChefDeService && baseSpecialtyLabel
     ? `${baseSpecialtyLabel}, Chef de Service`
     : baseSpecialtyLabel;
 
-  const specialtyColorClass =
-    member.specialty === 'cardio'
-      ? 'text-[#00B4D8]'
-      : member.specialty === 'radio'
-        ? 'text-[#E879A9]'
-        : 'text-[#64748B]';
+  const specialtyColorClass = 'text-[#061024]';
 
   const formattedName = formatNameWithUppercaseLastName(member.name);
 
@@ -198,7 +197,7 @@ function MemberPlaceholder({ member }: { member: TeamMember }) {
           <p className="text-[#061024]/80 text-xs leading-tight mt-0.5">{member.degree}</p>
         )}
         {member.miraclRole && (
-          <p className="text-[#061024] font-bold text-sm leading-tight mt-1">{member.miraclRole}</p>
+          <p className="text-[#00B4D8] font-bold text-sm leading-tight mt-1">{member.miraclRole}</p>
         )}
         {specialtyLabel && (
           <p className={`font-bold text-sm leading-tight mt-1 ${specialtyColorClass}`}>
@@ -260,11 +259,12 @@ function CenterCard({ center, discoverLabel }: { center: Center; discoverLabel: 
 
 export async function CentersGrid({ locale }: { locale: string }) {
   const t = await getTranslations({ locale, namespace: 'centersGrid' });
+  const logos = await getPartnerLogos();
 
   return (
     <section className="relative w-full py-16 md:py-24">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12 md:mb-16">
+        <div className="text-center mb-8 md:mb-10">
           <h2 className="max-w-4xl mx-auto">
             <span
               className="block text-3xl md:text-4xl lg:text-5xl font-medium text-[#061024] leading-tight"
@@ -286,6 +286,22 @@ export async function CentersGrid({ locale }: { locale: string }) {
             {t('subtitle')}
           </p>
         </div>
+
+      </div>
+      <div className="w-full mb-12 md:mb-16">
+        <PartnersMarquee
+          logos={[...logos, ...logos, ...logos].map(logo => {
+            if (logo.src.includes('larib')) return { ...logo, scale: 0.8 };
+            if (logo.src.includes('HEGP')) return { ...logo, scale: 0.95 };
+            if (logo.src.includes('icps')) return { ...logo, scale: 0.85 };
+            return { ...logo, scale: 1 };
+          })}
+          className="py-2"
+          trackClassName="gap-14 pr-14 !animate-[marquee_60s_linear_infinite]"
+          itemClassName="h-10 md:h-12 opacity-100 grayscale-0 hover:scale-110"
+        />
+      </div>
+      <div className="container mx-auto px-4">
 
         <div className="grid gap-3 md:gap-4 max-w-5xl mx-auto">
           {centersData.map((center) => (

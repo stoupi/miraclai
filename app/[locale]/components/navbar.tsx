@@ -102,7 +102,7 @@ export function Navbar() {
       }`}
     >
       <div className="container mx-auto flex h-28 items-center justify-between px-5">
-        <Link href="/" className="flex items-center">
+        <Link href="/" className="flex flex-col items-start">
           <div className="relative" style={{ width: 260, height: 64 }}>
             <Image
               src="/assets/logo_miracl_blanc_V2.svg"
@@ -126,6 +126,9 @@ export function Navbar() {
               }`}
             />
           </div>
+          <span className="mt-1 text-[9px] md:text-[10px] font-semibold text-[#00B4D8] uppercase tracking-[0.15em]">
+            Plateforme AP-HP · Label Carnot
+          </span>
         </Link>
 
         <div className="hidden md:flex items-center gap-10 text-base">
