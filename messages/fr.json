@@ -78,7 +78,15 @@
     "service2": "📊 Analyse quantitative et qualitative",
     "service3": "🤖 Développement et validation IA",
     "service4": "📑 Support méthodologique et scientifique",
-    "discover": "Découvrir"
+    "discover": "Découvrir",
+    "roleScientificDirector": "Directeur scientifique",
+    "roleMethodologyLead": "Référent Méthodologie",
+    "roleScientificCoordinator": "Coordinatrice scientifique",
+    "roleRadiologyLead": "Référent Radiologie",
+    "roleDepartmentHead": "Chef de service",
+    "specialtyCardio": "Cardiologue",
+    "specialtyRadio": "Radiologue",
+    "specialtyEngineer": "Ingénieur de recherche"
   },
   "servicesSection": {
     "title": "Pourquoi faire appel à <highlight>MIRACL.ai</highlight> ?",
@@ -425,11 +433,10 @@
     "labelModalities": "🫀 Modalités concernées",
     "modalityMRI": "IRM cardiaque",
     "modalityCT": "Scanner cardiaque",
-    "modalityEcho": "Échographie",
+    "modalityEcho": "Échocardiographie",
     "modalityECG": "ECG",
     "modalityAngio": "Coronarographie",
-    "modalityPETCT": "PET-CT",
-    "modalitySPECT": "Scintigraphie",
+    "modalityNuclear": "Imagerie nucléaire (PET-CT / Scintigraphie)",
     "modalityOther": "Autre",
     "labelProjectType": "🎓 Type de projet",
     "placeholderProjectType": "Sélectionnez le type",
@@ -452,6 +459,7 @@
     "placeholderMessage": "Décrivez votre projet ou votre demande...",
     "submit": "Envoyer ma demande",
     "sending": "Envoi en cours...",
+    "responsePromise": "Nous vous répondrons dans les plus brefs délais.",
     "successTitle": "Merci pour votre demande ! 🎉",
     "successMessage": "Notre équipe vous contactera dans les plus brefs délais."
   },

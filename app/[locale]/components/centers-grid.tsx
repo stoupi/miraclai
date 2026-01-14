@@ -37,9 +37,9 @@ const centersData: Center[] = [
     dominantSpecialty: 'mixed',
     logoScale: 'large',
     members: [
-      { name: 'Dr Théo Pezel', miraclRole: 'Directeur scientifique', degree: 'MD, PhD', specialty: 'cardio', photo: '/assets/team/pezel.jpg' },
-      { name: 'Pr Eric Vicaut', miraclRole: 'Référent Méthodologie', degree: 'MD, PhD', specialty: 'other', photo: '/assets/team/vicaut.jpg' },
-      { name: 'Solenn Toupin', miraclRole: 'Coordinatrice scientifique', degree: 'PhD', specialty: 'other', photo: '/assets/team/toupin.jpg', photoScale: 1.15, photoOffsetX: '30%', photoOffsetY: '-10%' },
+      { name: 'Dr Théo Pezel', miraclRole: 'roleScientificDirector', degree: 'MD, PhD', specialty: 'cardio', photo: '/assets/team/pezel.jpg' },
+      { name: 'Pr Eric Vicaut', miraclRole: 'roleMethodologyLead', degree: 'MD, PhD', specialty: 'other', photo: '/assets/team/vicaut.jpg' },
+      { name: 'Solenn Toupin', miraclRole: 'roleScientificCoordinator', degree: 'PhD', specialty: 'other', photo: '/assets/team/toupin.jpg', photoScale: 1.15, photoOffsetX: '30%', photoOffsetY: '-10%' },
       { name: 'Pr Valérie Bousson', miraclRole: '', degree: 'MD, PhD', specialty: 'radio', isChefDeService: true, photo: '/assets/team/bousson.jpg' },
     ],
   },
@@ -52,7 +52,7 @@ const centersData: Center[] = [
     dominantSpecialty: 'radio',
     logoScale: 'large',
     members: [
-      { name: 'Pr Gilles Soulat', miraclRole: 'Référent Radiologie', degree: 'MD, PhD', specialty: 'radio', photo: '/assets/team/soulat.jpg' },
+      { name: 'Pr Gilles Soulat', miraclRole: 'roleRadiologyLead', degree: 'MD, PhD', specialty: 'radio', photo: '/assets/team/soulat.jpg' },
       { name: 'Pr Elie Mousseaux', miraclRole: '', degree: 'MD, PhD', specialty: 'radio', photo: '/assets/team/mousseaux.jpg' },
       { name: 'Pr Jean-Sébastien Hulot', miraclRole: '', degree: 'MD, PhD', specialty: 'cardio', photo: '/assets/team/hulot.png' },
     ],
@@ -181,7 +181,20 @@ export async function CentersGrid({ locale }: { locale: string }) {
         />
       </div>
       <div className="container mx-auto px-4">
-        <CentersGridClient centers={centersData} discoverLabel={t('discover')} />
+        <CentersGridClient
+          centers={centersData}
+          discoverLabel={t('discover')}
+          translations={{
+            roleScientificDirector: t('roleScientificDirector'),
+            roleMethodologyLead: t('roleMethodologyLead'),
+            roleScientificCoordinator: t('roleScientificCoordinator'),
+            roleRadiologyLead: t('roleRadiologyLead'),
+            roleDepartmentHead: t('roleDepartmentHead'),
+            specialtyCardio: t('specialtyCardio'),
+            specialtyRadio: t('specialtyRadio'),
+            specialtyEngineer: t('specialtyEngineer'),
+          }}
+        />
       </div>
     </section>
   );

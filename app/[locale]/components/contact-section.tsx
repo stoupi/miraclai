@@ -78,8 +78,7 @@ export function ContactSection({ locale }: { locale: string }) {
     { value: 'echo', label: t('modalityEcho') },
     { value: 'ecg', label: t('modalityECG') },
     { value: 'angio', label: t('modalityAngio') },
-    { value: 'petct', label: t('modalityPETCT') },
-    { value: 'spect', label: t('modalitySPECT') },
+    { value: 'nuclear', label: t('modalityNuclear') },
     { value: 'other', label: t('modalityOther') },
   ];
 
@@ -210,11 +209,10 @@ export function ContactSection({ locale }: { locale: string }) {
               {/* Role */}
               <div className="flex flex-col gap-2">
                 <label htmlFor="role" className="text-sm font-semibold text-[#0A2540]">
-                  {t('labelRole')} <span className="text-[#F33349]">*</span>
+                  {t('labelRole')}
                 </label>
                 <select
                   id="role"
-                  required
                   value={formData.role}
                   onChange={(event) => handleInputChange('role', event.target.value)}
                   className="px-4 py-3 rounded-lg border border-gray-200 focus:border-[#00B4D8] focus:ring-2 focus:ring-[#00B4D8]/20 outline-none transition-all bg-white cursor-pointer"
@@ -234,11 +232,10 @@ export function ContactSection({ locale }: { locale: string }) {
               {/* Project Type */}
               <div className="flex flex-col gap-2">
                 <label htmlFor="projectType" className="text-sm font-semibold text-[#0A2540]">
-                  {t('labelProjectType')} <span className="text-[#F33349]">*</span>
+                  {t('labelProjectType')}
                 </label>
                 <select
                   id="projectType"
-                  required
                   value={formData.projectType}
                   onChange={(event) => handleInputChange('projectType', event.target.value)}
                   className="px-4 py-3 rounded-lg border border-gray-200 focus:border-[#00B4D8] focus:ring-2 focus:ring-[#00B4D8]/20 outline-none transition-all bg-white cursor-pointer"
@@ -255,11 +252,10 @@ export function ContactSection({ locale }: { locale: string }) {
               {/* Has Funding */}
               <div className="flex flex-col gap-2">
                 <label htmlFor="hasFunding" className="text-sm font-semibold text-[#0A2540]">
-                  {t('labelHasFunding')} <span className="text-[#F33349]">*</span>
+                  {t('labelHasFunding')}
                 </label>
                 <select
                   id="hasFunding"
-                  required
                   value={formData.hasFunding}
                   onChange={(event) => handleInputChange('hasFunding', event.target.value)}
                   className="px-4 py-3 rounded-lg border border-gray-200 focus:border-[#00B4D8] focus:ring-2 focus:ring-[#00B4D8]/20 outline-none transition-all bg-white cursor-pointer"
@@ -299,7 +295,7 @@ export function ContactSection({ locale }: { locale: string }) {
             {/* Services Interest */}
             <div className="mt-6">
               <label className="text-sm font-semibold text-[#0A2540] block mb-3">
-                {t('labelServices')} <span className="text-[#F33349]">*</span>
+                {t('labelServices')}
               </label>
               <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
                 {serviceOptions.map((option) => (
@@ -343,7 +339,7 @@ export function ContactSection({ locale }: { locale: string }) {
             {/* Modalities */}
             <div className="mt-6">
               <label className="text-sm font-semibold text-[#0A2540] block mb-3">
-                {t('labelModalities')} <span className="text-[#F33349]">*</span>
+                {t('labelModalities')}
               </label>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
                 {modalityOptions.map((option) => (
@@ -417,7 +413,7 @@ export function ContactSection({ locale }: { locale: string }) {
             </div>
 
             {/* Submit Button */}
-            <div className="mt-8">
+            <div className="mt-8 flex flex-col md:flex-row items-center gap-4">
               <button
                 type="submit"
                 disabled={isLoading}
@@ -435,6 +431,9 @@ export function ContactSection({ locale }: { locale: string }) {
                   </>
                 )}
               </button>
+              <p className="text-sm text-[#0A2540]/70 italic">
+                {t('responsePromise')}
+              </p>
             </div>
           </form>
         </div>

@@ -28,6 +28,17 @@ type Center = {
   logoScale: 'small' | 'medium' | 'large';
 };
 
+type Translations = {
+  roleScientificDirector: string;
+  roleMethodologyLead: string;
+  roleScientificCoordinator: string;
+  roleRadiologyLead: string;
+  roleDepartmentHead: string;
+  specialtyCardio: string;
+  specialtyRadio: string;
+  specialtyEngineer: string;
+};
+
 function formatNameWithUppercaseLastName(fullName: string): string {
   const parts = fullName.split(' ');
   if (parts.length < 2) return fullName;
@@ -37,7 +48,7 @@ function formatNameWithUppercaseLastName(fullName: string): string {
   return `${rest} ${lastName}`;
 }
 
-function MemberPlaceholder({ member }: { member: TeamMember }) {
+function MemberPlaceholder({ member, translations }: { member: TeamMember; translations: Translations }) {
   const initials = member.name
     .split(' ')
     .filter((word) => word.length > 2)
@@ -53,12 +64,16 @@ function MemberPlaceholder({ member }: { member: TeamMember }) {
 
   const baseSpecialtyLabel =
     member.specialty === 'cardio'
-      ? 'Cardiologue'
+      ? translations.specialtyCardio
       : member.specialty === 'radio'
-        ? 'Radiologue'
+        ? translations.specialtyRadio
         : member.specialty === 'other' && !member.miraclRole
-          ? 'Ingénieur de recherche'
+          ? translations.specialtyEngineer
           : '';
+
+  const translatedRole = member.miraclRole
+    ? translations[member.miraclRole as keyof Translations] || member.miraclRole
+    : '';
 
   const specialtyColorClass = 'text-[#061024]';
 
@@ -94,8 +109,8 @@ function MemberPlaceholder({ member }: { member: TeamMember }) {
         {member.degree && (
           <p className="text-[#061024]/80 text-xs leading-tight mt-0.5">{member.degree}</p>
         )}
-        {member.miraclRole && (
-          <p className="text-[#00B4D8] font-bold text-sm leading-tight mt-1">{member.miraclRole}</p>
+        {translatedRole && (
+          <p className="text-[#00B4D8] font-bold text-sm leading-tight mt-1">{translatedRole}</p>
         )}
         {baseSpecialtyLabel && (
           <p className={`font-bold text-sm leading-tight mt-1 ${specialtyColorClass}`}>
@@ -104,7 +119,7 @@ function MemberPlaceholder({ member }: { member: TeamMember }) {
         )}
         {member.isChefDeService && (
           <p className={`font-bold text-sm leading-tight mt-0.5 ${specialtyColorClass}`}>
-            Chef de Service
+            {translations.roleDepartmentHead}
           </p>
         )}
       </div>
@@ -112,7 +127,7 @@ function MemberPlaceholder({ member }: { member: TeamMember }) {
   );
 }
 
-function CenterCard({ center, discoverLabel, index }: { center: Center; discoverLabel: string; index: number }) {
+function CenterCard({ center, discoverLabel, index, translations }: { center: Center; discoverLabel: string; index: number; translations: Translations }) {
   const cardRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -180,7 +195,7 @@ function CenterCard({ center, discoverLabel, index }: { center: Center; discover
         <div className="flex-1 overflow-x-auto scrollbar-hide">
           <div className="flex items-start gap-4 md:gap-6">
             {center.members.map((member) => (
-              <MemberPlaceholder key={member.name} member={member} />
+              <MemberPlaceholder key={member.name} member={member} translations={translations} />
             ))}
           </div>
         </div>
@@ -189,11 +204,11 @@ function CenterCard({ center, discoverLabel, index }: { center: Center; discover
   );
 }
 
-export function CentersGridClient({ centers, discoverLabel }: { centers: Center[]; discoverLabel: string }) {
+export function CentersGridClient({ centers, discoverLabel, translations }: { centers: Center[]; discoverLabel: string; translations: Translations }) {
   return (
     <div className="grid gap-3 md:gap-4 max-w-5xl mx-auto">
       {centers.map((center, index) => (
-        <CenterCard key={center.id} center={center} discoverLabel={discoverLabel} index={index} />
+        <CenterCard key={center.id} center={center} discoverLabel={discoverLabel} index={index} translations={translations} />
       ))}
     </div>
   );
