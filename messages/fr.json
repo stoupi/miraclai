@@ -436,7 +436,7 @@
     "modalityEcho": "Échocardiographie",
     "modalityECG": "ECG",
     "modalityAngio": "Coronarographie",
-    "modalityNuclear": "Imagerie nucléaire (PET-CT / Scintigraphie)",
+    "modalityNuclear": "Imagerie nucléaire",
     "modalityOther": "Autre",
     "labelProjectType": "🎓 Type de projet",
     "placeholderProjectType": "Sélectionnez le type",
