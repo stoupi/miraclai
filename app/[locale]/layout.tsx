@@ -5,7 +5,7 @@ import { getTranslations } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { routing } from '@/app/i18n/routing';
 import "../globals.css";
-import { Navbar } from "./components/navbar";
+import { ConditionalNavbar } from "./components/conditional-navbar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -83,7 +83,7 @@ export default async function LocaleLayout({
         className={`${geistSans.variable} ${geistMono.variable} ${playfairDisplay.variable} ${calistoga.variable} ${dmSerifDisplay.variable} antialiased`}
       >
         <NextIntlClientProvider locale={locale} messages={messages}>
-          <Navbar />
+          <ConditionalNavbar />
           {children}
         </NextIntlClientProvider>
       </body>

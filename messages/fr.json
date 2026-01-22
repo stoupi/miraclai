@@ -512,5 +512,173 @@
         }
       }
     }
+  },
+  "journeeScientifique": {
+    "hero": {
+      "badge": "1ère édition",
+      "title": "Journée Scientifique MIRACL.ai",
+      "subtitle": "Rejoignez-nous pour un échange unique dédié aux acteurs industriels engagés aux côtés de la recherche et de la clinique pour faire avancer l'imagerie cardiovasculaire et l'intelligence artificielle.",
+      "date": "Mardi 8 avril 2026",
+      "time": "10h00 – 16h00",
+      "location": "Hôpital Européen Georges Pompidou",
+      "locationDetail": "Amphithéâtre, Hôpital Européen Georges Pompidou, Paris",
+      "maxParticipants": "100 places maximum",
+      "ctaRegister": "S'inscrire maintenant",
+      "ctaProgram": "Voir le programme"
+    },
+    "countdown": {
+      "title": "Compte à rebours",
+      "daysLabel": "jours",
+      "hoursLabel": "heures",
+      "minutesLabel": "minutes",
+      "secondsLabel": "secondes",
+      "subtitle": "Ne manquez pas cette première édition de la Journée Scientifique MIRACL.ai"
+    },
+    "about": {
+      "title": "À propos de l'événement",
+      "description": "Une journée entièrement dédiée au partage de connaissances autour de l'imagerie cardiovasculaire et de l'intelligence artificielle, organisée par MIRACL.ai en partenariat avec l'AP-HP et le label Carnot.",
+      "features": {
+        "corelabExpertise": {
+          "title": "Expertise Core Lab",
+          "description": "Sessions animées par des experts en imagerie cardiovasculaire multimodale sur l'application de l'IA en pratique clinique."
+        },
+        "dataManagement": {
+          "title": "Gestion des données",
+          "description": "Découvrez notre approche de la donnée : récupération, contrôle qualité, analyse et valorisation scientifique."
+        },
+        "collaboration": {
+          "title": "Collaboration interdisciplinaire",
+          "description": "Échanges entre cardiologues, radiologues, ingénieurs et partenaires industriels autour de projets innovants."
+        },
+        "innovation": {
+          "title": "Innovation et recherche",
+          "description": "Présentation des premiers résultats de nos doctorants et des projets structurants en cours."
+        }
+      }
+    },
+    "themes": {
+      "title": "Thématiques abordées",
+      "items": {
+        "mri": "IRM cardiaque",
+        "ct": "Scanner cardiaque & PCCT",
+        "echo": "Échocardiographie",
+        "nuclear": "Imagerie nucléaire",
+        "ecg": "ECG",
+        "angio": "Coronarographie & imagerie invasive",
+        "ai": "Deep Learning & Machine Learning",
+        "dataManagement": "Gestion de la donnée"
+      }
+    },
+    "program": {
+      "title": "Programme de la journée",
+      "date": "Mardi 8 avril 2026 • 9h30 – 16h00",
+      "blocks": {
+        "welcome": {
+          "title": "Accueil",
+          "sessions": {
+            "coffee": "Accueil café"
+          }
+        },
+        "session1": {
+          "title": "Session 1 • 10h00 – 12h30",
+          "subtitle": "MIRACL.ai : vision, expertise et savoir-faire",
+          "sessions": {
+            "whoAreWe": {
+              "title": "Qui sommes-nous ?",
+              "topics": {
+                "presentation": "Présentation de MIRACL.ai",
+                "dataManagement": "Comment ça fonctionne en pratique : gestion de la donnée de sa récupération à son analyse (contrôle qualité) – Collaboration Eureka & ArchiMed",
+                "methodology": "Plateforme clé pour la recherche en France et enjeux pour l'industrie",
+                "carnot": "Carnot : enjeu des start-up et innovations"
+              }
+            },
+            "break": "Pause & collation",
+            "services": {
+              "title": "Offres de service : détails de nos prestations",
+              "topics": {
+                "ct": "Scanner cardiaque et positionnement fort sur le PCCT",
+                "mri": "IRM cardiaque",
+                "echo": "Échocardiographie",
+                "nuclear": "Imagerie nucléaire : scintigraphie et PET",
+                "ecg": "ECG",
+                "angio": "Coronarographie et imagerie invasive",
+                "multimodal": "Synthèse : force d'une analyse holistique multimodale chez un même patient",
+                "regulatory": "Capacité de collaborations industrielles de MIRACL.ai : processus réglementaire"
+              }
+            }
+          }
+        },
+        "lunch": {
+          "title": "Pause déjeuner",
+          "session": "Déjeuner"
+        },
+        "session2": {
+          "title": "Session 2 • 13h30 – 16h00",
+          "subtitle": "Collaborations, projets structurants et formation par la recherche",
+          "sessions": {
+            "collaborations": {
+              "title": "Partage des principales collaborations existantes",
+              "topics": {
+                "fhu": "FHU et cardiomyopathie de Duchenne",
+                "myocarditis": "Projet Myocardite prospectif « Action / MIRACL.ai »",
+                "hcm": "Projet industriel HCM Mavacamten (industrie BMS) – Intégration Échographie & IRM",
+                "impulsion": "Programme de dépistage national du cancer du poumon IMPULSION",
+                "esc": "Registres internationaux de l'ESC avec EACVI-MMVD et EACVI-INFLAME",
+                "phrc": "Core Lab référent pour les PHRC nationaux : IMAGENE-DEF, RCT TAVI, COTAM"
+              }
+            },
+            "break": "Pause & collation",
+            "phd": {
+              "title": "Premiers résultats de nos étudiants doctorants",
+              "topics": {
+                "lge": "Concept innovant de « Granularité du rehaussement tardif » en IRM cardiaque",
+                "deepLearning": "Deep learning en imagerie multimodalité",
+                "derivate": "Machine learning en ICM – projets DERIVATE",
+                "cesar": "Projet CÉSAR et Echo"
+              }
+            }
+          }
+        }
+      }
+    },
+    "registration": {
+      "title": "Inscription",
+      "subtitle": "Places limitées à 100 participants. Inscrivez-vous dès maintenant pour réserver votre place !",
+      "maxParticipants": "100 places maximum",
+      "fields": {
+        "firstName": "Prénom",
+        "firstNamePlaceholder": "Votre prénom",
+        "lastName": "Nom",
+        "lastNamePlaceholder": "Votre nom",
+        "email": "Email",
+        "emailPlaceholder": "votre.email@exemple.fr",
+        "profession": "Profession",
+        "professionPlaceholder": "Sélectionnez votre profession",
+        "professionOptions": {
+          "cardiologist": "Cardiologue",
+          "radiologist": "Radiologue",
+          "researcher": "Chercheur / Universitaire",
+          "engineer": "Ingénieur",
+          "industry": "Partenaire industriel",
+          "other": "Autre"
+        },
+        "institution": "Institution",
+        "institutionPlaceholder": "Votre établissement"
+      },
+      "submitButton": "Confirmer mon inscription",
+      "consent": "En vous inscrivant, vous acceptez de recevoir des informations concernant cet événement.",
+      "successMessage": "Inscription confirmée ! Vous recevrez un email de confirmation.",
+      "errorMessage": "Une erreur est survenue. Veuillez réessayer."
+    },
+    "partners": {
+      "title": "Partenaires"
+    },
+    "footer": {
+      "organizerTitle": "Organisateur",
+      "organizerName": "MIRACL.ai – AP-HP",
+      "partnersTitle": "Partenaires",
+      "contactTitle": "Contact",
+      "contactText": "Pour toute question concernant l'événement, contactez-nous à contact@miracl.ai"
+    }
   }
 }
