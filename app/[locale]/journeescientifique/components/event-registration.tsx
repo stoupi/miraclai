@@ -16,6 +16,8 @@ import {
   SelectValue
 } from '@/components/ui/select';
 import { toast } from 'sonner';
+import { useAction } from 'next-safe-action/hooks';
+import { submitEventRegistration } from '@/lib/actions/event-registration';
 import type { EventRegistrationContent } from '../types';
 
 type EventRegistrationProps = {
@@ -33,8 +35,18 @@ const registrationSchema = z.object({
 type RegistrationFormData = z.infer<typeof registrationSchema>;
 
 export function EventRegistration({ content }: EventRegistrationProps) {
-  const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const { execute, isPending: isSubmitting } = useAction(submitEventRegistration, {
+    onSuccess: () => {
+      setIsSubmitted(true);
+      toast.success(content.successMessage);
+    },
+    onError: (error) => {
+      console.error('Registration error:', error);
+      toast.error(content.errorMessage);
+    },
+  });
 
   const {
     register,
@@ -45,19 +57,8 @@ export function EventRegistration({ content }: EventRegistrationProps) {
     resolver: zodResolver(registrationSchema)
   });
 
-  const onSubmit = async (data: RegistrationFormData) => {
-    setIsSubmitting(true);
-    try {
-      await new Promise((resolve) => setTimeout(resolve, 1500));
-      console.log('Registration data:', data);
-      setIsSubmitted(true);
-      toast.success(content.successMessage);
-    } catch (error) {
-      console.error('Registration error:', error);
-      toast.error(content.errorMessage);
-    } finally {
-      setIsSubmitting(false);
-    }
+  const onSubmit = (data: RegistrationFormData) => {
+    execute(data);
   };
 
   if (isSubmitted) {

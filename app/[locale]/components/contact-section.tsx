@@ -3,6 +3,9 @@
 import { useState } from 'react';
 import { useTranslations } from 'next-intl';
 import { Send, CheckCircle } from 'lucide-react';
+import { useAction } from 'next-safe-action/hooks';
+import { submitContactForm } from '@/lib/actions/contact';
+import { toast } from 'sonner';
 
 type FormData = {
   name: string;
@@ -36,7 +39,17 @@ export function ContactSection({ locale }: { locale: string }) {
   const t = useTranslations('contactSection');
   const [formData, setFormData] = useState<FormData>(initialFormData);
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
+
+  const { execute, isPending: isLoading } = useAction(submitContactForm, {
+    onSuccess: () => {
+      setIsSubmitted(true);
+      toast.success(t('successTitle'));
+    },
+    onError: (error) => {
+      console.error('Contact form error:', error);
+      toast.error(t('errorMessage') || 'Une erreur est survenue');
+    },
+  });
 
   const roleOptions = [
     { value: 'researcher', label: t('roleResearcher') },
@@ -106,13 +119,7 @@ export function ContactSection({ locale }: { locale: string }) {
 
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
-    setIsLoading(true);
-
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-
-    setIsLoading(false);
-    setIsSubmitted(true);
+    execute(formData);
   };
 
   if (isSubmitted) {
