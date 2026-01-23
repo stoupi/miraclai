@@ -515,14 +515,15 @@
   },
   "journeeScientifique": {
     "hero": {
-      "badge": "1ère édition",
+      "badge": "1<sup>ère</sup> édition",
       "title": "Journée Scientifique MIRACL.ai",
-      "subtitle": "Rejoignez-nous pour un échange unique dédié aux acteurs industriels engagés aux côtés de la recherche et de la clinique pour faire avancer l'imagerie cardiovasculaire et l'intelligence artificielle.",
+      "subtitle": "Une journée d'échanges entre chercheurs, cliniciens et partenaires industriels pour faire avancer l'imagerie cardiovasculaire et l'intelligence artificielle.",
       "date": "Mardi 8 avril 2026",
-      "time": "10h00 – 16h00",
-      "location": "Hôpital Européen Georges Pompidou",
-      "locationDetail": "Amphithéâtre, Hôpital Européen Georges Pompidou, Paris",
-      "maxParticipants": "100 places maximum",
+      "time": "9h30 – 16h00",
+      "location": "Grand Amphithéâtre",
+      "locationSubtitle": "Hôpital Européen Georges Pompidou",
+      "locationDetail": "Grand Amphithéâtre, Hôpital Européen Georges Pompidou, Paris",
+      "maxParticipants": "150 places maximum",
       "ctaRegister": "S'inscrire maintenant",
       "ctaProgram": "Voir le programme"
     },

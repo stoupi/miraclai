@@ -522,12 +522,13 @@
     "hero": {
       "badge": "1st edition",
       "title": "MIRACL.ai Scientific Day",
-      "subtitle": "Join us for a unique exchange dedicated to industrial partners engaged alongside research and clinical practice to advance cardiovascular imaging and artificial intelligence.",
+      "subtitle": "A day of exchange between researchers, clinicians, and industry partners to advance cardiovascular imaging and artificial intelligence.",
       "date": "Tuesday, April 8, 2026",
-      "time": "10:00 AM – 4:00 PM",
-      "location": "Georges Pompidou European Hospital",
-      "locationDetail": "Amphitheater, Georges Pompidou European Hospital, Paris",
-      "maxParticipants": "100 seats maximum",
+      "time": "9:30 AM – 4:00 PM",
+      "location": "Grand Amphitheater",
+      "locationSubtitle": "Georges Pompidou European Hospital",
+      "locationDetail": "Grand Amphitheater, Georges Pompidou European Hospital, Paris",
+      "maxParticipants": "150 seats maximum",
       "ctaRegister": "Register now",
       "ctaProgram": "View program"
     },

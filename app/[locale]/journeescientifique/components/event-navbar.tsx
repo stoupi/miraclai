@@ -40,7 +40,7 @@ export function EventNavbar() {
       }`}
     >
       <div className="container mx-auto flex h-20 md:h-24 items-center justify-between px-5">
-        <Link href="/" className="flex flex-col items-start">
+        <Link href="/" className="flex flex-col items-start cursor-pointer">
           <div className="relative" style={{ width: 200, height: 50 }}>
             <Image
               src="/assets/logo_miracl_noir_V2.svg"

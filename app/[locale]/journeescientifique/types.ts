@@ -5,6 +5,7 @@ export type EventHeroContent = {
   date: string;
   time: string;
   location: string;
+  locationSubtitle: string;
   locationDetail: string;
   maxParticipants: string;
   ctaRegister: string;

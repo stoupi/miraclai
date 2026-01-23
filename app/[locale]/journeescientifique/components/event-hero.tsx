@@ -107,15 +107,15 @@ export function EventHero({ content }: EventHeroProps) {
 
       <div className="container mx-auto px-4 py-16 md:py-24 text-center relative z-10">
         <div
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#00B4D8]/10 border border-[#00B4D8]/30 text-[#00B4D8] text-sm font-medium mb-8 animate-fade-in-up"
+          className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#00B4D8]/10 border border-[#00B4D8]/30 text-[#00B4D8] text-base font-semibold mb-6 animate-fade-in-up"
           style={{ animationDelay: '0.1s' }}
         >
-          <span className="w-2 h-2 rounded-full bg-[#00B4D8] animate-pulse" />
+          <span className="w-2.5 h-2.5 rounded-full bg-[#00B4D8] animate-pulse" />
           {content.badge}
         </div>
 
         <h1
-          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-medium text-[#061024] mb-6 tracking-tight animate-fade-in-up"
+          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-medium text-[#061024] mb-4 tracking-tight animate-fade-in-up"
           style={{
             fontFamily: 'var(--font-calistoga), serif',
             animationDelay: '0.2s'
@@ -125,31 +125,39 @@ export function EventHero({ content }: EventHeroProps) {
         </h1>
 
         <p
-          className="text-lg sm:text-xl md:text-2xl text-[#061024]/80 max-w-3xl mx-auto mb-10 animate-fade-in-up"
-          style={{ animationDelay: '0.3s' }}
+          className="text-xl sm:text-2xl md:text-3xl text-[#061024] max-w-4xl mx-auto mb-10 animate-fade-in-up"
+          style={{
+            fontFamily: 'var(--font-calistoga), serif',
+            animationDelay: '0.25s'
+          }}
         >
-          {content.subtitle}
+          Le <span className="hero-highlight">Core Lab académique</span> de référence en imagerie cardiovasculaire multimodale
         </p>
 
+
         <div
-          className="flex flex-wrap justify-center gap-4 mb-12 animate-fade-in-up"
+          className="flex flex-wrap justify-center gap-5 mb-12 animate-fade-in-up"
           style={{ animationDelay: '0.4s' }}
         >
-          <div className="flex items-center gap-2 px-5 py-3 rounded-full bg-white/80 backdrop-blur-sm border border-[#061024]/10 text-[#061024] shadow-sm">
-            <Calendar className="w-5 h-5 text-[#00B4D8]" />
-            <span className="font-medium">{content.date}</span>
-            <span className="text-[#061024]/50">•</span>
-            <span>{content.time}</span>
+          <div className="flex items-center gap-3 px-6 py-4 rounded-2xl bg-white/80 backdrop-blur-sm border border-[#061024]/10 text-[#061024] shadow-sm">
+            <Calendar className="w-6 h-6 text-[#00B4D8]" />
+            <div className="flex flex-col text-left">
+              <span className="font-semibold text-lg">{content.date}</span>
+              <span className="text-base text-[#061024]/70">{content.time}</span>
+            </div>
           </div>
 
-          <div className="flex items-center gap-2 px-5 py-3 rounded-full bg-white/80 backdrop-blur-sm border border-[#061024]/10 text-[#061024] shadow-sm">
-            <MapPin className="w-5 h-5 text-[#00B4D8]" />
-            <span className="font-medium">{content.location}</span>
+          <div className="flex items-center gap-3 px-6 py-4 rounded-2xl bg-white/80 backdrop-blur-sm border border-[#061024]/10 text-[#061024] shadow-sm">
+            <MapPin className="w-6 h-6 text-[#00B4D8]" />
+            <div className="flex flex-col text-left">
+              <span className="text-lg">{content.location}</span>
+              <span className="text-base font-semibold text-[#061024]">{content.locationSubtitle}</span>
+            </div>
           </div>
 
-          <div className="flex items-center gap-2 px-5 py-3 rounded-full bg-white/80 backdrop-blur-sm border border-[#061024]/10 text-[#061024] shadow-sm">
-            <Users className="w-5 h-5 text-[#00B4D8]" />
-            <span>{content.maxParticipants}</span>
+          <div className="flex items-center gap-3 px-6 py-4 rounded-2xl bg-white/80 backdrop-blur-sm border border-[#061024]/10 text-[#061024] shadow-sm">
+            <Users className="w-6 h-6 text-[#00B4D8]" />
+            <span className="text-lg">{content.maxParticipants}</span>
           </div>
         </div>
 
@@ -174,12 +182,6 @@ export function EventHero({ content }: EventHeroProps) {
           </Button>
         </div>
 
-        <div
-          className="mt-8 text-[#061024]/60 text-sm animate-fade-in-up"
-          style={{ animationDelay: '0.6s' }}
-        >
-          {content.locationDetail}
-        </div>
       </div>
 
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent" />

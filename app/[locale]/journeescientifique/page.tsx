@@ -243,6 +243,7 @@ export default async function JourneeScientifiquePage({ params }: Params) {
       date: t('hero.date'),
       time: t('hero.time'),
       location: t('hero.location'),
+      locationSubtitle: t('hero.locationSubtitle'),
       locationDetail: t('hero.locationDetail'),
       maxParticipants: t('hero.maxParticipants'),
       ctaRegister: t('hero.ctaRegister'),

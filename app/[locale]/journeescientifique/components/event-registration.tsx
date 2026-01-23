@@ -206,7 +206,7 @@ export function EventRegistration({ content }: EventRegistrationProps) {
           <Button
             type="submit"
             disabled={isSubmitting}
-            className="w-full mt-8 h-14 text-lg font-semibold rounded-xl border-2 border-[#F33349] bg-[#F33349] text-white hover:bg-white hover:text-[#F33349] transition-colors shadow-lg hover:shadow-xl"
+            className="cursor-pointer w-full mt-8 h-14 text-lg font-semibold rounded-xl border-2 border-[#F33349] bg-[#F33349] text-white hover:bg-white hover:text-[#F33349] transition-colors shadow-lg hover:shadow-xl"
           >
             {isSubmitting ? (
               <>
