@@ -75,3 +75,18 @@ model Setting {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
+
+// Event registrations for Journée Scientifique
+model EventRegistration {
+  id          String   @id @default(cuid())
+  firstName   String
+  lastName    String
+  email       String
+  profession  String
+  institution String
+  eventSlug   String   @default("journee-scientifique-2026")
+  createdAt   DateTime @default(now())
+
+  @@index([eventSlug])
+  @@index([email])
+}

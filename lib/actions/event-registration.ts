@@ -3,6 +3,7 @@
 import { z } from 'zod';
 import { unauthenticatedAction } from './safe-action';
 import { resend, CONTACT_RECIPIENTS, FROM_EMAIL } from '../resend';
+import { prisma } from '../prisma';
 
 const eventRegistrationSchema = z.object({
   firstName: z.string().min(2, 'First name is required'),
@@ -16,6 +17,18 @@ export const submitEventRegistration = unauthenticatedAction
   .schema(eventRegistrationSchema)
   .action(async ({ parsedInput }) => {
     const { firstName, lastName, email, profession, institution } = parsedInput;
+
+    // Save to database
+    await prisma.eventRegistration.create({
+      data: {
+        firstName,
+        lastName,
+        email,
+        profession,
+        institution,
+        eventSlug: 'journee-scientifique-2026',
+      },
+    });
 
     const now = new Date();
     const formattedDate = now.toLocaleDateString('fr-FR', {
@@ -100,7 +113,8 @@ export const submitEventRegistration = unauthenticatedAction
       </div>
     `;
 
-    const { error } = await resend.emails.send({
+    // Email to administrators
+    const { error: adminError } = await resend.emails.send({
       from: FROM_EMAIL,
       to: CONTACT_RECIPIENTS,
       replyTo: email,
@@ -108,9 +122,71 @@ export const submitEventRegistration = unauthenticatedAction
       html: emailHtml,
     });
 
-    if (error) {
-      console.error('Error sending registration email:', error);
+    if (adminError) {
+      console.error('Error sending admin email:', adminError);
       throw new Error('Failed to send email');
+    }
+
+    // Confirmation email to participant
+    const confirmationHtml = `
+      <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+        <div style="background: linear-gradient(135deg, #00B4D8 0%, #0077B6 100%); padding: 30px; border-radius: 12px 12px 0 0;">
+          <h1 style="color: white; margin: 0; font-size: 24px;">
+            ✅ Inscription confirmée
+          </h1>
+          <p style="color: rgba(255,255,255,0.9); margin: 10px 0 0 0;">
+            Journée Scientifique MIRACL.ai
+          </p>
+        </div>
+
+        <div style="background: #f8f9fa; padding: 30px; border-radius: 0 0 12px 12px;">
+          <p style="color: #061024; font-size: 16px; line-height: 1.6;">
+            Bonjour ${firstName},
+          </p>
+
+          <p style="color: #333; font-size: 16px; line-height: 1.6;">
+            Nous avons bien reçu votre inscription à la <strong>Journée Scientifique MIRACL.ai</strong>.
+          </p>
+
+          <div style="background: white; padding: 20px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #00B4D8;">
+            <p style="margin: 0 0 10px 0; color: #061024;">
+              <strong>📅 Date :</strong> Mardi 8 avril 2026
+            </p>
+            <p style="margin: 0 0 10px 0; color: #061024;">
+              <strong>🕤 Horaires :</strong> 9h30 – 16h00
+            </p>
+            <p style="margin: 0; color: #061024;">
+              <strong>📍 Lieu :</strong> Auditorium Guy Meyer, Hôpital Européen Georges Pompidou, Paris
+            </p>
+          </div>
+
+          <p style="color: #333; font-size: 16px; line-height: 1.6;">
+            Nous avons hâte de vous accueillir !
+          </p>
+
+          <p style="color: #333; font-size: 16px; line-height: 1.6;">
+            Cordialement,<br/>
+            <strong>L'équipe MIRACL.ai</strong>
+          </p>
+        </div>
+
+        <hr style="margin-top: 30px; border: none; border-top: 1px solid #eee;" />
+        <p style="color: #999; font-size: 12px; text-align: center;">
+          Cet email confirme votre inscription à la Journée Scientifique MIRACL.ai.
+        </p>
+      </div>
+    `;
+
+    const { error: confirmationError } = await resend.emails.send({
+      from: FROM_EMAIL,
+      to: email,
+      subject: `Confirmation d'inscription - Journée Scientifique MIRACL.ai`,
+      html: confirmationHtml,
+    });
+
+    if (confirmationError) {
+      console.error('Error sending confirmation email:', confirmationError);
+      // Don't throw here - admin email was sent successfully
     }
 
     return { success: true };
