@@ -1,5 +1,7 @@
+import type { ReactNode } from 'react';
+
 export type EventHeroContent = {
-  badge: string;
+  badge: ReactNode;
   title: string;
   subtitle: string;
   date: string;

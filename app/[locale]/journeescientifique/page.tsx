@@ -1,4 +1,5 @@
 import { getTranslations } from 'next-intl/server';
+import type { ReactNode } from 'react';
 
 import { EventNavbar } from './components/event-navbar';
 import { EventHero } from './components/event-hero';
@@ -237,7 +238,9 @@ export default async function JourneeScientifiquePage({ params }: Params) {
 
   const content: JourneeScientifiquePageContent = {
     hero: {
-      badge: t('hero.badge'),
+      badge: t.rich('hero.badge', {
+        sup: (chunks: ReactNode) => <sup>{chunks}</sup>
+      }),
       title: t('hero.title'),
       subtitle: t('hero.subtitle'),
       date: t('hero.date'),

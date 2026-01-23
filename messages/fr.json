@@ -515,7 +515,7 @@
   },
   "journeeScientifique": {
     "hero": {
-      "badge": "1<sup>ère</sup> édition",
+      "badge": "Première édition",
       "title": "Journée Scientifique MIRACL.ai",
       "subtitle": "Une journée d'échanges entre chercheurs, cliniciens et partenaires industriels pour faire avancer l'imagerie cardiovasculaire et l'intelligence artificielle.",
       "date": "Mardi 8 avril 2026",
@@ -644,8 +644,8 @@
     },
     "registration": {
       "title": "Inscription",
-      "subtitle": "Places limitées à 100 participants. Inscrivez-vous dès maintenant pour réserver votre place !",
-      "maxParticipants": "100 places maximum",
+      "subtitle": "Places limitées à 150 participants. Inscrivez-vous dès maintenant pour réserver votre place !",
+      "maxParticipants": "150 places maximum",
       "fields": {
         "firstName": "Prénom",
         "firstNamePlaceholder": "Votre prénom",
