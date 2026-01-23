@@ -2,7 +2,7 @@ import { getTranslations } from 'next-intl/server';
 import Image from 'next/image';
 import { Link } from '@/app/i18n/navigation';
 
-const CONTACT_EMAIL = 'contact@miracl.ai';
+const CONTACT_EMAIL = 'contact@miracl-ai.com';
 const CONTACT_PHONE = '+33 1 70 00 00 00';
 
 const navigationRoutes = [
