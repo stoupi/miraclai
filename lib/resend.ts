@@ -7,4 +7,6 @@ export const CONTACT_RECIPIENTS = [
   'solenn.toupin@gmail.com'
 ];
 
-export const FROM_EMAIL = 'MIRACL.ai <onboarding@resend.dev>';
+export const FROM_EMAIL = process.env.RESEND_FROM
+  ? `MIRACL.ai <${process.env.RESEND_FROM}>`
+  : 'MIRACL.ai <noreply@cardiolarib-research.com>';
