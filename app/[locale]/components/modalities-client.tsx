@@ -63,7 +63,7 @@ export function ModalitiesClient({ labels }: { labels: Labels }) {
                   className="w-full h-full object-cover"
                 />
               </div>
-              <span className="mt-3 px-2 py-1.5 rounded-full bg-[#00B4D8]/10 text-[8px] sm:text-[9px] md:text-[10px] lg:text-xs font-semibold text-[#00B4D8] uppercase tracking-wide text-center">
+              <span className="mt-3 px-2.5 py-1.5 rounded-full bg-[#00B4D8]/10 text-[10px] sm:text-xs md:text-sm font-semibold text-[#061024]/70 uppercase tracking-wide text-center">
                 {labels[modality.labelKey as keyof Omit<Labels, 'title'>]}
               </span>
             </motion.div>

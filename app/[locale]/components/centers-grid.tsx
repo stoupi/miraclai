@@ -170,7 +170,7 @@ export async function CentersGrid({ locale }: { locale: string }) {
       <div className="w-full mb-12 md:mb-16">
         <PartnersMarquee
           logos={[...logos, ...logos, ...logos].map(logo => {
-            if (logo.src.includes('larib')) return { ...logo, scale: 0.8 };
+            if (logo.src.includes('larib')) return { ...logo, scale: 1.0 };
             if (logo.src.includes('HEGP')) return { ...logo, scale: 0.95 };
             if (logo.src.includes('icps')) return { ...logo, scale: 0.85 };
             return { ...logo, scale: 1 };
