@@ -66,7 +66,7 @@ const centersData: Center[] = [
     dominantSpecialty: 'mixed',
     logoScale: 'small',
     members: [
-      { name: 'Dr Yohann Bohbot', miraclRole: '', degree: 'MD, PhD', specialty: 'cardio', photo: '/assets/team/bohbot.jpg' },
+      { name: 'Pr Yohann Bohbot', miraclRole: '', degree: 'MD, PhD', specialty: 'cardio', photo: '/assets/team/bohbot.jpg' },
       { name: 'Dr Cédric Renard', miraclRole: '', degree: 'MD', specialty: 'radio', photo: '/assets/team/renard.jpg' },
     ],
   },
