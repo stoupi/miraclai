@@ -91,6 +91,7 @@
     "roleDepartmentHead": "Department Head",
     "specialtyCardio": "Cardiologist",
     "specialtyRadio": "Radiologist",
+    "specialtyNuclear": "Nuclear Medicine Physician",
     "specialtyEngineer": "Research Engineer"
   },
   "servicesSection": {

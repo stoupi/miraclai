@@ -7,7 +7,7 @@ type TeamMember = {
   name: string;
   miraclRole: string;
   degree: 'MD, PhD' | 'MD' | 'PhD' | '';
-  specialty: 'cardio' | 'radio' | 'other';
+  specialty: 'cardio' | 'radio' | 'nuclear' | 'other';
   isChefDeService?: boolean;
   photo?: string;
   photoScale?: number;
@@ -55,6 +55,7 @@ const centersData: Center[] = [
       { name: 'Pr Gilles Soulat', miraclRole: 'roleRadiologyLead', degree: 'MD, PhD', specialty: 'radio', photo: '/assets/team/soulat.jpg' },
       { name: 'Pr Elie Mousseaux', miraclRole: '', degree: 'MD, PhD', specialty: 'radio', photo: '/assets/team/mousseaux.jpg' },
       { name: 'Pr Jean-Sébastien Hulot', miraclRole: '', degree: 'MD, PhD', specialty: 'cardio', photo: '/assets/team/hulot.png' },
+      { name: 'Pr Fabien Hyafil', miraclRole: '', degree: 'MD, PhD', specialty: 'nuclear', isChefDeService: true, photo: '/assets/team/hyafil.jpeg' },
     ],
   },
   {
@@ -192,6 +193,7 @@ export async function CentersGrid({ locale }: { locale: string }) {
             roleDepartmentHead: t('roleDepartmentHead'),
             specialtyCardio: t('specialtyCardio'),
             specialtyRadio: t('specialtyRadio'),
+            specialtyNuclear: t('specialtyNuclear'),
             specialtyEngineer: t('specialtyEngineer'),
           }}
         />

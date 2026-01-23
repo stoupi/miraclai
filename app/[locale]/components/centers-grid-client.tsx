@@ -9,7 +9,7 @@ type TeamMember = {
   name: string;
   miraclRole: string;
   degree: 'MD, PhD' | 'MD' | 'PhD' | '';
-  specialty: 'cardio' | 'radio' | 'other';
+  specialty: 'cardio' | 'radio' | 'nuclear' | 'other';
   isChefDeService?: boolean;
   photo?: string;
   photoScale?: number;
@@ -36,6 +36,7 @@ type Translations = {
   roleDepartmentHead: string;
   specialtyCardio: string;
   specialtyRadio: string;
+  specialtyNuclear: string;
   specialtyEngineer: string;
 };
 
@@ -60,16 +61,20 @@ function MemberPlaceholder({ member, translations }: { member: TeamMember; trans
       ? 'from-[#00B4D8] to-[#0077B6]'
       : member.specialty === 'radio'
         ? 'from-[#E879A9] to-[#C44569]'
-        : 'from-[#64748B] to-[#475569]';
+        : member.specialty === 'nuclear'
+          ? 'from-[#10B981] to-[#059669]'
+          : 'from-[#64748B] to-[#475569]';
 
   const baseSpecialtyLabel =
     member.specialty === 'cardio'
       ? translations.specialtyCardio
       : member.specialty === 'radio'
         ? translations.specialtyRadio
-        : member.specialty === 'other' && !member.miraclRole
-          ? translations.specialtyEngineer
-          : '';
+        : member.specialty === 'nuclear'
+          ? translations.specialtyNuclear
+          : member.specialty === 'other' && !member.miraclRole
+            ? translations.specialtyEngineer
+            : '';
 
   const translatedRole = member.miraclRole
     ? translations[member.miraclRole as keyof Translations] || member.miraclRole

@@ -48,7 +48,7 @@ export function EventHero({ content }: EventHeroProps) {
 
       <svg
         aria-hidden
-        className="absolute left-0 right-0 top-16 md:top-20 w-full h-28 opacity-60 z-0"
+        className="hidden md:block absolute left-0 right-0 top-16 md:top-20 w-full h-28 opacity-60 z-0"
         viewBox="0 0 1440 200"
         preserveAspectRatio="none"
       >
