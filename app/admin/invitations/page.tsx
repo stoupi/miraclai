@@ -1,16 +1,17 @@
 'use client';
 
 import { useState } from 'react';
-import { Send, CheckCircle, XCircle, Loader2, Mail } from 'lucide-react';
+import { Send, CheckCircle, XCircle, Loader2, Mail, User } from 'lucide-react';
 
 type SendResult = {
   email: string;
+  name: string;
   success: boolean;
   error?: string;
 };
 
 export default function AdminInvitationsPage() {
-  const [emails, setEmails] = useState('');
+  const [recipients, setRecipients] = useState('');
   const [secret, setSecret] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [results, setResults] = useState<{
@@ -30,7 +31,7 @@ export default function AdminInvitationsPage() {
       const response = await fetch('/api/admin/send-invitations', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ emails, secret }),
+        body: JSON.stringify({ emails: recipients, secret }),
       });
 
       const data = await response.json();
@@ -47,20 +48,20 @@ export default function AdminInvitationsPage() {
     }
   };
 
-  const emailCount = emails
-    .split(/[,\n]/)
-    .map((email) => email.trim())
-    .filter((email) => email.length > 0 && email.includes('@')).length;
+  const recipientCount = recipients
+    .split('\n')
+    .map((line) => line.trim())
+    .filter((line) => line.length > 0 && line.includes('@')).length;
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#061024] to-[#0a1a3a] py-12 px-4">
       <div className="max-w-2xl mx-auto">
         <div className="text-center mb-10">
-          <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-[#00B4D8]/20 mb-4">
-            <Mail className="w-8 h-8 text-[#00B4D8]" />
+          <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-[#F33349]/20 mb-4">
+            <Mail className="w-8 h-8 text-[#F33349]" />
           </div>
           <h1 className="text-3xl font-bold text-white mb-2">
-            Envoi d&apos;invitations
+            Invitations personnalisées
           </h1>
           <p className="text-white/60">
             Journée Scientifique MIRACL.ai - 8 Avril 2026
@@ -84,23 +85,35 @@ export default function AdminInvitationsPage() {
           </div>
 
           <div className="mb-6">
-            <label htmlFor="emails" className="block text-sm font-semibold text-[#061024] mb-2">
-              Adresses email
-              <span className="font-normal text-gray-500 ml-2">
-                (séparées par des virgules ou retours à la ligne)
-              </span>
+            <label htmlFor="recipients" className="block text-sm font-semibold text-[#061024] mb-2">
+              Liste des invités
             </label>
+            <p className="text-xs text-gray-500 mb-3">
+              Un invité par ligne. Formats acceptés :
+            </p>
+            <div className="bg-gray-50 rounded-lg p-3 mb-3 text-xs font-mono text-gray-600 space-y-1">
+              <p>Pr Jean Dupont &lt;jean.dupont@hopital.fr&gt;</p>
+              <p>Dr Marie Martin, marie.martin@chu.fr</p>
+              <p>Mme Sophie Bernard; sophie.bernard@univ.fr</p>
+            </div>
             <textarea
-              id="emails"
-              value={emails}
-              onChange={(e) => setEmails(e.target.value)}
-              rows={8}
+              id="recipients"
+              value={recipients}
+              onChange={(e) => setRecipients(e.target.value)}
+              rows={10}
               className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-[#00B4D8] focus:ring-2 focus:ring-[#00B4D8]/20 outline-none transition-all resize-none font-mono text-sm"
-              placeholder={`email1@example.com\nemail2@example.com\nemail3@example.com`}
+              placeholder={`Pr Jean Dupont <jean.dupont@hopital.fr>\nDr Marie Martin, marie.martin@chu.fr\nMme Sophie Bernard; sophie.bernard@univ.fr`}
               required
             />
-            <p className="mt-2 text-sm text-gray-500">
-              {emailCount} email{emailCount > 1 ? 's' : ''} détecté{emailCount > 1 ? 's' : ''}
+            <div className="mt-2 flex items-center gap-2 text-sm text-gray-500">
+              <User className="w-4 h-4" />
+              <span>{recipientCount} invité{recipientCount > 1 ? 's' : ''} détecté{recipientCount > 1 ? 's' : ''}</span>
+            </div>
+          </div>
+
+          <div className="mb-6 p-4 bg-amber-50 border border-amber-200 rounded-lg">
+            <p className="text-sm text-amber-800">
+              <strong>Email personnalisé :</strong> Chaque invité recevra un email avec son nom dans l&apos;objet et une salutation personnelle.
             </p>
           </div>
 
@@ -112,7 +125,7 @@ export default function AdminInvitationsPage() {
 
           <button
             type="submit"
-            disabled={isLoading || emailCount === 0}
+            disabled={isLoading || recipientCount === 0}
             className="w-full py-4 px-6 bg-[#F33349] text-white font-semibold rounded-xl hover:bg-[#e02a3f] transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
           >
             {isLoading ? (
@@ -144,11 +157,11 @@ export default function AdminInvitationsPage() {
               </div>
             </div>
 
-            <div className="space-y-2 max-h-64 overflow-y-auto">
+            <div className="space-y-2 max-h-80 overflow-y-auto">
               {results.results.map((result, index) => (
                 <div
                   key={index}
-                  className={`flex items-center gap-3 px-4 py-2 rounded-lg ${
+                  className={`flex items-center gap-3 px-4 py-3 rounded-lg ${
                     result.success ? 'bg-green-50' : 'bg-red-50'
                   }`}
                 >
@@ -157,25 +170,18 @@ export default function AdminInvitationsPage() {
                   ) : (
                     <XCircle className="w-5 h-5 text-red-600 flex-shrink-0" />
                   )}
-                  <span className="font-mono text-sm truncate">{result.email}</span>
+                  <div className="flex-1 min-w-0">
+                    <p className="font-medium text-sm text-[#061024] truncate">{result.name}</p>
+                    <p className="text-xs text-gray-500 truncate">{result.email}</p>
+                  </div>
                   {result.error && (
-                    <span className="text-xs text-red-600 ml-auto">{result.error}</span>
+                    <span className="text-xs text-red-600 flex-shrink-0">{result.error}</span>
                   )}
                 </div>
               ))}
             </div>
           </div>
         )}
-
-        <div className="mt-8 text-center">
-          <a
-            href="/email-templates/invitation-journee-scientifique.html"
-            target="_blank"
-            className="text-[#00B4D8] hover:underline text-sm"
-          >
-            Prévisualiser l&apos;email →
-          </a>
-        </div>
       </div>
     </div>
   );
