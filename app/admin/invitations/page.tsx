@@ -89,12 +89,12 @@ export default function AdminInvitationsPage() {
               Liste des invités
             </label>
             <p className="text-xs text-gray-500 mb-3">
-              Un invité par ligne. Formats acceptés :
+              Un invité par ligne. Commencer par <strong>M</strong> ou <strong>F</strong> pour le genre :
             </p>
             <div className="bg-gray-50 rounded-lg p-3 mb-3 text-xs font-mono text-gray-600 space-y-1">
-              <p>Pr Jean Dupont &lt;jean.dupont@hopital.fr&gt;</p>
-              <p>Dr Marie Martin, marie.martin@chu.fr</p>
-              <p>Mme Sophie Bernard; sophie.bernard@univ.fr</p>
+              <p>M, Pr Jean Dupont, jean.dupont@hopital.fr</p>
+              <p>F, Dr Marie Martin, marie.martin@chu.fr</p>
+              <p>F, Mme Sophie Bernard &lt;sophie.bernard@univ.fr&gt;</p>
             </div>
             <textarea
               id="recipients"
@@ -102,7 +102,7 @@ export default function AdminInvitationsPage() {
               onChange={(e) => setRecipients(e.target.value)}
               rows={10}
               className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-[#00B4D8] focus:ring-2 focus:ring-[#00B4D8]/20 outline-none transition-all resize-none font-mono text-sm"
-              placeholder={`Pr Jean Dupont <jean.dupont@hopital.fr>\nDr Marie Martin, marie.martin@chu.fr\nMme Sophie Bernard; sophie.bernard@univ.fr`}
+              placeholder={`M, Pr Jean Dupont, jean.dupont@hopital.fr\nF, Dr Marie Martin, marie.martin@chu.fr\nF, Mme Sophie Bernard <sophie.bernard@univ.fr>`}
               required
             />
             <div className="mt-2 flex items-center gap-2 text-sm text-gray-500">

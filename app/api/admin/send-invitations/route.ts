@@ -6,9 +6,16 @@ const ADMIN_SECRET = process.env.ADMIN_EXPORT_SECRET || 'miraclai-admin-2026';
 type Recipient = {
   name: string;
   email: string;
+  gender: 'M' | 'F';
 };
 
-const getInvitationHtml = (recipientName: string) => `
+const stripTitle = (name: string): string => {
+  return name.replace(/^(Mme|Mlle|M\.|Mr|Pr|Dr|Professeur|Docteur)\s+/i, '').trim();
+};
+
+const getInvitationHtml = (recipientName: string, gender: 'M' | 'F') => {
+  const nameWithoutTitle = stripTitle(recipientName);
+  return `
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -56,7 +63,7 @@ const getInvitationHtml = (recipientName: string) => `
           <tr>
             <td style="background-color: #ffffff; padding: 40px 40px 0 40px;">
               <p style="margin: 0 0 20px 0; color: #061024; font-size: 18px; line-height: 1.6;">
-                Cher${recipientName.startsWith('Mme') || recipientName.startsWith('Dr ') || recipientName.startsWith('Pr ') ? '' : '(e)'} <strong>${recipientName}</strong>,
+                ${gender === 'F' ? 'Chère' : 'Cher'} <strong>${nameWithoutTitle}</strong>,
               </p>
               <p style="margin: 0 0 20px 0; color: #333; font-size: 15px; line-height: 1.7;">
                 C'est avec un réel plaisir que nous vous convions à la <strong style="color: #061024;">première Journée Scientifique MIRACL.ai</strong>, un événement exclusif qui marquera le lancement officiel de notre plateforme.
@@ -168,6 +175,7 @@ const getInvitationHtml = (recipientName: string) => `
 </body>
 </html>
 `;
+};
 
 function parseRecipients(input: string): Recipient[] {
   const lines = input.split('\n').filter((line) => line.trim().length > 0);
@@ -176,33 +184,41 @@ function parseRecipients(input: string): Recipient[] {
   for (const line of lines) {
     const trimmedLine = line.trim();
 
+    // Extract gender prefix (M or F at the beginning)
+    const genderMatch = trimmedLine.match(/^([MF])\s*[,;]\s*(.+)$/i);
+    const gender: 'M' | 'F' = genderMatch ? (genderMatch[1].toUpperCase() as 'M' | 'F') : 'M';
+    const restOfLine = genderMatch ? genderMatch[2].trim() : trimmedLine;
+
     // Format: "Prénom Nom <email@example.com>"
-    const angleMatch = trimmedLine.match(/^(.+?)\s*<([^>]+)>$/);
+    const angleMatch = restOfLine.match(/^(.+?)\s*<([^>]+)>$/);
     if (angleMatch) {
       recipients.push({
         name: angleMatch[1].trim(),
         email: angleMatch[2].trim(),
+        gender,
       });
       continue;
     }
 
     // Format: "Prénom Nom, email@example.com" or "Prénom Nom; email@example.com"
-    const separatorMatch = trimmedLine.match(/^(.+?)[,;]\s*([^\s,;]+@[^\s,;]+)$/);
+    const separatorMatch = restOfLine.match(/^(.+?)[,;]\s*([^\s,;]+@[^\s,;]+)$/);
     if (separatorMatch) {
       recipients.push({
         name: separatorMatch[1].trim(),
         email: separatorMatch[2].trim(),
+        gender,
       });
       continue;
     }
 
     // Format: just email (fallback - use email as name)
-    if (trimmedLine.includes('@')) {
-      const email = trimmedLine.split(/[,;\s]/)[0];
+    if (restOfLine.includes('@')) {
+      const email = restOfLine.split(/[,;\s]/)[0];
       if (email.includes('@')) {
         recipients.push({
           name: email.split('@')[0],
           email: email,
+          gender,
         });
       }
     }
@@ -233,8 +249,8 @@ export async function POST(request: NextRequest) {
         const { error } = await resend.emails.send({
           from: FROM_EMAIL,
           to: recipient.email,
-          subject: `${recipient.name}, vous êtes invité(e) à la 1ère Journée Scientifique MIRACL.ai`,
-          html: getInvitationHtml(recipient.name),
+          subject: `${recipient.name}, vous êtes ${recipient.gender === 'F' ? 'invitée' : 'invité'} à la 1ère Journée Scientifique MIRACL.ai`,
+          html: getInvitationHtml(recipient.name, recipient.gender),
         });
 
         if (error) {
