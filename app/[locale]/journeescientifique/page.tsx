@@ -7,7 +7,7 @@ import { EventCountdown } from './components/event-countdown';
 import { EventAbout } from './components/event-about';
 import { EventProgram } from './components/event-program';
 import { EventRegistration } from './components/event-registration';
-import { EventPartners } from './components/event-partners';
+import { Footer } from '../components/footer';
 import type {
   JourneeScientifiquePageContent,
   EventFeature,
@@ -295,22 +295,6 @@ export default async function JourneeScientifiquePage({ params }: Params) {
       consent: t('registration.consent'),
       successMessage: t('registration.successMessage'),
       errorMessage: t('registration.errorMessage')
-    },
-    partners: {
-      title: t('partners.title'),
-      partners: [
-        { name: 'AP-HP', logo: '/assets/partners/aphp.png' },
-        { name: 'Carnot', logo: '/assets/partners/carnot.png' },
-        { name: 'Eureka', logo: '/assets/partners/eureka.png' },
-        { name: 'ArchiMed' }
-      ]
-    },
-    footer: {
-      organizerTitle: t('footer.organizerTitle'),
-      organizerName: t('footer.organizerName'),
-      partnersTitle: t('footer.partnersTitle'),
-      contactTitle: t('footer.contactTitle'),
-      contactText: t('footer.contactText')
     }
   };
 
@@ -324,7 +308,7 @@ export default async function JourneeScientifiquePage({ params }: Params) {
       <EventAbout about={content.about} themes={content.themes} />
       <EventProgram content={content.program} />
       <EventRegistration content={content.registration} />
-      <EventPartners partners={content.partners} footer={content.footer} />
+      <Footer locale={locale} />
     </main>
   );
 }

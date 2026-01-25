@@ -1,15 +1,17 @@
 'use client';
 
 import { Link, useRouter, usePathname } from '@/app/i18n/navigation';
-import { useMotionValueEvent, useScroll } from 'framer-motion';
+import { useMotionValueEvent, useScroll, motion } from 'framer-motion';
 import Image from 'next/image';
 import { useLocale, useTranslations } from 'next-intl';
 import { useEffect, useState } from 'react';
+import { Sparkles } from 'lucide-react';
 
 type LocaleOption = 'en' | 'fr';
 
 export function EventNavbar() {
   const t = useTranslations('navigation');
+  const tEvent = useTranslations('journeeScientifique');
   const locale = useLocale();
   const router = useRouter();
   const pathname = usePathname();
@@ -56,23 +58,38 @@ export function EventNavbar() {
           </span>
         </Link>
 
-        <div className={`flex items-center rounded-full border ${localeWrapperBorder} px-1.5 py-1`}>
-          <button
-            onClick={() => switchLocale('fr')}
-            className={`cursor-pointer px-3 py-1 text-xs font-medium rounded-full transition-colors ${
-              locale === 'fr' ? localeButtonActive : localeButtonInactive
-            }`}
-          >
-            FR
-          </button>
-          <button
-            onClick={() => switchLocale('en')}
-            className={`cursor-pointer px-3 py-1 text-xs font-medium rounded-full transition-colors ${
-              locale === 'en' ? localeButtonActive : localeButtonInactive
-            }`}
-          >
-            EN
-          </button>
+        <div className="flex items-center gap-3 md:gap-4">
+          <Link href="/">
+            <motion.div
+              className="group flex items-center gap-1.5 md:gap-2 px-3 md:px-4 py-2 rounded-full bg-[#00B4D8] hover:bg-[#00a3c4] transition-all duration-300 cursor-pointer shadow-sm hover:shadow-md"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.97 }}
+            >
+              <Sparkles className="w-3 h-3 md:w-3.5 md:h-3.5 text-white" />
+              <span className="text-[10px] md:text-xs font-semibold text-white">
+                {tEvent('backToSite')}
+              </span>
+            </motion.div>
+          </Link>
+
+          <div className={`flex items-center rounded-full border ${localeWrapperBorder} px-1.5 py-1`}>
+            <button
+              onClick={() => switchLocale('fr')}
+              className={`cursor-pointer px-3 py-1 text-xs font-medium rounded-full transition-colors ${
+                locale === 'fr' ? localeButtonActive : localeButtonInactive
+              }`}
+            >
+              FR
+            </button>
+            <button
+              onClick={() => switchLocale('en')}
+              className={`cursor-pointer px-3 py-1 text-xs font-medium rounded-full transition-colors ${
+                locale === 'en' ? localeButtonActive : localeButtonInactive
+              }`}
+            >
+              EN
+            </button>
+          </div>
         </div>
       </div>
     </nav>

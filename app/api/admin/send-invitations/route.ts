@@ -62,7 +62,7 @@ const getInvitationHtml = (recipientName: string, gender: 'M' | 'F') => {
           <!-- Personal greeting -->
           <tr>
             <td style="background-color: #ffffff; padding: 40px 40px 0 40px;">
-              <p style="margin: 0 0 20px 0; color: #061024; font-size: 18px; line-height: 1.6;">
+              <p style="margin: 0 0 20px 0; color: #061024; font-size: 15px; line-height: 1.7;">
                 ${gender === 'F' ? 'Chère' : 'Cher'} <strong>${nameWithoutTitle}</strong>,
               </p>
               <p style="margin: 0 0 20px 0; color: #333; font-size: 15px; line-height: 1.7;">

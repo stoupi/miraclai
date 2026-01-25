@@ -116,6 +116,4 @@ export type JourneeScientifiquePageContent = {
   themes: EventThemesContent;
   program: EventProgramContent;
   registration: EventRegistrationContent;
-  partners: EventPartnersContent;
-  footer: EventFooterContent;
 };

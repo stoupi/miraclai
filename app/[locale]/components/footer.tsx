@@ -3,7 +3,6 @@ import Image from 'next/image';
 import { Link } from '@/app/i18n/navigation';
 
 const CONTACT_EMAIL = 'contact@miracl-ai.com';
-const CONTACT_PHONE = '+33 1 70 00 00 00';
 
 const navigationRoutes = [
   { key: 'home', href: '/' },
@@ -77,29 +76,13 @@ export async function Footer({ locale }: FooterProps) {
               <h3 className="text-sm font-semibold uppercase tracking-[0.18em] text-white/60">
                 {tFooter('contactTitle')}
               </h3>
-              <div className="space-y-2">
-                <div>
-                  <span className="block text-xs uppercase tracking-[0.2em] text-white/40">
-                    {tFooter('contactEmailLabel')}
-                  </span>
-                  <a
-                    href={`mailto:${CONTACT_EMAIL}`}
-                    className="text-white/80 transition-colors hover:text-white"
-                  >
-                    {CONTACT_EMAIL}
-                  </a>
-                </div>
-                <div>
-                  <span className="block text-xs uppercase tracking-[0.2em] text-white/40">
-                    {tFooter('contactPhoneLabel')}
-                  </span>
-                  <a
-                    href={`tel:${CONTACT_PHONE.replace(/\s+/g, '')}`}
-                    className="text-white/80 transition-colors hover:text-white"
-                  >
-                    {CONTACT_PHONE}
-                  </a>
-                </div>
+              <div>
+                <a
+                  href={`mailto:${CONTACT_EMAIL}`}
+                  className="text-white/80 transition-colors hover:text-white"
+                >
+                  {CONTACT_EMAIL}
+                </a>
               </div>
             </div>
             <div className="space-y-2">
