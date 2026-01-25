@@ -9,14 +9,14 @@ function SessionCard({ session, isLast }: { session: ProgramSession; isLast: boo
   if (session.isBreak) {
     const BreakIcon = session.breakIcon === 'lunch' ? UtensilsCrossed : Coffee;
     return (
-      <div className="relative pl-8 pb-6">
+      <div className="relative pl-14 pb-6">
         {!isLast && (
-          <div className="absolute left-[11px] top-8 bottom-0 w-0.5 bg-gradient-to-b from-[#F33349]/30 to-transparent" />
+          <div className="absolute left-[19px] top-12 bottom-0 w-0.5 bg-gradient-to-b from-[#F33349]/30 to-transparent" />
         )}
-        <div className="absolute left-0 top-0 w-6 h-6 rounded-full bg-[#F33349]/10 border border-[#F33349]/20 flex items-center justify-center">
-          <BreakIcon className="w-3 h-3 text-[#F33349]" />
+        <div className="absolute left-0 top-0 w-10 h-10 rounded-full bg-[#F33349]/10 border border-[#F33349]/20 flex items-center justify-center">
+          <BreakIcon className="w-5 h-5 text-[#F33349]" />
         </div>
-        <div className="ml-4 py-3 px-4 bg-[#F33349]/5 rounded-xl border border-[#F33349]/10">
+        <div className="py-3 px-4 bg-[#F33349]/5 rounded-xl border border-[#F33349]/10">
           <div className="flex items-center gap-3">
             <span className="text-[#F33349] font-semibold">{session.time}</span>
             <span className="text-[#061024]/70 font-medium">{session.title}</span>
@@ -27,14 +27,14 @@ function SessionCard({ session, isLast }: { session: ProgramSession; isLast: boo
   }
 
   return (
-    <div className="relative pl-8 pb-6">
+    <div className="relative pl-14 pb-6">
       {!isLast && (
-        <div className="absolute left-[11px] top-8 bottom-0 w-0.5 bg-gradient-to-b from-[#00B4D8]/30 to-transparent" />
+        <div className="absolute left-[19px] top-12 bottom-0 w-0.5 bg-gradient-to-b from-[#00B4D8]/30 to-transparent" />
       )}
-      <div className="absolute left-0 top-0 w-6 h-6 rounded-full bg-gradient-to-br from-[#00B4D8] to-[#00B4D8]/80 flex items-center justify-center shadow-sm">
-        <Clock className="w-3 h-3 text-white" />
+      <div className="absolute left-0 top-0 w-10 h-10 rounded-full bg-gradient-to-br from-[#00B4D8] to-[#00B4D8]/80 flex items-center justify-center shadow-sm">
+        <Clock className="w-5 h-5 text-white" />
       </div>
-      <div className="ml-4 p-5 bg-white rounded-xl border border-[#061024]/10 shadow-sm hover:shadow-md transition-shadow">
+      <div className="p-5 bg-white rounded-xl border border-[#061024]/10 shadow-sm hover:shadow-md transition-shadow">
         <div className="flex items-start justify-between gap-4 mb-3">
           <span className="text-[#00B4D8] font-bold text-lg">{session.time}</span>
         </div>
