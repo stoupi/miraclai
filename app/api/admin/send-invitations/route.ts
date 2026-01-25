@@ -35,7 +35,7 @@ const getInvitationHtml = (recipientName: string) => `
                       </tr>
                       <tr>
                         <td style="padding-bottom: 25px;">
-                          <p style="margin: 0; color: rgba(255,255,255,0.6); font-size: 12px; letter-spacing: 0.5px;">Une plateforme de l'AP-HP</p>
+                          <p style="margin: 0; color: #00B4D8; font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 2px;">Une plateforme de l'AP-HP</p>
                         </td>
                       </tr>
                     </table>
