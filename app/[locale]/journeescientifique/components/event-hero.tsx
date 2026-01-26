@@ -2,7 +2,18 @@
 
 import { Calendar, MapPin, Users } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import Image from 'next/image';
 import type { EventHeroContent } from '../types';
+
+const imagingModalities = [
+  { src: '/assets/images_hero/mri.png', alt: 'IRM', label: 'IRM' },
+  { src: '/assets/images_hero/ct.png', alt: 'Scanner', label: 'Scanner' },
+  { src: '/assets/images_hero/echo.png', alt: 'Échographie', label: 'Écho' },
+  { src: '/assets/images_hero/angio.png', alt: 'Coronarographie', label: 'Angio' },
+  { src: '/assets/images_hero/oct.png', alt: 'OCT/IVUS', label: 'OCT' },
+  { src: '/assets/images_hero/ecg.jpg', alt: 'ECG', label: 'ECG' },
+  { src: '/assets/images_hero/nuclear.png', alt: 'Imagerie nucléaire', label: 'Nucléaire' },
+];
 
 type EventHeroProps = {
   content: EventHeroContent;
@@ -37,7 +48,7 @@ export function EventHero({ content }: EventHeroProps) {
   };
 
   return (
-    <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden pt-20 md:pt-24">
+    <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden pt-20 md:pt-24">
       <div
         className="absolute inset-0 -z-10"
         style={{
@@ -105,9 +116,9 @@ export function EventHero({ content }: EventHeroProps) {
         </g>
       </svg>
 
-      <div className="container mx-auto px-4 py-16 md:py-24 text-center relative z-10">
+      <div className="container mx-auto px-4 pt-16 md:pt-20 pb-8 md:pb-12 text-center relative z-10">
         <div
-          className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#00B4D8]/10 border border-[#00B4D8]/30 text-[#00B4D8] text-base font-semibold mb-6 animate-fade-in-up"
+          className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#00B4D8]/10 border border-[#00B4D8]/30 text-[#00B4D8] text-base font-semibold mb-4 animate-fade-in-up"
           style={{ animationDelay: '0.1s' }}
         >
           <span className="w-2.5 h-2.5 rounded-full bg-[#00B4D8] animate-pulse" />
@@ -115,7 +126,7 @@ export function EventHero({ content }: EventHeroProps) {
         </div>
 
         <h1
-          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-medium text-[#061024] mb-4 tracking-tight animate-fade-in-up"
+          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium text-[#061024] mb-4 tracking-tight animate-fade-in-up"
           style={{
             fontFamily: 'var(--font-calistoga), serif',
             animationDelay: '0.2s'
@@ -125,7 +136,7 @@ export function EventHero({ content }: EventHeroProps) {
         </h1>
 
         <p
-          className="text-xl sm:text-2xl md:text-3xl text-[#061024] max-w-4xl mx-auto mb-10 animate-fade-in-up"
+          className="text-xl sm:text-2xl md:text-3xl text-[#061024] max-w-4xl mx-auto mb-6 animate-fade-in-up"
           style={{
             fontFamily: 'var(--font-calistoga), serif',
             animationDelay: '0.25s'
@@ -134,9 +145,30 @@ export function EventHero({ content }: EventHeroProps) {
           Le <span className="hero-highlight">Core Lab académique</span> de référence en imagerie cardiovasculaire multimodale
         </p>
 
+        <div
+          className="flex flex-wrap justify-center gap-3 md:gap-5 max-w-2xl mx-auto mb-8 animate-fade-in-up"
+          style={{ animationDelay: '0.3s' }}
+        >
+          {imagingModalities.map((modality) => (
+            <div key={modality.label} className="flex flex-col items-center group">
+              <div className="w-12 h-12 md:w-14 md:h-14 rounded-full overflow-hidden border-2 border-white shadow-md bg-[#061024] transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg group-hover:border-[#00B4D8]">
+                <Image
+                  src={modality.src}
+                  alt={modality.alt}
+                  width={56}
+                  height={56}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <span className="mt-1.5 text-[8px] md:text-[9px] font-semibold text-[#061024]/50 uppercase tracking-wide">
+                {modality.label}
+              </span>
+            </div>
+          ))}
+        </div>
 
         <div
-          className="flex flex-wrap justify-center gap-5 mb-12 animate-fade-in-up"
+          className="flex flex-wrap justify-center gap-4 mb-8 animate-fade-in-up"
           style={{ animationDelay: '0.4s' }}
         >
           <div className="flex items-center gap-3 px-6 py-4 rounded-2xl bg-white/80 backdrop-blur-sm border border-[#061024]/10 text-[#061024] shadow-sm">
