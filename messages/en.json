@@ -540,7 +540,7 @@
       "hoursLabel": "hours",
       "minutesLabel": "minutes",
       "secondsLabel": "seconds",
-      "subtitle": "Don't miss this <highlight>first edition of the MIRACL.ai Scientific Day</highlight>"
+      "subtitle": "<highlight>First edition of the MIRACL.ai Scientific Day</highlight>"
     },
     "about": {
       "title": "About the event",
@@ -601,6 +601,7 @@
               }
             },
             "break": "Break & refreshments",
+            "qa": "Q&A session with the audience (25 minutes)",
             "services": {
               "title": "Service offerings: details of our services",
               "topics": {
@@ -612,13 +613,15 @@
                 "angio": "Coronary angiography and invasive imaging",
                 "multimodal": "Summary: the power of holistic multimodal analysis in the same patient",
                 "regulatory": "MIRACL.ai industrial collaboration capabilities: regulatory process"
-              }
+              },
+              "qa": "Q&A session with the audience (20 minutes)"
             }
           }
         },
         "lunch": {
           "title": "Lunch break",
-          "session": "Lunch"
+          "session": "Lunch",
+          "description": "Standing lunch reception fostering exchanges, networking and interactions between academic teams and industrial partners, in a friendly atmosphere."
         },
         "session2": {
           "title": "Session 2 • 1:30 PM – 4:00 PM",
@@ -627,23 +630,28 @@
             "collaborations": {
               "title": "Overview of main existing collaborations",
               "topics": {
-                "fhu": "FHU and Duchenne cardiomyopathy",
-                "myocarditis": "Prospective Myocarditis project 'Action / MIRACL.ai'",
-                "hcm": "HCM Mavacamten industrial project (BMS industry) – Echo & MRI Integration",
-                "impulsion": "IMPULSION national lung cancer screening program",
-                "esc": "ESC international registries with EACVI-MMVD and EACVI-INFLAME",
-                "phrc": "Reference Core Lab for national PHRCs: IMAGENE-DEF, RCT TAVI, COTAM"
-              }
+                "fhu": "FHU Prevent-HF Project and Duchenne Cardiomyopathy",
+                "myocarditis": "National Prospective Myocarditis Registry Project with Action Group and MIRACL.ai collaboration",
+                "hcm": "Hypertrophic Cardiomyopathy Registry Project under myosin inhibitors with BMS industrial collaboration",
+                "impulsion": "National lung cancer screening program 'IMPULSION': MIRACL.ai mission for the SFC",
+                "esc": "ESC international registries with 'EACVI-MMVD' and 'EACVI-INFLAME': MIRACL.ai mission for the European Society of Cardiology"
+              },
+              "qa": "Q&A session with the audience (15 minutes)"
             },
             "break": "Break & refreshments",
             "phd": {
               "title": "First results from our doctoral students",
               "topics": {
                 "lge": "Innovative concept of 'Late Gadolinium Enhancement Granularity' in cardiac MRI",
-                "deepLearning": "Deep learning in multimodal imaging",
-                "derivate": "Machine learning in ICM – DERIVATE projects",
+                "deepLearning": "Deep learning in multimodal imaging and AI frugality concept",
+                "derivate": "Machine learning combining MRI and CT data for predicting serious events",
                 "cesar": "CÉSAR project and Echo"
-              }
+              },
+              "qa": "Q&A session with the audience (20 minutes)"
+            },
+            "conclusion": {
+              "title": "Conclusion",
+              "topic": "Closing remarks and perspectives"
             }
           }
         }

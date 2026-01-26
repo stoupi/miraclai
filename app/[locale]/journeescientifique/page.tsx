@@ -65,7 +65,7 @@ export default async function JourneeScientifiquePage({ params }: Params) {
           title: t('program.blocks.session1.sessions.whoAreWe.title'),
           speakers: [
             {
-              name: 'Gilles Soulat & Théo Pezel',
+              name: 'Pr Gilles Soulat & Dr Théo Pezel',
               affiliation: 'HEGP, CHU Lariboisière, AP-HP',
               topic: t('program.blocks.session1.sessions.whoAreWe.topics.presentation')
             },
@@ -75,16 +75,17 @@ export default async function JourneeScientifiquePage({ params }: Params) {
               topic: t('program.blocks.session1.sessions.whoAreWe.topics.dataManagement')
             },
             {
-              name: 'Éric Vicaut',
+              name: 'Pr Éric Vicaut',
               affiliation: 'URC AP-HP Nord',
               topic: t('program.blocks.session1.sessions.whoAreWe.topics.methodology')
             },
             {
-              name: 'Gabriel Steg, Milan Lazarevic, Quentin Demanet',
+              name: 'Pr Gabriel Steg, Milan Lazarevic, Quentin Demanet',
               affiliation: 'AP-HP',
               topic: t('program.blocks.session1.sessions.whoAreWe.topics.carnot')
             }
-          ]
+          ],
+          qaText: t('program.blocks.session1.sessions.qa')
         },
         {
           time: '11h00 – 11h15',
@@ -97,37 +98,37 @@ export default async function JourneeScientifiquePage({ params }: Params) {
           title: t('program.blocks.session1.sessions.services.title'),
           speakers: [
             {
-              name: 'François Pontana',
+              name: 'Pr François Pontana',
               affiliation: 'CHU de Lille',
               topic: t('program.blocks.session1.sessions.services.topics.ct')
             },
             {
-              name: 'Jérôme Garot',
+              name: 'Pr Jérôme Garot',
               affiliation: 'ICPS, Massy',
               topic: t('program.blocks.session1.sessions.services.topics.mri')
             },
             {
-              name: 'Yohann Bohbot, Augustin Coisne, Olivier Huttin',
+              name: 'Pr Yohann Bohbot, Pr Augustin Coisne, Pr Olivier Huttin',
               affiliation: 'CHU Amiens, Lille, Nancy',
               topic: t('program.blocks.session1.sessions.services.topics.echo')
             },
             {
-              name: 'Fabien Hyafil',
+              name: 'Pr Fabien Hyafil',
               affiliation: 'HEGP, AP-HP',
               topic: t('program.blocks.session1.sessions.services.topics.nuclear')
             },
             {
-              name: 'Christian De Chillou',
+              name: 'Pr Christian De Chillou',
               affiliation: 'CHRU Nancy',
               topic: t('program.blocks.session1.sessions.services.topics.ecg')
             },
             {
-              name: 'Jean-Guillaume Dillinger',
+              name: 'Pr Jean-Guillaume Dillinger',
               affiliation: 'CHU Lariboisière, AP-HP',
               topic: t('program.blocks.session1.sessions.services.topics.angio')
             },
             {
-              name: 'Jean-Nicolas Dacher',
+              name: 'Pr Jean-Nicolas Dacher',
               affiliation: 'CHU de Rouen',
               topic: t('program.blocks.session1.sessions.services.topics.multimodal')
             },
@@ -136,7 +137,8 @@ export default async function JourneeScientifiquePage({ params }: Params) {
               affiliation: 'DRCI, AP-HP',
               topic: t('program.blocks.session1.sessions.services.topics.regulatory')
             }
-          ]
+          ],
+          qaText: t('program.blocks.session1.sessions.services.qa')
         }
       ]
     },
@@ -147,7 +149,8 @@ export default async function JourneeScientifiquePage({ params }: Params) {
           time: '12h30 – 13h30',
           title: t('program.blocks.lunch.session'),
           isBreak: true,
-          breakIcon: 'lunch'
+          breakIcon: 'lunch',
+          description: t('program.blocks.lunch.description')
         }
       ]
     },
@@ -160,31 +163,32 @@ export default async function JourneeScientifiquePage({ params }: Params) {
           title: t('program.blocks.session2.sessions.collaborations.title'),
           speakers: [
             {
-              name: 'Karim Wahbi',
+              name: 'Pr Karim Wahbi',
               affiliation: 'CHU Cochin, AP-HP',
               topic: t('program.blocks.session2.sessions.collaborations.topics.fhu')
             },
             {
-              name: 'Mathieu Kerneis',
-              affiliation: 'CHU Pitié Salpétrière, AP-HP',
+              name: 'Pr Mathieu Kerneis',
+              affiliation: 'CHU Pitié Salpétrière, AP-HP, Groupe Action',
               topic: t('program.blocks.session2.sessions.collaborations.topics.myocarditis')
             },
             {
-              name: 'Charles Fauvel & Léa Cymes',
+              name: 'Dr Charles Fauvel & Léa Cymes',
               affiliation: 'CHU de Rouen, BMS',
               topic: t('program.blocks.session2.sessions.collaborations.topics.hcm')
             },
             {
-              name: 'Jean-Sebastien Hulot',
+              name: 'Pr Jean-Sebastien Hulot',
               affiliation: 'HEGP, AP-HP',
               topic: t('program.blocks.session2.sessions.collaborations.topics.impulsion')
             },
             {
-              name: 'Théo Pezel',
+              name: 'Dr Théo Pezel',
               affiliation: 'CHU Lariboisière, AP-HP',
               topic: t('program.blocks.session2.sessions.collaborations.topics.esc')
             }
-          ]
+          ],
+          qaText: t('program.blocks.session2.sessions.collaborations.qa')
         },
         {
           time: '15h00 – 15h15',
@@ -193,28 +197,40 @@ export default async function JourneeScientifiquePage({ params }: Params) {
           breakIcon: 'coffee'
         },
         {
-          time: '15h15 – 16h00',
+          time: '15h15 – 15h50',
           title: t('program.blocks.session2.sessions.phd.title'),
           speakers: [
             {
-              name: 'Jeremy Florence',
-              affiliation: 'PhD MIRACL.ai, Clermont-Ferrand',
+              name: 'Dr Jeremy Florence',
+              affiliation: 'PhD student MIRACL.ai, en collaboration avec le CHU de Clermont-Ferrand',
               topic: t('program.blocks.session2.sessions.phd.topics.lge')
             },
             {
               name: 'Sofiane Sifaoui',
-              affiliation: 'PhD MIRACL.ai, Télécom/Polytechnique Paris',
+              affiliation: 'PhD student MIRACL.ai, en collaboration avec Télécom/Polytechnique Paris',
               topic: t('program.blocks.session2.sessions.phd.topics.deepLearning')
             },
             {
-              name: 'Alex Unger',
-              affiliation: 'PhD MIRACL.ai, Bruxelles',
+              name: 'Solenn Toupin',
+              affiliation: 'Coordinatrice scientifique de MIRACL.ai',
               topic: t('program.blocks.session2.sessions.phd.topics.derivate')
             },
             {
-              name: 'Julien Hudelo',
-              affiliation: 'PhD MIRACL.ai, Amiens',
+              name: 'Dr Julien Hudelo',
+              affiliation: "PhD student MIRACL.ai, en collaboration avec le CHU d'Amiens",
               topic: t('program.blocks.session2.sessions.phd.topics.cesar')
+            }
+          ],
+          qaText: t('program.blocks.session2.sessions.phd.qa')
+        },
+        {
+          time: '15h50 – 16h00',
+          title: t('program.blocks.session2.sessions.conclusion.title'),
+          speakers: [
+            {
+              name: 'Pr Gilles Soulat & Dr Théo Pezel',
+              affiliation: 'HEGP, CHU Lariboisière, AP-HP',
+              topic: t('program.blocks.session2.sessions.conclusion.topic')
             }
           ]
         }

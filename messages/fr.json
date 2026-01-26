@@ -535,7 +535,7 @@
       "hoursLabel": "heures",
       "minutesLabel": "minutes",
       "secondsLabel": "secondes",
-      "subtitle": "Ne manquez pas cette <highlight>première édition de la Journée Scientifique MIRACL.ai</highlight>"
+      "subtitle": "<highlight>Première édition de la Journée Scientifique MIRACL.ai</highlight>"
     },
     "about": {
       "title": "À propos de l'événement",
@@ -596,6 +596,7 @@
               }
             },
             "break": "Pause & collation",
+            "qa": "Séances de questions/réponses avec l'audience (25 minutes)",
             "services": {
               "title": "Offres de service : détails de nos prestations",
               "topics": {
@@ -607,13 +608,15 @@
                 "angio": "Coronarographie et imagerie invasive",
                 "multimodal": "Synthèse : force d'une analyse holistique multimodale chez un même patient",
                 "regulatory": "Capacité de collaborations industrielles de MIRACL.ai : processus réglementaire"
-              }
+              },
+              "qa": "Séances de questions/réponses avec l'audience (20 minutes)"
             }
           }
         },
         "lunch": {
           "title": "Pause déjeuner",
-          "session": "Déjeuner"
+          "session": "Déjeuner",
+          "description": "Cocktail déjeunatoire debout favorisant les échanges, le networking et les interactions entre équipes académiques et partenaires industriels, dans un cadre convivial."
         },
         "session2": {
           "title": "Session 2 • 13h30 – 16h00",
@@ -622,23 +625,28 @@
             "collaborations": {
               "title": "Partage des principales collaborations existantes",
               "topics": {
-                "fhu": "FHU et cardiomyopathie de Duchenne",
-                "myocarditis": "Projet Myocardite prospectif « Action / MIRACL.ai »",
-                "hcm": "Projet industriel HCM Mavacamten (industrie BMS) – Intégration Échographie & IRM",
-                "impulsion": "Programme de dépistage national du cancer du poumon IMPULSION",
-                "esc": "Registres internationaux de l'ESC avec EACVI-MMVD et EACVI-INFLAME",
-                "phrc": "Core Lab référent pour les PHRC nationaux : IMAGENE-DEF, RCT TAVI, COTAM"
-              }
+                "fhu": "Projet FHU Prevent-HF et Cardiomyopathie de Duchenne",
+                "myocarditis": "Projet Registre national prospectif des myocardites avec collaboration Groupe Action et MIRACL.ai",
+                "hcm": "Projet Registre des cardiomyopathies hypertrophique sous inhibiteurs de la myosine avec collaboration industrielle BMS",
+                "impulsion": "Programme de dépistage national du cancer du poumon « IMPULSION » : mission de MIRACL.ai pour la SFC",
+                "esc": "Registres internationaux de l'ESC avec « EACVI-MMVD » et « EACVI-INFLAME » : mission de MIRACL.ai pour l'European Society of Cardiology"
+              },
+              "qa": "Séances de questions/réponses avec l'audience (15 minutes)"
             },
             "break": "Pause & collation",
             "phd": {
               "title": "Premiers résultats de nos étudiants doctorants",
               "topics": {
                 "lge": "Concept innovant de « Granularité du rehaussement tardif » en IRM cardiaque",
-                "deepLearning": "Deep learning en imagerie multimodalité",
-                "derivate": "Machine learning en ICM – projets DERIVATE",
+                "deepLearning": "Deep learning en imagerie multimodale et concept de frugalité en IA",
+                "derivate": "Machine learning combinant données IRM et Scanner pour la prédiction d'évènements graves",
                 "cesar": "Projet CÉSAR et Echo"
-              }
+              },
+              "qa": "Séances de questions/réponses avec l'audience (20 minutes)"
+            },
+            "conclusion": {
+              "title": "Conclusion",
+              "topic": "Mot de conclusion et perspectives"
             }
           }
         }

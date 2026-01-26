@@ -56,6 +56,8 @@ export type ProgramSession = {
   speakers?: ProgramSpeaker[];
   isBreak?: boolean;
   breakIcon?: 'coffee' | 'lunch';
+  qaText?: string;
+  description?: string;
 };
 
 export type ProgramBlock = {

@@ -1,4 +1,4 @@
-import { Clock, Coffee, UtensilsCrossed, User } from 'lucide-react';
+import { Clock, Coffee, UtensilsCrossed, User, MessageCircle } from 'lucide-react';
 import Image from 'next/image';
 import type { EventProgramContent, ProgramSession } from '../types';
 
@@ -19,6 +19,9 @@ const speakerPhotos: Record<string, SpeakerPhotoConfig> = {
   'Solenn Toupin': { src: '/assets/team/toupin.jpg', scale: 1.15, offsetX: '30%', offsetY: '-10%' },
   'Marine Beaumont': { src: '/assets/team/beaumont.jpg' },
   'Éric Vicaut': { src: '/assets/team/vicaut.jpg' },
+  'Gabriel Steg': { src: '/steg.jpeg' },
+  'Milan Lazarevic': { src: '/lazerevic.jpeg' },
+  'Quentin Demanet': { src: '/demanet.jpeg' },
   'François Pontana': { src: '/assets/team/pontana.jpg' },
   'Jérôme Garot': { src: '/assets/team/garot.jpeg' },
   'Yohann Bohbot': { src: '/assets/team/bohbot.jpg' },
@@ -27,8 +30,17 @@ const speakerPhotos: Record<string, SpeakerPhotoConfig> = {
   'Fabien Hyafil': { src: '/assets/team/hyafil.jpeg' },
   'Christian De Chillou': { src: '/assets/team/chillou.jpg' },
   'Jean-Nicolas Dacher': { src: '/assets/team/dacher.jpg' },
+  'Allyre Lohier': { src: '/lohier.jpeg' },
   'Charles Fauvel': { src: '/assets/team/fauvel.jpg' },
   'Jean-Sebastien Hulot': { src: '/assets/team/hulot.png' },
+  'Karim Wahbi': { src: '/whabi.jpeg' },
+  'Mathieu Kerneis': { src: '/kerneis.png' },
+  'Léa Cymes': { src: '/cymes.jpeg', offsetY: '40%' },
+  'Jeremy Florence': { src: '/florence.jpeg' },
+  'Alexandre Unger': { src: '/a-unger.jpg' },
+  'Julien Hudelo': { src: '/hudelo.jpeg' },
+  'Jean-Guillaume Dillinger': { src: '/dillinger.jpeg' },
+  'Sofiane Sifaoui': { src: '/sifaoui.jpeg' },
 };
 
 function getSpeakerPhoto(fullName: string): SpeakerPhotoConfig | null {
@@ -96,6 +108,9 @@ function SessionCard({ session, isLast }: { session: ProgramSession; isLast: boo
             <span className="text-[#F33349] font-semibold">{session.time}</span>
             <span className="text-[#061024]/70 font-medium">{session.title}</span>
           </div>
+          {session.description && (
+            <p className="mt-2 text-sm text-[#061024]/60 italic">{session.description}</p>
+          )}
         </div>
       </div>
     );
@@ -137,6 +152,18 @@ function SessionCard({ session, isLast }: { session: ProgramSession; isLast: boo
                 </div>
               );
             })}
+          </div>
+        )}
+        {session.qaText && (
+          <div className="mt-4 relative overflow-hidden py-3 px-4 bg-gradient-to-r from-[#061024] via-[#0a1a3a] to-[#061024] rounded-xl border border-[#00B4D8]/30">
+            <div className="absolute inset-0 opacity-30" style={{
+              backgroundImage: `url("data:image/svg+xml,%3Csvg width='20' height='20' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='2' cy='2' r='1' fill='%2300B4D8' opacity='0.3'/%3E%3C/svg%3E")`,
+              backgroundSize: '20px 20px'
+            }} />
+            <div className="relative flex items-center gap-3">
+              <MessageCircle className="w-5 h-5 text-[#00B4D8] flex-shrink-0" />
+              <span className="text-white font-medium text-sm">{session.qaText}</span>
+            </div>
           </div>
         )}
       </div>
