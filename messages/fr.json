@@ -620,7 +620,7 @@
         },
         "session2": {
           "title": "Session 2 • 13h30 – 16h00",
-          "subtitle": "Collaborations, projets structurants et formation par la recherche",
+          "subtitle": "Collaborations, projets structurants et résultats de recherche",
           "sessions": {
             "collaborations": {
               "title": "Partage des principales collaborations existantes",
@@ -635,7 +635,7 @@
             },
             "break": "Pause & collation",
             "phd": {
-              "title": "Premiers résultats de nos étudiants doctorants",
+              "title": "Premiers résultats de recherche de la plateforme",
               "topics": {
                 "lge": "Concept innovant de « Granularité du rehaussement tardif » en IRM cardiaque",
                 "deepLearning": "Deep learning en imagerie multimodale et concept de frugalité en IA",
@@ -646,7 +646,8 @@
             },
             "conclusion": {
               "title": "Conclusion",
-              "topic": "Mot de conclusion et perspectives"
+              "topic": "Mot de conclusion et perspectives",
+              "description": "Pour clôturer la journée, un petit cadeau souvenir vous sera offert, avec nos catalogues de plateformes et un aperçu de nos bases de données disponibles."
             }
           }
         }

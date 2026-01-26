@@ -232,7 +232,8 @@ export default async function JourneeScientifiquePage({ params }: Params) {
               affiliation: 'HEGP, CHU Lariboisière, AP-HP',
               topic: t('program.blocks.session2.sessions.conclusion.topic')
             }
-          ]
+          ],
+          description: t('program.blocks.session2.sessions.conclusion.description')
         }
       ]
     }

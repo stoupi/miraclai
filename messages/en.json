@@ -625,7 +625,7 @@
         },
         "session2": {
           "title": "Session 2 • 1:30 PM – 4:00 PM",
-          "subtitle": "Collaborations, structuring projects and research training",
+          "subtitle": "Collaborations, structuring projects and research results",
           "sessions": {
             "collaborations": {
               "title": "Overview of main existing collaborations",
@@ -640,7 +640,7 @@
             },
             "break": "Break & refreshments",
             "phd": {
-              "title": "First results from our doctoral students",
+              "title": "First research results from the platform",
               "topics": {
                 "lge": "Innovative concept of 'Late Gadolinium Enhancement Granularity' in cardiac MRI",
                 "deepLearning": "Deep learning in multimodal imaging and AI frugality concept",
@@ -651,7 +651,8 @@
             },
             "conclusion": {
               "title": "Conclusion",
-              "topic": "Closing remarks and perspectives"
+              "topic": "Closing remarks and perspectives",
+              "description": "To close the day, a small souvenir gift will be offered to you, with our platform catalogs and an overview of our available databases."
             }
           }
         }

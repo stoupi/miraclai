@@ -166,6 +166,9 @@ function SessionCard({ session, isLast }: { session: ProgramSession; isLast: boo
             </div>
           </div>
         )}
+        {session.description && (
+          <p className="mt-4 text-sm text-[#061024]/60 italic">{session.description}</p>
+        )}
       </div>
     </div>
   );
