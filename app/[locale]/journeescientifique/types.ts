@@ -20,7 +20,7 @@ export type EventCountdownContent = {
   hoursLabel: string;
   minutesLabel: string;
   secondsLabel: string;
-  subtitle: string;
+  subtitle: ReactNode;
 };
 
 export type EventFeature = {

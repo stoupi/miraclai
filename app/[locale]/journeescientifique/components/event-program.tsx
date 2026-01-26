@@ -1,9 +1,84 @@
-import { Clock, Coffee, UtensilsCrossed } from 'lucide-react';
+import { Clock, Coffee, UtensilsCrossed, User } from 'lucide-react';
+import Image from 'next/image';
 import type { EventProgramContent, ProgramSession } from '../types';
 
 type EventProgramProps = {
   content: EventProgramContent;
 };
+
+type SpeakerPhotoConfig = {
+  src: string;
+  scale?: number;
+  offsetX?: string;
+  offsetY?: string;
+};
+
+const speakerPhotos: Record<string, SpeakerPhotoConfig> = {
+  'Gilles Soulat': { src: '/assets/team/soulat.jpg' },
+  'Théo Pezel': { src: '/assets/team/pezel.jpg' },
+  'Solenn Toupin': { src: '/assets/team/toupin.jpg', scale: 1.15, offsetX: '30%', offsetY: '-10%' },
+  'Marine Beaumont': { src: '/assets/team/beaumont.jpg' },
+  'Éric Vicaut': { src: '/assets/team/vicaut.jpg' },
+  'François Pontana': { src: '/assets/team/pontana.jpg' },
+  'Jérôme Garot': { src: '/assets/team/garot.jpeg' },
+  'Yohann Bohbot': { src: '/assets/team/bohbot.jpg' },
+  'Augustin Coisne': { src: '/assets/team/coisne.jpg' },
+  'Olivier Huttin': { src: '/assets/team/huttin.jpg' },
+  'Fabien Hyafil': { src: '/assets/team/hyafil.jpeg' },
+  'Christian De Chillou': { src: '/assets/team/chillou.jpg' },
+  'Jean-Nicolas Dacher': { src: '/assets/team/dacher.jpg' },
+  'Charles Fauvel': { src: '/assets/team/fauvel.jpg' },
+  'Jean-Sebastien Hulot': { src: '/assets/team/hulot.png' },
+};
+
+function getSpeakerPhoto(fullName: string): SpeakerPhotoConfig | null {
+  for (const [name, config] of Object.entries(speakerPhotos)) {
+    if (fullName.includes(name)) {
+      return config;
+    }
+  }
+  return null;
+}
+
+function extractSpeakers(speakerString: string): string[] {
+  return speakerString
+    .split(/[,&]/)
+    .map((name) => name.trim())
+    .filter((name) => name.length > 0);
+}
+
+function SpeakerAvatar({ name }: { name: string }) {
+  const photoConfig = getSpeakerPhoto(name);
+
+  if (photoConfig) {
+    const imageStyle: React.CSSProperties = {
+      objectFit: 'cover',
+      transform: photoConfig.scale ? `scale(${photoConfig.scale})` : undefined,
+      objectPosition: photoConfig.offsetX || photoConfig.offsetY
+        ? `${photoConfig.offsetX || '50%'} ${photoConfig.offsetY || '50%'}`
+        : undefined,
+    };
+
+    return (
+      <div className="w-12 h-12 md:w-14 md:h-14 rounded-full overflow-hidden border-2 border-white shadow-md flex-shrink-0">
+        <Image
+          src={photoConfig.src}
+          alt={name}
+          width={56}
+          height={56}
+          className="w-full h-full"
+          style={imageStyle}
+        />
+      </div>
+    );
+  }
+
+  return (
+    <div className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-gradient-to-br from-[#061024] to-[#0a1a3a] border-2 border-white shadow-md flex items-center justify-center flex-shrink-0">
+      <User className="w-6 h-6 text-white/60" />
+    </div>
+  );
+}
 
 function SessionCard({ session, isLast }: { session: ProgramSession; isLast: boolean }) {
   if (session.isBreak) {
@@ -38,20 +113,30 @@ function SessionCard({ session, isLast }: { session: ProgramSession; isLast: boo
         <div className="flex items-start justify-between gap-4 mb-3">
           <span className="text-[#00B4D8] font-bold text-lg">{session.time}</span>
         </div>
-        <h4 className="text-[#061024] font-bold text-base mb-3">{session.title}</h4>
+        <h4 className="text-[#061024] font-bold text-base mb-4">{session.title}</h4>
         {session.speakers && session.speakers.length > 0 && (
-          <div className="space-y-2 border-l-2 border-[#00B4D8]/30 pl-3">
-            {session.speakers.map((speaker, speakerIndex) => (
-              <div key={speakerIndex} className="text-sm">
-                <span className="font-semibold text-[#061024]">{speaker.name}</span>
-                {speaker.affiliation && (
-                  <span className="text-[#061024]/50 ml-1">({speaker.affiliation})</span>
-                )}
-                {speaker.topic && (
-                  <p className="text-[#061024]/60 italic mt-0.5">{speaker.topic}</p>
-                )}
-              </div>
-            ))}
+          <div className="space-y-4">
+            {session.speakers.map((speaker, speakerIndex) => {
+              const speakerNames = extractSpeakers(speaker.name);
+              return (
+                <div key={speakerIndex} className="flex items-start justify-between gap-3 p-3 rounded-lg bg-[#F0F9FA]/50 hover:bg-[#F0F9FA] transition-colors">
+                  <div className="flex-1 min-w-0">
+                    {speaker.topic && (
+                      <p className="text-[#00B4D8] text-sm font-medium mb-1">{speaker.topic}</p>
+                    )}
+                    <p className="font-semibold text-[#061024] text-sm">{speaker.name}</p>
+                    {speaker.affiliation && (
+                      <p className="text-[#061024]/50 text-xs">{speaker.affiliation}</p>
+                    )}
+                  </div>
+                  <div className="flex gap-2 flex-row-reverse">
+                    {speakerNames.map((name, nameIndex) => (
+                      <SpeakerAvatar key={nameIndex} name={name} />
+                    ))}
+                  </div>
+                </div>
+              );
+            })}
           </div>
         )}
       </div>

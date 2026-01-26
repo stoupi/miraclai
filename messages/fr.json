@@ -535,7 +535,7 @@
       "hoursLabel": "heures",
       "minutesLabel": "minutes",
       "secondsLabel": "secondes",
-      "subtitle": "Ne manquez pas cette première édition de la Journée Scientifique de la plateforme MIRACL.ai"
+      "subtitle": "Ne manquez pas cette <highlight>première édition de la Journée Scientifique MIRACL.ai</highlight>"
     },
     "about": {
       "title": "À propos de l'événement",

@@ -183,11 +183,6 @@ export default async function JourneeScientifiquePage({ params }: Params) {
               name: 'Théo Pezel',
               affiliation: 'CHU Lariboisière, AP-HP',
               topic: t('program.blocks.session2.sessions.collaborations.topics.esc')
-            },
-            {
-              name: 'Gilles Soulat',
-              affiliation: 'HEGP, AP-HP',
-              topic: t('program.blocks.session2.sessions.collaborations.topics.phrc')
             }
           ]
         },
@@ -258,7 +253,11 @@ export default async function JourneeScientifiquePage({ params }: Params) {
       hoursLabel: t('countdown.hoursLabel'),
       minutesLabel: t('countdown.minutesLabel'),
       secondsLabel: t('countdown.secondsLabel'),
-      subtitle: t('countdown.subtitle')
+      subtitle: t.rich('countdown.subtitle', {
+        highlight: (chunks: ReactNode) => (
+          <span className="hero-highlight">{chunks}</span>
+        )
+      })
     },
     about: {
       title: t('about.title'),
