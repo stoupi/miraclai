@@ -155,15 +155,37 @@ const getInvitationHtml = (recipientName: string, gender: 'M' | 'F') => {
           <!-- Signature -->
           <tr>
             <td style="background-color: #f8fafb; padding: 30px 40px; border-top: 1px solid #e8f4f5;">
-              <p style="margin: 0 0 15px 0; color: #333; font-size: 15px; line-height: 1.6;">
+              <p style="margin: 0 0 20px 0; color: #333; font-size: 15px; line-height: 1.6;">
                 Dans l'attente du plaisir de vous accueillir,
               </p>
-              <p style="margin: 0; color: #061024; font-size: 15px; font-weight: 600;">
-                Dr Théo Pezel
-              </p>
-              <p style="margin: 0; color: #666; font-size: 13px;">
-                Directeur scientifique, MIRACL.ai
-              </p>
+              <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                <tr>
+                  <td style="padding-right: 15px; vertical-align: top; width: 33%;">
+                    <p style="margin: 0; color: #061024; font-size: 14px; font-weight: 600;">
+                      Dr Théo Pezel
+                    </p>
+                    <p style="margin: 0; color: #666; font-size: 12px;">
+                      Référent Cardiologue
+                    </p>
+                  </td>
+                  <td style="padding: 0 15px; vertical-align: top; width: 33%; border-left: 1px solid #e0e0e0;">
+                    <p style="margin: 0; color: #061024; font-size: 14px; font-weight: 600;">
+                      Pr Gilles Soulat
+                    </p>
+                    <p style="margin: 0; color: #666; font-size: 12px;">
+                      Référent Radiologue
+                    </p>
+                  </td>
+                  <td style="padding-left: 15px; vertical-align: top; width: 33%; border-left: 1px solid #e0e0e0;">
+                    <p style="margin: 0; color: #061024; font-size: 14px; font-weight: 600;">
+                      Solenn Toupin, PhD
+                    </p>
+                    <p style="margin: 0; color: #666; font-size: 12px;">
+                      Coordinatrice scientifique
+                    </p>
+                  </td>
+                </tr>
+              </table>
             </td>
           </tr>
 
