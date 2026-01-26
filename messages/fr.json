@@ -655,7 +655,7 @@
     },
     "registration": {
       "title": "Inscription",
-      "subtitle": "Places limitées à 150 participants. Inscrivez-vous dès maintenant pour réserver votre place !",
+      "subtitle": "Inscrivez-vous dès maintenant pour réserver votre place !",
       "maxParticipants": "150 places maximum",
       "fields": {
         "firstName": "Prénom",

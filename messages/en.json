@@ -660,7 +660,7 @@
     },
     "registration": {
       "title": "Registration",
-      "subtitle": "Limited to 150 participants. Register now to reserve your spot!",
+      "subtitle": "Register now to reserve your spot!",
       "maxParticipants": "150 seats maximum",
       "fields": {
         "firstName": "First name",

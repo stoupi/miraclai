@@ -63,7 +63,7 @@ export function EventRegistration({ content }: EventRegistrationProps) {
 
   if (isSubmitted) {
     return (
-      <section id="registration-section" className="py-20 bg-white">
+      <section id="registration-section" className="py-20 bg-white scroll-mt-24">
         <div className="container mx-auto px-4">
           <div className="max-w-xl mx-auto text-center">
             <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-[#00B4D8]/10 border border-[#00B4D8]/20 flex items-center justify-center">
@@ -82,7 +82,7 @@ export function EventRegistration({ content }: EventRegistrationProps) {
   }
 
   return (
-    <section id="registration-section" className="py-20 bg-white">
+    <section id="registration-section" className="py-20 bg-white scroll-mt-24">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2
