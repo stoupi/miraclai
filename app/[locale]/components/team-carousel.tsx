@@ -24,7 +24,7 @@ const allMembers: TeamMember[] = [
   { name: 'Dr Yohann Bohbot', role: 'Cardiologue', specialty: 'cardio', center: 'CHU Amiens', centerLogo: '/assets/logo_centres/logo_amiens.jpg' },
   { name: 'Dr Cédric Renard', role: 'Radiologue', specialty: 'radio', center: 'CHU Amiens', centerLogo: '/assets/logo_centres/logo_amiens.jpg' },
   { name: 'Pr Olivier Huttin', role: 'Cardiologue', specialty: 'cardio', center: 'CHRU Nancy', centerLogo: '/assets/logo_centres/logo_nancy.png' },
-  { name: 'Pr Christian De Chillou', role: 'Cardiologue', specialty: 'cardio', center: 'CHRU Nancy', centerLogo: '/assets/logo_centres/logo_nancy.png' },
+  { name: 'Pr Christian de Chillou', role: 'Cardiologue', specialty: 'cardio', center: 'CHRU Nancy', centerLogo: '/assets/logo_centres/logo_nancy.png' },
   { name: 'Marine Beaumont', role: 'Cardiologue', specialty: 'cardio', center: 'CHRU Nancy', centerLogo: '/assets/logo_centres/logo_nancy.png' },
   { name: 'Pr Augustin Coisne', role: 'Cardiologue', specialty: 'cardio', center: 'CHU Lille', centerLogo: '/assets/logo_centres/logo_lille.png' },
   { name: 'Pr François Pontana', role: 'Radiologue', specialty: 'radio', center: 'CHU Lille', centerLogo: '/assets/logo_centres/logo_lille.png' },

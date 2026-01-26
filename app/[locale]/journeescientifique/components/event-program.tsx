@@ -28,7 +28,7 @@ const speakerPhotos: Record<string, SpeakerPhotoConfig> = {
   'Augustin Coisne': { src: '/assets/team/coisne.jpg' },
   'Olivier Huttin': { src: '/assets/team/huttin.jpg' },
   'Fabien Hyafil': { src: '/assets/team/hyafil.jpeg' },
-  'Christian De Chillou': { src: '/assets/team/chillou.jpg' },
+  'Christian de Chillou': { src: '/assets/team/chillou.jpg' },
   'Jean-Nicolas Dacher': { src: '/assets/team/dacher.jpg' },
   'Allyre Lohier': { src: '/lohier.jpeg' },
   'Charles Fauvel': { src: '/assets/team/fauvel.jpg' },

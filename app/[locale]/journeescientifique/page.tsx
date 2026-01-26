@@ -119,7 +119,7 @@ export default async function JourneeScientifiquePage({ params }: Params) {
               topic: t('program.blocks.session1.sessions.services.topics.nuclear')
             },
             {
-              name: 'Pr Christian De Chillou',
+              name: 'Pr Christian de Chillou',
               affiliation: 'CHRU Nancy',
               topic: t('program.blocks.session1.sessions.services.topics.ecg')
             },

@@ -107,7 +107,7 @@ const centersData: Center[] = [
     logoScale: 'medium',
     members: [
       { name: 'Pr Olivier Huttin', miraclRole: '', degree: 'MD, PhD', specialty: 'cardio', photo: '/assets/team/huttin.jpg' },
-      { name: 'Pr Christian De Chillou', miraclRole: '', degree: 'MD, PhD', specialty: 'cardio', photo: '/assets/team/chillou.jpg' },
+      { name: 'Pr Christian de Chillou', miraclRole: '', degree: 'MD, PhD', specialty: 'cardio', photo: '/assets/team/chillou.jpg' },
       { name: 'Marine Beaumont', miraclRole: '', degree: 'PhD', specialty: 'other', photo: '/assets/team/beaumont.jpg' },
     ],
   },

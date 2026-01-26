@@ -92,7 +92,8 @@ export function EventRegistration({ content }: EventRegistrationProps) {
             {content.title}
           </h2>
           <p className="text-lg text-[#061024]/70 max-w-xl mx-auto">
-            {content.subtitle}{' '}
+            {content.subtitle}
+            <br />
             <span className="font-semibold text-[#00B4D8]">{content.maxParticipants}</span>
           </p>
         </div>
