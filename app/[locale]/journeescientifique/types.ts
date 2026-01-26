@@ -53,6 +53,7 @@ export type ProgramSpeaker = {
 export type ProgramSession = {
   time: string;
   title: string;
+  subtitle?: string;
   speakers?: ProgramSpeaker[];
   isBreak?: boolean;
   breakIcon?: 'coffee' | 'lunch';

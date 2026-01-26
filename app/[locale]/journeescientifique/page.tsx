@@ -96,6 +96,7 @@ export default async function JourneeScientifiquePage({ params }: Params) {
         {
           time: '11h15 – 12h30',
           title: t('program.blocks.session1.sessions.services.title'),
+          subtitle: 'Présentations flash de 5 minutes',
           speakers: [
             {
               name: 'Pr François Pontana',
@@ -161,6 +162,7 @@ export default async function JourneeScientifiquePage({ params }: Params) {
         {
           time: '13h30 – 15h00',
           title: t('program.blocks.session2.sessions.collaborations.title'),
+          subtitle: 'Présentations flash de 5 minutes',
           speakers: [
             {
               name: 'Pr Karim Wahbi',
@@ -199,6 +201,7 @@ export default async function JourneeScientifiquePage({ params }: Params) {
         {
           time: '15h15 – 15h50',
           title: t('program.blocks.session2.sessions.phd.title'),
+          subtitle: 'Présentations flash de 5 minutes',
           speakers: [
             {
               name: 'Dr Jeremy Florence',

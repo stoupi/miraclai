@@ -128,7 +128,11 @@ function SessionCard({ session, isLast }: { session: ProgramSession; isLast: boo
         <div className="flex items-start justify-between gap-4 mb-3">
           <span className="text-[#00B4D8] font-bold text-lg">{session.time}</span>
         </div>
-        <h4 className="text-[#061024] font-bold text-base mb-4">{session.title}</h4>
+        <h4 className="text-[#061024] font-bold text-base">{session.title}</h4>
+        {session.subtitle && (
+          <p className="text-[#061024]/50 text-sm italic mb-4">{session.subtitle}</p>
+        )}
+        {!session.subtitle && <div className="mb-4" />}
         {session.speakers && session.speakers.length > 0 && (
           <div className="space-y-4">
             {session.speakers.map((speaker, speakerIndex) => {
@@ -161,14 +165,10 @@ function SessionCard({ session, isLast }: { session: ProgramSession; isLast: boo
           </div>
         )}
         {session.description && (
-          <div className="mt-4 relative overflow-hidden py-3 px-4 bg-gradient-to-r from-[#061024] via-[#0a1a3a] to-[#061024] rounded-xl border border-[#00B4D8]/30">
-            <div className="absolute inset-0 opacity-30" style={{
-              backgroundImage: `url("data:image/svg+xml,%3Csvg width='20' height='20' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='2' cy='2' r='1' fill='%2300B4D8' opacity='0.3'/%3E%3C/svg%3E")`,
-              backgroundSize: '20px 20px'
-            }} />
-            <div className="relative flex items-center gap-3">
-              <Gift className="w-5 h-5 text-[#00B4D8] flex-shrink-0" />
-              <span className="text-white font-medium text-sm">{session.description}</span>
+          <div className="mt-4 py-3 px-4 bg-[#F33349]/5 rounded-xl border border-[#F33349]/10">
+            <div className="flex items-center gap-3">
+              <Gift className="w-5 h-5 text-[#F33349] flex-shrink-0" />
+              <span className="text-[#061024]/70 font-medium text-sm">{session.description}</span>
             </div>
           </div>
         )}
