@@ -144,7 +144,7 @@ function SessionCard({ session, isLast }: { session: ProgramSession; isLast: boo
                       <p className="text-[#061024]/50 text-xs">{speaker.affiliation}</p>
                     )}
                   </div>
-                  <div className="flex gap-2 flex-row-reverse">
+                  <div className="flex gap-2">
                     {speakerNames.map((name, nameIndex) => (
                       <SpeakerAvatar key={nameIndex} name={name} />
                     ))}
@@ -155,15 +155,9 @@ function SessionCard({ session, isLast }: { session: ProgramSession; isLast: boo
           </div>
         )}
         {session.qaText && (
-          <div className="mt-4 relative overflow-hidden py-3 px-4 bg-gradient-to-r from-[#061024] via-[#0a1a3a] to-[#061024] rounded-xl border border-[#00B4D8]/30">
-            <div className="absolute inset-0 opacity-30" style={{
-              backgroundImage: `url("data:image/svg+xml,%3Csvg width='20' height='20' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='2' cy='2' r='1' fill='%2300B4D8' opacity='0.3'/%3E%3C/svg%3E")`,
-              backgroundSize: '20px 20px'
-            }} />
-            <div className="relative flex items-center gap-3">
-              <MessageCircle className="w-5 h-5 text-[#00B4D8] flex-shrink-0" />
-              <span className="text-white font-medium text-sm">{session.qaText}</span>
-            </div>
+          <div className="mt-4 flex items-start gap-3 p-3 rounded-lg bg-[#F0F9FA]/50">
+            <MessageCircle className="w-5 h-5 text-[#00B4D8] flex-shrink-0 mt-0.5" />
+            <p className="text-[#061024]/70 text-sm font-medium">{session.qaText}</p>
           </div>
         )}
         {session.description && (
@@ -197,13 +191,13 @@ export function EventProgram({ content }: EventProgramProps) {
           <p className="text-lg text-[#00B4D8] font-medium">{content.date}</p>
         </div>
 
-        <div className="max-w-4xl mx-auto space-y-12">
+        <div className="max-w-4xl mx-auto space-y-6">
           {content.blocks.map((block, blockIndex) => (
             <div key={blockIndex}>
               <div className="mb-6">
-                <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#061024] rounded-full text-white font-semibold text-sm shadow-lg">
+                <span className="inline-block px-2 py-0.5 bg-[#00B4D8]/10 text-[#00B4D8] font-semibold text-sm border-l-3 border-[#00B4D8]">
                   {block.blockTitle}
-                </div>
+                </span>
                 {block.blockSubtitle && (
                   <h3
                     className="mt-4 text-xl md:text-2xl font-bold text-[#061024]"
