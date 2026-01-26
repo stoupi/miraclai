@@ -104,7 +104,7 @@ function SessionCard({ session, isLast }: { session: ProgramSession; isLast: boo
           <BreakIcon className="w-5 h-5 text-[#F33349]" />
         </div>
         <div className="py-3 px-4 bg-[#F33349]/5 rounded-xl border border-[#F33349]/10">
-          <div className={session.breakIcon === 'lunch' ? 'flex gap-4' : ''}>
+          <div className={session.breakIcon === 'lunch' ? 'flex flex-col md:flex-row gap-4' : ''}>
             <div className="flex-1">
               <div className="flex items-center gap-3">
                 <span className="text-[#F33349] font-semibold">{session.time}</span>
@@ -115,7 +115,7 @@ function SessionCard({ session, isLast }: { session: ProgramSession; isLast: boo
               )}
             </div>
             {session.breakIcon === 'lunch' && (
-              <div className="w-56 h-32 rounded-lg overflow-hidden flex-shrink-0">
+              <div className="w-full md:w-56 h-40 md:h-32 rounded-lg overflow-hidden flex-shrink-0">
                 <Image
                   src="/hegp.jpg"
                   alt="HEGP"

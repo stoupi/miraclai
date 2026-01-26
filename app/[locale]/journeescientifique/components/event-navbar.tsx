@@ -41,19 +41,18 @@ export function EventNavbar() {
         scrolled ? 'backdrop-blur-md bg-white/80 border-b border-[#061024]/10' : 'bg-transparent'
       }`}
     >
-      <div className="container mx-auto flex h-20 md:h-24 items-center justify-between px-5">
-        <Link href="/" className="flex flex-col items-start cursor-pointer">
-          <div className="relative" style={{ width: 200, height: 50 }}>
+      <div className="container mx-auto flex h-20 md:h-24 items-center justify-between px-3 md:px-5">
+        <Link href="/" className="flex flex-col items-start cursor-pointer flex-shrink-0">
+          <div className="relative w-[140px] h-[35px] md:w-[200px] md:h-[50px]">
             <Image
               src="/assets/logo_miracl_noir_V2.svg"
               alt={t('logoAlt')}
-              width={200}
-              height={50}
+              fill
               priority
-              className="absolute inset-0"
+              className="object-contain object-left"
             />
           </div>
-          <span className="-mt-2 ml-[68px] text-[8px] md:text-[9px] font-semibold text-[#00B4D8] uppercase tracking-[0.15em]">
+          <span className="-mt-2 ml-[48px] md:ml-[68px] text-[7px] md:text-[9px] font-semibold text-[#00B4D8] uppercase tracking-[0.15em]">
             {t('platformLabel')}
           </span>
         </Link>
@@ -72,10 +71,10 @@ export function EventNavbar() {
             </motion.div>
           </Link>
 
-          <div className={`flex items-center rounded-full border ${localeWrapperBorder} px-1.5 py-1`}>
+          <div className={`flex items-center rounded-full border ${localeWrapperBorder} px-1 md:px-1.5 py-0.5 md:py-1 flex-shrink-0`}>
             <button
               onClick={() => switchLocale('fr')}
-              className={`cursor-pointer px-3 py-1 text-xs font-medium rounded-full transition-colors ${
+              className={`cursor-pointer px-2 md:px-3 py-0.5 md:py-1 text-[10px] md:text-xs font-medium rounded-full transition-colors ${
                 locale === 'fr' ? localeButtonActive : localeButtonInactive
               }`}
             >
@@ -83,7 +82,7 @@ export function EventNavbar() {
             </button>
             <button
               onClick={() => switchLocale('en')}
-              className={`cursor-pointer px-3 py-1 text-xs font-medium rounded-full transition-colors ${
+              className={`cursor-pointer px-2 md:px-3 py-0.5 md:py-1 text-[10px] md:text-xs font-medium rounded-full transition-colors ${
                 locale === 'en' ? localeButtonActive : localeButtonInactive
               }`}
             >

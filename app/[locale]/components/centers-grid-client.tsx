@@ -2,8 +2,8 @@
 
 import Image from 'next/image';
 import { Link } from '@/app/i18n/navigation';
-import { ChevronRight } from 'lucide-react';
-import { useEffect, useRef } from 'react';
+import { ChevronRight, ChevronsRight } from 'lucide-react';
+import { useEffect, useRef, useState } from 'react';
 
 type TeamMember = {
   name: string;
@@ -134,6 +134,8 @@ function MemberPlaceholder({ member, translations }: { member: TeamMember; trans
 
 function CenterCard({ center, discoverLabel, index, translations }: { center: Center; discoverLabel: string; index: number; translations: Translations }) {
   const cardRef = useRef<HTMLDivElement>(null);
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const [showScrollHint, setShowScrollHint] = useState(true);
 
   useEffect(() => {
     const card = cardRef.current;
@@ -157,6 +159,26 @@ function CenterCard({ center, discoverLabel, index, translations }: { center: Ce
     observer.observe(card);
     return () => observer.disconnect();
   }, [index]);
+
+  useEffect(() => {
+    const scrollContainer = scrollContainerRef.current;
+    if (!scrollContainer) return;
+
+    const checkScrollPosition = () => {
+      const hasMoreToScroll = scrollContainer.scrollWidth > scrollContainer.clientWidth;
+      const isScrolledToEnd = scrollContainer.scrollLeft + scrollContainer.clientWidth >= scrollContainer.scrollWidth - 10;
+      setShowScrollHint(hasMoreToScroll && !isScrolledToEnd);
+    };
+
+    checkScrollPosition();
+    scrollContainer.addEventListener('scroll', checkScrollPosition);
+    window.addEventListener('resize', checkScrollPosition);
+
+    return () => {
+      scrollContainer.removeEventListener('scroll', checkScrollPosition);
+      window.removeEventListener('resize', checkScrollPosition);
+    };
+  }, []);
 
   const logoSizeClass =
     center.logoScale === 'large'
@@ -197,12 +219,25 @@ function CenterCard({ center, discoverLabel, index, translations }: { center: Ce
 
         <div className="h-20 md:h-24 w-px flex-shrink-0 bg-[#00B4D8]/30" />
 
-        <div className="flex-1 overflow-x-auto scrollbar-hide">
-          <div className="flex items-start gap-4 md:gap-6">
-            {center.members.map((member) => (
-              <MemberPlaceholder key={member.name} member={member} translations={translations} />
-            ))}
+        <div className="relative flex-1 min-w-0">
+          <div
+            ref={scrollContainerRef}
+            className="overflow-x-auto scrollbar-hide"
+          >
+            <div className="flex items-start gap-4 md:gap-6 pr-8 md:pr-0">
+              {center.members.map((member) => (
+                <MemberPlaceholder key={member.name} member={member} translations={translations} />
+              ))}
+            </div>
           </div>
+          {showScrollHint && (
+            <div className="absolute right-0 top-0 bottom-0 flex items-center pointer-events-none md:hidden">
+              <div className="absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-white via-white/80 to-transparent" />
+              <div className="relative z-10 flex items-center justify-center w-8 h-8 rounded-full bg-[#00B4D8]/10 animate-pulse mr-1">
+                <ChevronsRight className="w-5 h-5 text-[#00B4D8] animate-[bounceRight_1s_ease-in-out_infinite]" />
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </div>
