@@ -535,15 +535,15 @@
       "hoursLabel": "heures",
       "minutesLabel": "minutes",
       "secondsLabel": "secondes",
-      "subtitle": "Ne manquez pas cette première édition de la Journée Scientifique MIRACL.ai"
+      "subtitle": "Ne manquez pas cette première édition de la Journée Scientifique de la plateforme MIRACL.ai"
     },
     "about": {
       "title": "À propos de l'événement",
-      "description": "Une journée entièrement dédiée au partage de connaissances autour de l'imagerie cardiovasculaire et de l'intelligence artificielle, organisée par MIRACL.ai en partenariat avec l'AP-HP et le label Carnot.",
+      "description": "Une journée entièrement dédiée au partage de connaissances autour de l'imagerie cardiovasculaire et de l'intelligence artificielle, organisée par la plateforme MIRACL.ai.",
       "features": {
         "corelabExpertise": {
           "title": "Expertise Core Lab",
-          "description": "Sessions animées par des experts en imagerie cardiovasculaire multimodale sur l'application de l'IA en pratique clinique."
+          "description": "Sessions animées par des experts en imagerie cardiovasculaire multimodale sur l'ensemble des services existants par modalités incluant une approche IA."
         },
         "dataManagement": {
           "title": "Gestion des données",

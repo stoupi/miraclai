@@ -540,15 +540,15 @@
       "hoursLabel": "hours",
       "minutesLabel": "minutes",
       "secondsLabel": "seconds",
-      "subtitle": "Don't miss this first edition of the MIRACL.ai Scientific Day"
+      "subtitle": "Don't miss this first edition of the MIRACL.ai platform Scientific Day"
     },
     "about": {
       "title": "About the event",
-      "description": "A day entirely dedicated to sharing knowledge about cardiovascular imaging and artificial intelligence, organized by MIRACL.ai in partnership with AP-HP and the Carnot label.",
+      "description": "A day entirely dedicated to sharing knowledge about cardiovascular imaging and artificial intelligence, organized by the MIRACL.ai platform.",
       "features": {
         "corelabExpertise": {
           "title": "Core Lab Expertise",
-          "description": "Sessions led by experts in multimodal cardiovascular imaging on the application of AI in clinical practice."
+          "description": "Sessions led by experts in multimodal cardiovascular imaging covering all existing services by modality, including an AI approach."
         },
         "dataManagement": {
           "title": "Data Management",
