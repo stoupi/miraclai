@@ -96,7 +96,7 @@ export async function Hero({ locale }: HeroProps) {
         </g>
       </svg>
 
-      <div className="container mx-auto grid grid-cols-1 items-center gap-8 px-4 pt-6 pb-6 md:grid-cols-2 lg:pt-8 lg:pb-8">
+      <div className="container mx-auto grid grid-cols-1 items-center gap-8 px-4 pt-6 pb-6 md:grid-cols-2 lg:pt-2 lg:pb-8">
         <div className="flex flex-col items-start w-full pt-4 md:pt-6">
           <div className="w-full max-w-xl">
             <h1 className="text-balance text-3xl leading-[1.15] tracking-tight text-[#061024] sm:text-4xl lg:text-5xl" style={{ fontFamily: 'var(--font-calistoga), serif' }}>

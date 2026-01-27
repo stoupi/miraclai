@@ -76,7 +76,7 @@ export async function ServicesSection({ locale }: { locale: string }) {
           </div>
 
           {/* Right side - Image/Illustration */}
-          <div className="flex items-center justify-center lg:sticky lg:top-32">
+          <div className="hidden md:flex items-center justify-center lg:sticky lg:top-32">
             <div className="relative w-full max-w-md">
               <Image
                 src="/assets/coeur_hero.svg"
