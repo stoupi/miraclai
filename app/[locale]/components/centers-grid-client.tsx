@@ -231,10 +231,10 @@ function CenterCard({ center, discoverLabel, index, translations }: { center: Ce
             </div>
           </div>
           {showScrollHint && (
-            <div className="absolute right-0 top-0 bottom-0 flex items-center pointer-events-none md:hidden">
-              <div className="absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-white via-white/80 to-transparent" />
-              <div className="relative z-10 flex items-center justify-center w-8 h-8 rounded-full bg-[#00B4D8]/10 animate-pulse mr-1">
-                <ChevronsRight className="w-5 h-5 text-[#00B4D8] animate-[bounceRight_1s_ease-in-out_infinite]" />
+            <div className="absolute right-0 top-0 flex items-start pointer-events-none md:hidden">
+              <div className="absolute top-0 right-0 w-12 h-20 bg-gradient-to-l from-white via-white/80 to-transparent" />
+              <div className="relative z-10 flex items-center justify-center w-7 h-7 rounded-full bg-[#00B4D8]/10 animate-pulse mt-5 mr-1">
+                <ChevronsRight className="w-4 h-4 text-[#00B4D8] animate-[bounceRight_1s_ease-in-out_infinite]" />
               </div>
             </div>
           )}
