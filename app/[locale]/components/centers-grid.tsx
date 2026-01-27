@@ -93,7 +93,7 @@ const centersData: Center[] = [
     dominantSpecialty: 'mixed',
     logoScale: 'small',
     members: [
-      { name: 'Pr Augustin Coisne', miraclRole: '', degree: 'MD, PhD', specialty: 'cardio', photo: '/assets/team/coisne.jpg' },
+      { name: 'Pr Augustin Coisne', miraclRole: '', degree: 'MD, PhD', specialty: 'cardio', isChefDeService: true, photo: '/assets/team/coisne.jpg' },
       { name: 'Pr François Pontana', miraclRole: '', degree: 'MD, PhD', specialty: 'radio', isChefDeService: true, photo: '/assets/team/pontana.jpg' },
     ],
   },
