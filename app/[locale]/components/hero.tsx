@@ -28,7 +28,7 @@ export async function Hero({ locale }: HeroProps) {
   const t = await getTranslations({ locale, namespace: 'home' });
 
   return (
-    <section id="hero-section" className="relative isolate overflow-hidden min-h-[80vh] pt-20 pb-6 md:pt-12 md:pb-2 lg:pt-6 lg:pb-0">
+    <section id="hero-section" className="relative isolate overflow-hidden min-h-[80vh] pt-20 pb-6 md:pt-6 md:pb-2 lg:pt-0 lg:pb-0">
       <div
         className="absolute inset-0 -z-10"
         style={{
@@ -123,7 +123,7 @@ export async function Hero({ locale }: HeroProps) {
           </div>
         </div>
 
-        <div className="relative flex items-center justify-center">
+        <div className="relative hidden md:flex items-center justify-center">
           <div className="relative w-[280px] sm:w-[340px] md:w-[400px] lg:w-[460px] xl:w-[500px] mt-12 md:mt-20 lg:mt-24">
             <Image
               src="/assets/coeur_hero.svg"
