@@ -631,7 +631,7 @@
               "title": "Overview of main existing collaborations",
               "topics": {
                 "fhu": "FHU Prevent-HF Project and Duchenne Cardiomyopathy",
-                "myocarditis": "National Prospective Myocarditis Registry Project with Action Group and MIRACL.ai collaboration",
+                "myocarditis": "New research project Action Group and MIRACL.ai",
                 "hcm": "Hypertrophic Cardiomyopathy Registry Project under myosin inhibitors with BMS industrial collaboration",
                 "impulsion": "National lung cancer screening program 'IMPULSION': MIRACL.ai mission for the SFC",
                 "esc": "ESC international registries with 'EACVI-MMVD' and 'EACVI-INFLAME': MIRACL.ai mission for the European Society of Cardiology"
@@ -645,7 +645,7 @@
                 "lge": "Innovative concept of 'Late Gadolinium Enhancement Granularity' in cardiac MRI",
                 "deepLearning": "Deep learning in multimodal imaging and AI frugality concept",
                 "derivate": "Machine learning combining MRI and CT data for predicting serious events",
-                "cesar": "CÉSAR project and Echo"
+                "cesar": "CESAR project and Echo"
               },
               "qa": "Q&A session with the audience (20 minutes)"
             },

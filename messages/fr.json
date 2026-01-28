@@ -626,7 +626,7 @@
               "title": "Partage des principales collaborations existantes",
               "topics": {
                 "fhu": "Projet FHU Prevent-HF et Cardiomyopathie de Duchenne",
-                "myocarditis": "Projet Registre national prospectif des myocardites avec collaboration Groupe Action et MIRACL.ai",
+                "myocarditis": "Nouveau projet recherche Groupe Action et MIRACL.ai",
                 "hcm": "Projet Registre des cardiomyopathies hypertrophique sous inhibiteurs de la myosine avec collaboration industrielle BMS",
                 "impulsion": "Programme de dépistage national du cancer du poumon « IMPULSION » : mission de MIRACL.ai pour la SFC",
                 "esc": "Registres internationaux de l'ESC avec « EACVI-MMVD » et « EACVI-INFLAME » : mission de MIRACL.ai pour l'European Society of Cardiology"
@@ -640,7 +640,7 @@
                 "lge": "Concept innovant de « Granularité du rehaussement tardif » en IRM cardiaque",
                 "deepLearning": "Deep learning en imagerie multimodale et concept de frugalité en IA",
                 "derivate": "Machine learning combinant données IRM et Scanner pour la prédiction d'évènements graves",
-                "cesar": "Projet CÉSAR et Echo"
+                "cesar": "Projet CESAR et Echo"
               },
               "qa": "Séances de questions/réponses avec l'audience (20 minutes)"
             },
