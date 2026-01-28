@@ -4,6 +4,7 @@ import { NextIntlClientProvider, hasLocale } from 'next-intl';
 import { getTranslations } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { routing } from '@/app/i18n/routing';
+import { Analytics } from '@vercel/analytics/next';
 import "../globals.css";
 import { ConditionalNavbar } from "./components/conditional-navbar";
 
@@ -86,6 +87,7 @@ export default async function LocaleLayout({
           <ConditionalNavbar />
           {children}
         </NextIntlClientProvider>
+        <Analytics />
       </body>
     </html>
   );
