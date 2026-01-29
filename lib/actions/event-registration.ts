@@ -150,7 +150,7 @@ export const submitEventRegistration = unauthenticatedAction
 
           <div style="background: white; padding: 20px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #00B4D8;">
             <p style="margin: 0 0 10px 0; color: #061024;">
-              <strong>📅 Date :</strong> Mardi 8 avril 2026
+              <strong>📅 Date :</strong> Mercredi 8 avril 2026
             </p>
             <p style="margin: 0 0 10px 0; color: #061024;">
               <strong>🕤 Horaires :</strong> 9h30 – 16h00
