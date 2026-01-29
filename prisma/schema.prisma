@@ -90,3 +90,12 @@ model EventRegistration {
   @@index([eventSlug])
   @@index([email])
 }
+
+model SentInvitation {
+  id        String   @id @default(cuid())
+  email     String
+  name      String
+  sentAt    DateTime @default(now())
+
+  @@index([email])
+}

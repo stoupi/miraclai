@@ -1,13 +1,14 @@
 'use client';
 
 import { useState } from 'react';
-import { Send, CheckCircle, XCircle, Loader2, Mail, User } from 'lucide-react';
+import { Send, CheckCircle, XCircle, Loader2, Mail, User, AlertTriangle } from 'lucide-react';
 
 type SendResult = {
   email: string;
   name: string;
   success: boolean;
   error?: string;
+  alreadySent?: boolean;
 };
 
 export default function AdminInvitationsPage() {
@@ -17,6 +18,7 @@ export default function AdminInvitationsPage() {
   const [results, setResults] = useState<{
     totalSent: number;
     totalFailed: number;
+    totalSkipped: number;
     results: SendResult[];
   } | null>(null);
   const [error, setError] = useState<string | null>(null);
@@ -151,6 +153,12 @@ export default function AdminInvitationsPage() {
                 <div className="text-2xl font-bold text-green-600">{results.totalSent}</div>
                 <div className="text-sm text-green-700">Envoyé{results.totalSent > 1 ? 's' : ''}</div>
               </div>
+              {results.totalSkipped > 0 && (
+                <div className="flex-1 bg-amber-50 rounded-lg p-4 text-center">
+                  <div className="text-2xl font-bold text-amber-600">{results.totalSkipped}</div>
+                  <div className="text-sm text-amber-700">Déjà envoyé{results.totalSkipped > 1 ? 's' : ''}</div>
+                </div>
+              )}
               <div className="flex-1 bg-red-50 rounded-lg p-4 text-center">
                 <div className="text-2xl font-bold text-red-600">{results.totalFailed}</div>
                 <div className="text-sm text-red-700">Échoué{results.totalFailed > 1 ? 's' : ''}</div>
@@ -162,11 +170,13 @@ export default function AdminInvitationsPage() {
                 <div
                   key={index}
                   className={`flex items-center gap-3 px-4 py-3 rounded-lg ${
-                    result.success ? 'bg-green-50' : 'bg-red-50'
+                    result.success ? 'bg-green-50' : result.alreadySent ? 'bg-amber-50' : 'bg-red-50'
                   }`}
                 >
                   {result.success ? (
                     <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0" />
+                  ) : result.alreadySent ? (
+                    <AlertTriangle className="w-5 h-5 text-amber-600 flex-shrink-0" />
                   ) : (
                     <XCircle className="w-5 h-5 text-red-600 flex-shrink-0" />
                   )}
@@ -175,7 +185,7 @@ export default function AdminInvitationsPage() {
                     <p className="text-xs text-gray-500 truncate">{result.email}</p>
                   </div>
                   {result.error && (
-                    <span className="text-xs text-red-600 flex-shrink-0">{result.error}</span>
+                    <span className={`text-xs flex-shrink-0 ${result.alreadySent ? 'text-amber-600' : 'text-red-600'}`}>{result.error}</span>
                   )}
                 </div>
               ))}

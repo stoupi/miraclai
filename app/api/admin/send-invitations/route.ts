@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { resend, FROM_EMAIL } from '@/lib/resend';
+import { prisma } from '@/lib/prisma';
 
 const ADMIN_SECRET = process.env.ADMIN_EXPORT_SECRET || 'miraclai-admin-2026';
 
@@ -264,9 +265,30 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'No valid recipients provided' }, { status: 400 });
     }
 
-    const results: { email: string; name: string; success: boolean; error?: string }[] = [];
+    const recipientEmails = recipients.map((recipient) => recipient.email.toLowerCase());
+    const alreadySent = await prisma.sentInvitation.findMany({
+      where: { email: { in: recipientEmails } },
+      select: { email: true, sentAt: true },
+    });
+    const alreadySentEmails = new Set(alreadySent.map((record) => record.email.toLowerCase()));
+
+    const results: { email: string; name: string; success: boolean; error?: string; alreadySent?: boolean }[] = [];
 
     for (const recipient of recipients) {
+      const emailLower = recipient.email.toLowerCase();
+
+      if (alreadySentEmails.has(emailLower)) {
+        const sentRecord = alreadySent.find((record) => record.email.toLowerCase() === emailLower);
+        results.push({
+          email: recipient.email,
+          name: recipient.name,
+          success: false,
+          alreadySent: true,
+          error: `Invitation déjà envoyée le ${sentRecord?.sentAt.toLocaleDateString('fr-FR')}`,
+        });
+        continue;
+      }
+
       try {
         const { error } = await resend.emails.send({
           from: FROM_EMAIL,
@@ -278,21 +300,26 @@ export async function POST(request: NextRequest) {
         if (error) {
           results.push({ email: recipient.email, name: recipient.name, success: false, error: error.message });
         } else {
+          await prisma.sentInvitation.create({
+            data: { email: emailLower, name: recipient.name },
+          });
           results.push({ email: recipient.email, name: recipient.name, success: true });
         }
       } catch (err) {
         results.push({ email: recipient.email, name: recipient.name, success: false, error: String(err) });
       }
 
-      await new Promise((resolve) => setTimeout(resolve, 200));
+      await new Promise((resolve) => setTimeout(resolve, 600));
     }
 
-    const successCount = results.filter((r) => r.success).length;
-    const failedCount = results.filter((r) => !r.success).length;
+    const successCount = results.filter((result) => result.success).length;
+    const failedCount = results.filter((result) => !result.success && !result.alreadySent).length;
+    const skippedCount = results.filter((result) => result.alreadySent).length;
 
     return NextResponse.json({
       totalSent: successCount,
       totalFailed: failedCount,
+      totalSkipped: skippedCount,
       results,
     });
   } catch (error) {
