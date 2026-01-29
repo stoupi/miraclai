@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Send, CheckCircle, XCircle, Loader2, Mail, User, AlertTriangle, Download, List, UserCheck, UserX } from 'lucide-react';
+import { Send, CheckCircle, XCircle, Loader2, Mail, User, AlertTriangle, Download, List, UserCheck, UserX, ClipboardList, Building2, Briefcase } from 'lucide-react';
 
 type SendResult = {
   email: string;
@@ -25,11 +25,24 @@ type InvitationListData = {
   invitations: InvitationRecord[];
 };
 
+type RegistrationRecord = {
+  id: string;
+  firstName: string;
+  lastName: string;
+  email: string;
+  profession: string;
+  institution: string;
+  createdAt: string;
+};
+
+type ActiveTab = 'send' | 'list' | 'registrations';
+
 export default function AdminInvitationsPage() {
   const [recipients, setRecipients] = useState('');
   const [secret, setSecret] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [isLoadingList, setIsLoadingList] = useState(false);
+  const [isLoadingRegistrations, setIsLoadingRegistrations] = useState(false);
   const [results, setResults] = useState<{
     totalSent: number;
     totalFailed: number;
@@ -37,8 +50,9 @@ export default function AdminInvitationsPage() {
     results: SendResult[];
   } | null>(null);
   const [invitationList, setInvitationList] = useState<InvitationListData | null>(null);
+  const [registrationsList, setRegistrationsList] = useState<RegistrationRecord[] | null>(null);
   const [error, setError] = useState<string | null>(null);
-  const [activeTab, setActiveTab] = useState<'send' | 'list'>('send');
+  const [activeTab, setActiveTab] = useState<ActiveTab>('send');
 
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
@@ -91,15 +105,46 @@ export default function AdminInvitationsPage() {
     }
   };
 
-  const handleDownloadCsv = () => {
+  const handleLoadRegistrations = async () => {
+    if (!secret) {
+      setError('Entrez la clé secrète admin');
+      return;
+    }
+    setIsLoadingRegistrations(true);
+    setError(null);
+
+    try {
+      const response = await fetch(`/api/admin/registrations?secret=${encodeURIComponent(secret)}&format=json`);
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Une erreur est survenue');
+      }
+
+      setRegistrationsList(data);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Une erreur est survenue');
+    } finally {
+      setIsLoadingRegistrations(false);
+    }
+  };
+
+  const handleDownloadInvitationsCsv = () => {
     if (!secret) return;
     window.open(`/api/admin/send-invitations?secret=${encodeURIComponent(secret)}&format=csv`, '_blank');
+  };
+
+  const handleDownloadRegistrationsCsv = () => {
+    if (!secret) return;
+    window.open(`/api/admin/registrations?secret=${encodeURIComponent(secret)}`, '_blank');
   };
 
   const recipientCount = recipients
     .split('\n')
     .map((line) => line.trim())
     .filter((line) => line.length > 0 && line.includes('@')).length;
+
+  const needsSecret = !secret && activeTab !== 'send';
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#061024] to-[#0a1a3a] py-12 px-4">
@@ -142,7 +187,23 @@ export default function AdminInvitationsPage() {
             }`}
           >
             <List className="w-4 h-4" />
-            Liste des invités
+            Invités
+          </button>
+          <button
+            onClick={() => {
+              setActiveTab('registrations');
+              if (!registrationsList && secret) {
+                handleLoadRegistrations();
+              }
+            }}
+            className={`flex-1 py-3 px-4 rounded-xl font-semibold text-sm flex items-center justify-center gap-2 transition-colors ${
+              activeTab === 'registrations'
+                ? 'bg-white text-[#061024]'
+                : 'bg-white/10 text-white/70 hover:bg-white/20'
+            }`}
+          >
+            <ClipboardList className="w-4 h-4" />
+            Inscrits
           </button>
         </div>
 
@@ -275,7 +336,7 @@ export default function AdminInvitationsPage() {
 
         {activeTab === 'list' && (
           <div className="bg-white rounded-2xl p-8 shadow-xl">
-            {!secret && (
+            {needsSecret && (
               <div className="text-center py-8">
                 <p className="text-gray-500 mb-4">Entrez la clé secrète admin dans l&apos;onglet Envoyer pour accéder à la liste.</p>
               </div>
@@ -318,7 +379,7 @@ export default function AdminInvitationsPage() {
                       Actualiser
                     </button>
                     <button
-                      onClick={handleDownloadCsv}
+                      onClick={handleDownloadInvitationsCsv}
                       className="py-2 px-4 text-sm bg-[#00B4D8] text-white rounded-lg hover:bg-[#0096b4] transition-colors flex items-center gap-2"
                     >
                       <Download className="w-4 h-4" />
@@ -368,6 +429,105 @@ export default function AdminInvitationsPage() {
                           </span>
                           <p className="text-xs text-gray-400">
                             {new Date(invitation.sentAt).toLocaleDateString('fr-FR')}
+                          </p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </>
+            )}
+          </div>
+        )}
+
+        {activeTab === 'registrations' && (
+          <div className="bg-white rounded-2xl p-8 shadow-xl">
+            {needsSecret && (
+              <div className="text-center py-8">
+                <p className="text-gray-500 mb-4">Entrez la clé secrète admin dans l&apos;onglet Envoyer pour accéder aux inscriptions.</p>
+              </div>
+            )}
+
+            {secret && !registrationsList && !isLoadingRegistrations && (
+              <div className="text-center py-8">
+                <button
+                  onClick={handleLoadRegistrations}
+                  className="py-3 px-6 bg-[#00B4D8] text-white font-semibold rounded-xl hover:bg-[#0096b4] transition-colors flex items-center justify-center gap-2 mx-auto"
+                >
+                  <ClipboardList className="w-5 h-5" />
+                  Charger les inscriptions
+                </button>
+              </div>
+            )}
+
+            {isLoadingRegistrations && (
+              <div className="text-center py-8">
+                <Loader2 className="w-8 h-8 animate-spin text-[#00B4D8] mx-auto" />
+                <p className="text-gray-500 mt-3">Chargement...</p>
+              </div>
+            )}
+
+            {error && activeTab === 'registrations' && (
+              <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg text-red-700">
+                {error}
+              </div>
+            )}
+
+            {registrationsList && (
+              <>
+                <div className="flex items-center justify-between mb-6">
+                  <h2 className="text-xl font-bold text-[#061024]">Inscrits</h2>
+                  <div className="flex gap-2">
+                    <button
+                      onClick={handleLoadRegistrations}
+                      className="py-2 px-4 text-sm bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors"
+                    >
+                      Actualiser
+                    </button>
+                    <button
+                      onClick={handleDownloadRegistrationsCsv}
+                      className="py-2 px-4 text-sm bg-[#00B4D8] text-white rounded-lg hover:bg-[#0096b4] transition-colors flex items-center gap-2"
+                    >
+                      <Download className="w-4 h-4" />
+                      CSV
+                    </button>
+                  </div>
+                </div>
+
+                <div className="bg-green-50 rounded-lg p-4 text-center mb-6">
+                  <div className="text-2xl font-bold text-green-600">{registrationsList.length}</div>
+                  <div className="text-sm text-green-700">Inscrit{registrationsList.length > 1 ? 's' : ''}</div>
+                </div>
+
+                {registrationsList.length === 0 ? (
+                  <p className="text-center text-gray-500 py-6">Aucune inscription.</p>
+                ) : (
+                  <div className="space-y-2 max-h-[500px] overflow-y-auto">
+                    {registrationsList.map((registration) => (
+                      <div
+                        key={registration.id}
+                        className="flex items-center gap-3 px-4 py-3 rounded-lg bg-gray-50"
+                      >
+                        <UserCheck className="w-5 h-5 text-green-600 flex-shrink-0" />
+                        <div className="flex-1 min-w-0">
+                          <p className="font-medium text-sm text-[#061024] truncate">
+                            {registration.firstName} {registration.lastName}
+                          </p>
+                          <p className="text-xs text-gray-500 truncate">{registration.email}</p>
+                          <div className="flex items-center gap-3 mt-1">
+                            <span className="text-xs text-gray-400 flex items-center gap-1">
+                              <Briefcase className="w-3 h-3" />
+                              {registration.profession}
+                            </span>
+                            <span className="text-xs text-gray-400 flex items-center gap-1">
+                              <Building2 className="w-3 h-3" />
+                              {registration.institution}
+                            </span>
+                          </div>
+                        </div>
+                        <div className="text-right flex-shrink-0">
+                          <p className="text-xs text-gray-400">
+                            {new Date(registration.createdAt).toLocaleDateString('fr-FR')}
                           </p>
                         </div>
                       </div>

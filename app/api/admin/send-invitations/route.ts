@@ -24,14 +24,14 @@ const getInvitationHtml = (recipientName: string, gender: 'M' | 'F') => {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body style="margin: 0; padding: 0; background-color: #f4f4f4; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
-  <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #f4f4f4;">
+  <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" bgcolor="#f4f4f4" style="background-color: #f4f4f4;">
     <tr>
       <td align="center" style="padding: 20px 10px;">
         <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" style="max-width: 600px; width: 100%; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 24px rgba(0,0,0,0.15);">
 
           <!-- Header -->
           <tr>
-            <td style="background: linear-gradient(135deg, #061024 0%, #0a1a3a 50%, #0d2347 100%); padding: 0;">
+            <td bgcolor="#061024" style="background: linear-gradient(135deg, #061024 0%, #0a1a3a 50%, #0d2347 100%); background-color: #061024; padding: 0;">
               <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
                 <tr>
                   <td style="padding: 40px 40px 30px 40px; text-align: center;">
@@ -49,7 +49,7 @@ const getInvitationHtml = (recipientName: string, gender: 'M' | 'F') => {
                     </table>
                     <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center">
                       <tr>
-                        <td style="background-color: rgba(243, 51, 73, 0.2); border: 1px solid rgba(243, 51, 73, 0.4); border-radius: 50px; padding: 8px 20px;">
+                        <td bgcolor="#3d1520" style="background-color: #3d1520; border: 1px solid #6b2030; border-radius: 50px; padding: 8px 20px;">
                           <span style="color: #F33349; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 2px;">Invitation personnelle</span>
                         </td>
                       </tr>
@@ -62,7 +62,7 @@ const getInvitationHtml = (recipientName: string, gender: 'M' | 'F') => {
 
           <!-- Personal greeting -->
           <tr>
-            <td style="background-color: #ffffff; padding: 40px 40px 0 40px;">
+            <td bgcolor="#ffffff" style="background-color: #ffffff; padding: 40px 40px 0 40px;">
               <p style="margin: 0 0 20px 0; color: #061024; font-size: 15px; line-height: 1.7;">
                 ${gender === 'F' ? 'Chère' : 'Cher'} <strong>${nameWithoutTitle}</strong>,
               </p>
@@ -77,11 +77,11 @@ const getInvitationHtml = (recipientName: string, gender: 'M' | 'F') => {
 
           <!-- Event details -->
           <tr>
-            <td style="background-color: #ffffff; padding: 0 40px;">
-              <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background: linear-gradient(135deg, #061024 0%, #0a1a3a 100%); border-radius: 16px; overflow: hidden;">
+            <td bgcolor="#ffffff" style="background-color: #ffffff; padding: 0 40px;">
+              <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" bgcolor="#061024" style="background: linear-gradient(135deg, #061024 0%, #0a1a3a 100%); background-color: #061024; border-radius: 16px; overflow: hidden;">
                 <tr>
-                  <td style="padding: 30px; text-align: center;">
-                    <p style="margin: 0 0 5px 0; color: rgba(255,255,255,0.7); font-size: 12px; text-transform: uppercase; letter-spacing: 2px;">Première édition</p>
+                  <td bgcolor="#061024" style="background-color: #061024; padding: 30px; text-align: center;">
+                    <p style="margin: 0 0 5px 0; color: #b3b3b3; font-size: 12px; text-transform: uppercase; letter-spacing: 2px;">Première édition</p>
                     <h2 style="margin: 0 0 5px 0; color: #ffffff; font-size: 28px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">
                       Journée Scientifique
                     </h2>
@@ -90,16 +90,16 @@ const getInvitationHtml = (recipientName: string, gender: 'M' | 'F') => {
                     </p>
                     <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center">
                       <tr>
-                        <td style="padding: 0 15px; border-right: 1px solid rgba(255,255,255,0.2);">
+                        <td style="padding: 0 15px; border-right: 1px solid #333d4d;">
                           <p style="margin: 0; color: #00B4D8; font-size: 24px; font-weight: 700;">8 Avril</p>
-                          <p style="margin: 0; color: rgba(255,255,255,0.7); font-size: 13px;">2026</p>
+                          <p style="margin: 0; color: #b3b3b3; font-size: 13px;">2026</p>
                         </td>
-                        <td style="padding: 0 15px; border-right: 1px solid rgba(255,255,255,0.2);">
+                        <td style="padding: 0 15px; border-right: 1px solid #333d4d;">
                           <p style="margin: 0; color: #ffffff; font-size: 14px; font-weight: 600;">9h30 - 16h00</p>
                         </td>
                         <td style="padding: 0 15px;">
                           <p style="margin: 0; color: #ffffff; font-size: 14px; font-weight: 600;">Auditorium Guy Meyer</p>
-                          <p style="margin: 0; color: rgba(255,255,255,0.7); font-size: 13px;">HEGP, Paris</p>
+                          <p style="margin: 0; color: #b3b3b3; font-size: 13px;">HEGP, Paris</p>
                         </td>
                       </tr>
                     </table>
@@ -111,7 +111,7 @@ const getInvitationHtml = (recipientName: string, gender: 'M' | 'F') => {
 
           <!-- Why attend -->
           <tr>
-            <td style="background-color: #ffffff; padding: 30px 40px;">
+            <td bgcolor="#ffffff" style="background-color: #ffffff; padding: 30px 40px;">
               <p style="margin: 0; color: #333; font-size: 15px; line-height: 1.7;">
                 Cette journée sera l'occasion de vous présenter notre plateforme, son équipe et ses services, d'échanger sur les enjeux actuels de l'imagerie cardiovasculaire et de l'intelligence artificielle, et de rencontrer les acteurs académiques et industriels qui façonnent l'avenir de notre discipline.
               </p>
@@ -120,8 +120,8 @@ const getInvitationHtml = (recipientName: string, gender: 'M' | 'F') => {
 
           <!-- Limited seats warning -->
           <tr>
-            <td style="background-color: #ffffff; padding: 0 40px 30px 40px;">
-              <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #FEF3F4; border-radius: 12px; border-left: 4px solid #F33349;">
+            <td bgcolor="#ffffff" style="background-color: #ffffff; padding: 0 40px 30px 40px;">
+              <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" bgcolor="#FEF3F4" style="background-color: #FEF3F4; border-radius: 12px; border-left: 4px solid #F33349;">
                 <tr>
                   <td style="padding: 15px 20px;">
                     <p style="margin: 0; color: #061024; font-size: 14px; line-height: 1.5;">
@@ -135,10 +135,10 @@ const getInvitationHtml = (recipientName: string, gender: 'M' | 'F') => {
 
           <!-- CTA -->
           <tr>
-            <td style="background-color: #ffffff; padding: 0 40px 40px 40px; text-align: center;">
+            <td bgcolor="#ffffff" style="background-color: #ffffff; padding: 0 40px 40px 40px; text-align: center;">
               <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center">
                 <tr>
-                  <td style="border-radius: 50px; background: linear-gradient(135deg, #F33349 0%, #e02a3f 100%); box-shadow: 0 4px 15px rgba(243, 51, 73, 0.35);">
+                  <td bgcolor="#F33349" style="border-radius: 50px; background-color: #F33349;">
                     <a href="https://www.miracl-ai.com/fr/journeescientifique#registration-section" target="_blank" style="display: inline-block; padding: 18px 45px; color: #ffffff; font-size: 16px; font-weight: 700; text-decoration: none; text-transform: uppercase; letter-spacing: 1px;">
                       Confirmer ma présence
                     </a>
@@ -155,7 +155,7 @@ const getInvitationHtml = (recipientName: string, gender: 'M' | 'F') => {
 
           <!-- Signature -->
           <tr>
-            <td style="background-color: #f8fafb; padding: 30px 40px; border-top: 1px solid #e8f4f5;">
+            <td bgcolor="#f8fafb" style="background-color: #f8fafb; padding: 30px 40px; border-top: 1px solid #e8f4f5;">
               <p style="margin: 0 0 20px 0; color: #333; font-size: 15px; line-height: 1.6;">
                 Dans l'attente du plaisir de vous accueillir,
               </p>
