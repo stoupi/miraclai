@@ -250,6 +250,58 @@ function parseRecipients(input: string): Recipient[] {
   return recipients.filter((r) => r.email.includes('@'));
 }
 
+export async function GET(request: NextRequest) {
+  const secret = request.nextUrl.searchParams.get('secret');
+
+  if (secret !== ADMIN_SECRET) {
+    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+  }
+
+  const format = request.nextUrl.searchParams.get('format');
+
+  const invitations = await prisma.sentInvitation.findMany({
+    orderBy: { sentAt: 'desc' },
+  });
+
+  const registrations = await prisma.eventRegistration.findMany({
+    where: { eventSlug: 'journee-scientifique-2026' },
+    select: { email: true },
+  });
+  const registeredEmails = new Set(registrations.map((registration) => registration.email.toLowerCase()));
+
+  const invitationsWithStatus = invitations.map((invitation) => ({
+    id: invitation.id,
+    name: invitation.name,
+    email: invitation.email,
+    sentAt: invitation.sentAt.toISOString(),
+    isRegistered: registeredEmails.has(invitation.email.toLowerCase()),
+  }));
+
+  if (format === 'csv') {
+    const csvHeader = 'Nom,Email,Date envoi,Inscrit';
+    const csvRows = invitationsWithStatus.map((invitation) =>
+      `"${invitation.name}","${invitation.email}","${new Date(invitation.sentAt).toLocaleDateString('fr-FR')}","${invitation.isRegistered ? 'Oui' : 'Non'}"`
+    );
+    const csvContent = [csvHeader, ...csvRows].join('\n');
+
+    return new NextResponse(csvContent, {
+      headers: {
+        'Content-Type': 'text/csv; charset=utf-8',
+        'Content-Disposition': 'attachment; filename="invitations-miracl.csv"',
+      },
+    });
+  }
+
+  const totalInvited = invitationsWithStatus.length;
+  const totalRegistered = invitationsWithStatus.filter((invitation) => invitation.isRegistered).length;
+
+  return NextResponse.json({
+    totalInvited,
+    totalRegistered,
+    invitations: invitationsWithStatus,
+  });
+}
+
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
