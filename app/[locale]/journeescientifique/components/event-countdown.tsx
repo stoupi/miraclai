@@ -1,8 +1,10 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { Calendar } from 'lucide-react';
+import { Calendar, Linkedin } from 'lucide-react';
 import type { EventCountdownContent } from '../types';
+
+const LINKEDIN_URL = 'https://www.linkedin.com/company/miracl-ai';
 
 type EventCountdownProps = {
   content: EventCountdownContent;
@@ -106,6 +108,16 @@ export function EventCountdown({ content, targetDate }: EventCountdownProps) {
         </div>
 
         <p className="text-[#061024]/70 max-w-xl mx-auto">{content.subtitle}</p>
+
+        <a
+          href={LINKEDIN_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-6 inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#061024]/5 border border-[#061024]/10 text-[#061024]/70 hover:bg-[#0077B5]/10 hover:border-[#0077B5]/30 hover:text-[#0077B5] transition-all duration-300"
+        >
+          <Linkedin className="w-4 h-4" />
+          <span className="text-sm font-medium">Suivez MIRACL.ai sur LinkedIn</span>
+        </a>
       </div>
     </section>
   );

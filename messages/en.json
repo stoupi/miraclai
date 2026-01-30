@@ -364,7 +364,9 @@
     "addressTitle": "Location",
     "addressLine1": "Hôpital Lariboisière",
     "addressLine2": "2 Rue Ambroise Paré, 75010 Paris",
-    "copyrightSuffix": "MIRACL.ai. All rights reserved."
+    "copyrightSuffix": "MIRACL.ai. All rights reserved.",
+    "linkedinFollow": "Follow our news",
+    "linkedinLabel": "LinkedIn"
   },
   "auth": {
     "loginTitle": "Login",

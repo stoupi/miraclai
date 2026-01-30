@@ -186,10 +186,28 @@ const getInvitationHtml = (recipientName: string, gender: 'M' | 'F') => {
                   </td>
                 </tr>
               </table>
+              <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="margin-top: 20px; border-top: 1px solid #e0e0e0; padding-top: 16px;">
+                <tr>
+                  <td style="text-align: center;">
+                    <a href="https://www.linkedin.com/company/miracl-ai" target="_blank" style="text-decoration: none; display: inline-block;">
+                      <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center">
+                        <tr>
+                          <td style="vertical-align: middle; padding-right: 8px;">
+                            <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" width="18" height="18" style="display: block;" />
+                          </td>
+                          <td style="vertical-align: middle;">
+                            <span style="color: #00B4D8; font-size: 13px; font-weight: 600;">Suivez MIRACL.ai sur LinkedIn</span>
+                          </td>
+                        </tr>
+                      </table>
+                    </a>
+                  </td>
+                </tr>
+              </table>
             </td>
           </tr>
 
-          
+
         </table>
       </td>
     </tr>
