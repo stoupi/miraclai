@@ -4,6 +4,7 @@ import { CentersGrid } from './components/centers-grid';
 import { ServicesSection } from './components/services-section';
 import { ContactSection } from './components/contact-section';
 import { Footer } from './components/footer';
+import { FloatingLinkedinButton } from './components/floating-linkedin-button';
 
 export default async function Home({
   params
@@ -20,6 +21,7 @@ export default async function Home({
       <ServicesSection locale={locale} />
       <ContactSection locale={locale} />
       <Footer locale={locale} />
+      <FloatingLinkedinButton />
     </>
   );
 }

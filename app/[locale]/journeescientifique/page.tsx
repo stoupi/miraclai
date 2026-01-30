@@ -8,6 +8,7 @@ import { EventAbout } from './components/event-about';
 import { EventProgram } from './components/event-program';
 import { EventRegistration } from './components/event-registration';
 import { Footer } from '../components/footer';
+import { FloatingLinkedinButton } from '../components/floating-linkedin-button';
 import type {
   JourneeScientifiquePageContent,
   EventFeature,
@@ -328,6 +329,7 @@ export default async function JourneeScientifiquePage({ params }: Params) {
       <EventProgram content={content.program} />
       <EventRegistration content={content.registration} />
       <Footer locale={locale} />
+      <FloatingLinkedinButton />
     </main>
   );
 }
