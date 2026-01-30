@@ -366,7 +366,8 @@
     "addressLine2": "2 Rue Ambroise Paré, 75010 Paris",
     "copyrightSuffix": "MIRACL.ai. All rights reserved.",
     "linkedinFollow": "Follow our news",
-    "linkedinLabel": "LinkedIn"
+    "linkedinLabel": "LinkedIn",
+    "linkedinTooltip": "Follow us on LinkedIn"
   },
   "auth": {
     "loginTitle": "Login",
