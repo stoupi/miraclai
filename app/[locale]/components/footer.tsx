@@ -9,7 +9,6 @@ const navigationRoutes = [
   { key: 'home', href: '/' },
   { key: 'team', href: '/team' },
   { key: 'services', href: '/services' },
-  { key: 'news', href: '/news' }
 ] as const;
 
 type FooterProps = { locale: string };

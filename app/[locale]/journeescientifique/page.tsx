@@ -211,7 +211,7 @@ export default async function JourneeScientifiquePage({ params }: Params) {
             },
             {
               name: 'Sofiane Sifaoui',
-              affiliation: 'PhD student MIRACL.ai, en collaboration avec Télécom/Polytechnique Paris',
+              affiliation: 'PhD student MIRACL.ai & Télécom Paris (Institut Polytechnique de Paris)',
               topic: t('program.blocks.session2.sessions.phd.topics.deepLearning')
             },
             {
