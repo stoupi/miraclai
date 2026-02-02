@@ -683,7 +683,8 @@
       "submitButton": "Confirmer mon inscription",
       "consent": "En vous inscrivant, vous acceptez de recevoir des informations concernant cet événement.",
       "successMessage": "Inscription confirmée ! Vous recevrez un email de confirmation.",
-      "errorMessage": "Une erreur est survenue. Veuillez réessayer."
+      "errorMessage": "Une erreur est survenue. Veuillez réessayer.",
+      "alreadyRegisteredMessage": "Une inscription est déjà prise en compte pour cet email."
     },
     "partners": {
       "title": "Partenaires"

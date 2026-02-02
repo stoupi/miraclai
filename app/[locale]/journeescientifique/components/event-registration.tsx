@@ -38,7 +38,11 @@ export function EventRegistration({ content }: EventRegistrationProps) {
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   const { execute, isPending: isSubmitting } = useAction(submitEventRegistration, {
-    onSuccess: () => {
+    onSuccess: ({ data }) => {
+      if (data?.alreadyRegistered) {
+        toast.error(content.alreadyRegisteredMessage);
+        return;
+      }
       setIsSubmitted(true);
       toast.success(content.successMessage);
     },

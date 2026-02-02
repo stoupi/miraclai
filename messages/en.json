@@ -688,7 +688,8 @@
       "submitButton": "Confirm registration",
       "consent": "By registering, you agree to receive information about this event.",
       "successMessage": "Registration confirmed! You will receive a confirmation email.",
-      "errorMessage": "An error occurred. Please try again."
+      "errorMessage": "An error occurred. Please try again.",
+      "alreadyRegisteredMessage": "A registration already exists for this email."
     },
     "partners": {
       "title": "Partners"

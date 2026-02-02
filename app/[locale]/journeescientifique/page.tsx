@@ -314,7 +314,8 @@ export default async function JourneeScientifiquePage({ params }: Params) {
       submitButton: t('registration.submitButton'),
       consent: t('registration.consent'),
       successMessage: t('registration.successMessage'),
-      errorMessage: t('registration.errorMessage')
+      errorMessage: t('registration.errorMessage'),
+      alreadyRegisteredMessage: t('registration.alreadyRegisteredMessage')
     }
   };
 

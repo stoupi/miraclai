@@ -87,8 +87,8 @@ model EventRegistration {
   eventSlug   String   @default("journee-scientifique-2026")
   createdAt   DateTime @default(now())
 
+  @@unique([email, eventSlug])
   @@index([eventSlug])
-  @@index([email])
 }
 
 model SentInvitation {

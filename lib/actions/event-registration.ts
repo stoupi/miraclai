@@ -17,13 +17,24 @@ export const submitEventRegistration = unauthenticatedAction
   .schema(eventRegistrationSchema)
   .action(async ({ parsedInput }) => {
     const { firstName, lastName, email, profession, institution } = parsedInput;
+    const normalizedEmail = email.toLowerCase().trim();
 
-    // Save to database
+    const existingRegistration = await prisma.eventRegistration.findFirst({
+      where: {
+        email: normalizedEmail,
+        eventSlug: 'journee-scientifique-2026',
+      },
+    });
+
+    if (existingRegistration) {
+      return { alreadyRegistered: true };
+    }
+
     await prisma.eventRegistration.create({
       data: {
         firstName,
         lastName,
-        email,
+        email: normalizedEmail,
         profession,
         institution,
         eventSlug: 'journee-scientifique-2026',
@@ -189,5 +200,5 @@ export const submitEventRegistration = unauthenticatedAction
       // Don't throw here - admin email was sent successfully
     }
 
-    return { success: true };
+    return { success: true, alreadyRegistered: false };
   });

@@ -94,6 +94,7 @@ export type EventRegistrationContent = {
   consent: string;
   successMessage: string;
   errorMessage: string;
+  alreadyRegisteredMessage: string;
 };
 
 export type EventPartnersContent = {
