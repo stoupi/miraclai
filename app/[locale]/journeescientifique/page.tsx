@@ -110,8 +110,8 @@ export default async function JourneeScientifiquePage({ params }: Params) {
               topic: t('program.blocks.session1.sessions.services.topics.mri')
             },
             {
-              name: 'Pr Yohann Bohbot, Pr Augustin Coisne, Pr Olivier Huttin',
-              affiliation: 'CHU Amiens, Lille, Nancy',
+              name: 'Pr Yohann Bohbot, Pr Augustin Coisne',
+              affiliation: 'CHU Amiens, Lille',
               topic: t('program.blocks.session1.sessions.services.topics.echo')
             },
             {
