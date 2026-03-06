@@ -81,7 +81,7 @@ export default async function JourneeScientifiquePage({ params }: Params) {
               topic: t('program.blocks.session1.sessions.whoAreWe.topics.methodology')
             },
             {
-              name: 'Pr Gabriel Steg, Milan Lazarevic, Quentin Demanet',
+              name: 'Pr Gabriel Steg',
               affiliation: 'AP-HP',
               topic: t('program.blocks.session1.sessions.whoAreWe.topics.carnot')
             }
