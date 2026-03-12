@@ -126,7 +126,7 @@ export default async function JourneeScientifiquePage({ params }: Params) {
             },
             {
               name: 'Pr Jean-Guillaume Dillinger',
-              affiliation: 'CHU Lariboisière, AP-HP',
+              affiliation: 'Hôpital Lariboisière (AP-HP)',
               topic: t('program.blocks.session1.sessions.services.topics.angio')
             },
             {
