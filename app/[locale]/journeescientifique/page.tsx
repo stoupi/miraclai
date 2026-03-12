@@ -177,7 +177,7 @@ export default async function JourneeScientifiquePage({ params }: Params) {
             },
             {
               name: 'Dr Charles Fauvel & Léa Cymes',
-              affiliation: 'CHU de Rouen, BMS',
+              affiliation: 'CHU de Rouen, Bristol Myers Squibb (BMS)',
               topic: t('program.blocks.session2.sessions.collaborations.topics.hcm')
             },
             {
