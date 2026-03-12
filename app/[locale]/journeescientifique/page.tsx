@@ -106,7 +106,7 @@ export default async function JourneeScientifiquePage({ params }: Params) {
             },
             {
               name: 'Pr Jérôme Garot',
-              affiliation: 'ICPS, Massy',
+              affiliation: 'Institut Cardiovasculaire Paris Sud (ICPS), Massy',
               topic: t('program.blocks.session1.sessions.services.topics.mri')
             },
             {
