@@ -67,12 +67,12 @@ export default async function JourneeScientifiquePage({ params }: Params) {
           speakers: [
             {
               name: 'Pr Gilles Soulat & Dr Théo Pezel',
-              affiliation: 'HEGP, CHU Lariboisière, AP-HP',
+              affiliation: 'Hôpital européen Georges Pompidou (AP-HP), Hôpital Lariboisière (AP-HP)',
               topic: t('program.blocks.session1.sessions.whoAreWe.topics.presentation')
             },
             {
               name: 'Solenn Toupin & Marine Beaumont',
-              affiliation: 'CHU Lariboisière, CHRU Nancy',
+              affiliation: 'Hôpital Lariboisière (AP-HP), CHRU de Nancy',
               topic: t('program.blocks.session1.sessions.whoAreWe.topics.dataManagement')
             },
             {
@@ -111,17 +111,17 @@ export default async function JourneeScientifiquePage({ params }: Params) {
             },
             {
               name: 'Pr Yohann Bohbot, Pr Augustin Coisne',
-              affiliation: 'CHU Amiens, Lille',
+              affiliation: "CHU d'Amiens, CHU de Lille",
               topic: t('program.blocks.session1.sessions.services.topics.echo')
             },
             {
               name: 'Pr Fabien Hyafil',
-              affiliation: 'HEGP, AP-HP',
+              affiliation: 'Hôpital européen Georges Pompidou (AP-HP)',
               topic: t('program.blocks.session1.sessions.services.topics.nuclear')
             },
             {
               name: 'Pr Christian de Chillou',
-              affiliation: 'CHRU Nancy',
+              affiliation: 'CHRU de Nancy',
               topic: t('program.blocks.session1.sessions.services.topics.ecg')
             },
             {
@@ -167,12 +167,12 @@ export default async function JourneeScientifiquePage({ params }: Params) {
           speakers: [
             {
               name: 'Pr Karim Wahbi',
-              affiliation: 'CHU Cochin, AP-HP',
+              affiliation: 'Hôpital Cochin, AP-HP',
               topic: t('program.blocks.session2.sessions.collaborations.topics.fhu')
             },
             {
               name: 'Pr Mathieu Kerneis',
-              affiliation: 'CHU Pitié Salpétrière, AP-HP, Groupe Action',
+              affiliation: 'Hôpital de la Pitié Salpêtrière, AP-HP, Groupe Action',
               topic: t('program.blocks.session2.sessions.collaborations.topics.myocarditis')
             },
             {
@@ -182,12 +182,12 @@ export default async function JourneeScientifiquePage({ params }: Params) {
             },
             {
               name: 'Pr Jean-Sebastien Hulot',
-              affiliation: 'HEGP, AP-HP',
+              affiliation: 'Hôpital européen Georges Pompidou (AP-HP)',
               topic: t('program.blocks.session2.sessions.collaborations.topics.impulsion')
             },
             {
               name: 'Dr Théo Pezel',
-              affiliation: 'CHU Lariboisière, AP-HP',
+              affiliation: 'Hôpital Lariboisière (AP-HP)',
               topic: t('program.blocks.session2.sessions.collaborations.topics.esc')
             }
           ],
@@ -233,7 +233,7 @@ export default async function JourneeScientifiquePage({ params }: Params) {
           speakers: [
             {
               name: 'Pr Gilles Soulat & Dr Théo Pezel',
-              affiliation: 'HEGP, CHU Lariboisière, AP-HP',
+              affiliation: 'Hôpital européen Georges Pompidou (AP-HP), Hôpital Lariboisière (AP-HP)',
               topic: t('program.blocks.session2.sessions.conclusion.topic')
             }
           ],

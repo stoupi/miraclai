@@ -167,7 +167,7 @@ export const submitEventRegistration = unauthenticatedAction
               <strong>🕤 Horaires :</strong> 9h30 – 16h00
             </p>
             <p style="margin: 0; color: #061024;">
-              <strong>📍 Lieu :</strong> Auditorium Guy Meyer, Hôpital Européen Georges Pompidou, Paris
+              <strong>📍 Lieu :</strong> Auditorium Guy Meyer, Hôpital européen Georges Pompidou (AP-HP), Paris
             </p>
           </div>
 
