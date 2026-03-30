@@ -111,7 +111,7 @@ export default async function JourneeScientifiquePage({ params }: Params) {
             },
             {
               name: 'Pr Fabien Hyafil',
-              affiliation: 'Hôpital européen Georges Pompidou (AP-HP)',
+              affiliation: 'Médecin nucléaire, Hôpital européen Georges Pompidou (AP-HP)',
               topic: t('program.blocks.session1.sessions.services.topics.nuclear')
             },
             {
@@ -121,7 +121,7 @@ export default async function JourneeScientifiquePage({ params }: Params) {
             },
             {
               name: 'Pr Jean-Guillaume Dillinger',
-              affiliation: 'Hôpital Lariboisière (AP-HP)',
+              affiliation: 'Cardiologue, Hôpital Lariboisière (AP-HP)',
               topic: t('program.blocks.session1.sessions.services.topics.angio')
             },
             {
@@ -172,12 +172,12 @@ export default async function JourneeScientifiquePage({ params }: Params) {
             },
             {
               name: 'Pr Karim Wahbi',
-              affiliation: 'Hôpital Cochin, AP-HP',
+              affiliation: 'Cardiologue, Hôpital Cochin, AP-HP',
               topic: t('program.blocks.session2.sessions.collaborations.topics.fhu')
             },
             {
               name: 'Pr Mathieu Kerneis',
-              affiliation: 'Hôpital de la Pitié Salpêtrière, AP-HP, Groupe Action',
+              affiliation: 'Cardiologue, Hôpital de la Pitié Salpêtrière, AP-HP, Groupe Action',
               topic: t('program.blocks.session2.sessions.collaborations.topics.myocarditis')
             },
             {
