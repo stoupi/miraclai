@@ -72,7 +72,7 @@ export default async function JourneeScientifiquePage({ params }: Params) {
             },
             {
               name: 'Solenn Toupin & Marine Beaumont',
-              affiliation: 'Hôpital Lariboisière (AP-HP), CHRU de Nancy',
+              affiliation: 'Coordinatrice scientifique & Cardiologue, Hôpital Lariboisière (AP-HP), CHRU de Nancy',
               topic: t('program.blocks.session1.sessions.whoAreWe.topics.dataManagement')
             },
             {
@@ -96,17 +96,17 @@ export default async function JourneeScientifiquePage({ params }: Params) {
           speakers: [
             {
               name: 'Pr François Pontana',
-              affiliation: 'CHU de Lille',
+              affiliation: 'Radiologue, CHU de Lille',
               topic: t('program.blocks.session1.sessions.services.topics.ct')
             },
             {
               name: 'Pr Jérôme Garot',
-              affiliation: 'Institut Cardiovasculaire Paris Sud (ICPS), Massy',
+              affiliation: 'Cardiologue, Institut Cardiovasculaire Paris Sud (ICPS), Massy',
               topic: t('program.blocks.session1.sessions.services.topics.mri')
             },
             {
               name: 'Pr Yohann Bohbot, Pr Augustin Coisne',
-              affiliation: "CHU d'Amiens, CHU de Lille",
+              affiliation: "Cardiologues, CHU d'Amiens, CHU de Lille",
               topic: t('program.blocks.session1.sessions.services.topics.echo')
             },
             {
@@ -116,7 +116,7 @@ export default async function JourneeScientifiquePage({ params }: Params) {
             },
             {
               name: 'Pr Christian de Chillou',
-              affiliation: 'CHRU de Nancy',
+              affiliation: 'Cardiologue, CHRU de Nancy',
               topic: t('program.blocks.session1.sessions.services.topics.ecg')
             },
             {
@@ -126,7 +126,7 @@ export default async function JourneeScientifiquePage({ params }: Params) {
             },
             {
               name: 'Pr Jean-Nicolas Dacher',
-              affiliation: 'CHU de Rouen',
+              affiliation: 'Radiologue, CHU de Rouen',
               topic: t('program.blocks.session1.sessions.services.topics.multimodal')
             },
             {
