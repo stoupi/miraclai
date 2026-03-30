@@ -166,11 +166,6 @@ export default async function JourneeScientifiquePage({ params }: Params) {
               topic: t('program.blocks.session2.sessions.collaborations.topics.hcm')
             },
             {
-              name: 'Pr Gabriel Steg',
-              affiliation: "Service de cardiologie de l'hôpital Bichat – Claude-Bernard AP-HP, Vice-président recherche du directoire de l'AP-HP",
-              topic: t('program.blocks.session2.sessions.collaborations.topics.taviColchicine')
-            },
-            {
               name: 'Pr Karim Wahbi',
               affiliation: 'Cardiologue, Hôpital Cochin, AP-HP',
               topic: t('program.blocks.session2.sessions.collaborations.topics.fhu')
@@ -189,6 +184,11 @@ export default async function JourneeScientifiquePage({ params }: Params) {
               name: 'Dr Théo Pezel',
               affiliation: 'Hôpital Lariboisière (AP-HP)',
               topic: t('program.blocks.session2.sessions.collaborations.topics.esc')
+            },
+            {
+              name: 'Pr Gabriel Steg',
+              affiliation: "Service de cardiologie de l'hôpital Bichat – Claude-Bernard AP-HP, Vice-président recherche du directoire de l'AP-HP",
+              topic: t('program.blocks.session2.sessions.collaborations.topics.taviColchicine')
             }
           ],
           qaText: t('program.blocks.session2.sessions.collaborations.qa')
@@ -210,6 +210,11 @@ export default async function JourneeScientifiquePage({ params }: Params) {
               topic: t('program.blocks.session2.sessions.phd.topics.lge')
             },
             {
+              name: 'Dr Julien Hudelo',
+              affiliation: "PhD student MIRACL.ai, en collaboration avec le CHU d'Amiens",
+              topic: t('program.blocks.session2.sessions.phd.topics.cesar')
+            },
+            {
               name: 'Sofiane Sifaoui',
               affiliation: 'PhD student MIRACL.ai & Télécom Paris (Institut Polytechnique de Paris)',
               topic: t('program.blocks.session2.sessions.phd.topics.deepLearning')
@@ -218,11 +223,6 @@ export default async function JourneeScientifiquePage({ params }: Params) {
               name: 'Solenn Toupin',
               affiliation: 'Coordinatrice scientifique de MIRACL.ai',
               topic: t('program.blocks.session2.sessions.phd.topics.derivate')
-            },
-            {
-              name: 'Dr Julien Hudelo',
-              affiliation: "PhD student MIRACL.ai, en collaboration avec le CHU d'Amiens",
-              topic: t('program.blocks.session2.sessions.phd.topics.cesar')
             }
           ],
           qaText: t('program.blocks.session2.sessions.phd.qa')
