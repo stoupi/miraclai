@@ -79,11 +79,6 @@ export default async function JourneeScientifiquePage({ params }: Params) {
               name: 'Pr Éric Vicaut',
               affiliation: 'URC AP-HP Nord',
               topic: t('program.blocks.session1.sessions.whoAreWe.topics.methodology')
-            },
-            {
-              name: 'Pr Gabriel Steg',
-              affiliation: 'AP-HP',
-              topic: t('program.blocks.session1.sessions.whoAreWe.topics.carnot')
             }
           ],
           qaText: t('program.blocks.session1.sessions.qa')
@@ -166,6 +161,16 @@ export default async function JourneeScientifiquePage({ params }: Params) {
           subtitle: 'Présentations flash de 5 minutes',
           speakers: [
             {
+              name: 'Dr Charles Fauvel & Léa Cymes',
+              affiliation: 'CHU de Rouen, Bristol Myers Squibb (BMS)',
+              topic: t('program.blocks.session2.sessions.collaborations.topics.hcm')
+            },
+            {
+              name: 'Pr Gabriel Steg',
+              affiliation: "Service de cardiologie de l'hôpital Bichat – Claude-Bernard AP-HP, Vice-président recherche du directoire de l'AP-HP",
+              topic: t('program.blocks.session2.sessions.collaborations.topics.taviColchicine')
+            },
+            {
               name: 'Pr Karim Wahbi',
               affiliation: 'Hôpital Cochin, AP-HP',
               topic: t('program.blocks.session2.sessions.collaborations.topics.fhu')
@@ -174,11 +179,6 @@ export default async function JourneeScientifiquePage({ params }: Params) {
               name: 'Pr Mathieu Kerneis',
               affiliation: 'Hôpital de la Pitié Salpêtrière, AP-HP, Groupe Action',
               topic: t('program.blocks.session2.sessions.collaborations.topics.myocarditis')
-            },
-            {
-              name: 'Dr Charles Fauvel & Léa Cymes',
-              affiliation: 'CHU de Rouen, Bristol Myers Squibb (BMS)',
-              topic: t('program.blocks.session2.sessions.collaborations.topics.hcm')
             },
             {
               name: 'Pr Jean-Sebastien Hulot',

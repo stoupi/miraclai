@@ -599,8 +599,7 @@
               "topics": {
                 "presentation": "Presentation of MIRACL.ai",
                 "dataManagement": "How it works in practice: data management from collection to analysis",
-                "methodology": "Key platform for research in France and industry challenges",
-                "carnot": "MIRACL.ai to accelerate innovation between research and industry: \"Carnot Label\""
+                "methodology": "Key platform for research in France and industry challenges"
               }
             },
             "break": "Break & refreshments",
@@ -633,6 +632,7 @@
             "collaborations": {
               "title": "Overview of main existing collaborations",
               "topics": {
+                "taviColchicine": "TAVI & Colchicine: a national randomized trial (PHRC) with cardiac CT as the primary endpoint",
                 "fhu": "FHU Prevent-HF Project and Duchenne Cardiomyopathy",
                 "myocarditis": "New research project Action Group and MIRACL.ai",
                 "hcm": "Hypertrophic Cardiomyopathy Registry Project under myosin inhibitors with BMS industrial collaboration",
