@@ -77,7 +77,7 @@ export default async function JourneeScientifiquePage({ params }: Params) {
             },
             {
               name: 'Pr Éric Vicaut',
-              affiliation: 'URC AP-HP Nord',
+              affiliation: "Responsable de l'unité de recherche clinique (URC) Saint-Louis Lariboisière AP-HP",
               topic: t('program.blocks.session1.sessions.whoAreWe.topics.methodology')
             }
           ],
@@ -131,7 +131,7 @@ export default async function JourneeScientifiquePage({ params }: Params) {
             },
             {
               name: 'Allyre Lohier',
-              affiliation: 'DRCI, AP-HP',
+              affiliation: "Chargé de mission collaboration de recherche à la DRCI de l'AP-HP",
               topic: t('program.blocks.session1.sessions.services.topics.regulatory')
             }
           ],
