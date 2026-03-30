@@ -72,7 +72,7 @@ export default async function JourneeScientifiquePage({ params }: Params) {
             },
             {
               name: 'Solenn Toupin & Marine Beaumont',
-              affiliation: 'Coordinatrice scientifique & Cardiologue, Hôpital Lariboisière (AP-HP), CHRU de Nancy',
+              affiliation: 'Hôpital Lariboisière (AP-HP), CHRU de Nancy',
               topic: t('program.blocks.session1.sessions.whoAreWe.topics.dataManagement')
             },
             {
