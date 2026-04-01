@@ -181,14 +181,14 @@ export default async function JourneeScientifiquePage({ params }: Params) {
               topic: t('program.blocks.session2.sessions.collaborations.topics.impulsion')
             },
             {
-              name: 'Dr Théo Pezel',
-              affiliation: 'Hôpital Lariboisière (AP-HP)',
-              topic: t('program.blocks.session2.sessions.collaborations.topics.esc')
-            },
-            {
               name: 'Pr Gabriel Steg',
               affiliation: "Service de cardiologie de l'hôpital Bichat – Claude-Bernard AP-HP, Vice-président recherche du directoire de l'AP-HP",
               topic: t('program.blocks.session2.sessions.collaborations.topics.taviColchicine')
+            },
+            {
+              name: 'Dr Théo Pezel',
+              affiliation: 'Hôpital Lariboisière (AP-HP)',
+              topic: t('program.blocks.session2.sessions.collaborations.topics.esc')
             }
           ],
           qaText: t('program.blocks.session2.sessions.collaborations.qa')
