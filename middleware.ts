@@ -1,11 +1,29 @@
 import createMiddleware from 'next-intl/middleware';
+import { NextRequest, NextResponse } from 'next/server';
 import { routing } from './app/i18n/routing';
 
-export default createMiddleware(routing);
+const intlMiddleware = createMiddleware(routing);
+
+const PUBLIC_PATHS = new Set(['/', '/fr', '/en']);
+
+export default function middleware(request: NextRequest) {
+  const { pathname } = request.nextUrl;
+
+  const isPublic =
+    PUBLIC_PATHS.has(pathname) ||
+    pathname.startsWith('/api') ||
+    pathname.startsWith('/_next') ||
+    pathname.startsWith('/_vercel') ||
+    pathname.includes('.');
+
+  if (!isPublic) {
+    const locale = pathname.startsWith('/fr') ? 'fr' : 'en';
+    return NextResponse.redirect(new URL(`/${locale}`, request.url));
+  }
+
+  return intlMiddleware(request);
+}
 
 export const config = {
-  // Match all pathnames except for
-  // - … if they start with `/api`, `/trpc`, `/_next` or `/_vercel`
-  // - … the ones containing a dot (e.g. `favicon.ico`)
   matcher: '/((?!api|trpc|_next|_vercel|.*\..*).*)'
 };
